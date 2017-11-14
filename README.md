@@ -1,1 +1,1 @@
-API-GraphQL del Sistema de Pre-incripcion del Romulo Gallegos
+API-GraphQL del Sistema de Pre-incripcion del Romulo Gallegos.
