@@ -1,4 +1,4 @@
-package configurations
+package databases
 
 import (
 	"encoding/json"
@@ -23,7 +23,7 @@ type configurationDB struct {
 //getConfigurationDB Obtiene la configuracion de un archivo JSON y pobla la estructura configurationDB
 func getConfigurationDB() configurationDB {
 	var c configurationDB
-	file, err := os.Open("./configDB.json")
+	file, err := os.Open("./databases/configDB.json")
 	if err != nil {
 		log.Fatal(err)
 	}

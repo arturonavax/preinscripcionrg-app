@@ -17,12 +17,12 @@ var (
 
 //init Lee las llaves RSA.
 func init() {
-	privateByte, err := ioutil.ReadFile("./keys/private.rsa")
+	privateByte, err := ioutil.ReadFile("./security/keys/private.rsa")
 	if err != nil {
 		log.Fatal("No se pudo leer el archivo privado")
 	}
 
-	publicBytes, err := ioutil.ReadFile("./keys/public.rsa")
+	publicBytes, err := ioutil.ReadFile("./security/keys/public.rsa")
 	if err != nil {
 		log.Fatal("No se pudo leer el archivo publico")
 	}

@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/configurations"
+	"github.com/arthurnavah/PreInscripcionRG-API/databases"
 	"github.com/arthurnavah/PreInscripcionRG-API/models"
 	"github.com/arthurnavah/PreInscripcionRG-API/utils"
 )
@@ -24,7 +24,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//Se instancia una conexion a la base de datos.
-	db := configurations.GetConnectionDB()
+	db := databases.GetConnectionDB()
 	defer db.Close()
 
 	//Se encripta con sha256 la contraseña enviada en el cuerpo del Request.

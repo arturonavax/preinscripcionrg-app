@@ -1,9 +1,7 @@
-package utils
+package databases
 
 import (
 	"log"
-
-	"github.com/arthurnavah/PreInscripcionRG-API/configurations"
 	"github.com/arthurnavah/PreInscripcionRG-API/models"
 )
 
@@ -12,7 +10,7 @@ func createTables() {
 	log.Println("---------------------------------------")
 	log.Println("- Generando Tablas...                 -")
 
-	db := configurations.GetConnectionDB()
+	db := GetConnectionDB()
 	defer db.Close()
 	db.CreateTable(&models.People{})
 	db.CreateTable(&models.UserKind{})

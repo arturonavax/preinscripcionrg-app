@@ -1,9 +1,8 @@
-package utils
+package databases
 
 import (
 	"log"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/configurations"
 	"github.com/arthurnavah/PreInscripcionRG-API/models"
 )
 
@@ -12,7 +11,7 @@ func recreateTables() {
 	log.Println("---------------------------------------")
 	log.Println("- Recreando tablas...                 -")
 
-	db := configurations.GetConnectionDB()
+	db := GetConnectionDB()
 	defer db.Close()
 	//Se borran las tablas.
 	db.DropTable(&models.User{})
