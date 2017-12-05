@@ -9,6 +9,11 @@ type Student struct {
 	UpdatedAt time.Time
 	DeletedAt *time.Time `sql:"index"`
 
+	UserID uint `json:"userId" gorm:"not null;type:integer"`
+
+	// Datos del Estudiante.
+	SIGECOD string `json:"SIGECOD" gorm:"type:varchar(20)"`
+
 	FirstName string `json:"firstName" gorm:"not null;type:varchar(50)"`
 	LastName  string `json:"lastName" gorm:"not null;type:varchar(50)"`
 
@@ -47,4 +52,13 @@ type Student struct {
 	LastNameP    string `json:"lastNameP" gorm:"not null;type:varchar(50)"`
 	PhoneNumberP string `json:"phoneNumberP" gorm:"not null;type:varchar(12)"`
 	CIP          int    `json:"cip" gorm:"not null; unique;integer"`
+
+	//Escolaridad
+	Year    int    `json:"year" gorm:"not null;type:integer`
+	Mention string `json:"mention" gorm:"not null;type:varchar(50)`
+	Section string `json:"section" gorm:"not null; type:varchar(10)`
+
+	Age    int    `json:"age" gorm:"not null;type:integer`
+	Size   string `json:"size" gorm:"not null;type:varchar(10)`
+	Weight int    `json:"weight" gorm:"not null;type:integer"`
 }
