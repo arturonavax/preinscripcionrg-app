@@ -5,8 +5,9 @@ import (
 	"os"
 	"strings"
 
-	"gitlab.com/arthurnavah/Production-Arthur/Inventario-API/databases"
-	"gitlab.com/arthurnavah/Production-Arthur/Inventario-API/models"
+	"github.com/arthurnavah/PreInscripcionRG-API/databases"
+	"github.com/arthurnavah/PreInscripcionRG-API/models"
+	student "github.com/arthurnavah/PreInscripcionRG-API/models/students"
 )
 
 //VerificationBasic Hace las verificaciones basicas para el funcionamiento del sistema.
@@ -14,9 +15,24 @@ func VerificationBasic() {
 	//Comprobacion de Tablas.
 	tablesExist := TablesIsExist(
 		models.People{},
-		models.UserKind{},
 		models.UserStatus{},
+		models.UserKind{},
 		models.User{},
+		student.Country{},
+		student.State{},
+		student.Municipality{},
+		student.Institution{},
+		student.Representative{},
+		student.Teacher{},
+		student.Parish{},
+		student.Sector{},
+		student.TypeOfRoad{},
+		student.Father{},
+		student.Mother{},
+		student.Mention{},
+		student.Section{},
+		student.StudentCondition{},
+		student.Student{},
 	)
 	//-----------------------
 

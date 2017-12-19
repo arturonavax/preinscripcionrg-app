@@ -2,8 +2,8 @@ package student
 
 import "time"
 
-//Countries Paises de la aplicacion.
-type Countries struct {
+//Section Seccion de la aplicacion.
+type Section struct {
 	ID        uint `json:"id" gorm:"primary_key"`
 	CreatedAt time.Time
 	UpdatedAt time.Time

@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/arthurnavah/PreInscripcionRG-API/models"
+	student "github.com/arthurnavah/PreInscripcionRG-API/models/students"
 )
 
 //CreateTables Crea las tablas necesarias.
@@ -17,9 +18,24 @@ func CreateTables() {
 
 	//Se crean las tablas.
 	db.CreateTable(&models.People{})
-	db.CreateTable(&models.UserKind{})
 	db.CreateTable(&models.UserStatus{})
+	db.CreateTable(&models.UserKind{})
 	db.CreateTable(&models.User{})
+	db.CreateTable(&student.Country{})
+	db.CreateTable(&student.State{})
+	db.CreateTable(&student.Municipality{})
+	db.CreateTable(&student.Institution{})
+	db.CreateTable(&student.Representative{})
+	db.CreateTable(&student.Teacher{})
+	db.CreateTable(&student.Parish{})
+	db.CreateTable(&student.Sector{})
+	db.CreateTable(&student.TypeOfRoad{})
+	db.CreateTable(&student.Father{})
+	db.CreateTable(&student.Mother{})
+	db.CreateTable(&student.Mention{})
+	db.CreateTable(&student.Section{})
+	db.CreateTable(&student.StudentCondition{})
+	db.CreateTable(&student.Student{})
 	//----------------------
 
 	//Relaciones y llaves foraneas.

@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/arthurnavah/PreInscripcionRG-API/security"
+
 	"github.com/arthurnavah/PreInscripcionRG-API/databases"
 	"github.com/arthurnavah/PreInscripcionRG-API/models"
 	"github.com/arthurnavah/PreInscripcionRG-API/utils"
@@ -40,7 +42,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		userFound.Password = ""
 
 		//Se genera un JWT con la estructura userFound
-		token := utils.GenerateJWT(userFound)
+		token := security.GenerateJWT(userFound)
 
 		//Se convierte el JWT resultante en un JSON valido para enviar al Usuario.
 		j, err := json.Marshal(models.Token{Token: token})
