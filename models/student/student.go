@@ -1,4 +1,4 @@
-package models
+package student
 
 import "time"
 
