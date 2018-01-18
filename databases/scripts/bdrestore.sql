@@ -4,7 +4,7 @@
 INSERT INTO peoples (first_name, last_name, email, phone_number, address) VALUES
 	('Arturo', 'Nava', 'arthurnavah@gmail.com','+584166651924', 'Valle Frio'),
 	('Maikol', 'Hernandez', 'maikol@gmail.com', '04146360146', 'Chinita'),
-	('Ricardo', 'Romero', 'ricardo@gmail.com', '04166409170', 'La Victoria'),
+	('Ricardo', 'Romero', 'ricardo@gmail.com', '041664091   70', 'La Victoria'),
 	('Carlos', 'Vasquez', 'carlos@gmail.com', '04243081929', 'La Limpia')
 ;
 
@@ -135,7 +135,7 @@ INSERT INTO fathers (user_id, first_name, last_name, email, phone_number, ci) VA
 ;
 
 -- CREACION DE MADRES.
-INSERT INTO fathers (user_id, first_name, last_name, email, phone_number, ci) VALUES
+INSERT INTO mothers (user_id, first_name, last_name, email, phone_number, ci) VALUES
     (1, 'Zully', 'Marina', 'zully@gmail.com', '04146360146', 'V-8500612')    
 ;
 
@@ -159,4 +159,25 @@ INSERT INTO student_conditions (user_id, name) VALUES
     (1, 'ALQUILADA'),
     (1, 'AL CUIDO'),
     (1, 'CONSERJERIA')
+;
+
+-- CREACION DE ASIGNATURAS.
+INSERT INTO asignatures (user_id, name) VALUES
+    (1, 'MATEMATICA'),
+    (1, 'FISICA'),
+    (1, 'QUIMICA'),
+    (1, 'LENGUAS EXTRANJERAS'),
+    (1, 'CASTELLANO'),
+    (1, 'BIOLOGIA'),
+    (1, 'EDUC.FISICA'),
+    (1, 'INFORMATICA'),
+    (1, 'CONTABILIDAD'),
+    (1, 'TURISMO'),
+    (1, 'MECANOGRAFIA'),
+    (1, 'DERECHO'),
+    (1, 'ARTISTICA'),
+    (1, 'PROGRAMACION'),
+    (1, 'MANT.TECNICO'),
+    (1, 'PREMILITAR'),
+    (1, 'OFIMATICA')
 ;
