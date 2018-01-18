@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/databases"
+	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/databases"
 	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models"
 	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models/student"
 )
