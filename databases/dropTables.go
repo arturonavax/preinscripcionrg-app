@@ -36,6 +36,7 @@ func DropTables() {
 	db.DropTable(&student.Section{})
 	db.DropTable(&student.StudentCondition{})
 	db.DropTable(&student.Student{})
+	db.DropTable(&student.Asignature{})
 	//------------------------
 
 	log.Println("-                 -                    -")
