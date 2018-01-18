@@ -3,8 +3,8 @@ package databases
 import (
 	"log"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/models"
-	student "github.com/arthurnavah/PreInscripcionRG-API/models/students"
+	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models"
+	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models/student"
 )
 
 //CreateTables Crea las tablas necesarias.
@@ -36,6 +36,7 @@ func CreateTables() {
 	db.CreateTable(&student.Section{})
 	db.CreateTable(&student.StudentCondition{})
 	db.CreateTable(&student.Student{})
+	db.CreateTable(&student.Asignature{})
 	//----------------------
 
 	//Relaciones y llaves foraneas.

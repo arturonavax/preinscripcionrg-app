@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/arthurnavah/PreInscripcionRG-API/routes"
-	"github.com/arthurnavah/PreInscripcionRG-API/utils"
+	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/routes"
+	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/utils"
 )
 
 func main() {

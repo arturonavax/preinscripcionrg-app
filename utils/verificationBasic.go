@@ -6,8 +6,8 @@ import (
 	"strings"
 
 	"github.com/arthurnavah/PreInscripcionRG-API/databases"
-	"github.com/arthurnavah/PreInscripcionRG-API/models"
-	student "github.com/arthurnavah/PreInscripcionRG-API/models/students"
+	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models"
+	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models/student"
 )
 
 //VerificationBasic Hace las verificaciones basicas para el funcionamiento del sistema.

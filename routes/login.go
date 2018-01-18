@@ -3,7 +3,7 @@ package routes
 import (
 	"net/http"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/controllers"
+	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/controllers"
 )
 
 //SetLoginRouter Declara la ruta de Logeo del usuario.
