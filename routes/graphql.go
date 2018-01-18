@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/graphql-go/handler"
-	"gitlab.com/arthurnavah/Production-Arthur/InventSoft2/schemas"
+	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/schemas"
 	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/security"
 )
 
