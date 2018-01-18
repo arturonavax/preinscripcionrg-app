@@ -17,4 +17,7 @@ type UserKind struct {
 	ReadUsers   bool `json:"readUsers" gorm:"not null;type:boolean;default:false"`
 	UpdateUsers bool `json:"updateUsers" gorm:"not null;type:boolean;default:false"`
 	DeleteUsers bool `json:"deleteUsers" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Estudiantes
+	CreateStudents bool `json:"createStudent" gorm:"not null;type:boolean;default:false"`
 }

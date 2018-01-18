@@ -5,7 +5,7 @@ import (
 )
 
 //StudentType Objecto GraphQL para Estudiantes.
-var StudentType = grahql.NewObject(
+var StudentType = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name: "Student",
 		Fields: graphql.Fields{
@@ -73,7 +73,7 @@ var StudentType = grahql.NewObject(
 				Type: graphql.Int,
 			},
 			"dateOfBirth": &graphql.Field{
-				Type: graphql.DateTime,
+				Type: graphql.String,
 			},
 			"gender": &graphql.Field{
 				Type: graphql.String,
@@ -124,7 +124,13 @@ var StudentType = grahql.NewObject(
 				Type: graphql.Boolean,
 			},
 			"inscriptionDate": &graphql.Field{
-				Type: graphql.DateTime,
+				Type: graphql.String,
+			},
+			"message": &graphql.Field{
+				Type: graphql.String,
+			},
+			"code": &graphql.Field{
+				Type: graphql.Int,
 			},
 		},
 	},
