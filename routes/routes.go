@@ -15,6 +15,9 @@ func InitRoutes() *http.ServeMux {
 
 	//Se Establece la ruta /graphql
 
+	//Prueba
+	SetTestRouter(mux)
+
 	//Se devuelve la instacia ServeMux con las rutas declaradas
 	return mux
 }
