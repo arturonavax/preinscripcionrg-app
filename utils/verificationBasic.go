@@ -17,25 +17,33 @@ func VerificationBasic() {
 	var permit uint8
 	_, err := ioutil.ReadFile("./security/keys/private.rsa")
 	if err != nil {
-		log.Println("No se pudo leer el archivo privado en './security/keys/private.rsa'")
+		log.Println("=========================================================================")
+		log.Println("!! No se pudo leer el archivo privado en './security/keys/private.rsa' !!")
+		log.Println("=========================================================================")
 		permit++
 	}
 
 	_, err = ioutil.ReadFile("./security/keys/public.rsa")
 	if err != nil {
-		log.Println("No se pudo leer el archivo publico en './security/keys/public.rsa'")
+		log.Println("========================================================================")
+		log.Println("!! No se pudo leer el archivo publico en './security/keys/public.rsa' !!")
+		log.Println("========================================================================")
 		permit++
 	}
 
 	_, err = ioutil.ReadFile("./databases/configDB.json")
 	if err != nil {
-		log.Println("No se pudo leer el archivo de configuracion de la base de datos './databases/configDB.json'")
+		log.Println("=================================================================================================")
+		log.Println("!! No se pudo leer el archivo de configuracion de la base de datos './databases/configDB.json' !!")
+		log.Println("=================================================================================================")
 		permit++
 	}
 
 	if permit != 0 {
 		InitProduction()
-		log.Println("--> SE HAN CREADO LOS ARCHIVOS FALTANTES <--")
+		log.Println("================================================")
+		log.Println("# --> SE HAN CREADO LOS ARCHIVOS FALTANTES <-- #")
+		log.Println("================================================")
 		os.Exit(0)
 	}
 	//Comprobacion de Tablas.
@@ -65,13 +73,18 @@ func VerificationBasic() {
 
 	if tablesExist != true {
 		var t string
-		fmt.Println("Se detecto la ausencia de algunas Tablas necesarias en la Base de Datos, ¿Desea crearlas? (Yes/No)")
+		log.Println("========================================================================================================")
+		log.Println("!! Se detecto la ausencia de algunas Tablas necesarias en la Base de Datos, ¿Desea crearlas? (Yes/No) !!")
+		fmt.Print("+ >")
 		fmt.Scan(&t)
+		log.Println("========================================================================================================")
 		t = strings.ToUpper(t)
 		if t == "YES" {
 			databases.CreateTables()
 		} else {
-			fmt.Println("No se puede continuar sin las tablas necesarias")
+			log.Println("=======================================================")
+			log.Println("¡¡ No es posible continuar sin las tablas necesarias ¡¡")
+			log.Println("=======================================================")
 			os.Exit(0)
 		}
 	}

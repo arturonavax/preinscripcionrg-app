@@ -9,8 +9,8 @@ import (
 
 //CreateTables Crea las tablas necesarias.
 func CreateTables() {
-	log.Println("---------------------------------------")
-	log.Println("-        Generando Tablas...          -")
+	log.Println("=======================================")
+	log.Println("|        Generando Tablas...          |")
 
 	//Se obtiene la conexion a la DB.
 	db := GetConnectionDB()
@@ -60,7 +60,7 @@ func CreateTables() {
 	db.Create(&status)
 	//---------------------------
 
-	log.Println("-                 -                   -")
-	log.Println("- ...Finalizo la Generacion de Tablas -")
-	log.Println("---------------------------------------")
+	log.Println("|                 ...                 |")
+	log.Println("| ...Finalizo la Generacion de Tablas |")
+	log.Println("=======================================")
 }

@@ -1,6 +1,7 @@
 package students
 
 import (
+	"log"
 	"net/http"
 
 	"github.com/graphql-go/graphql"
@@ -130,6 +131,7 @@ var StudentCreate = &graphql.Field{
 		},
 	},
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
+
 		newStudent := &student.Student{}
 		m := &models.CreateMessage{}
 		kind := &models.UserKind{}
@@ -203,7 +205,6 @@ var StudentCreate = &graphql.Field{
 		newStudent.Regular, _ = p.Args["regular"].(bool)
 
 		newStudent.InscriptionDate, _ = p.Args["inscriptionDate"].(string)
-
 		//Se instancia una conexion a la base de datos.
 		db := databases.GetConnectionDB()
 		defer db.Close()
@@ -219,6 +220,7 @@ var StudentCreate = &graphql.Field{
 				m.Message = "#StudentCreate# : Ocurrio un Error."
 				m.Code = http.StatusBadGateway
 			} else {
+				log.Println("--> Se a registrado un nuevo Estudiante en BD", "( StudentID:", newStudent.ID, ")", "<--")
 				m.ID = newStudent.ID
 				m.Code = http.StatusCreated
 				m.Message = "#StudentCreate# : El estudiante se creo exitosamente!."

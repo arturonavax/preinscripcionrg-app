@@ -124,3 +124,5 @@ Paquetes utilizados para realizar este proyecto :
     graphql-go/handler  -   Para diseñar el Handler que pueda manipular GraphQL de manera correcta.
     gorm    -   Para la manipulacion de SQL por medio de un ORM.
     gorm/dialects/postgres" -   Como el Driver de PostgreSQL.
+
+//Lineas Totales : 1.666

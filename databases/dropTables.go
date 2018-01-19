@@ -9,8 +9,8 @@ import (
 
 //DropTables elimina las tablas de la base de datos.
 func DropTables() {
-	log.Println("---------------------------------------")
-	log.Println("-         Eliminando tablas..		   -")
+	log.Println("=======================================")
+	log.Println("|         Eliminando tablas..		   |")
 
 	//Se obtiene la conexion a la DB.
 	db := GetConnectionDB()
@@ -39,7 +39,7 @@ func DropTables() {
 	db.DropTable(&student.Asignature{})
 	//------------------------
 
-	log.Println("-                 -                    -")
-	log.Println("- ...Finalizo la eliminacion de Tablas -")
-	log.Println("----------------------------------------")
+	log.Println("|                 ...                  |")
+	log.Println("| ...Finalizo la eliminacion de Tablas |")
+	log.Println("========================================")
 }

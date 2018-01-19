@@ -4,6 +4,7 @@ import (
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 
 	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/databases"
@@ -16,6 +17,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	people := models.People{}
 	user := models.User{}
 	m := models.Message{}
+	m2 := models.CreateMessage{}
 
 	//Se decodifica el cuerpo del Request en user.
 	err := json.NewDecoder(r.Body).Decode(&user)
@@ -63,6 +65,8 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		utils.DisplayMessage(w, m)
 		tx.Rollback()
 		return
+	} else {
+		log.Println("-->", "Se a registrado una Persona :", people.FirstName, people.LastName, "( PeopleID:", people.ID, ")")
 	}
 
 	//Se crea el usuario en la base de datos
@@ -74,11 +78,14 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		utils.DisplayMessage(w, m)
 		tx.Rollback()
 		return
+	} else {
+		log.Println("-->", "Se a registrado un Usuario :", user.Username, "( UserID:", user.ID, ")", "(PeopleID:", people.ID, ")")
 	}
 
 	tx.Commit()
 	//Se envia el mensaje de exito al usuario.
-	m.Message = "Usuario creado con Exito"
-	m.Code = http.StatusCreated
-	utils.DisplayMessage(w, m)
+	m2.Message = "Usuario creado con Exitoo"
+	m2.Code = http.StatusCreated
+	m2.ID = user.ID
+	utils.DisplayCreateMessage(w, m2)
 }
