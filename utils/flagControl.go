@@ -20,17 +20,22 @@ var RecreateTables string
 //Port Contiene el Puerto en el que desea ejecutar el Servidor.
 var Port int
 
+//InitProduction Permite crear las carpetas y archivos necesarios del sistema.
+var InitProduc string
+
 //FlagControl Controla las banderas del ejecutable.
 func FlagControl() {
 	flag.StringVar(&CreateTables, "createTables", "NO", "Genera las tablas necesarias")
 	flag.StringVar(&DropTables, "dropTables", "NO", "Borra las tablas de la base de datos")
 	flag.StringVar(&RecreateTables, "recreateTables", "NO", "Recrea las tablas necesarias")
+	flag.StringVar(&InitProduc, "initProduction", "NO", "Crea todas las carpetas y archivos necesarios para ejecutar la aplicacion")
 	flag.IntVar(&Port, "port", 8080, "Declara el puerto para el servidor web")
 	flag.Parse()
 
 	CreateTables = strings.ToUpper(CreateTables)
 	DropTables = strings.ToUpper(DropTables)
 	RecreateTables = strings.ToUpper(RecreateTables)
+	InitProduc = strings.ToUpper(InitProduc)
 
 	if CreateTables == "YES" {
 		databases.CreateTables()
@@ -42,6 +47,11 @@ func FlagControl() {
 	}
 	if RecreateTables == "YES" {
 		databases.RecreateTables()
+		os.Exit(0)
+	}
+
+	if InitProduc == "YES" {
+		InitProduction()
 		os.Exit(0)
 	}
 }

@@ -10,8 +10,8 @@ import (
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
-//configurationDB Estructura que contiene la configuracion de la Base de datos
-type configurationDB struct {
+//ConfigurationDB Estructura que contiene la configuracion de la Base de datos
+type ConfigurationDB struct {
 	Server   string
 	Port     string
 	User     string
@@ -21,8 +21,8 @@ type configurationDB struct {
 }
 
 //getConfigurationDB Obtiene la configuracion de un archivo JSON y pobla la estructura configurationDB
-func getConfigurationDB() configurationDB {
-	var c configurationDB
+func getConfigurationDB() ConfigurationDB {
+	var c ConfigurationDB
 	file, err := os.Open("./databases/configDB.json")
 	if err != nil {
 		log.Fatal(err)

@@ -17,24 +17,19 @@ var (
 
 //init Lee las llaves RSA.
 func init() {
-	privateByte, err := ioutil.ReadFile("./security/keys/private.rsa")
-	if err != nil {
-		log.Fatal("No se pudo leer el archivo privado")
-	}
+	var err error
+	privateByte, _ := ioutil.ReadFile("./security/keys/private.rsa")
 
-	publicBytes, err := ioutil.ReadFile("./security/keys/public.rsa")
-	if err != nil {
-		log.Fatal("No se pudo leer el archivo publico")
-	}
+	publicBytes, _ := ioutil.ReadFile("./security/keys/public.rsa")
 
 	privateKey, err = jwt.ParseRSAPrivateKeyFromPEM(privateByte)
 	if err != nil {
-		log.Fatal("No se pudo hacer el parse a privateKey")
+		log.Println("No se pudo hacer el parse a privateKey")
 	}
 
 	PublicKey, err = jwt.ParseRSAPublicKeyFromPEM(publicBytes)
 	if err != nil {
-		log.Fatal("No se pudo hacer el parse a PublicKey")
+		log.Println("No se pudo hacer el parse a PublicKey")
 	}
 }
 

@@ -2,6 +2,8 @@ package utils
 
 import (
 	"fmt"
+	"io/ioutil"
+	"log"
 	"os"
 	"strings"
 
@@ -12,6 +14,30 @@ import (
 
 //VerificationBasic Hace las verificaciones basicas para el funcionamiento del sistema.
 func VerificationBasic() {
+	var permit uint8
+	_, err := ioutil.ReadFile("./security/keys/private.rsa")
+	if err != nil {
+		log.Println("No se pudo leer el archivo privado en './security/keys/private.rsa'")
+		permit++
+	}
+
+	_, err = ioutil.ReadFile("./security/keys/public.rsa")
+	if err != nil {
+		log.Println("No se pudo leer el archivo publico en './security/keys/public.rsa'")
+		permit++
+	}
+
+	_, err = ioutil.ReadFile("./databases/configDB.json")
+	if err != nil {
+		log.Println("No se pudo leer el archivo de configuracion de la base de datos './databases/configDB.json'")
+		permit++
+	}
+
+	if permit != 0 {
+		InitProduction()
+		log.Println("--> SE HAN CREADO LOS ARCHIVOS FALTANTES <--")
+		os.Exit(0)
+	}
 	//Comprobacion de Tablas.
 	tablesExist := TablesIsExist(
 		models.People{},
@@ -33,6 +59,7 @@ func VerificationBasic() {
 		student.Section{},
 		student.StudentCondition{},
 		student.Student{},
+		student.Asignature{},
 	)
 	//-----------------------
 
@@ -47,8 +74,8 @@ func VerificationBasic() {
 			fmt.Println("No se puede continuar sin las tablas necesarias")
 			os.Exit(0)
 		}
-
 	}
+
 }
 
 //TablesIsExist Comprueba la existencia de las tablas/estructuras que se le pasen como parametros, Devuelve un bool.
