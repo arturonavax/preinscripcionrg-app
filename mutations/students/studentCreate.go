@@ -220,12 +220,13 @@ var StudentCreate = &graphql.Field{
 				m.Message = "#StudentCreate# : Ocurrio un Error."
 				m.Code = http.StatusBadGateway
 			} else {
-				log.Println("--> Se a registrado un nuevo Estudiante en BD", "( StudentID:", newStudent.ID, ")", "<--")
+				log.Printf("$ UserID:%d { Registro a '%s %s' como nuevo estudiante (StudentID:%d) } $\n", userID, newStudent.FirstName, newStudent.LastName, newStudent.ID)
 				m.ID = newStudent.ID
 				m.Code = http.StatusCreated
 				m.Message = "#StudentCreate# : El estudiante se creo exitosamente!."
 			}
 		} else {
+			log.Printf("$ UserID:%d { No tiene permisos para crear estudiantes } $\n", userID)
 			m.Code = http.StatusNonAuthoritativeInfo
 			m.Message = "#StudentCreate# : No tienes permisos para crear estudiantes."
 		}

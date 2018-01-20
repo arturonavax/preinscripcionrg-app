@@ -75,7 +75,7 @@ func VerificationBasic() {
 		var t string
 		log.Println("========================================================================================================")
 		log.Println("!! Se detecto la ausencia de algunas Tablas necesarias en la Base de Datos, ¿Desea crearlas? (Yes/No) !!")
-		fmt.Print("+ >")
+		fmt.Print("                    + >")
 		fmt.Scan(&t)
 		log.Println("========================================================================================================")
 		t = strings.ToUpper(t)

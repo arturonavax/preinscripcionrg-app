@@ -66,7 +66,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		tx.Rollback()
 		return
 	} else {
-		log.Println("-->", "Se a registrado una Persona :", people.FirstName, people.LastName, "( PeopleID:", people.ID, ")")
+		log.Printf("-+> Se a registrado una Persona : '%s %s' (PeopleID:%d) <+-\n", people.FirstName, people.LastName, people.ID)
 	}
 
 	//Se crea el usuario en la base de datos
@@ -79,7 +79,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		tx.Rollback()
 		return
 	} else {
-		log.Println("-->", "Se a registrado un Usuario :", user.Username, "( UserID:", user.ID, ")", "(PeopleID:", people.ID, ")")
+		log.Printf("-+> Se a registrado un Usuario : '%s' (UserID:%d) (PeopleID:%d) <+-\n", user.Username, user.ID, people.ID)
 	}
 
 	tx.Commit()

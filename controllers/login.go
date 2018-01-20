@@ -39,7 +39,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 
 	//userFound.ID es mayor a 0 cuando tuvo algun resultado el Query.
 	if userFound.ID > 0 {
-		log.Println("-->", userFound.Username, "( UserID:", userFound.ID, ")", "a pedido un JSON Web Token.")
+		log.Printf("$ UserID:%d { %s Solicito un JWT } $\n", userFound.ID, userFound.Username)
 
 		//Se elimina la contraseña de la estructura por seguridad.
 		userFound.Password = ""
@@ -57,7 +57,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusAccepted)
 		w.Write(j)
 
-		log.Println("<-- Se le envio el JWT pedido a", userFound.Username, "( UserID:", userFound.ID, ")")
+		log.Printf("$ UserID:%d { JWT Enviado a %s } $\n", userFound.ID, userFound.Username)
 	} else {
 		m := models.Message{
 			Message: "Usuario o Clave no valido",
