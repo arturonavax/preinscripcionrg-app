@@ -65,12 +65,19 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		utils.DisplayMessage(w, m)
 		tx.Rollback()
 		return
+
 	} else {
-		log.Printf("-+> Se a registrado una Persona : '%s %s' (PeopleID:%d) <+-\n", people.FirstName, people.LastName, people.ID)
+		log.Printf("-+> Se a registrado una Persona : '%s %s' (PeopleID:%d) <+-\n",
+			people.FirstName,
+			people.LastName,
+			people.ID,
+		)
+
+		user.PeopleID = people.ID
+
 	}
 
 	//Se crea el usuario en la base de datos
-	user.PeopleID = people.ID
 	err = tx.Create(&user).Error
 	if err != nil {
 		m.Message = fmt.Sprintf("Error al crear el usuario: %s", err)
@@ -78,14 +85,23 @@ func Register(w http.ResponseWriter, r *http.Request) {
 		utils.DisplayMessage(w, m)
 		tx.Rollback()
 		return
+
 	} else {
-		log.Printf("-+> Se a registrado un Usuario : '%s' (UserID:%d) (PeopleID:%d) <+-\n", user.Username, user.ID, people.ID)
+		//Transaccion exitosa
+		tx.Commit()
+
+		log.Printf("-+> Se a registrado un Usuario : '%s' (UserID:%d) (PeopleID:%d) <+-\n",
+			user.Username,
+			user.ID,
+			people.ID,
+		)
+
+		//Se envia el mensaje de exito al usuario.
+		m2.Message = "Usuario creado con Exitoo"
+		m2.Code = http.StatusCreated
+		m2.ID = user.ID
+		utils.DisplayCreateMessage(w, m2)
+
 	}
 
-	tx.Commit()
-	//Se envia el mensaje de exito al usuario.
-	m2.Message = "Usuario creado con Exitoo"
-	m2.Code = http.StatusCreated
-	m2.ID = user.ID
-	utils.DisplayCreateMessage(w, m2)
 }

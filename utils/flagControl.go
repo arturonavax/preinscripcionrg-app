@@ -40,18 +40,23 @@ func FlagControl() {
 	if CreateTables == "YES" {
 		databases.CreateTables()
 		os.Exit(0)
+
 	}
 	if DropTables == "YES" {
 		databases.DropTables()
 		os.Exit(0)
+
 	}
 	if RecreateTables == "YES" {
 		databases.RecreateTables()
 		os.Exit(0)
+
 	}
 
 	if InitProduc == "YES" {
 		InitProduction()
 		os.Exit(0)
+
 	}
+
 }

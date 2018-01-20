@@ -51,10 +51,12 @@ func RequireAuth(next http.Handler) http.Handler {
 		if token.Valid {
 			ctx := context.WithValue(r.Context(), "user", token.Claims.(*models.Claim).User)
 			next.ServeHTTP(w, r.WithContext(ctx))
+
 		} else {
 			m.Code = http.StatusUnauthorized
 			m.Message = "Su token no es valido"
 			utils.DisplayMessage(w, m)
+
 		}
 	})
 }

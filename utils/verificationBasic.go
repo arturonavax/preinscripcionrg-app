@@ -81,12 +81,15 @@ func VerificationBasic() {
 		t = strings.ToUpper(t)
 		if t == "YES" {
 			databases.CreateTables()
+
 		} else {
 			log.Println("=======================================================")
 			log.Println("¡¡ No es posible continuar sin las tablas necesarias ¡¡")
 			log.Println("=======================================================")
 			os.Exit(0)
+
 		}
+
 	}
 
 }
@@ -104,16 +107,20 @@ func TablesIsExist(modelss ...interface{}) bool {
 		existTable := db.HasTable(v)
 
 		modelss[i] = existTable
+
 	}
 
 	//Se recorre el slice sobreescrito, Si se encuentra un valor false significa que una tabla no existe.
 	for _, v := range modelss {
 		if v == false {
 			allExist = false
+
 		}
+
 	}
 
 	//Se devuelve la variable allExist, Si dentro de el slice de parametros habia una tabla que no existia, allExist
 	// es false.
 	return allExist
+
 }
