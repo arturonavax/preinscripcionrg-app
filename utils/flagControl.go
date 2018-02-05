@@ -29,7 +29,7 @@ func FlagControl() {
 	flag.StringVar(&DropTables, "dropTables", "NO", "Borra las tablas de la base de datos")
 	flag.StringVar(&RecreateTables, "recreateTables", "NO", "Recrea las tablas necesarias")
 	flag.StringVar(&InitProduc, "initProduction", "NO", "Crea todas las carpetas y archivos necesarios para ejecutar la aplicacion")
-	flag.IntVar(&Port, "port", 8080, "Declara el puerto para el servidor web")
+	flag.IntVar(&Port, "port", 9090, "Declara el puerto para el servidor web")
 	flag.Parse()
 
 	CreateTables = strings.ToUpper(CreateTables)
