@@ -1,8 +1,8 @@
 package mutations
 
 import (
+	"github.com/arthurnavah/PreInscripcionRG-API/mutations/students"
 	"github.com/graphql-go/graphql"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/mutations/students"
 )
 
 //RootMutation administrador de mutations.

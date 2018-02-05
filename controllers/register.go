@@ -7,9 +7,9 @@ import (
 	"log"
 	"net/http"
 
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/databases"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/utils"
+	"github.com/arthurnavah/PreInscripcionRG-API/databases"
+	"github.com/arthurnavah/PreInscripcionRG-API/models"
+	"github.com/arthurnavah/PreInscripcionRG-API/utils"
 )
 
 //Register Controlador de Registro de Usuario.

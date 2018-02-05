@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models"
+	"github.com/arthurnavah/PreInscripcionRG-API/models"
 )
 
 func Test(w http.ResponseWriter, r *http.Request) {

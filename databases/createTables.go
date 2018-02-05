@@ -3,8 +3,8 @@ package databases
 import (
 	"log"
 
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models/student"
+	"github.com/arthurnavah/PreInscripcionRG-API/models"
+	"github.com/arthurnavah/PreInscripcionRG-API/models/student"
 )
 
 //CreateTables Crea las tablas necesarias.

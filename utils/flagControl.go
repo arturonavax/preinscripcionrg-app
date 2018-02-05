@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/databases"
+	"github.com/arthurnavah/PreInscripcionRG-API/databases"
 )
 
 //CreateTables Decide si se desea Crear las tablas de la Base de Datos.

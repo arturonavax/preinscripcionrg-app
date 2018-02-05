@@ -4,11 +4,11 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/arthurnavah/PreInscripcionRG-API/databases"
+	"github.com/arthurnavah/PreInscripcionRG-API/models"
+	"github.com/arthurnavah/PreInscripcionRG-API/models/graphqlTypes"
+	"github.com/arthurnavah/PreInscripcionRG-API/models/student"
 	"github.com/graphql-go/graphql"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/databases"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models/graphqlTypes"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models/student"
 )
 
 //StudentCreate Mutation para crear Estudiantes.

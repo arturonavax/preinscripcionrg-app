@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/models"
+	"github.com/arthurnavah/PreInscripcionRG-API/models"
 )
 
 //DisplayMessage Envia un mensaje al Usuario.

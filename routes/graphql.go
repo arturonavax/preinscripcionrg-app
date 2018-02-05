@@ -3,9 +3,9 @@ package routes
 import (
 	"net/http"
 
+	"github.com/arthurnavah/PreInscripcionRG-API/schemas"
+	"github.com/arthurnavah/PreInscripcionRG-API/security"
 	"github.com/graphql-go/handler"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/schemas"
-	"gitlab.com/arthurnavah/Production-Arthur/PreInscripcionRG-API/security"
 )
 
 //SetAPIGraphql Declara la ruta del API Graphql.
