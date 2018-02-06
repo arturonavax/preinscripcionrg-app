@@ -32,7 +32,7 @@ func Register(w http.ResponseWriter, r *http.Request) {
 	//user.Password y user.ConfirmPassword deben coincidir para continuar.
 	if user.Password != user.ConfirmPassword {
 		m.Message = "Las contraseñas no coinciden"
-		m.Code = http.StatusBadRequest
+		m.Code = http.StatusNotAcceptable
 		utils.DisplayMessage(w, m)
 		return
 	} else if user.Password == user.ConfirmPassword {

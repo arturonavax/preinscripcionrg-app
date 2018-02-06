@@ -11,7 +11,6 @@ import (
 
 	"github.com/arthurnavah/PreInscripcionRG-API/databases"
 	"github.com/arthurnavah/PreInscripcionRG-API/models"
-	"github.com/arthurnavah/PreInscripcionRG-API/utils"
 )
 
 //Login Controlador de Logeo.
@@ -52,7 +51,11 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		token := security.GenerateJWT(userFound)
 
 		//Se convierte el JWT resultante en un JSON valido para enviar al Usuario.
-		j, err := json.Marshal(models.Token{Token: token})
+		j, err := json.Marshal(models.Token{
+			Token:   token,
+			Message: "Logueo Exitoso!",
+			Code:    http.StatusContinue,
+		})
 		if err != nil {
 			log.Fatalf("Error al convertir el token a JSON %s\n", err)
 		}
@@ -67,11 +70,13 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		)
 
 	} else {
-		m := models.Message{
-			Message: "Usuario o Clave no valido",
-			Code:    http.StatusUnauthorized,
-		}
-		utils.DisplayMessage(w, m)
+		j, _ := json.Marshal(models.Token{
+			Token:   "",
+			Message: "Usuario o Contraseña invalido",
+			Code:    http.StatusNonAuthoritativeInfo,
+		})
+
+		w.Write(j)
 
 	}
 
