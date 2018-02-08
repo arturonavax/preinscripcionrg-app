@@ -1,8 +1,8 @@
 package schemas
 
 import (
-	"github.com/arthurnavah/PreInscripcionRG-API/mutations"
-	"github.com/arthurnavah/PreInscripcionRG-API/querys"
+	"github.com/arthurnavah/PreInscripcionRG/mutations"
+	"github.com/arthurnavah/PreInscripcionRG/querys"
 	"github.com/graphql-go/graphql"
 )
 

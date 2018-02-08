@@ -4,10 +4,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/databases"
-	"github.com/arthurnavah/PreInscripcionRG-API/models"
-	"github.com/arthurnavah/PreInscripcionRG-API/models/graphqlTypes"
-	"github.com/arthurnavah/PreInscripcionRG-API/models/student"
+	"github.com/arthurnavah/PreInscripcionRG/databases"
+	"github.com/arthurnavah/PreInscripcionRG/models"
+	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
+	"github.com/arthurnavah/PreInscripcionRG/models/student"
 	"github.com/graphql-go/graphql"
 )
 

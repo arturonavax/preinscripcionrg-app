@@ -3,8 +3,8 @@ package databases
 import (
 	"log"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/models"
-	"github.com/arthurnavah/PreInscripcionRG-API/models/student"
+	"github.com/arthurnavah/PreInscripcionRG/models"
+	"github.com/arthurnavah/PreInscripcionRG/models/student"
 )
 
 //DropTables elimina las tablas de la base de datos.

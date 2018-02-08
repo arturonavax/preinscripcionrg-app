@@ -4,11 +4,10 @@ import (
 	"context"
 	"net/http"
 
+	"github.com/arthurnavah/PreInscripcionRG/models"
+	"github.com/arthurnavah/PreInscripcionRG/utils"
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/dgrijalva/jwt-go/request"
-
-	"github.com/arthurnavah/PreInscripcionRG-API/models"
-	"github.com/arthurnavah/PreInscripcionRG-API/utils"
 )
 
 //RequireAuth Middleware para autenticar por JWT.

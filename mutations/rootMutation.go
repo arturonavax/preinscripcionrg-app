@@ -1,7 +1,7 @@
 package mutations
 
 import (
-	"github.com/arthurnavah/PreInscripcionRG-API/mutations/students"
+	"github.com/arthurnavah/PreInscripcionRG/mutations/students"
 	"github.com/graphql-go/graphql"
 )
 

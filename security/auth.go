@@ -5,9 +5,8 @@ import (
 	"io/ioutil"
 	"log"
 
+	"github.com/arthurnavah/PreInscripcionRG/models"
 	jwt "github.com/dgrijalva/jwt-go"
-
-	"github.com/arthurnavah/PreInscripcionRG-API/models"
 )
 
 var (

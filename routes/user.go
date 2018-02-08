@@ -3,7 +3,7 @@ package routes
 import (
 	"net/http"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/controllers"
+	"github.com/arthurnavah/PreInscripcionRG/controllers"
 )
 
 //SetRegisterRouter Declara la ruta para Registrar usuarios.

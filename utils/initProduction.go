@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/databases"
+	"github.com/arthurnavah/PreInscripcionRG/databases"
 )
 
 func InitProduction() {

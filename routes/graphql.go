@@ -3,8 +3,8 @@ package routes
 import (
 	"net/http"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/schemas"
-	"github.com/arthurnavah/PreInscripcionRG-API/security"
+	"github.com/arthurnavah/PreInscripcionRG/schemas"
+	"github.com/arthurnavah/PreInscripcionRG/security"
 	"github.com/graphql-go/handler"
 )
 

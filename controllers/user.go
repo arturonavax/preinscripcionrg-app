@@ -7,10 +7,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/arthurnavah/PreInscripcionRG-API/databases"
-	"github.com/arthurnavah/PreInscripcionRG-API/models"
-	"github.com/arthurnavah/PreInscripcionRG-API/security"
-	"github.com/arthurnavah/PreInscripcionRG-API/utils"
+	"github.com/arthurnavah/PreInscripcionRG/databases"
+	"github.com/arthurnavah/PreInscripcionRG/models"
+	"github.com/arthurnavah/PreInscripcionRG/security"
+	"github.com/arthurnavah/PreInscripcionRG/utils"
 )
 
 func Users(w http.ResponseWriter, r *http.Request) {
