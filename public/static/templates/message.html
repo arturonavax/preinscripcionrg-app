@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>{{.Title}}</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/normalize.css"/>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+    <body>
+        <header class="header">
+            
+            <div class="header__logo">
+                <h1 class="logo__title">iRG APP</h1>
+                <span class="logo__decoration"></span>
+            </div>
+            
+            <button id="menu__btn" class="header__btn"></button>
+            
+            <nav id="menu" class="header__nav">
+
+                <h1 class="nav__title">Menu</h1>
+
+                <div class="nav__item">
+                    <a class="item__link item__link--home" href="#">Home</a>
+                </div>
+
+                <div class="nav__item">  
+                    <a class="item__link item__link--login" href="/login">Login</a>
+                </div>
+
+                <div class="nav__item">
+                    <a class="item__link item__link--register" href="#">Register</a>
+                </div>
+
+            </nav>
+            
+        </header>
+
+        <section class="section">
+            <article class="section__container">
+
+                <div class="container__title">
+                    <h2 class="title">
+                        {{.TitleContainer}}
+                    </h2>
+                </div>
+                <span class="container__message">{{.Message}}</span>
+
+                <div class="container__btns">
+                    <a href="{{.Link1}}" class="btn-back">{{.Btn1}}</a>
+                    <a href="{{.Link2}}" class="btn-back">{{.Btn2}}</a>
+                </div>
+            </article>
+        </section>
+        <script src="/js/menu.js"></script>
+        <script src="/js/token.js"></script>
+    </body>
+</html>

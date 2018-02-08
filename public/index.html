@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="/css/normalize.css"/>
+        <link rel="stylesheet" href="/css/style.css"/>
+    </head>
+    <body>
+        
+        <header class="header">
+            
+            <div class="header__logo">
+                <h1 class="logo__title">iRG APP</h1>
+                <span class="logo__decoration"></span>
+            </div>
+            
+            <button id="menu__btn" class="header__btn"></button>
+            
+            <nav id="menu" class="header__nav">
+
+                <h1 class="nav__title">Menu</h1>
+
+                <div class="nav__item">
+                    <a class="item__link item__link--home" href="#">Home</a>
+                </div>
+
+                <div class="nav__item">  
+                    <a class="item__link item__link--login" href="#">Login</a>
+                </div>
+
+                <div class="nav__item">
+                    <a class="item__link item__link--register" href="/register">Register</a>
+                </div>
+
+            </nav>
+            
+        </header>
+        
+        <section class="section">
+            
+            <article class="section__container">
+            
+                <div class="container__title">
+                    <h2 class="title">
+                        ¡ Ingresa en 
+                        <span class="title__decoration">iRG !</span>
+                    </h2>
+                </div>
+                
+                <form id="form" class="container__form" method="post" action="/api/login">
+                
+                    <div class="form__item">
+                        <p class="item__label">Nombre de usuario</p>
+                        <input id="username" class="item__input" type="text" placeholder="usuario.." name="username"/>
+                    </div>
+                    <div class="form__item">
+                        <p class="item__label">Contraseña</p>
+                        <input class="item__input" type="password" placeholder="contraseña..." name="password"/>
+                    </div>
+                    <div class="form__item">
+                        <input id="btn-submit" class="item__submit" type="submit" value="Login"/> 
+                    </div>
+                </form>
+                
+            </article>
+            
+        </section>
+        
+        <script src="/js/menu.js"></script>
+        <script src="/js/login.js"></script>
+    </body>
+</html>

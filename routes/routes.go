@@ -7,17 +7,17 @@ func InitRoutes() *http.ServeMux {
 	//Se crea una instancia ServeMux.
 	mux := http.NewServeMux()
 
-	//Se Establece la ruta /register
-	SetRegisterRouter(mux)
-
-	//Se Establece la ruta /login
-	SetLoginRouter(mux)
+	//Se Establece la ruta /api/users y /api/login
+	SetUserRouter(mux)
 
 	//Se Establece la ruta /graphql
 	SetAPIGraphql(mux)
 
-	//Prueba
-	SetTestRouter(mux)
+	//Se Expone la carpeta publica.
+	SetPublicRoutes(mux)
+
+	//Se Establecen las rutas de las vistas.
+	SetViewsRoutes(mux)
 
 	//Se devuelve la instacia ServeMux con las rutas declaradas
 	return mux
