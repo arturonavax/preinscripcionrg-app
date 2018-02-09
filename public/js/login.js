@@ -4,6 +4,9 @@ passw = $("#password"),
 btnSubmit = $("#btn-submit"),
 formMessage = $("#form-message");
 
+if (sessionStorage.getItem("token")) {
+    let
+}
 
 formLogin.addEventListener("submit", e => {
     e.preventDefault();
@@ -24,12 +27,13 @@ formLogin.addEventListener("submit", e => {
             sessionStorage.setItem("token", respuesta.response.token);
 
             if (sessionStorage.getItem("token")) {
-                var data = "query {me{id,username}}";
+                var data = "query {me{firstName,lastName}}";
             
                 requestAjaxToken("POST", "/graphql", data)
                  .then( respuesta => {
+                     dataGraph = respuesta.response.data
                      console.log(respuesta.response);
-                     document.querySelector("#titleUser").textContent = "Bienvenido/a "+respuesta.response.data.me.username+"!";
+                     document.querySelector("#titleUser").textContent = "Bienvenido/a "+dataGraph.me.firstName+" "+dataGraph.me.lastName+"!";
                  })
                  .catch( error => {
                      console.log(error);
