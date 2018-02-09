@@ -6,8 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/normalize.css"/>
         <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/section.css" />
+        <link rel="stylesheet" href="/css/footer.css" />
     </head>
     <body>
+       
+       <div id="dark" class="dark"></div>
+       
         <header class="header">
             
             <div class="header__logo">
@@ -20,13 +26,23 @@
             <nav id="menu" class="header__nav">
 
                 <h1 class="nav__title">Menu</h1>
+                
+                <span id="titleUser" class="nav__user-name">#Nombre del Usuario#</span>
 
                 <div class="nav__item">
                     <a class="item__link item__link--home" href="#">Home</a>
                 </div>
+                
+                <div class="nav__item">  
+                    <a class="item__link item__link--profile" href="#">Profile</a>
+                </div>
 
                 <div class="nav__item">  
                     <a class="item__link item__link--login" href="/login">Login</a>
+                </div>
+                
+                <div class="nav__item">
+                    <a class="item__link item__link--log-out" href="#">Log Out</a>
                 </div>
 
                 <div class="nav__item">
@@ -38,6 +54,7 @@
         </header>
 
         <section class="section">
+           
             <article class="section__container">
 
                 <div class="container__title">
@@ -51,8 +68,55 @@
                     <a href="{{.Link1}}" class="btn-back">{{.Btn1}}</a>
                     <a href="{{.Link2}}" class="btn-back">{{.Btn2}}</a>
                 </div>
+                
             </article>
+            
         </section>
+        
+        <footer class="footer">
+            
+            <div class="footer__information">
+                
+                <div class="information__contact">
+                   
+                        <p class="contact__icon contact__icon--location">
+                            Maracaibo 4002, Zulia.
+                        </p>
+
+                        <p class="contact__icon contact__icon--call">
+                            +58-416-555-2293.
+                        </p>
+                    
+                        <a class="contact__icon contact__icon--mail" href="#">
+                            RomuloGallegos@gmail.com
+                        </a>
+                        <a href="#" class="contact__icon contact__icon--facebook">
+                            Facebook
+                        </a>
+                </div>
+                
+                <div class="information__about">
+                       
+                    <h2 class="about__name">
+                        Acerca Del Instituto
+                    </h2>
+                    <span class="about__infor">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Adipisci incidunt dicta necessitatibus minima
+                        eum ipsa, ex commodi, consequuntur consectetur cumque
+                        expedita nobis quis, aspernatur dignissimos nisi harum 
+                        officia voluptatibus! Delectus.
+                    </span>
+
+                </div>
+                
+            </div>
+            
+            <div class="footer__royalties">
+                2018 &copy; All Rights Reserved..
+            </div>
+            
+        </footer>
 
         <script src="/js/utils.js"></script>
         <script src="/js/menu.js"></script>
