@@ -21,7 +21,6 @@ func Users(w http.ResponseWriter, r *http.Request) {
 
 //Register Controlador de Registro de Usuario.
 func UserCreate(w http.ResponseWriter, r *http.Request) {
-
 	people := models.People{}
 	user := models.User{}
 	m := models.Message{}
@@ -35,6 +34,7 @@ func UserCreate(w http.ResponseWriter, r *http.Request) {
 		utils.DisplayMessage(w, m)
 		return
 	}
+	fmt.Println(user)
 
 	//user.Password y user.ConfirmPassword deben coincidir para continuar.
 	if user.Password != user.ConfirmPassword {

@@ -1,5 +1,16 @@
-var form = $("#form");
-var formSubmit = $("#btn-submit");
+sessionStorage.removeItem("token");
+
+let formRegister = $("#form-register"),
+    username = $("#username"),
+    email = $("#email"),
+    firstName = $("#firstName"),
+    lastName = $("#lastName"),
+    address = $("#address"),
+    phoneNumber = $("#phoneNumber"),
+    passw = $("#password"),
+    confirmPassw = $("#confirmPassword"),
+    btnSubmit = $("#btn-submit"),
+    formMessage = $("#form-message");
 
 $("#username").value = sessionStorage.getItem("username");
 $("#email").value = sessionStorage.getItem("email");
@@ -8,21 +19,57 @@ $("#lastName").value = sessionStorage.getItem("lastName");
 $("#address").value = sessionStorage.getItem("address");
 $("#phoneNumber").value = sessionStorage.getItem("phoneNumber");
 
-form.addEventListener("submit", function() {
-    formSubmit.disabled = true;
-    formSubmit.value = "Enviando...";
+formRegister.addEventListener("submit", e => {
+    e.preventDefault();
+    btnSubmit.disabled = true;
+    btnSubmit.value = "Enviando...";
 
-    var username = $("#username").value;
-    var email = $("#email").value;
-    var firstName = $("#firstName").value;
-    var lastName = $("#lastName").value;
-    var address = $("#address").value;
-    var phoneNumber = $("#phoneNumber").value;
+    let obj = {
+        username: username.value,
+        email: email.value,
+        firstName: firstName.value,
+        lastName: lastName.value,
+        address: address.value,
+        phoneNumber: phoneNumber.value,
+        password: passw.value,
+        confirmPassword: confirmPassw.value
+    }
+
+    requestAjax(formRegister.method, formRegister.action, JSON.stringify(obj))
+     .then( respuesta => {
+
+         if (respuesta.response.code === 201) {
+
+             formMessage.textContent = "Registro exitoso";
+             console.log(respuesta.response);
+
+         } else if (respuesta.response.code === 400) {
+
+             formMessage.textContent = "El Usuario ya existe";
+             console.log(respuesta.response);
+
+         } else if (respuesta.response.code === 406) {
+
+             formMessage.textContent = "Las contraseñas no coinciden";
+             console.log(respuesta.response);
+
+         } else {
+
+             console.log(respuesta.response.code);
+
+         }
+     })
+     .catch( error => {
+         console.log(error)
+     });
     
-    sessionStorage.setItem("username", username);
-    sessionStorage.setItem("email", email);
-    sessionStorage.setItem("firstName", firstName);
-    sessionStorage.setItem("lastName", lastName);
-    sessionStorage.setItem("address", address);
-    sessionStorage.setItem("phoneNumber", phoneNumber);
+    sessionStorage.setItem("username", username.value);
+    sessionStorage.setItem("email", email.value);
+    sessionStorage.setItem("firstName", firstName.value);
+    sessionStorage.setItem("lastName", lastName.value);
+    sessionStorage.setItem("address", address.value);
+    sessionStorage.setItem("phoneNumber", phoneNumber.value);
+
+    btnSubmit.disabled = false;
+    btnSubmit.value = "Registrar";
 });

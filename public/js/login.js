@@ -1,20 +1,47 @@
-sessionStorage.removeItem("email");
-sessionStorage.removeItem("firstName");
-sessionStorage.removeItem("lastName");
-sessionStorage.removeItem("address");
-sessionStorage.removeItem("phoneNumber");
+let formLogin = $("#form-login"),
+    username = $("#username"),
+    passw = $("#password"),
+    btnSubmit = $("#btn-submit"),
+    formMessage = $("#form-message");
 
-var form = $("#form");
-var formSubmit = $("#btn-submit");
+username.value = sessionStorage.getItem("username");
 
-$("#username").value = sessionStorage.getItem("username");
+formLogin.addEventListener("submit", e => {
+    e.preventDefault();
+    btnSubmit.disabled = true;
+    btnSubmit.value = "Enviando...";
 
-form.addEventListener("submit", function() {
-    formSubmit.disabled = true;
-    formSubmit.value = "Enviando...";
+    let obj = {
+        username: username.value,
+        password: passw.value
+    }
+
+    requestAjax(formLogin.method, formLogin.action, JSON.stringify(obj))
+     .then( respuesta => {
+
+         if (respuesta.response.code === 100) {
+
+             formMessage.textContent = "Logueo exitoso!";
+             sessionStorage.setItem("token", respuesta.response.token);
+             console.log(respuesta.response);
+
+         } else if (respuesta.response.code === 203) {
+
+             formMessage.textContent = "Usuario o contraseña invalidos";
+             console.log(respuesta.response);
+
+         } else {
+
+             console.log(respuesta.response.code);
+
+         }
+     })
+     .catch( error => {
+         console.log(error)
+     });
     
-    var username = $("#username").value;
-   
-    sessionStorage.setItem("username", username);
-    
+    sessionStorage.setItem("username", username.value);
+
+    btnSubmit.disabled = false;
+    btnSubmit.value = "Login";
 });

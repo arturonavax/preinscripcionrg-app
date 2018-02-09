@@ -51,7 +51,7 @@
                     </h2>
                 </div>
                 
-                <form id="form" class="container__form" method="post" action="/api/users">
+                <form id="form-register" class="container__form" method="post" action="/api/users">
                     
                     <div class="form__item">
                         <p class="item__label">Nombre de usuario</p>
@@ -85,24 +85,25 @@
 
                     <div class="form__item">
                         <p class="item__label">Contraseña</p>
-                        <input class="item__input" type="password" placeholder="Introduce tu contraseña..." name="password"/>
+                        <input class="item__input" type="password" placeholder="Introduce tu contraseña..." name="password" id="password"/>
                     </div>
                     
                     <div class="form__item">
                         <p class="item__label">Confirmar Contraseña</p>
-                        <input class="item__input" type="password" placeholder="Confirma tu contraseña..." name="confirmPassword"/>
+                        <input class="item__input" type="password" placeholder="Confirma tu contraseña..." name="confirmPassword" id="confirmPassword" />
                     </div>
     
                     <div class="form__item">
                         <input id="btn-submit" class="item__submit" type="submit" value="Registrar"/>
                     </div>
-                    <div id="form__message"></div>   
+                    <div id="form-message"></div>   
                 </form>
                 
             </article>
             
         </section>
 
+        <script src="/js/utils.js"></script>
         <script src="/js/menu.js"></script>
         <script src="/js/register.js"></script>
     </body>
