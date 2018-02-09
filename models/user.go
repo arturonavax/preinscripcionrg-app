@@ -19,5 +19,10 @@ type User struct {
 	Password string `json:"password" gorm:"not null;type:varchar(256)"`
 
 	ConfirmPassword string `json:"confirmPassword,omitempty" gorm:"-"`
-	People          `gorm:"-"`
+
+	FirstName   string `json:"firstName" gorm:"-"`
+	LastName    string `json:"lastName" gorm:"-"`
+	Email       string `json:"email" gorm:"-"`
+	PhoneNumber string `json:"phoneNumber" gorm:"-"`
+	Address     string `json:"address" gorm:"-"`
 }
