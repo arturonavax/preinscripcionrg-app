@@ -53,25 +53,25 @@
     font-weight: 900;
 }
 
-.btn-back {
-    display:inline-block;
-    text-align: center;
-    line-height: 50px;
-    margin-top: 15px;
-    width: 40%;
-    height: 50px;
-    font-size: 20px;
+    .btn-back {
+        display:inline-block;
+        text-align: center;
+        line-height: 50px;
+        margin-top: 15px;
+        width: 40%;
+        height: 50px;
+        font-size: 20px;
 
-    background-color: #da373b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
+        background-color: #da373b;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
 
-.btn-back:hover {
-    cursor: pointer;
-    background-color: #db2323;
-}
+    .btn-back:hover {
+        cursor: pointer;
+        background-color: #db2323;
+    }
 
 .container__btns {
     margin: 20px;
@@ -161,5 +161,32 @@
             cursor: pointer;
             background-color: #db2323;
         }
+
+/*------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------*/
+/*----------------------- SECTION PROFILE --------------------*/
+/*------------------------------------------------------------*/
+
+.container__item {
+    width: 90%;
+    height: 100%;
+    margin-top: 15px; 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.item__data__title {
+    color: #da333b;
+    margin-bottom: 5px;
+}
+
+.item__data__content {
+    padding-left: 15px;
+    font-size: 18px;
+}
 
 /*------------------------------------------------------------*/
