@@ -38,7 +38,7 @@ Banderas validas para pasar al ejecutable :
 
 Rutas de la API :
 
-    /register   -   A esta ruta se le envia por el metodo POST un JSON con la siguiente estructura :
+    /api/register   -   A esta ruta se le envia por el metodo POST un JSON con la siguiente estructura :
         HeaderKey: Content-Type  ;  Value: application/json
 
         {
@@ -54,7 +54,7 @@ Rutas de la API :
 
     ----------------------
 
-    /login  -   A esta ruta se le envia por el metodo POST un JSON con la siguiente estructura :
+    /api/login  -   A esta ruta se le envia por el metodo POST un JSON con la siguiente estructura :
         HeaderKey: Content-Type  ;  Value: application/json
 
         {
@@ -67,7 +67,7 @@ Rutas de la API :
 
     /graphql    -   A esta ruta se le envia por el metodo POST un paquete GraphQL con la siguiente estructura :
         HeaderKey: Content-Type  ;  Value: application/graphql
-        HeaderKey: Authorization  ;  Value: (JWT Devuelto por /login)
+        HeaderKey: Authorization  ;  Value: (JWT Devuelto por /api/login)
 
         mutation {
             studentC (
@@ -124,5 +124,3 @@ Paquetes utilizados para realizar este proyecto :
     graphql-go/handler  -   Para diseñar el Handler que pueda manipular GraphQL de manera correcta.
     gorm    -   Para la manipulacion de SQL por medio de un ORM.
     gorm/dialects/postgres" -   Como el Driver de PostgreSQL.
-
-//Lineas Totales : 1.666
