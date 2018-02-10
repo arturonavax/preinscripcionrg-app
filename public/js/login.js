@@ -1,3 +1,15 @@
+var btnRegister = $("#navBtn-register");
+var btnLogin = $("#navBtn-login");
+var loginRegister = $("#login-register");
+
+btnRegister.addEventListener("click", function() {
+    loginRegister.classList.add("register--open");
+});
+
+btnLogin.addEventListener("click", function(){
+    loginRegister.classList.remove("register--open");
+});
+
 if (sessionStorage.getItem("token")) {
     window.location.replace("/app");
 }
