@@ -6,7 +6,7 @@ import (
 	"github.com/arthurnavah/PreInscripcionRG/controllers"
 )
 
-//SetRegisterRouter Declara la ruta para Registrar usuarios.
+//SetUserRouter Declara la ruta para Registrar usuarios.
 func SetUserRouter(mux *http.ServeMux) {
 	prefix := "/api/users"
 	prefixLogin := "/api/login"
