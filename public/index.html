@@ -12,113 +12,176 @@
     </head>
     <body>
         
-        <div id="dark" class="dark"></div>
+        <div class="main">
         
-        <header class="header">
-            
-            <div class="header__logo">
-                <h1 class="logo__title">iRG APP</h1>
-                <span class="logo__decoration"></span>
-            </div>
-            
-            <button id="menu__btn" class="header__btn"></button>
-            
-            <nav id="menu" class="header__nav">
+            <div id="dark" class="dark"></div>
 
-                <h1 class="nav__title">Menu</h1>
-                
-                <div id="navBtn" class="nav__item visible">
-                    <a class="item__link item__link--home" href="#">Home</a>
+            <header class="header">
+
+                <div class="header__logo">
+                    <h1 class="logo__title">iRG APP</h1>
+                    <span class="logo__decoration"></span>
                 </div>
 
-                <div id="navBtn" class="nav__item visible">  
-                    <a class="item__link item__link--login" href="#">Login</a>
+                <button id="menu__btn" class="header__btn"></button>
+
+                <nav id="menu" class="header__nav">
+
+                    <h1 class="nav__title">Menu</h1>
+
+                    <div id="navBtn" class="nav__item visible">
+                        <a class="item__link item__link--home" href="#">Home</a>
+                    </div>
+
+                    <div id="navBtn" class="nav__item visible">
+                        <a class="item__link item__link--login" href="#">Login</a>
+                    </div>
+
+                    <div id="navBtn" class="nav__item visible">
+                        <a class="item__link item__link--register" href="/register">Register</a>
+                    </div>
+
+                </nav>
+
+            </header>
+
+            <section class="section section--translate">
+
+                <article class="section__container section__container--1">
+
+                    <div class="container__title">
+                        <h2 class="title">
+                            ¡ Ingresa en 
+                            <span class="title__decoration">iRG !</span>
+                        </h2>
+                    </div>
+
+                    <form id="form-login" class="container__form" method="post" action="/api/login">
+
+                        <div class="form__item">
+                            <p class="item__label">Nombre de usuario</p>
+                            <input id="username" class="item__input" type="text" placeholder="usuario.." name="username"/>
+                        </div>
+                        <div class="form__item">
+                            <p class="item__label">Contraseña</p>
+                            <input id="password" class="item__input" type="password" placeholder="contraseña..." name="password"/>
+                        </div>
+                        <div class="form__item">
+                            <input id="btn-submit" class="item__submit" type="submit" value="Login"/> 
+                        </div>
+
+                        <div id="form-message"></div>   
+                    </form>
+
+                </article>
+
+                <article class="section__container section__container--2">
+
+                    <div class="container__title">
+                        <h2 class="title">
+                            ¡ Registrate en 
+                            <span class="title__decoration">iRG !</span>
+                        </h2>
+                    </div>
+
+                    <form id="form-register" class="container__form" method="post" action="/api/users">
+
+                        <div class="form__item">
+                            <p class="item__label">Nombre de usuario</p>
+                            <input class="item__input" type="text" placeholder="Nombre de usuario..." id="username" name="username"/>
+                        </div>
+
+                        <div class="form__item">
+                            <p class="item__label">Email</p>
+                            <input class="item__input" type="email" placeholder="MiEmail@gmail.com" id="email" name="email"/>
+                        </div>
+
+                        <div class="form__item">
+                            <p class="item__label">Nombre</p>
+                            <input class="item__input" type="text" placeholder="Nombre..." id="firstName" name="firstName"/>
+                        </div>
+
+                        <div class="form__item">
+                            <p class="item__label">Apellido</p>
+                            <input class="item__input" type="text" placeholder="Apellido..." id="lastName" name="lastName"/>
+                        </div>
+
+                        <div class="form__item">
+                            <p class="item__label">Direccion</p>
+                            <input class="item__input" type="text" placeholder="Direccion..." id="address" name="address"/>
+                        </div>
+
+                        <div class="form__item">
+                            <p class="item__label">Numero de telefono</p>
+                            <input class="item__input" type="number" placeholder="Numero de telefono..." id="phoneNumber" name="phoneNumber"/>
+                        </div>
+
+                        <div class="form__item">
+                            <p class="item__label">Contraseña</p>
+                            <input class="item__input" type="password" placeholder="Introduce tu contraseña..." name="password" id="password"/>
+                        </div>
+
+                        <div class="form__item">
+                            <p class="item__label">Confirmar Contraseña</p>
+                            <input class="item__input" type="password" placeholder="Confirma tu contraseña..." name="confirmPassword" id="confirmPassword" />
+                        </div>
+
+                        <div class="form__item">
+                            <input id="btn-submit" class="item__submit" type="submit" value="Registrar"/>
+                        </div>
+                        <div id="form-message"></div>   
+                    </form>
+
+                </article>
+
+            </section>
+
+            <footer class="footer">
+
+                <div class="footer__information">
+
+                    <div class="information__contact">
+
+                            <p class="contact__icon contact__icon--location">
+                                Maracaibo 4002, Zulia.
+                            </p>
+
+                            <p class="contact__icon contact__icon--call">
+                                +58-416-555-2293.
+                            </p>
+
+                            <a class="contact__icon contact__icon--mail" href="#">
+                                RomuloGallegos@gmail.com
+                            </a>
+                            <a href="#" class="contact__icon contact__icon--facebook">
+                                Facebook
+                            </a>
+                    </div>
+
+                    <div class="information__about">
+
+                        <h2 class="about__name">
+                            Acerca Del Instituto
+                        </h2>
+                        <span class="about__infor">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Adipisci incidunt dicta necessitatibus minima
+                            eum ipsa, ex commodi, consequuntur consectetur cumque
+                            expedita nobis quis, aspernatur dignissimos nisi harum 
+                            officia voluptatibus! Delectus.
+                        </span>
+
+                    </div>
+
                 </div>
-                
-                <div id="navBtn" class="nav__item visible">
-                    <a class="item__link item__link--register" href="/register">Register</a>
+
+                <div class="footer__royalties">
+                    2018 &copy; All Rights Reserved.
                 </div>
-                
-            </nav>
-            
-        </header>
+
+            </footer>
         
-        <section class="section">
-            
-            <article class="section__container">
-            
-                <div class="container__title">
-                    <h2 class="title">
-                        ¡ Ingresa en 
-                        <span class="title__decoration">iRG !</span>
-                    </h2>
-                </div>
-                
-                <form id="form-login" class="container__form" method="post" action="/api/login">
-                
-                    <div class="form__item">
-                        <p class="item__label">Nombre de usuario</p>
-                        <input id="username" class="item__input" type="text" placeholder="usuario.." name="username"/>
-                    </div>
-                    <div class="form__item">
-                        <p class="item__label">Contraseña</p>
-                        <input id="password" class="item__input" type="password" placeholder="contraseña..." name="password"/>
-                    </div>
-                    <div class="form__item">
-                        <input id="btn-submit" class="item__submit" type="submit" value="Login"/> 
-                    </div>
-                    
-                    <div id="form-message"></div>   
-                </form>
-                
-            </article>
-            
-        </section>
-        
-        <footer class="footer">
-            
-            <div class="footer__information">
-                
-                <div class="information__contact">
-                   
-                        <p class="contact__icon contact__icon--location">
-                            Maracaibo 4002, Zulia.
-                        </p>
-
-                        <p class="contact__icon contact__icon--call">
-                            +58-416-555-2293.
-                        </p>
-                    
-                        <a class="contact__icon contact__icon--mail" href="#">
-                            RomuloGallegos@gmail.com
-                        </a>
-                        <a href="#" class="contact__icon contact__icon--facebook">
-                            Facebook
-                        </a>
-                </div>
-                
-                <div class="information__about">
-                       
-                    <h2 class="about__name">
-                        Acerca Del Instituto
-                    </h2>
-                    <span class="about__infor">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Adipisci incidunt dicta necessitatibus minima
-                        eum ipsa, ex commodi, consequuntur consectetur cumque
-                        expedita nobis quis, aspernatur dignissimos nisi harum 
-                        officia voluptatibus! Delectus.
-                    </span>
-
-                </div>
-                
-            </div>
-            
-            <div class="footer__royalties">
-                2018 &copy; All Rights Reserved.
-            </div>
-            
-        </footer>
+        </div>
         
         <script src="/js/utils.js"></script>
         <script src="/js/menu.js"></script>
