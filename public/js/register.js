@@ -1,4 +1,6 @@
-sessionStorage.removeItem("token");
+if (sessionStorage.getItem("token")) {
+    window.location.replace("/app");
+}
 
 let formRegister = $("#form-register"),
     username = $("#username"),
