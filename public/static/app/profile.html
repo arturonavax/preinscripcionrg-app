@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Profile</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="/css/normalize.css"/>
+        <link rel="stylesheet" href="/css/style.css"/>
+        <link rel="stylesheet" href="/css/header.css" />
+        <link rel="stylesheet" href="/css/section.css" />
+        <link rel="stylesheet" href="/css/footer.css" />
+    </head>
+    <body>
+
+       <div id="dark" class="dark"></div>
+        
+        <header class="header">
+            
+            <div class="header__logo">
+                <h1 class="logo__title">iRG APP</h1>
+                <span class="logo__decoration"></span>
+            </div>
+            
+            <button id="menu__btn" class="header__btn"></button>
+            
+            <nav id="menu" class="header__nav">
+
+                <h1 class="nav__title">Menu</h1>
+                
+                <span id="titleUser" class="nav__user-name">#Nombre del Usuario#</span>
+                
+                <div id="" class="nav__item visible">
+                    <a class="item__link item__link--home" href="#">Home</a>
+                </div>
+                
+                <div id="" class="nav__item visible">  
+                    <a class="item__link item__link--profile" href="#">Profile</a>
+                </div>
+
+                <div id="btn-logout" class="nav__item visible">
+                    <a class="item__link item__link--log-out" href="#">Log Out</a>
+                </div>
+                
+            </nav>
+            
+        </header>
+        
+        <section class="section">
+            
+            <article class="section__container">
+                
+                <div class="container__title">
+                    <h2 class="title">
+                        <span class="title__decoration">My</span>
+                        Profile 
+                    </h2>
+                </div>
+                
+                <div class="container__item">
+                    <h3 class="item__data__title">ID del usuario :</h3>
+                    <div id="userID" class="item__data__content"></div>
+                </div>
+
+                <div class="container__item">
+                    <h3 class="item__data__title">Nombre de Usuario :</h3>
+                    <div id="username" class="item__data__content"></div>
+                </div>
+
+                <div class="container__item">
+                    <h3 class="item__data__title">Email :</h3>
+                    <div id="email" class="item__data__content"></div>
+                </div>
+                
+                <div class="container__item">
+                    <h3 class="item__data__title">Nombre :</h3>
+                    <div id="firstName" class="item__data__content"></div>
+                </div>
+                
+                <div class="container__item">
+                    <h3 class="item__data__title">Apellidos :</h3>
+                    <div id="lastName" class="item__data__content"></div>
+                </div>
+                
+                <div class="container__item">
+                    <h3 class="item__data__title">Dirección :</h3>
+                    <div id="address" class="item__data__content"></div>
+                </div>
+                
+                <div class="container__item">
+                    <h3 class="item__data__title">Numero de telefono :</h3>
+                    <div id="phoneNumber" class="item__data__content"></div>
+                </div>
+
+                <div class="container__item">
+                    <h3 class="item__data__title">Estado del usuario :</h3>
+                    <div id="kindUser" class="item__data__content"></div>
+                </div>
+                
+            </article>
+            
+        </section>
+        
+        <footer class="footer">
+            
+            <div class="footer__information">
+                
+                <div class="information__contact">
+                   
+                        <p class="contact__icon contact__icon--location">
+                            Maracaibo 4002, Zulia.
+                        </p>
+
+                        <p class="contact__icon contact__icon--call">
+                            +58-416-555-2293.
+                        </p>
+                    
+                        <a class="contact__icon contact__icon--mail" href="#">
+                            RomuloGallegos@gmail.com
+                        </a>
+                        <a href="#" class="contact__icon contact__icon--facebook">
+                            Facebook
+                        </a>
+                </div>
+                
+                <div class="information__about">
+                       
+                    <h2 class="about__name">
+                        Acerca Del Instituto
+                    </h2>
+                    <span class="about__infor">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Adipisci incidunt dicta necessitatibus minima
+                        eum ipsa, ex commodi, consequuntur consectetur cumque
+                        expedita n,obis quis, aspernatur dignissimos nisi harum 
+                        officia voluptatibus! Delectus.
+                    </span>
+
+                </div>
+                
+            </div>
+            
+            <div class="footer__royalties">
+                2018 &copy; All Rights Reserved.
+            </div>
+            
+        </footer>
+        
+        <script src="/js/utils.js"></script>
+        <script src="/js/menu.js"></script>
+        <script src="/js/app.js"></script>
+    </body>
+</html>
+
+
+<!--
+     ID de Usuario
+     Estado de Usuario
+     Email
+     Address
+     PhoneNumber
+     
+-->
