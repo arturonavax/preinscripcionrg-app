@@ -13,13 +13,14 @@ import (
 	"github.com/arthurnavah/PreInscripcionRG/utils"
 )
 
+//Users Controlador para las rutas /api/users.
 func Users(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		UserCreate(w, r)
 	}
 }
 
-//Register Controlador de Registro de Usuario.
+//UserCreate Controlador de Registro de Usuario.
 func UserCreate(w http.ResponseWriter, r *http.Request) {
 	people := models.People{}
 	user := models.User{}
@@ -118,7 +119,7 @@ func UserCreate(w http.ResponseWriter, r *http.Request) {
 
 // --------------------------------------------------------------------------------
 
-//Login Controlador de Logeo.
+//Login Controlador de Logeo en la ruta /api/login.
 func Login(w http.ResponseWriter, r *http.Request) {
 	userFound := models.User{}
 
