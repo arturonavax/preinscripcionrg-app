@@ -33,12 +33,12 @@
                         <a class="item__link item__link--home" href="#">Home</a>
                     </div>
 
-                    <div id="navBtn" class="nav__item visible">
-                        <a class="item__link item__link--login" href="#">Login</a>
+                    <div id="navBtn-login" class="nav__item visible">
+                        <a class="item__link item__link--login" href="">Login</a>
                     </div>
 
-                    <div id="navBtn" class="nav__item visible">
-                        <a class="item__link item__link--register" href="/register">Register</a>
+                    <div id="navBtn-register" class="nav__item visible">
+                        <a class="item__link item__link--register" href="">Register</a>
                     </div>
 
                 </nav>
@@ -46,93 +46,97 @@
             </header>
 
             <section class="section section--translate">
+                
+                <div id="login-register" class="login-register">
 
-                <article class="section__container section__container--1">
+                    <article class="section__container section__container--2">
 
-                    <div class="container__title">
-                        <h2 class="title">
-                            ¡ Ingresa en 
-                            <span class="title__decoration">iRG !</span>
-                        </h2>
-                    </div>
-
-                    <form id="form-login" class="container__form" method="post" action="/api/login">
-
-                        <div class="form__item">
-                            <p class="item__label">Nombre de usuario</p>
-                            <input id="username" class="item__input" type="text" placeholder="usuario.." name="username"/>
-                        </div>
-                        <div class="form__item">
-                            <p class="item__label">Contraseña</p>
-                            <input id="password" class="item__input" type="password" placeholder="contraseña..." name="password"/>
-                        </div>
-                        <div class="form__item">
-                            <input id="btn-submit" class="item__submit" type="submit" value="Login"/> 
+                        <div class="container__title">
+                            <h2 class="title">
+                                ¡ Registrate en 
+                                <span class="title__decoration">iRG !</span>
+                            </h2>
                         </div>
 
-                        <div id="form-message"></div>   
-                    </form>
+                        <form id="form-register" class="container__form" method="post" action="/api/users">
 
-                </article>
+                            <div class="form__item">
+                                <p class="item__label">Nombre de usuario</p>
+                                <input class="item__input" type="text" placeholder="Nombre de usuario..." id="username-register" name="username"/>
+                            </div>
 
-                <article class="section__container section__container--2">
+                            <div class="form__item">
+                                <p class="item__label">Email</p>
+                                <input class="item__input" type="email" placeholder="MiEmail@gmail.com" id="email" name="email"/>
+                            </div>
 
-                    <div class="container__title">
-                        <h2 class="title">
-                            ¡ Registrate en 
-                            <span class="title__decoration">iRG !</span>
-                        </h2>
-                    </div>
+                            <div class="form__item">
+                                <p class="item__label">Nombre</p>
+                                <input class="item__input" type="text" placeholder="Nombre..." id="firstName" name="firstName"/>
+                            </div>
 
-                    <form id="form-register" class="container__form" method="post" action="/api/users">
+                            <div class="form__item">
+                                <p class="item__label">Apellido</p>
+                                <input class="item__input" type="text" placeholder="Apellido..." id="lastName" name="lastName"/>
+                            </div>
 
-                        <div class="form__item">
-                            <p class="item__label">Nombre de usuario</p>
-                            <input class="item__input" type="text" placeholder="Nombre de usuario..." id="username" name="username"/>
+                            <div class="form__item">
+                                <p class="item__label">Direccion</p>
+                                <input class="item__input" type="text" placeholder="Direccion..." id="address" name="address"/>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Numero de telefono</p>
+                                <input class="item__input" type="number" placeholder="Numero de telefono..." id="phoneNumber" name="phoneNumber"/>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Contraseña</p>
+                                <input class="item__input" type="password" placeholder="Introduce tu contraseña..." name="password" id="password-register"/>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Confirmar Contraseña</p>
+                                <input class="item__input" type="password" placeholder="Confirma tu contraseña..." name="confirmPassword" id="confirmPassword" />
+                            </div>
+
+                            <div class="form__item">
+                                <input id="btn-submit-register" class="item__submit" type="submit" value="Registrar"/>
+                            </div>
+                            <div id="form-message"></div>   
+                        </form>
+
+                    </article>
+
+                    <article class="section__container section__container--1">
+
+                        <div class="container__title">
+                            <h2 class="title">
+                                ¡ Ingresa en 
+                                <span class="title__decoration">iRG !</span>
+                            </h2>
                         </div>
 
-                        <div class="form__item">
-                            <p class="item__label">Email</p>
-                            <input class="item__input" type="email" placeholder="MiEmail@gmail.com" id="email" name="email"/>
-                        </div>
+                        <form id="form-login" class="container__form" method="post" action="/api/login">
 
-                        <div class="form__item">
-                            <p class="item__label">Nombre</p>
-                            <input class="item__input" type="text" placeholder="Nombre..." id="firstName" name="firstName"/>
-                        </div>
+                            <div class="form__item">
+                                <p class="item__label">Nombre de usuario</p>
+                                <input id="username-login" class="item__input" type="text" placeholder="usuario.." name="username"/>
+                            </div>
+                            <div class="form__item">
+                                <p class="item__label">Contraseña</p>
+                                <input id="password-login" class="item__input" type="password" placeholder="contraseña..." name="password"/>
+                            </div>
+                            <div class="form__item">
+                                <input id="btn-submit-login" class="item__submit" type="submit" value="Login"/> 
+                            </div>
 
-                        <div class="form__item">
-                            <p class="item__label">Apellido</p>
-                            <input class="item__input" type="text" placeholder="Apellido..." id="lastName" name="lastName"/>
-                        </div>
+                            <div id="form-message"></div>   
+                        </form>
 
-                        <div class="form__item">
-                            <p class="item__label">Direccion</p>
-                            <input class="item__input" type="text" placeholder="Direccion..." id="address" name="address"/>
-                        </div>
-
-                        <div class="form__item">
-                            <p class="item__label">Numero de telefono</p>
-                            <input class="item__input" type="number" placeholder="Numero de telefono..." id="phoneNumber" name="phoneNumber"/>
-                        </div>
-
-                        <div class="form__item">
-                            <p class="item__label">Contraseña</p>
-                            <input class="item__input" type="password" placeholder="Introduce tu contraseña..." name="password" id="password"/>
-                        </div>
-
-                        <div class="form__item">
-                            <p class="item__label">Confirmar Contraseña</p>
-                            <input class="item__input" type="password" placeholder="Confirma tu contraseña..." name="confirmPassword" id="confirmPassword" />
-                        </div>
-
-                        <div class="form__item">
-                            <input id="btn-submit" class="item__submit" type="submit" value="Registrar"/>
-                        </div>
-                        <div id="form-message"></div>   
-                    </form>
-
-                </article>
+                    </article>
+                
+                </div>
 
             </section>
 
