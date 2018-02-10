@@ -1,5 +1,5 @@
 if (sessionStorage.getItem("token")) {
-    window.location.replace("http://localhost:8080/app");
+    window.location.replace("/app");
 }
 
 let formLogin = $("#form-login"),
