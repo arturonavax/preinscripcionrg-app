@@ -10,7 +10,7 @@
 }
 
 .login-register {
-    transition: all .2s;
+    transition: all .3s;
     width: 200%;
     
     display: flex;
@@ -19,6 +19,9 @@
 }
 .register--open {
     transform: translate(0,0);
+}
+.register--open .section__container--1{
+    height: auto;
 }
 
     .section__container {
@@ -41,6 +44,7 @@
 
     .section__container--1 {
         height: 320px;
+        overflow:hidden;
     }
 
         .container__title {
