@@ -1,5 +1,5 @@
 if (!sessionStorage.getItem("token")) {
-    window.location.replace("/login");
+    window.location.replace("/user");
 }
 
 var data = "query {me{id,username,email,firstName,lastName,address,phoneNumber,kindID}}"; 
@@ -39,5 +39,5 @@ var btnLogout = $("#btn-logout");
 btnLogout.addEventListener("click", function() {
     sessionStorage.removeItem("token");
 
-    window.location.replace("/login");
+    window.location.replace("/user");
 });
