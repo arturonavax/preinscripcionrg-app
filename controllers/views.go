@@ -6,23 +6,11 @@ import (
 	"net/http"
 )
 
-//RegisterView Controlador para la ruta /register.
-func RegisterView(w http.ResponseWriter, r *http.Request) {
-	if r.Method == "GET" {
-		t, err := template.ParseFiles("./public/static/register.html")
-		if err != nil {
-			fmt.Println("No se encontro el arrchivo static/register.html")
-		}
-
-		t.Execute(w, nil)
-	}
-}
-
-//LoginView Controlador para la ruta /login.
-func LoginView(w http.ResponseWriter, r *http.Request) {
-	t, err := template.ParseFiles("./public/index.html")
+//UserView Controlador para la ruta /user.
+func UserView(w http.ResponseWriter, r *http.Request) {
+	t, err := template.ParseFiles("./public/static/user.html")
 	if err != nil {
-		fmt.Println("No se encontro el archivo public/index.html")
+		fmt.Println("No se encontro el archivo static/user.html")
 	}
 
 	t.Execute(w, nil)
@@ -30,9 +18,9 @@ func LoginView(w http.ResponseWriter, r *http.Request) {
 
 //AppView Controlador para la ruta /app.
 func AppView(w http.ResponseWriter, r *http.Request) {
-	t, err := template.ParseFiles("./public/static/app/profile.html")
+	t, err := template.ParseFiles("./public/static/app/main.html")
 	if err != nil {
-		fmt.Println("No se encontro el archivo app/profile.html")
+		fmt.Println("No se encontro el archivo app/main.html")
 	}
 
 	t.Execute(w, nil)
