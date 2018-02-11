@@ -2,6 +2,8 @@ package querys
 
 import (
 	"github.com/arthurnavah/PreInscripcionRG/querys/me"
+	"github.com/arthurnavah/PreInscripcionRG/querys/students"
+	"github.com/arthurnavah/PreInscripcionRG/querys/users"
 	"github.com/graphql-go/graphql"
 )
 
@@ -10,7 +12,9 @@ var RootQuery = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name: "Query",
 		Fields: graphql.Fields{
-			"me": me.QueryMe,
+			"me":       me.QueryMe,
+			"users":    users.QueryUsers,
+			"students": students.QueryStudents,
 		},
 	},
 )
