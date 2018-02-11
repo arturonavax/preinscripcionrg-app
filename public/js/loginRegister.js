@@ -1,3 +1,7 @@
+if (sessionStorage.getItem("token")) {
+    window.location.replace("/app");
+}
+
 var btnRegister = $("#navBtn-register");
 var btnLogin = $("#navBtn-login");
 var loginRegister = $("#login-register");
@@ -9,10 +13,6 @@ btnRegister.addEventListener("click", function() {
 btnLogin.addEventListener("click", function(){
     loginRegister.classList.remove("register--open");
 });
-
-if (sessionStorage.getItem("token")) {
-    window.location.replace("/app");
-}
 
 let formLogin = $("#form-login"),
     formRegister = $("#form-register"),
@@ -58,27 +58,18 @@ formLogin.addEventListener("submit", e => {
             
             formMessageLogin.textContent = "Logueo exitoso!";
             sessionStorage.setItem("token", respuesta.response.token);
-
-            if (sessionStorage.getItem("token")) {
-                var data = "query {me{firstName,lastName}}";
-            
-                requestAjaxToken("POST", "/graphql", data)
-                 .then( respuesta => {
-                     dataGraph = respuesta.response.data
-                     console.log(respuesta);
-                     document.querySelector("#titleUser").textContent = "Bienvenido/a "+dataGraph.me.firstName+" "+dataGraph.me.lastName+"!";
-                 })
-                 .catch( error => {
-                     console.log(error);
-                 });
-            }
             
             usernameLogin.value = sessionStorage.getItem("username");
             console.log(respuesta.response);
 
-            if (sessionStorage.getItem("token")) {
-                window.location.replace("/app");
-            }
+            sessionStorage.removeItem("username");
+            sessionStorage.removeItem("email");
+            sessionStorage.removeItem("firstName");
+            sessionStorage.removeItem("lastName");
+            sessionStorage.removeItem("address");
+            sessionStorage.removeItem("phoneNumber");
+
+            window.location.replace("/app");
 
          } else if (respuesta.response.code === 203) {
 
