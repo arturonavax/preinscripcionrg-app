@@ -1,6 +1,7 @@
 package mutations
 
 import (
+	"github.com/arthurnavah/PreInscripcionRG/mutations/me"
 	"github.com/arthurnavah/PreInscripcionRG/mutations/students"
 	"github.com/graphql-go/graphql"
 )
@@ -12,6 +13,8 @@ var RootMutation = graphql.NewObject(
 		Fields: graphql.Fields{
 			//Mutations de Estudiantes.
 			"studentC": students.StudentCreate,
+			//Mutations del Usuario.
+			"meU": me.MeUpdate,
 		},
 	},
 )
