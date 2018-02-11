@@ -1,6 +1,6 @@
-if (!sessionStorage.getItem("token")) {
+/*if (!sessionStorage.getItem("token")) {
     window.location.replace("/user");
-}
+}*/
 
 var data = "query {me{id,username,email,firstName,lastName,address,phoneNumber,kindID}}"; 
 

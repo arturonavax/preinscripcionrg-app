@@ -1,6 +1,6 @@
-if (sessionStorage.getItem("token")) {
+/*if (sessionStorage.getItem("token")) {
     window.location.replace("/app");
-}
+}*/
 
 var btnRegister = $("#navBtn-register");
 var btnLogin = $("#navBtn-login");

@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="/css/style.css"/>
         <link rel="stylesheet" href="/css/header.css" />
         <link rel="stylesheet" href="/css/section.css" />
+        <link rel="stylesheet" href="/css/formulario.css" />
         <link rel="stylesheet" href="/css/footer.css" />
     </head>
     <body>
@@ -34,7 +35,7 @@
                 </div>
                 
                 <div id="" class="nav__item visible">  
-                    <button class="item__btn item__btn--profile">Profile</button>
+                    <button class="item__btn item__btn--profile">My Profile</button>
                 </div>
 
                 <div id="btn-logout" class="nav__item visible">
@@ -47,13 +48,14 @@
         
         <section class="section">
             
-            <article class="section__container">
+            <article class="section__container section__container--profile">
                 
                 <div class="container__title">
                     <h2 class="title">
                         <span class="title__decoration">My</span>
                         Profile 
                     </h2>
+                    <button class="edit-btn"></button>
                 </div>
                 
                 <div class="container__item">
@@ -63,7 +65,7 @@
 
                 <div class="container__item">
                     <h3 class="item__data__title">Nombre de Usuario :</h3>
-                    <div id="username" class="item__data__content"></div>
+                    <div id="username" class="item__data__content"></div>           
                 </div>
 
                 <div class="container__item">
@@ -94,6 +96,9 @@
                 <div class="container__item">
                     <h3 class="item__data__title">Estado del usuario :</h3>
                     <div id="kindUser" class="item__data__content"></div>
+                </div>
+                
+                <div class="container__item container__item--btn">
                 </div>
                 
             </article>
