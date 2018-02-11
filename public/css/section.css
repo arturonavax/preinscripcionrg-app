@@ -7,10 +7,12 @@
     z-index: 0;
     min-height: 80vh;
     padding-top: 80px;
+    padding-bottom: 20px;
+    background-color: mintcream;
 }
 
 .login-register {
-    transition: all .3s;
+    transition: all .6s;
     width: 200%;
     
     display: flex;

@@ -11,5 +11,6 @@ dark.addEventListener("click", toggleMenu);
 
 function toggleMenu() {
     menu.classList.toggle("header__nav--open");
-    dark.classList.toggle("header__nav--open");
+    //dark.classList.toggle("header__nav--open");
+    dark.classList.toggle("dark--move");
 }
