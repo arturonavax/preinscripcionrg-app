@@ -9,6 +9,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
+//Mutation para actualizar el usuario del sistema.
 var MeUpdate = &graphql.Field{
 	Type: graphqlTypes.UserType,
 	Args: graphql.FieldConfigArgument{
