@@ -8,7 +8,7 @@ type Message struct {
 
 //CreateMessage Mensaje de creacion para el usuario.
 type CreateMessage struct {
-	ID      uint   `json:"id"`
+	ID      int    `json:"id"`
 	Message string `json:"message"`
 	Code    int    `json:"code"`
 }
