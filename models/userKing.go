@@ -24,4 +24,7 @@ type UserKind struct {
 	// Permisos sobre Estudiantes
 	ReadStudents   bool `json:"readStudent" gorm:"not null;type:boolean;default:false"`
 	CreateStudents bool `json:"createStudent" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Asignaturas
+	ReadAsignatures bool `json:"readAsignatures" gorm:"not null;type:boolean;default:false"`
 }
