@@ -27,4 +27,31 @@ type UserKind struct {
 
 	// Permisos sobre Asignaturas
 	ReadAsignatures bool `json:"readAsignatures" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Paises
+	ReadCountries bool `json:"readCountries" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Menciones
+	ReadMentions bool `json:"readMentions" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Municipios
+	ReadMunicipalities bool `json:"readMunicipalities" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Parroquias
+	ReadParishes bool `json:"readParishes" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Secciones
+	ReadSections bool `json:"readSections" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Sectores
+	ReadSectors bool `json:"readSectors" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Estados
+	ReadStates bool `json:"readStates" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Profesores
+	ReadTeachers bool `json:"readTeachers" gorm:"not null;type:boolean;default:false"`
+
+	// Permisos sobre Tipos de vias
+	ReadTypeOfRoads bool `json:"readTypeOfRoads" gorm:"not null;type:boolean;default:false"`
 }
