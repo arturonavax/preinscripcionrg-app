@@ -1,4 +1,4 @@
-package students
+package typeOfRoads
 
 import (
 	"github.com/arthurnavah/PreInscripcionRG/databases"
@@ -8,12 +8,12 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-//QueryStudents Query GraphQL para consultar lista de estudiantes
-var QueryStudents = &graphql.Field{
-	Type: graphql.NewList(graphqlTypes.StudentType),
+//QueryTypeOfRoads Query GraphQL para consultar lista de tipos de vias
+var QueryTypeOfRoads = &graphql.Field{
+	Type: graphql.NewList(graphqlTypes.TypeOfRoadType),
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 		kind := &models.UserKind{}
-		var ListStudent []student.Student
+		var ListTypeOfRoads []student.TypeOfRoad
 
 		kindID := p.Context.Value("user").(models.User).KindID
 
@@ -22,9 +22,9 @@ var QueryStudents = &graphql.Field{
 
 		db.Where("id = ?", kindID).First(&kind)
 
-		if kind.ReadStudents {
-			db.Find(&ListStudent)
+		if kind.ReadTypeOfRoads {
+			db.Find(&ListTypeOfRoads)
 		}
-		return ListStudent, nil
+		return ListTypeOfRoads, nil
 	},
 }

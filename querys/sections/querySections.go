@@ -1,4 +1,4 @@
-package students
+package sections
 
 import (
 	"github.com/arthurnavah/PreInscripcionRG/databases"
@@ -8,12 +8,12 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-//QueryStudents Query GraphQL para consultar lista de estudiantes
-var QueryStudents = &graphql.Field{
-	Type: graphql.NewList(graphqlTypes.StudentType),
+//QuerySections Query GraphQL para consultar lista de secciones
+var QuerySections = &graphql.Field{
+	Type: graphql.NewList(graphqlTypes.SectionType),
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 		kind := &models.UserKind{}
-		var ListStudent []student.Student
+		var ListSections []student.Section
 
 		kindID := p.Context.Value("user").(models.User).KindID
 
@@ -22,9 +22,9 @@ var QueryStudents = &graphql.Field{
 
 		db.Where("id = ?", kindID).First(&kind)
 
-		if kind.ReadStudents {
-			db.Find(&ListStudent)
+		if kind.ReadSections {
+			db.Find(&ListSections)
 		}
-		return ListStudent, nil
+		return ListSections, nil
 	},
 }

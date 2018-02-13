@@ -49,6 +49,9 @@ type UserKind struct {
 	// Permisos sobre Estados
 	ReadStates bool `json:"readStates" gorm:"not null;type:boolean;default:false"`
 
+	// Permisos sobre Condiciones de estudiantes
+	ReadStudentConditions bool `json:"readStudentConditions" gorm:"not null;type:boolean;default:false"`
+
 	// Permisos sobre Profesores
 	ReadTeachers bool `json:"readTeachers" gorm:"not null;type:boolean;default:false"`
 

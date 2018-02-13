@@ -1,4 +1,4 @@
-package students
+package mentions
 
 import (
 	"github.com/arthurnavah/PreInscripcionRG/databases"
@@ -8,12 +8,12 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-//QueryStudents Query GraphQL para consultar lista de estudiantes
-var QueryStudents = &graphql.Field{
-	Type: graphql.NewList(graphqlTypes.StudentType),
+//QueryMentions Query GraphQL para consultar lista de menciones
+var QueryMentions = &graphql.Field{
+	Type: graphql.NewList(graphqlTypes.MentionType),
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 		kind := &models.UserKind{}
-		var ListStudent []student.Student
+		var ListMentions []student.Mention
 
 		kindID := p.Context.Value("user").(models.User).KindID
 
@@ -22,9 +22,9 @@ var QueryStudents = &graphql.Field{
 
 		db.Where("id = ?", kindID).First(&kind)
 
-		if kind.ReadStudents {
-			db.Find(&ListStudent)
+		if kind.ReadMentions {
+			db.Find(&ListMentions)
 		}
-		return ListStudent, nil
+		return ListMentions, nil
 	},
 }

@@ -1,4 +1,4 @@
-package students
+package studentConditions
 
 import (
 	"github.com/arthurnavah/PreInscripcionRG/databases"
@@ -8,12 +8,12 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-//QueryStudents Query GraphQL para consultar lista de estudiantes
-var QueryStudents = &graphql.Field{
-	Type: graphql.NewList(graphqlTypes.StudentType),
+//QueryStudentConditions Query GraphQL para consultar lista de condiciones de estudiantes
+var QueryStudentConditions = &graphql.Field{
+	Type: graphql.NewList(graphqlTypes.StudentConditionType),
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 		kind := &models.UserKind{}
-		var ListStudent []student.Student
+		var ListStudentConditions []student.StudentCondition
 
 		kindID := p.Context.Value("user").(models.User).KindID
 
@@ -22,9 +22,9 @@ var QueryStudents = &graphql.Field{
 
 		db.Where("id = ?", kindID).First(&kind)
 
-		if kind.ReadStudents {
-			db.Find(&ListStudent)
+		if kind.ReadStudentConditions {
+			db.Find(&ListStudentConditions)
 		}
-		return ListStudent, nil
+		return ListStudentConditions, nil
 	},
 }

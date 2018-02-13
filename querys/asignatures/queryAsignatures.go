@@ -8,6 +8,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
+//QueryAsignatures Query GraphQL para consultar la lista de asignaturas
 var QueryAsignatures = &graphql.Field{
 	Type: graphql.NewList(graphqlTypes.AsignatureType),
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {

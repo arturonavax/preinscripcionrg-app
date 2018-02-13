@@ -10,6 +10,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
+//QueryStudent Query GraphQL para consultar un estudiante en especifico
 var QueryStudent = &graphql.Field{
 	Type: graphqlTypes.StudentType,
 	Args: graphql.FieldConfigArgument{

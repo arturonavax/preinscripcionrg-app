@@ -1,4 +1,4 @@
-package students
+package countries
 
 import (
 	"github.com/arthurnavah/PreInscripcionRG/databases"
@@ -8,12 +8,12 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-//QueryStudents Query GraphQL para consultar lista de estudiantes
-var QueryStudents = &graphql.Field{
-	Type: graphql.NewList(graphqlTypes.StudentType),
+//QueryCountries Query GraphQL para consultar la lista de paises
+var QueryCountries = &graphql.Field{
+	Type: graphql.NewList(graphqlTypes.CountryType),
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 		kind := &models.UserKind{}
-		var ListStudent []student.Student
+		var ListCountries []student.Country
 
 		kindID := p.Context.Value("user").(models.User).KindID
 
@@ -22,9 +22,9 @@ var QueryStudents = &graphql.Field{
 
 		db.Where("id = ?", kindID).First(&kind)
 
-		if kind.ReadStudents {
-			db.Find(&ListStudent)
+		if kind.ReadCountries {
+			db.Find(&ListCountries)
 		}
-		return ListStudent, nil
+		return ListCountries, nil
 	},
 }
