@@ -79,4 +79,7 @@ type Student struct {
 	PendingAsignature string `json:"pendingAsignature" gorm:"type:varchar(200)"`
 	Regular           bool   `json:"regular" gorm:"not null;type:boolean"`
 	InscriptionDate   string `json:"inscriptionDate" gorm:"not null;type:varchar(20)"`
+
+	Message string `json:"message" gorm:"-"`
+	Code    int    `json:"code" gorm:"-"`
 }

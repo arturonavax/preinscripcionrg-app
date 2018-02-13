@@ -15,6 +15,7 @@ var RootQuery = graphql.NewObject(
 			"me":       me.QueryMe,
 			"users":    users.QueryUsers,
 			"students": students.QueryStudents,
+			"student":  students.QueryStudent,
 		},
 	},
 )
