@@ -60,6 +60,42 @@ var StudentType = graphql.NewObject(
 			"SIGECOD": &graphql.Field{
 				Type: graphql.String,
 			},
+			"motherFirstName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherLastName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherEmail": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherPhoneNumber": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherCIType": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherCI": &graphql.Field{
+				Type: graphql.Int,
+			},
+			"fatherFirstName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherLastName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherEmail": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherPhoneNumber": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherCIType": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherCI": &graphql.Field{
+				Type: graphql.Int,
+			},
 			"firstName": &graphql.Field{
 				Type: graphql.String,
 			},
