@@ -4,6 +4,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
+//UserType Objeto GraphQL para usuarios.
 var UserType = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name: "User",

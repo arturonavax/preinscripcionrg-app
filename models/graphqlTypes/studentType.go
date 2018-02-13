@@ -4,12 +4,15 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-//StudentType Objecto GraphQL para Estudiantes.
+//StudentType Objeto GraphQL para Estudiantes.
 var StudentType = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name: "Student",
 		Fields: graphql.Fields{
 			"id": &graphql.Field{
+				Type: graphql.Int,
+			},
+			"userID": &graphql.Field{
 				Type: graphql.Int,
 			},
 			"countryOfBirthID": &graphql.Field{
