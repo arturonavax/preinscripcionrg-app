@@ -46,6 +46,13 @@ type Student struct {
 	FatherCIType      string `json:"fatherCIType" gorm:"-"`
 	FatherCI          int    `json:"fatherCI" gorm:"-"`
 
+	RepresentativeFirstName   string `json:"representativeFirstName" gorm:"-"`
+	RepresentativeLastName    string `json:"representativeLastName" gorm:"-"`
+	RepresentativeEmail       string `json:"representativeEmail" gorm:"-"`
+	RepresentativePhoneNumber string `json:"representativePhoneNumber" gorm:"-"`
+	RepresentativeCIType      string `json:"representativeCIType" gorm:"-"`
+	RepresentativeCI          int    `json:"representativeCI" gorm:"-"`
+
 	FirstName string `json:"firstName" gorm:"not null;type:varchar(50)"`
 	LastName  string `json:"lastName" gorm:"not null;type:varchar(50)"`
 

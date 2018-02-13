@@ -96,6 +96,24 @@ var StudentType = graphql.NewObject(
 			"fatherCI": &graphql.Field{
 				Type: graphql.Int,
 			},
+			"representativeFirstName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativeLastName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativeEmail": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativePhoneNumber": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativeCIType": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativeCI": &graphql.Field{
+				Type: graphql.Int,
+			},
 			"firstName": &graphql.Field{
 				Type: graphql.String,
 			},

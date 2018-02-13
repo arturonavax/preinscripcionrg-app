@@ -69,62 +69,68 @@ Rutas de la API :
         HeaderKey: Content-Type  ;  Value: application/graphql
         HeaderKey: Authorization  ;  Value: (JWT Devuelto por /api/login)
 
-    mutation {
-	studentC (
-		countryOfBirthID : 1,
-		stateOfBirthID : 1,
-		municOfBirthID : 1,
-		municipalityID : 1,
-		institutionOfOriginID : 1,
-		parishID : 1,
-		sectorID : 1,
-		typeOfRoadID : 1,
-		mentionID : 1,
-		sectionID : 1,
-		studentConditionID : 1,
-		representativeID : 1,
-		teacherID : 1,
-		
-		SIGECOD : "A1001",
-		motherFirstName: "Francis",
-		motherLastName: "Bohorquez",
-		motherEmail: "francis@gmail.com",
-		motherPhoneNumber: "+58928273493",
-		motherCIType: "V",
-		motherCI: 1727392,
-		
-		fatherFirstName: "Dario",
-		fatherLastName: "Peñaranda",
-		fatherEmail: "dario@gmail.com",
-		fatherPhoneNumber: "+58928273423",
-		fatherCIType: "E",
-		fatherCI: 1727772,
-		
-		firstName : "Frank",
-		lastName : "Peñaranda",
-		ciType : "V",
-		ci : 29100800,
-		dateOfBirth : "11/11/01",
-		gender : "M",
-		healthProblem : false,
-		healthProblemE : "",
-		email : "coffemanfp@gmail.com",
-		phoneNumber : "+584167634291",
-		address : "Valle Frio",
-		scholarship : true,
-		canaima : true,
-		conditionOfHousing : "PROPIA",
-		year : 4,
-		age : 15,
-		size : "L",
-		weight : 60,
-		repeatAsignature : "Castellano",
-		pendingAsignature : "",
-		regular : true,
-		inscriptionDate : "10/08/15"
-		
-        ){id,message,code}
-    }
+	mutation {
+		studentC (
+			countryOfBirthID : 1,
+			stateOfBirthID : 1,
+			municOfBirthID : 1,
+			municipalityID : 1,
+			institutionOfOriginID : 1,
+			parishID : 1,
+			sectorID : 1,
+			typeOfRoadID : 1,
+			mentionID : 1,
+			sectionID : 1,
+			studentConditionID : 1,
+			teacherID : 1,
+			
+			SIGECOD : "A1001",
+			motherFirstName: "Francis",
+			motherLastName: "Peñaranda",
+			motherEmail: "francis@gmail.com",
+			motherPhoneNumber: "+58928273493",
+			motherCIType: "V",
+			motherCI: 1727392,
+			
+			fatherFirstName: "Dario",
+			fatherLastName: "Peñaranda",
+			fatherEmail: "dario@gmail.com",
+			fatherPhoneNumber: "+58928273423",
+			fatherCIType: "E",
+			fatherCI: 1727772,
+			
+			representativeFirstName: "Dario",
+			representativeLastName: "Peñaranda",
+			representativeEmail: "dario@gmail.com",
+			representativePhoneNumber: "+58928273423",
+			representativeCIType: "E",
+			representativeCI: 1727772,
+			
+			firstName : "Frank",
+			lastName : "Peñaranda",
+			ciType : "V",
+			ci : 29100800,
+			dateOfBirth : "11/11/01",
+			gender : "M",
+			healthProblem : false,
+			healthProblemE : "",
+			email : "coffemanfp@gmail.com",
+			phoneNumber : "+584167634291",
+			address : "Valle Frio",
+			scholarship : true,
+			canaima : true,
+			conditionOfHousing : "PROPIA",
+			year : 4,
+			age : 15,
+			size : "L",
+			weight : 60,
+			repeatAsignature : "Castellano",
+			pendingAsignature : "",
+			regular : true,
+			inscriptionDate : "10/08/15"
+			
+		){id,message,code}
+	}
 
     ----------------------
 -------------------------------------------
