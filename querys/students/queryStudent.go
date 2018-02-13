@@ -23,6 +23,7 @@ var QueryStudent = &graphql.Field{
 		studentFound := &student.Student{}
 		motherFound := &student.Mother{}
 		fatherFound := &student.Father{}
+		representativeFound := &student.Representative{}
 
 		kindID := p.Context.Value("user").(models.User).KindID
 
@@ -41,6 +42,7 @@ var QueryStudent = &graphql.Field{
 
 				motherFound.ID = studentFound.MotherID
 				fatherFound.ID = studentFound.FatherID
+				representativeFound.ID = studentFound.RepresentativeID
 
 				err = db.Where("id = ?", motherFound.ID).First(&motherFound).Error
 				if err != nil {
@@ -51,6 +53,12 @@ var QueryStudent = &graphql.Field{
 				err = db.Where("id = ?", fatherFound.ID).First(&fatherFound).Error
 				if err != nil {
 					studentFound.Message = "#QueryStudent# : Ocurrio un error buscando el padre del estudiante."
+					studentFound.Code = http.StatusBadGateway
+				}
+
+				err = db.Where("id = ?", representativeFound.ID).First(&representativeFound).Error
+				if err != nil {
+					studentFound.Message = "#QueryStudent# : Ocurrio un error buscando el representant del estudiante."
 					studentFound.Code = http.StatusBadGateway
 				}
 
@@ -68,6 +76,12 @@ var QueryStudent = &graphql.Field{
 				studentFound.FatherCIType = fatherFound.CIType
 				studentFound.FatherCI = fatherFound.CI
 
+				studentFound.RepresentativeFirstName = representativeFound.FirstName
+				studentFound.RepresentativeLastName = representativeFound.LastName
+				studentFound.RepresentativeEmail = representativeFound.Email
+				studentFound.RepresentativePhoneNumber = representativeFound.PhoneNumber
+				studentFound.RepresentativeCIType = representativeFound.CIType
+				studentFound.RepresentativeCI = representativeFound.CI
 			} else {
 				studentFound.Message = "#QueryStudent# : No tienes permisos para leer estudiantes."
 				studentFound.Code = http.StatusNonAuthoritativeInfo
