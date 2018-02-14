@@ -35,7 +35,6 @@ func UserCreate(w http.ResponseWriter, r *http.Request) {
 		utils.DisplayMessage(w, m)
 		return
 	}
-	fmt.Println(user)
 
 	//user.Password y user.ConfirmPassword deben coincidir para continuar.
 	if user.Password != user.ConfirmPassword {
