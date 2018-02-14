@@ -7,6 +7,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
+//QueryUsers Query GraphQL para consultar lista de Usuarios
 var QueryUsers = &graphql.Field{
 	Type: graphql.NewList(graphqlTypes.UserType),
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {

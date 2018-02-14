@@ -4,13 +4,13 @@ import "time"
 
 //Student Estudiante de la institucion
 type Student struct {
-	ID        uint `json:"id" gorm:"primary_key"`
+	ID        int `json:"id" gorm:"primary_key"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	DeletedAt *time.Time `sql:"index"`
 
 	//IDs
-	UserID uint `json:"userId" gorm:"not null;type:integer"`
+	UserID int `json:"userId" gorm:"not null;type:integer"`
 
 	CountryOfBirthID      int `json:"countryOfBirthID" gorm:"not null;type:integer"`
 	StateOfBirthID        int `json:"stateOfBirthID" gorm:"not null;type:integer"`
@@ -31,6 +31,27 @@ type Student struct {
 
 	// Datos del Estudiante.
 	SIGECOD string `json:"SIGECOD" gorm:"unique;type:varchar(20)"`
+
+	MotherFirstName   string `json:"motherFirstName" gorm:"-"`
+	MotherLastName    string `json:"motherLastName" gorm:"-"`
+	MotherEmail       string `json:"motherEmail" gorm:"-"`
+	MotherPhoneNumber string `json:"motherPhoneNumber" gorm:"-"`
+	MotherCIType      string `json:"motherCIType" gorm:"-"`
+	MotherCI          int    `json:"motherCI" gorm:"-"`
+
+	FatherFirstName   string `json:"fatherFirstName" gorm:"-"`
+	FatherLastName    string `json:"fatherLastName" gorm:"-"`
+	FatherEmail       string `json:"fatherEmail" gorm:"-"`
+	FatherPhoneNumber string `json:"fatherPhoneNumber" gorm:"-"`
+	FatherCIType      string `json:"fatherCIType" gorm:"-"`
+	FatherCI          int    `json:"fatherCI" gorm:"-"`
+
+	RepresentativeFirstName   string `json:"representativeFirstName" gorm:"-"`
+	RepresentativeLastName    string `json:"representativeLastName" gorm:"-"`
+	RepresentativeEmail       string `json:"representativeEmail" gorm:"-"`
+	RepresentativePhoneNumber string `json:"representativePhoneNumber" gorm:"-"`
+	RepresentativeCIType      string `json:"representativeCIType" gorm:"-"`
+	RepresentativeCI          int    `json:"representativeCI" gorm:"-"`
 
 	FirstName string `json:"firstName" gorm:"not null;type:varchar(50)"`
 	LastName  string `json:"lastName" gorm:"not null;type:varchar(50)"`
@@ -65,4 +86,7 @@ type Student struct {
 	PendingAsignature string `json:"pendingAsignature" gorm:"type:varchar(200)"`
 	Regular           bool   `json:"regular" gorm:"not null;type:boolean"`
 	InscriptionDate   string `json:"inscriptionDate" gorm:"not null;type:varchar(20)"`
+
+	Message string `json:"message" gorm:"-"`
+	Code    int    `json:"code" gorm:"-"`
 }

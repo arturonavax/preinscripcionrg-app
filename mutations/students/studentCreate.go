@@ -39,12 +39,6 @@ var StudentCreate = &graphql.Field{
 		"typeOfRoadID": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Int),
 		},
-		"fatherID": &graphql.ArgumentConfig{
-			Type: graphql.NewNonNull(graphql.Int),
-		},
-		"motherID": &graphql.ArgumentConfig{
-			Type: graphql.NewNonNull(graphql.Int),
-		},
 		"mentionID": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Int),
 		},
@@ -52,9 +46,6 @@ var StudentCreate = &graphql.Field{
 			Type: graphql.NewNonNull(graphql.Int),
 		},
 		"studentConditionID": &graphql.ArgumentConfig{
-			Type: graphql.NewNonNull(graphql.Int),
-		},
-		"representativeID": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Int),
 		},
 		"teacherID": &graphql.ArgumentConfig{
@@ -74,6 +65,60 @@ var StudentCreate = &graphql.Field{
 		},
 		"ci": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Int),
+		},
+		"motherFirstName": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"motherLastName": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"motherEmail": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"motherPhoneNumber": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"motherCIType": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"motherCI": &graphql.ArgumentConfig{
+			Type: graphql.Int,
+		},
+		"fatherFirstName": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"fatherLastName": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"fatherEmail": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"fatherPhoneNumber": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"fatherCIType": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"fatherCI": &graphql.ArgumentConfig{
+			Type: graphql.Int,
+		},
+		"representativeFirstName": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"representativeLastName": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"representativeEmail": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"representativePhoneNumber": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"representativeCIType": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"representativeCI": &graphql.ArgumentConfig{
+			Type: graphql.Int,
 		},
 		"dateOfBirth": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.String),
@@ -131,7 +176,9 @@ var StudentCreate = &graphql.Field{
 		},
 	},
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-
+		newMother := &student.Mother{}
+		newFather := &student.Father{}
+		newRepresentative := &student.Representative{}
 		newStudent := &student.Student{}
 		m := &models.CreateMessage{}
 		kind := &models.UserKind{}
@@ -152,15 +199,33 @@ var StudentCreate = &graphql.Field{
 		newStudent.ParishID, _ = p.Args["parishID"].(int)
 		newStudent.SectorID, _ = p.Args["sectorID"].(int)
 		newStudent.TypeOfRoadID, _ = p.Args["typeOfRoadID"].(int)
-		newStudent.FatherID, _ = p.Args["fatherID"].(int)
-		newStudent.MotherID, _ = p.Args["motherID"].(int)
 		newStudent.MentionID, _ = p.Args["mentionID"].(int)
 		newStudent.SectionID, _ = p.Args["sectionID"].(int)
 		newStudent.StudentConditionID, _ = p.Args["studentConditionID"].(int)
-		newStudent.RepresentativeID, _ = p.Args["representativeID"].(int)
 		newStudent.TeacherID, _ = p.Args["teacherID"].(int)
 
 		newStudent.SIGECOD, _ = p.Args["SIGECOD"].(string)
+
+		newStudent.MotherFirstName, _ = p.Args["motherFirstName"].(string)
+		newStudent.MotherLastName, _ = p.Args["motherLastName"].(string)
+		newStudent.MotherEmail, _ = p.Args["motherEmail"].(string)
+		newStudent.MotherPhoneNumber, _ = p.Args["motherPhoneNumber"].(string)
+		newStudent.MotherCIType, _ = p.Args["motherCIType"].(string)
+		newStudent.MotherCI, _ = p.Args["motherCI"].(int)
+
+		newStudent.FatherFirstName, _ = p.Args["fatherFirstName"].(string)
+		newStudent.FatherLastName, _ = p.Args["fatherLastName"].(string)
+		newStudent.FatherEmail, _ = p.Args["fatherEmail"].(string)
+		newStudent.FatherPhoneNumber, _ = p.Args["fatherPhoneNumber"].(string)
+		newStudent.FatherCIType, _ = p.Args["fatherCIType"].(string)
+		newStudent.FatherCI, _ = p.Args["fatherCI"].(int)
+
+		newStudent.RepresentativeFirstName, _ = p.Args["representativeFirstName"].(string)
+		newStudent.RepresentativeLastName, _ = p.Args["representativeLastName"].(string)
+		newStudent.RepresentativeEmail, _ = p.Args["representativeEmail"].(string)
+		newStudent.RepresentativePhoneNumber, _ = p.Args["representativePhoneNumber"].(string)
+		newStudent.RepresentativeCIType, _ = p.Args["representativeCIType"].(string)
+		newStudent.RepresentativeCI, _ = p.Args["representativeCI"].(int)
 
 		newStudent.FirstName, _ = p.Args["firstName"].(string)
 
@@ -205,6 +270,28 @@ var StudentCreate = &graphql.Field{
 		newStudent.Regular, _ = p.Args["regular"].(bool)
 
 		newStudent.InscriptionDate, _ = p.Args["inscriptionDate"].(string)
+
+		newMother.FirstName = newStudent.MotherFirstName
+		newMother.LastName = newStudent.MotherLastName
+		newMother.Email = newStudent.MotherEmail
+		newMother.PhoneNumber = newStudent.MotherPhoneNumber
+		newMother.CIType = newStudent.MotherCIType
+		newMother.CI = newStudent.MotherCI
+
+		newFather.FirstName = newStudent.FatherFirstName
+		newFather.LastName = newStudent.FatherLastName
+		newFather.Email = newStudent.FatherEmail
+		newFather.PhoneNumber = newStudent.FatherPhoneNumber
+		newFather.CIType = newStudent.FatherCIType
+		newFather.CI = newStudent.FatherCI
+
+		newRepresentative.FirstName = newStudent.RepresentativeFirstName
+		newRepresentative.LastName = newStudent.RepresentativeLastName
+		newRepresentative.Email = newStudent.RepresentativeEmail
+		newRepresentative.PhoneNumber = newStudent.RepresentativePhoneNumber
+		newRepresentative.CIType = newStudent.RepresentativeCIType
+		newRepresentative.CI = newStudent.RepresentativeCI
+
 		//Se instancia una conexion a la base de datos.
 		db := databases.GetConnectionDB()
 		defer db.Close()
@@ -214,13 +301,40 @@ var StudentCreate = &graphql.Field{
 
 		//Permisos para crear estudiantes.
 		if kind.CreateStudents {
-			//Se crea el Estudiante en la base de datos.
-			err := db.Create(&newStudent).Error
-			if err != nil {
-				m.Message = "#StudentCreate# : Ocurrio un Error."
-				m.Code = http.StatusBadGateway
+			tx := db.Begin()
 
+			err := tx.Create(&newMother).Error
+			if err != nil {
+				m.Message = "#StudentCreate# : Ocurrio un Error al registrar a la madre."
+				m.Code = http.StatusBadGateway
+				tx.Rollback()
+			}
+
+			err = tx.Create(&newFather).Error
+			if err != nil {
+				m.Message = "#StudentCreate# : Ocurrio un Error al registrar al padre."
+				m.Code = http.StatusBadGateway
+				tx.Rollback()
+			}
+
+			err = tx.Create(&newRepresentative).Error
+			if err != nil {
+				m.Message = "#StudentCreate# : Ocurrio un Error al registrar al representante."
+				m.Code = http.StatusBadGateway
+				tx.Rollback()
+			}
+
+			newStudent.MotherID = newMother.ID
+			newStudent.FatherID = newFather.ID
+			newStudent.RepresentativeID = newRepresentative.ID
+
+			//Se crea el Estudiante en la base de datos.
+			err = tx.Create(&newStudent).Error
+			if err != nil {
+				m.Message = "#StudentCreate# : Ocurrio un Error al registrar el estudiante."
+				m.Code = http.StatusBadGateway
 			} else {
+				tx.Commit()
 				log.Printf("$ UserID:%d { Registro a '%s %s' como nuevo estudiante (StudentID:%d) } $\n",
 					userID,
 					newStudent.FirstName,
@@ -230,13 +344,11 @@ var StudentCreate = &graphql.Field{
 				m.ID = newStudent.ID
 				m.Code = http.StatusCreated
 				m.Message = "#StudentCreate# : El estudiante se creo exitosamente!."
-
 			}
 		} else {
 			log.Printf("$ UserID:%d { No tiene permisos para crear estudiantes } $\n", userID)
 			m.Code = http.StatusNonAuthoritativeInfo
 			m.Message = "#StudentCreate# : No tienes permisos para crear estudiantes."
-
 		}
 
 		//Devuelve el mensaje al usuario

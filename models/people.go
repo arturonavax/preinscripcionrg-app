@@ -4,7 +4,7 @@ import "time"
 
 //People Persona de la aplicacion
 type People struct {
-	ID        uint `json:"id" gorm:"primary_key"`
+	ID        int `json:"id" gorm:"primary_key"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
 	DeletedAt *time.Time `sql:"index"`

@@ -7,6 +7,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
+//QueryMe Query GraphQL para consultar datos del usuario
 var QueryMe = &graphql.Field{
 	Type: graphqlTypes.UserType,
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {

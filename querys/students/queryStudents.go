@@ -8,6 +8,7 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
+//QueryStudents Query GraphQL para consultar lista de estudiantes
 var QueryStudents = &graphql.Field{
 	Type: graphql.NewList(graphqlTypes.StudentType),
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {

@@ -4,12 +4,15 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-//StudentType Objecto GraphQL para Estudiantes.
+//StudentType Objeto GraphQL para Estudiantes.
 var StudentType = graphql.NewObject(
 	graphql.ObjectConfig{
 		Name: "Student",
 		Fields: graphql.Fields{
 			"id": &graphql.Field{
+				Type: graphql.Int,
+			},
+			"userID": &graphql.Field{
 				Type: graphql.Int,
 			},
 			"countryOfBirthID": &graphql.Field{
@@ -59,6 +62,60 @@ var StudentType = graphql.NewObject(
 			},
 			"SIGECOD": &graphql.Field{
 				Type: graphql.String,
+			},
+			"motherFirstName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherLastName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherEmail": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherPhoneNumber": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherCIType": &graphql.Field{
+				Type: graphql.String,
+			},
+			"motherCI": &graphql.Field{
+				Type: graphql.Int,
+			},
+			"fatherFirstName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherLastName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherEmail": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherPhoneNumber": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherCIType": &graphql.Field{
+				Type: graphql.String,
+			},
+			"fatherCI": &graphql.Field{
+				Type: graphql.Int,
+			},
+			"representativeFirstName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativeLastName": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativeEmail": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativePhoneNumber": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativeCIType": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativeCI": &graphql.Field{
+				Type: graphql.Int,
 			},
 			"firstName": &graphql.Field{
 				Type: graphql.String,
