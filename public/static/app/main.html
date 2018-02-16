@@ -50,12 +50,17 @@
             
             <article id="container-profile" class="section__container section__container--profile">
                 
-                <div class="container__title">
-                    <h2 class="title">
-                        <span class="title__decoration">My</span>
-                        Profile 
-                    </h2>
-                    <button id="btn-editProfile" class="edit-btn"></button>
+                <div id="top-profileContainer" class="container__title">
+                    <div class="title__item title__text">
+                        <h2 class="title">
+                            <span class="title__decoration">My</span>
+                            Profile 
+                        </h2>
+                    </div>
+                    <div class="title__item title__itemBtn">
+                        <button id="btn-editProfile" class="itemBtn itemBtn--edit"></button>
+                        <button id="btn-back" class="itemBtn itemBtn--back"></button>
+                    </div>
                 </div>
                 
                 <div id="userID-profileContainer" class="container__item">
@@ -98,7 +103,7 @@
                     <div id="kindIDData-container" class="item__data__content"></div>
                 </div>
                 
-                <div id="containerBtns" class="container__item container__item--btn">
+                <div id="btnContainer-profileContainer" class="container__item container__item--btn">
                 </div>
                 
             </article>
@@ -153,7 +158,7 @@
         <script src="/js/utils.js"></script>
         <script src="/js/menu.js"></script>
         <script src="/js/app/profile.js"></script>
-        <script src="/js/app/app.js"></script>
+        <script src="/js/app/main.js"></script>
     </body>
 </html>
 

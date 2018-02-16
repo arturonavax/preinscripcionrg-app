@@ -78,6 +78,11 @@
 
         renderEdit: function() {
             let pv = this.ProfileView;
+            pv.BtnCancelEditProfile.textContent = "Cancelar";
+            pv.BtnCancelEditProfile.classList.add("item__submit");
+
+            pv.BtnSaveEditProfile.textContent = "Guardar";
+            pv.BtnSaveEditProfile.classList.add("item__submit");
 
             pv.UsernameDataEdit.value = pv.UsernameDataContainer.textContent;
             pv.UsernameDataEdit.id = pv.UsernameDataContainer.id;
@@ -115,16 +120,9 @@
             pv.LastNameProfileContainer.replaceChild(pv.LastNameDataEdit, pv.LastNameDataContainer);
             pv.AddressProfileContainer.replaceChild(pv.AddressDataEdit, pv.AddressDataContainer);
             pv.PhoneNumberProfileContainer.replaceChild(pv.PhoneNumberDataEdit, pv.PhoneNumberDataContainer);
-            /*
-            this.ProfileView.UserIDProfileContainer.removeChild(this.ProfileView.UserIDDataContainer);
-            this.ProfileView.UsernameProfileContainer.removeChild(this.ProfileView.UsernameDataContainer);
-            this.ProfileView.EmailProfileContainer.removeChild(this.ProfileView.EmailDataContainer);
-            this.ProfileView.FirstNameProfileContainer.removeChild(this.ProfileView.FirstNameDataContainer);
-            this.ProfileView.LastNameProfileContainer.removeChild(this.ProfileView.LastNameDataContainer);
-            this.ProfileView.AddressProfileContainer.removeChild(this.ProfileView.AddressDataContainer);
-            this.ProfileView.PhoneNumberProfileContainer.removeChild(this.ProfileView.PhoneNumberDataContainer);
-            this.ProfileView.KindIDProfileContainer.removeChild(this.ProfileView.KindIDDataContainer);
-            */
+
+            pv.BtnContainerEditProfile.appendChild(pv.BtnCancelEditProfile);
+            pv.BtnContainerEditProfile.appendChild(pv.BtnSaveEditProfile);
         }
     }
 
@@ -133,6 +131,10 @@
 (function(){
     self.ProfileView = function(){
         this.ContainerProfile = $("#container-profile");
+
+        this.TopProfileContainer = $("#top-profileContainer");
+
+        this.BtnEditProfile = document.createElement("button");
 
         this.UserIDProfileContainer = $("#userID-profileContainer");
         this.UsernameProfileContainer = $("#username-profileContainer");
@@ -159,69 +161,25 @@
         this.AddressDataEdit = document.createElement("input");
         this.PhoneNumberDataEdit = document.createElement("input");
         this.KindIDDataEdit = document.createElement("input");
-    }
-    
-    self.ProfileView.prototype = {
+
+        this.BtnContainerEditProfile = $("#btnContainer-profileContainer");
+        this.BtnCancelEditProfile = document.createElement("button"); 
+        this.BtnSaveEditProfile = document.createElement("button"); 
     }
 })();
 
-var miToken = sessionStorage.getItem("token");
+/* -------------------------------------------------------------------------- */
 
-var miPerfilVista = new ProfileView();
-var miPerfil = new Profile(miPerfilVista);
-miPerfil.token = miToken;
-
-miPerfil.render();
-miPerfil.renderEdit();
-
-/*
-var miToken = sessionStorage.getItem("token");
-
-var miProfileView = new ProfileView();
-var miProfile = new Profile(miProfileView);
-miProfile.token = miToken;
-
-miProfile.render();
+let tokenUser = sessionStorage.getItem("token");
 
 let btnEditProfile = $("#btn-editProfile");
 
+let profileView = new ProfileView(),
+    profileUser = new Profile(profileView);
+
+profileUser.token = tokenUser;
+profileUser.render();
+
 btnEditProfile.addEventListener("click", function(){
-    miProfile.renderEdit();
+    profileUser.renderEdit();
 });
-*/
-
-/*
-function GetProfile() {
-
-    let userIDContainer = $("#userID-container"),
-        usernameContainer = $("#username-container"),
-        emailContainer = $("#email-container"),
-        firstNameContainer = $("#firstName-container"),
-        lastNameContainer = $("#lastName-container"),
-        addressContainer = $("#address-container"),
-        phoneNumberContainer = $("#phoneNumber-container"),
-        containerBtns = $("#containerBtns");
-
-    var data = "query {me{id,username,email,firstName,lastName,address,phoneNumber,kindID}}"; 
-
-    requestAjaxToken("POST", "/graphql", data)
-    .then( respuesta => {
-        dataGraph = respuesta.response.data
-        console.log(respuesta);
-
-        userID.textContent = dataGraph.me.id;
-        username.textContent = dataGraph.me.username;
-        email.textContent = dataGraph.me.email;
-        firstName.textContent = dataGraph.me.firstName;
-        lastName.textContent = dataGraph.me.lastName;
-        address.textContent = dataGraph.me.address;
-        phoneNumber.textContent = dataGraph.me.phoneNumber;
-        kindUser.textContent = dataGraph.me.kindID;
-
-        titleUser.textContent = dataGraph.me.username;
-    })
-    .catch( error => {
-        console.log(error);
-    });
-}
-*/
