@@ -66,6 +66,11 @@
         },
         render: function() {
             let pv = this.ProfileView;
+
+            pv.BtnEditProfile.classList.add("itemBtn");
+            pv.BtnEditProfile.classList.add("itemBtn--edit");
+
+            pv.BtnProfileContainer.insertBefore(pv.BtnEditProfile, pv.BtnProfileContainer[0]);
             pv.UserIDDataContainer.textContent = this.UserID;
             pv.UsernameDataContainer.textContent = this.Username;
             pv.EmailDataContainer.textContent = this.Email;
@@ -133,8 +138,9 @@
         this.ContainerProfile = $("#container-profile");
 
         this.TopProfileContainer = $("#top-profileContainer");
-
         this.BtnEditProfile = document.createElement("button");
+        this.BtnProfileContainer = $("#btnContainer-topProfile");
+
 
         this.UserIDProfileContainer = $("#userID-profileContainer");
         this.UsernameProfileContainer = $("#username-profileContainer");
