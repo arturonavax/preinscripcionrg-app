@@ -27,13 +27,13 @@ function requestAjax(method, url, obj) {
 
 }
 
-function requestAjaxToken(method, url, obj) {
+function requestAjaxToken(method, url, token, obj) {
     return new Promise(function(resolver, rechazar){
         let xhr = new XMLHttpRequest();
 
         xhr.open(method, url, true);
         xhr.setRequestHeader("Content-Type", "application/graphql");
-        xhr.setRequestHeader("Authorization", sessionStorage.getItem("token"));
+        xhr.setRequestHeader("Authorization", token);
         xhr.withCredentials = true;
         xhr.setRequestHeader("cache-control", "no-cache");
         xhr.addEventListener("load", e => {
@@ -42,7 +42,7 @@ function requestAjaxToken(method, url, obj) {
                 status: self.status,
                 response: JSON.parse(self.response)
             };
-            resolver(respuesta)
+            resolver(respuesta);
         })
         xhr.addEventListener("error", e => {
             let self = e.target;

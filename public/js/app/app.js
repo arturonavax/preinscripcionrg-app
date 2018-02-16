@@ -1,12 +1,12 @@
-/*if (!sessionStorage.getItem("token")) {
+if (!sessionStorage.getItem("token")) {
     window.location.replace("/user");
-}*/
+}
 
 var data = "query {me{id,username,email,firstName,lastName,address,phoneNumber,kindID}}"; 
-
+/*
 requestAjaxToken("POST", "/graphql", data)
  .then( respuesta => {
-    dataGraph = respuesta.response.data
+    dataGraph = respuesta.response.data;
     console.log(respuesta);
 
     userID.textContent = dataGraph.me.id;
@@ -102,3 +102,4 @@ btnEdit.addEventListener("click", function() {
 
     containerBtns.appendChild(btnSave);
 });
+*/
