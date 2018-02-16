@@ -66,6 +66,15 @@
         },
         render: function() {
             let pv = this.ProfileView;
+            let self = this;
+
+            pv.BtnEditProfile.classList.add("itemBtn");
+            pv.BtnEditProfile.classList.add("itemBtn--edit");
+            pv.BtnEditProfile.addEventListener("click", function(){
+               self.renderEdit(); 
+            });
+
+            pv.BtnEditProfileContainer.appendChild(pv.BtnEditProfile);
             pv.UserIDDataContainer.textContent = this.UserID;
             pv.UsernameDataContainer.textContent = this.Username;
             pv.EmailDataContainer.textContent = this.Email;
@@ -78,11 +87,18 @@
 
         renderEdit: function() {
             let pv = this.ProfileView;
+            let self = this;
             pv.BtnCancelEditProfile.textContent = "Cancelar";
             pv.BtnCancelEditProfile.classList.add("item__submit");
+            pv.BtnCancelEditProfile.addEventListener("click", function(){
+                self.cancelEdit();
+            });
 
             pv.BtnSaveEditProfile.textContent = "Guardar";
             pv.BtnSaveEditProfile.classList.add("item__submit");
+            pv.BtnSaveEditProfile.addEventListener("click", function(){
+                self.saveEdit();
+            });
 
             pv.UsernameDataEdit.value = pv.UsernameDataContainer.textContent;
             pv.UsernameDataEdit.id = pv.UsernameDataContainer.id;
@@ -123,6 +139,21 @@
 
             pv.BtnContainerEditProfile.appendChild(pv.BtnCancelEditProfile);
             pv.BtnContainerEditProfile.appendChild(pv.BtnSaveEditProfile);
+        },
+
+        cancelEdit: function(){
+            let pv = this.ProfileView;
+            pv.UsernameProfileContainer.replaceChild(pv.UsernameDataContainer, pv.UsernameDataEdit);
+            pv.EmailProfileContainer.replaceChild(pv.EmailDataContainer, pv.EmailDataEdit);
+            pv.FirstNameProfileContainer.replaceChild(pv.FirstNameDataContainer, pv.FirstNameDataEdit);
+            pv.LastNameProfileContainer.replaceChild(pv.LastNameDataContainer, pv.LastNameDataEdit);
+            pv.AddressProfileContainer.replaceChild(pv.AddressDataContainer, pv.AddressDataEdit);
+            pv.PhoneNumberProfileContainer.replaceChild(pv.PhoneNumberDataContainer, pv.PhoneNumberDataEdit);
+        },
+
+        saveEdit: function(){
+            let pv = this.ProfileView;
+            let username = pv.UsernameDataEdit.value;
         }
     }
 
@@ -133,8 +164,10 @@
         this.ContainerProfile = $("#container-profile");
 
         this.TopProfileContainer = $("#top-profileContainer");
-
         this.BtnEditProfile = document.createElement("button");
+        this.BtnProfileContainer = $("#btnContainer-topProfile");
+        this.BtnEditProfileContainer = $("#btnContainer-editProfile");
+
 
         this.UserIDProfileContainer = $("#userID-profileContainer");
         this.UsernameProfileContainer = $("#username-profileContainer");
@@ -179,7 +212,3 @@ let profileView = new ProfileView(),
 
 profileUser.token = tokenUser;
 profileUser.render();
-
-btnEditProfile.addEventListener("click", function(){
-    profileUser.renderEdit();
-});
