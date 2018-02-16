@@ -27,11 +27,11 @@ function requestAjax(method, url, obj) {
 
 }
 
-function requestAjaxToken(method, url, token, obj) {
+function requestAjaxToken(method, url, token, obj, async) {
     return new Promise(function(resolver, rechazar){
         let xhr = new XMLHttpRequest();
 
-        xhr.open(method, url, true);
+        xhr.open(method, url, async);
         xhr.setRequestHeader("Content-Type", "application/graphql");
         xhr.setRequestHeader("Authorization", token);
         xhr.withCredentials = true;
@@ -47,7 +47,7 @@ function requestAjaxToken(method, url, token, obj) {
         xhr.addEventListener("error", e => {
             let self = e.target;
     
-            rechazar(selft);
+            rechazar(self);
         });
     
         xhr.send(obj);

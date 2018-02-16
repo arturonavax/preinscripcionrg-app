@@ -2,8 +2,8 @@ if (!sessionStorage.getItem("token")) {
     window.location.replace("/user");
 }
 
-var data = "query {me{id,username,email,firstName,lastName,address,phoneNumber,kindID}}"; 
 /*
+var data = "query {me{id,username,email,firstName,lastName,address,phoneNumber,kindID}}"; 
 requestAjaxToken("POST", "/graphql", data)
  .then( respuesta => {
     dataGraph = respuesta.response.data;
