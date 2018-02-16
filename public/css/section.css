@@ -55,7 +55,7 @@
         .container__title {
             width: 100%;
             padding-bottom: 10px;
-            line-height: 35px;
+            height: 60px;
             
             display: inline-block;
             text-align: center;
@@ -63,6 +63,10 @@
             color: #565656;
             border-bottom: 2px dotted #939393;
         }
+
+.title__item {
+    display: inline-block;
+}
 
             .title {
                 font-family: maven-blod;
@@ -78,13 +82,12 @@
                 color: #da373b;
             }
 
-        .edit-btn {
+        .itemBtn {
             height: 35px;
             width: 35px;
             display: inline-block;
             font-size: 24px;
             cursor: pointer;
-            float: right;
             line-height: 35px;
 
             border: none;
@@ -92,7 +95,7 @@
             background: none;
         }
 
-        .edit-btn::before {
+        .itemBtn--edit::before {
             font-family: icons;
             content: "\e906";
 

@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?9hnnvh');
-  src:  url('fonts/icomoon.eot?9hnnvh#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?9hnnvh') format('truetype'),
-    url('fonts/icomoon.woff?9hnnvh') format('woff'),
-    url('fonts/icomoon.svg?9hnnvh#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?iy1ipu');
+  src:  url('fonts/icomoon.eot?iy1ipu#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?iy1ipu') format('truetype'),
+    url('fonts/icomoon.woff?iy1ipu') format('woff'),
+    url('fonts/icomoon.svg?iy1ipu#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -33,9 +33,6 @@
 .icon-phone:before {
   content: "\e942";
 }
-.icon-address-book:before {
-  content: "\e944";
-}
 .icon-envelop:before {
   content: "\e945";
 }
@@ -54,26 +51,23 @@
 .icon-search:before {
   content: "\e986";
 }
-.icon-cogs:before {
-  content: "\e995";
-}
 .icon-menu:before {
   content: "\e9bd";
 }
 .icon-heart:before {
   content: "\e9da";
 }
-.icon-man:before {
-  content: "\e9dc";
-}
-.icon-woman:before {
-  content: "\e9dd";
-}
 .icon-enter:before {
   content: "\ea13";
 }
 .icon-exit:before {
   content: "\ea14";
+}
+.icon-arrow-right:before {
+  content: "\ea34";
+}
+.icon-arrow-left:before {
+  content: "\ea38";
 }
 .icon-facebook2:before {
   content: "\ea91";
