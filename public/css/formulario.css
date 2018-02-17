@@ -39,20 +39,19 @@
         .item__input {
             height: 35px;
             width: 100%;
-            margin-bottom: 10px;
             padding-left: 5px;
 
             border: 1px solid #939393;
             border-radius: 5px;
         }
-.item__input--edit {
-    padding-left: 15px;
-    font-family: maven-blod;
-    font-size: 18px;
-    
-    color: #565656;
-    background-color: transparent;
-}
+        .item__input--edit {
+            padding-left: 15px;
+            font-family: maven-blod;
+            font-size: 18px;
+
+            color: #565656;
+            background-color: transparent;
+        }
 
 
         .item__input--radio{
