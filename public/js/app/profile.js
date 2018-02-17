@@ -1,6 +1,7 @@
 //Profile
 (function(){
     self.Profile = function(profileView){
+        this.Token = "";
         this.UserID = 0;
         this.Username = "";
         this.Email = "";
@@ -15,6 +16,7 @@
 
     self.Profile.prototype = {
         set token(token){
+            this.Token = token;
             let query = `
 
             query {
@@ -90,20 +92,17 @@
             let self = this;
             pv.BtnCancelEditProfile.textContent = "Cancelar";
             pv.BtnCancelEditProfile.classList.add("item__submit");
+            pv.BtnCancelEditProfile.classList.add("item__submit--edit");
             pv.BtnCancelEditProfile.addEventListener("click", function(){
                 self.cancelEdit();
             });
 
             pv.BtnSaveEditProfile.textContent = "Guardar";
             pv.BtnSaveEditProfile.classList.add("item__submit");
+            pv.BtnSaveEditProfile.classList.add("item__submit--edit");
             pv.BtnSaveEditProfile.addEventListener("click", function(){
                 self.saveEdit();
             });
-
-            pv.UsernameDataEdit.value = pv.UsernameDataContainer.textContent;
-            pv.UsernameDataEdit.id = pv.UsernameDataContainer.id;
-            pv.UsernameDataEdit.classList.add("item__input");
-            pv.UsernameDataEdit.classList.add("item__input--edit");
 
             pv.EmailDataEdit.value = pv.EmailDataContainer.textContent;
             pv.EmailDataEdit.id = pv.EmailDataContainer.id;
@@ -130,7 +129,6 @@
             pv.PhoneNumberDataEdit.classList.add("item__input");
             pv.PhoneNumberDataEdit.classList.add("item__input--edit");
 
-            pv.UsernameProfileContainer.replaceChild(pv.UsernameDataEdit, pv.UsernameDataContainer);
             pv.EmailProfileContainer.replaceChild(pv.EmailDataEdit, pv.EmailDataContainer);
             pv.FirstNameProfileContainer.replaceChild(pv.FirstNameDataEdit, pv.FirstNameDataContainer);
             pv.LastNameProfileContainer.replaceChild(pv.LastNameDataEdit, pv.LastNameDataContainer);
@@ -143,17 +141,57 @@
 
         cancelEdit: function(){
             let pv = this.ProfileView;
-            pv.UsernameProfileContainer.replaceChild(pv.UsernameDataContainer, pv.UsernameDataEdit);
             pv.EmailProfileContainer.replaceChild(pv.EmailDataContainer, pv.EmailDataEdit);
             pv.FirstNameProfileContainer.replaceChild(pv.FirstNameDataContainer, pv.FirstNameDataEdit);
             pv.LastNameProfileContainer.replaceChild(pv.LastNameDataContainer, pv.LastNameDataEdit);
             pv.AddressProfileContainer.replaceChild(pv.AddressDataContainer, pv.AddressDataEdit);
             pv.PhoneNumberProfileContainer.replaceChild(pv.PhoneNumberDataContainer, pv.PhoneNumberDataEdit);
+
+            pv.BtnContainerEditProfile.removeChild(pv.BtnCancelEditProfile);
+            pv.BtnContainerEditProfile.removeChild(pv.BtnSaveEditProfile);
         },
 
         saveEdit: function(){
             let pv = this.ProfileView;
-            let username = pv.UsernameDataEdit.value;
+            let email = pv.EmailDataEdit.value,
+                firstName = pv.FirstNameDataEdit.value,
+                lastName = pv.LastNameDataEdit.value,
+                address = pv.AddressDataEdit.value,
+                phoneNumber = pv.PhoneNumberDataEdit.value;
+            
+            let mutation = `
+            
+            mutation {
+                meU(
+                    email: "${email}",
+                    firstName: "${firstName}",
+                    lastName: "${lastName}",
+                    address: "${address}",
+                    phoneNumber: "${phoneNumber}"
+                ){id,message,code}
+            }
+
+            `
+
+            requestAjaxToken("POST", "/graphql", this.Token, mutation, true)
+             .then( r => {
+                if (r.response.data.meU.code === 100) {
+                    pv.EmailDataContainer.textContent = email;
+                    pv.FirstNameDataContainer.textContent = firstName;
+                    pv.LastNameDataContainer.textContent = lastName;
+                    pv.AddressDataContainer.textContent = address;
+                    pv.PhoneNumberDataContainer.textContent = phoneNumber;
+
+                    pv.ProfileNotification.textContent = "Usuario actualizado con exito."
+                } else if (r.response.data.meU.code === 500) {
+                    pv.ProfileNotification.textContent = "Ocurrio un error."
+
+                }
+                console.log(r);
+             });
+
+
+            this.cancelEdit();
         }
     }
 
@@ -167,6 +205,7 @@
         this.BtnEditProfile = document.createElement("button");
         this.BtnProfileContainer = $("#btnContainer-topProfile");
         this.BtnEditProfileContainer = $("#btnContainer-editProfile");
+        this.ProfileNotification = $("#profileNotification");
 
 
         this.UserIDProfileContainer = $("#userID-profileContainer");
@@ -187,7 +226,6 @@
         this.PhoneNumberDataContainer = $("#phoneNumberData-container");
         this.KindIDDataContainer = $("#kindIDData-container");
 
-        this.UsernameDataEdit = document.createElement("input");
         this.EmailDataEdit = document.createElement("input");
         this.FirstNameDataEdit = document.createElement("input");
         this.LastNameDataEdit = document.createElement("input");
