@@ -101,6 +101,7 @@
             pv.BtnSaveEditProfile.classList.add("item__submit");
             pv.BtnSaveEditProfile.classList.add("item__submit--edit");
             pv.BtnSaveEditProfile.addEventListener("click", function(){
+                pv.BtnSaveEditProfile.textContent = "Guardando..";
                 self.saveEdit();
             });
 
@@ -175,6 +176,7 @@
 
             requestAjaxToken("POST", "/graphql", this.Token, mutation, true)
              .then( r => {
+                pv.BtnSaveEditProfile.textContent = "Guardar";
                 if (r.response.data.meU.code === 100) {
                     pv.EmailDataContainer.textContent = email;
                     pv.FirstNameDataContainer.textContent = firstName;

@@ -41,10 +41,13 @@ lastName.value = sessionStorage.getItem("lastName");
 address.value = sessionStorage.getItem("address");
 phoneNumber.value = sessionStorage.getItem("phoneNumber");
 
+btnSubmitLogin.addEventListener("click", function(){
+    btnSubmitLogin.value = "Entrando...";
+});
+
 formLogin.addEventListener("submit", e => {
     e.preventDefault();
     btnSubmitLogin.disabled = true;
-    btnSubmitLogin.value = "Enviando...";
     
     let obj = {
         username: usernameLogin.value,
@@ -54,6 +57,8 @@ formLogin.addEventListener("submit", e => {
     requestAjax(formLogin.method, formLogin.action, JSON.stringify(obj))
     .then( respuesta => {
         
+        btnSubmitLogin.disabled = false;
+        btnSubmitLogin.value = "Login";
         if (respuesta.response.code === 100) {
             
             formMessageLogin.textContent = "Logueo exitoso!";
@@ -88,14 +93,15 @@ formLogin.addEventListener("submit", e => {
     
     sessionStorage.setItem("username", usernameLogin.value);
 
-    btnSubmitLogin.disabled = false;
-    btnSubmitLogin.value = "Login";
+});
+
+btnSubmitRegister.addEventListener("click", function() {
+    btnSubmitRegister.value = "Registrando...";
 });
 
 formRegister.addEventListener("submit", e => {
     e.preventDefault();
     btnSubmitRegister.disabled = true;
-    btnSubmitRegister.value = "Enviando...";
 
     let obj = {
         username: usernameRegister.value,
@@ -110,7 +116,8 @@ formRegister.addEventListener("submit", e => {
 
     requestAjax(formRegister.method, formRegister.action, JSON.stringify(obj))
      .then( respuesta => {
-
+        btnSubmitRegister.disabled = false;
+        btnSubmitRegister.value = "Registrar";
          if (respuesta.response.code === 201) {
 
              formMessageRegister.textContent = "Registro exitoso";
@@ -143,6 +150,4 @@ formRegister.addEventListener("submit", e => {
     sessionStorage.setItem("address", address.value);
     sessionStorage.setItem("phoneNumber", phoneNumber.value);
 
-    btnSubmitRegister.disabled = false;
-    btnSubmitRegister.value = "Registrar";
 });
