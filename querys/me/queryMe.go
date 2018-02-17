@@ -11,8 +11,8 @@ import (
 var QueryMe = &graphql.Field{
 	Type: graphqlTypes.UserType,
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-		var user = models.User{}
-		var people = models.People{}
+		var user = &models.User{}
+		var people = &models.People{}
 		userID := p.Context.Value("user").(models.User).ID
 		peopleID := p.Context.Value("user").(models.User).PeopleID
 

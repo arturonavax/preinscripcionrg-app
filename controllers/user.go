@@ -22,8 +22,8 @@ func Users(w http.ResponseWriter, r *http.Request) {
 
 //UserCreate Controlador de Registro de Usuario.
 func UserCreate(w http.ResponseWriter, r *http.Request) {
-	people := models.People{}
-	user := models.User{}
+	people := &models.People{}
+	user := &models.User{}
 	m := models.Message{}
 	m2 := models.CreateMessage{}
 
