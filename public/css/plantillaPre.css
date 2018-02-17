@@ -1,0 +1,49 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.container {
+    margin: 50px auto;
+    width:80%;
+}
+
+.input{
+    height: 26px;
+    font-size: 16px;
+}
+
+.input10{
+    width:100%;
+}
+.input6{
+    width:60%;
+}
+
+.input5{
+    width:50%;
+}
+
+.input4{
+    width:40%;
+}
+
+.input3{
+    width:30%;
+}
+
+.input2{
+    width:20%;
+}

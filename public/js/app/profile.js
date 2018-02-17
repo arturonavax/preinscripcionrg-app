@@ -252,5 +252,3 @@ let profileView = new ProfileView(),
 
 profileUser.token = tokenUser;
 profileUser.render();
-
-$("#titleUser").textContent = profileUser.Username;

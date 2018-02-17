@@ -1,7 +1,3 @@
-function $(select) {
-    return document.querySelector(select);
-}
-
 var menu = $("#menu");
 var menuBtn = $("#menu__btn");
 var dark = $("#dark");
