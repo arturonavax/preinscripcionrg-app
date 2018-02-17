@@ -79,9 +79,14 @@
             border-radius: 5px;
         }
 
+        .item__submit--edit {
+            width: 45%;
+        }
+
         .item__submit:hover {
             cursor: pointer;
             background-color: #db2323;
         }
+
 
 /*------------------------------------------------------------*/

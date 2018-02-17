@@ -45,6 +45,7 @@
 
     .section__container--1 {
         height: 320px;
+        position: relative;
         overflow:hidden;
     }
 
@@ -70,6 +71,12 @@
             color: #565656;
             border-bottom: 2px dotted #939393;
         }
+
+.container__title--user {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
             .title__item {
                 width: auto;
