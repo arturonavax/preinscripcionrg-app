@@ -20,7 +20,7 @@ var RecreateTables string
 //Port Contiene el Puerto en el que desea ejecutar el Servidor.
 var Port int
 
-//InitProduction Permite crear las carpetas y archivos necesarios del sistema.
+//InitProduc Permite crear las carpetas y archivos necesarios del sistema.
 var InitProduc string
 
 //FlagControl Controla las banderas del ejecutable.

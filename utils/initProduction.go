@@ -7,6 +7,7 @@ import (
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 )
 
+//InitProduction Crea todos los archivos necesarios para el funcionamiento del programa.
 func InitProduction() {
 	os.Mkdir("databases", 0777)
 	os.Mkdir("security", 0777)
