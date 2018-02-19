@@ -1,6 +1,8 @@
 package states
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -24,6 +26,19 @@ var QueryStates = &graphql.Field{
 
 		if kind.ReadStates {
 			db.Find(&ListStates)
+
+			for i := 0; i < len(ListStates); i++ {
+				ListStates[i].Message = "#QueryStates# : Consulta exitosa."
+				ListStates[i].Code = http.StatusAccepted
+			}
+		} else {
+			State := student.State{
+				Message: "#QueryStates# : No tienes permisos para leer estados.",
+				Code:    http.StatusNonAuthoritativeInfo,
+			}
+
+			ListStates = append(ListStates, State)
+
 		}
 		return ListStates, nil
 	},

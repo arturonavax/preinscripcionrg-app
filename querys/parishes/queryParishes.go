@@ -1,6 +1,8 @@
 package parishes
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -24,6 +26,19 @@ var QueryParishes = &graphql.Field{
 
 		if kind.ReadParishes {
 			db.Find(&ListParishes)
+
+			for i := 0; i < len(ListParishes); i++ {
+				ListParishes[i].Message = "#QueryParishes# : Consulta exitosa."
+				ListParishes[i].Code = http.StatusAccepted
+			}
+		} else {
+
+			Parish := student.Parish{
+				Message: "#QueryParishes# : No tienes permisos para leer parroquias.",
+				Code:    http.StatusNonAuthoritativeInfo,
+			}
+
+			ListParishes = append(ListParishes, Parish)
 		}
 		return ListParishes, nil
 	},

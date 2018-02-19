@@ -32,6 +32,7 @@ var RootQuery = graphql.NewObject(
 			"student":  students.QueryStudent,
 			//Querys Asignaturas
 			"asignatures": asignatures.QueryAsignatures,
+			"asignature":  asignatures.QueryAsignature,
 			//Querys Paises
 			"countries": countries.QueryCountries,
 			//Querys Menciones

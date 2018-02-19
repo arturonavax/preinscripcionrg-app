@@ -14,4 +14,7 @@ type People struct {
 	Email       string `json:"email" gorm:"not null; unique;type:varchar(100)"`
 	PhoneNumber string `json:"phoneNumber" gorm:"type:varchar(20)"`
 	Address     string `json:"address" gorm:"type:varchar(200)"`
+
+	Message string `json:"message" gorm:"-"`
+	Code    int    `json:"code" gorm:"-"`
 }

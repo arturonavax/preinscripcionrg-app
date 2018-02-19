@@ -12,4 +12,7 @@ type Parish struct {
 	UserID         int    `json:"userID" gorm:"type:integer"`
 	MunicipalityID int    `json:"municipalityID" gorm:"type:integer"`
 	Name           string `json:"name" gorm:"not null;unique;type:varchar(50)"`
+
+	Message string `json:"message" gorm:"-"`
+	Code    int    `json:"code" gorm:"-"`
 }

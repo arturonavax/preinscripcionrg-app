@@ -16,4 +16,7 @@ type Father struct {
 	PhoneNumber string `json:"phoneNumber" gorm:"not null;type:varchar(15)"`
 	CIType      string `json:"ciType" gorm:"not null;type:char(1)"`
 	CI          int    `json:"ci" gorm:"not null;unique;type:integer"`
+
+	Message string `json:"message" gorm:"-"`
+	Code    int    `json:"code" gorm:"-"`
 }

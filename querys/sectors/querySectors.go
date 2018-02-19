@@ -1,6 +1,8 @@
 package sectors
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -24,6 +26,19 @@ var QuerySectors = &graphql.Field{
 
 		if kind.ReadSectors {
 			db.Find(&ListSectors)
+
+			for i := 0; i < len(ListSectors); i++ {
+				ListSectors[i].Message = "#QuerySectors# : Consulta exitosa."
+				ListSectors[i].Code = http.StatusAccepted
+			}
+		} else {
+			Sector := student.Sector{
+				Message: "#QuerySectors# : No tienes permisos para leer sectores.",
+				Code:    http.StatusNonAuthoritativeInfo,
+			}
+
+			ListSectors = append(ListSectors, Sector)
+
 		}
 		return ListSectors, nil
 	},

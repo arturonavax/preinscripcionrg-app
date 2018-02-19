@@ -25,4 +25,7 @@ type User struct {
 	Email       string `json:"email" gorm:"-"`
 	PhoneNumber string `json:"phoneNumber" gorm:"-"`
 	Address     string `json:"address" gorm:"-"`
+
+	Message string `json:"message" gorm:"-"`
+	Code    int    `json:"code" gorm:"-"`
 }

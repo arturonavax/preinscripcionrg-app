@@ -1,6 +1,8 @@
 package students
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -24,6 +26,19 @@ var QueryStudents = &graphql.Field{
 
 		if kind.ReadStudents {
 			db.Find(&ListStudent)
+
+			for i := 0; i < len(ListStudent); i++ {
+				ListStudent[i].Message = "#QueryStudents# : Consulta exitosa."
+				ListStudent[i].Code = http.StatusAccepted
+			}
+		} else {
+			Student := student.Student{
+				Message: "#QueryStudents# : No tienes permisos para leer estudiantes.",
+				Code:    http.StatusNonAuthoritativeInfo,
+			}
+
+			ListStudent = append(ListStudent, Student)
+
 		}
 		return ListStudent, nil
 	},

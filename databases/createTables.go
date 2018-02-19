@@ -49,8 +49,8 @@ func CreateTables() {
 
 	//Records basicos necesarios.
 	kind := &models.UserKind{}
-	kind.Name = "ESPECTADOR"
-	kind.Description = "No tiene ningun Permiso"
+	kind.Name = "REPRESENTANTE"
+	kind.Description = "Tiene los permisos basicos para poder utilizar la interfaz superficialmente y registrar usuarios"
 
 	status := &models.UserStatus{}
 	status.Name = "ACTIVO"

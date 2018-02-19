@@ -1,6 +1,8 @@
 package teachers
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -24,6 +26,19 @@ var QueryTeachers = &graphql.Field{
 
 		if kind.ReadTeachers {
 			db.Find(&ListTeachers)
+
+			for i := 0; i < len(ListTeachers); i++ {
+				ListTeachers[i].Message = "#QueryTeachers# : Consulta exitosa."
+				ListTeachers[i].Code = http.StatusAccepted
+			}
+		} else {
+
+			Teacher := student.Teacher{
+				Message: "#QueryTeachers# : No tienes permisos para leer profesores.",
+				Code:    http.StatusNonAuthoritativeInfo,
+			}
+
+			ListTeachers = append(ListTeachers, Teacher)
 		}
 		return ListTeachers, nil
 	},

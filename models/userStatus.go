@@ -12,4 +12,7 @@ type UserStatus struct {
 	UserID      int    `json:"userID" gorm:"type:integer"`
 	Name        string `json:"name" gorm:"not null;unique;varchar(50)"`
 	Description string `json:"description" grom:"varchar(200)"`
+
+	Message string `json:"message" gorm:"-"`
+	Code    int    `json:"code" gorm:"-"`
 }

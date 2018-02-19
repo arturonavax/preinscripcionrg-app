@@ -1,6 +1,8 @@
 package countries
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -24,6 +26,19 @@ var QueryCountries = &graphql.Field{
 
 		if kind.ReadCountries {
 			db.Find(&ListCountries)
+
+			for i := 0; i < len(ListCountries); i++ {
+				ListCountries[i].Message = "#QueryCountries# : Consulta exitosa."
+				ListCountries[i].Code = http.StatusAccepted
+			}
+
+		} else {
+			Country := student.Country{
+				Message: "#QueryCountries# : No tienes permisos para leer paises.",
+				Code:    http.StatusNonAuthoritativeInfo,
+			}
+
+			ListCountries = append(ListCountries, Country)
 		}
 		return ListCountries, nil
 	},

@@ -1,6 +1,8 @@
 package mentions
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -24,6 +26,20 @@ var QueryMentions = &graphql.Field{
 
 		if kind.ReadMentions {
 			db.Find(&ListMentions)
+
+			for i := 0; i < len(ListMentions); i++ {
+				ListMentions[i].Message = "#QueryMentions# : Consulta exitosa."
+				ListMentions[i].Code = http.StatusAccepted
+			}
+
+		} else {
+			Mention := student.Mention{
+				Message: "#QueryMentions# : No tienes permisos para leer Menciones.",
+				Code:    http.StatusNonAuthoritativeInfo,
+			}
+
+			ListMentions = append(ListMentions, Mention)
+
 		}
 		return ListMentions, nil
 	},

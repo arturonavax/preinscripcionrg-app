@@ -17,4 +17,7 @@ type Representative struct {
 	CIType       string `json:"ciType" gorm:"not null;type:char(1)"`
 	CI           int    `json:"ci" gorm:"not null;unique;type:integer"`
 	Relationship string `json:"relationship" gorm:"not null;type:varchar(30)"`
+
+	Message string `json:"message" gorm:"-"`
+	Code    int    `json:"code" gorm:"-"`
 }

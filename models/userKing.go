@@ -22,39 +22,42 @@ type UserKind struct {
 	UpdateMe bool `json:"updateMe" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Estudiantes
-	ReadStudents   bool `json:"readStudent" gorm:"not null;type:boolean;default:false"`
-	CreateStudents bool `json:"createStudent" gorm:"not null;type:boolean;default:false"`
+	ReadStudents   bool `json:"readStudent" gorm:"not null;type:boolean;default:true"`
+	CreateStudents bool `json:"createStudent" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Asignaturas
-	ReadAsignatures bool `json:"readAsignatures" gorm:"not null;type:boolean;default:false"`
+	ReadAsignatures bool `json:"readAsignatures" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Paises
-	ReadCountries bool `json:"readCountries" gorm:"not null;type:boolean;default:false"`
+	ReadCountries bool `json:"readCountries" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Menciones
-	ReadMentions bool `json:"readMentions" gorm:"not null;type:boolean;default:false"`
+	ReadMentions bool `json:"readMentions" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Municipios
-	ReadMunicipalities bool `json:"readMunicipalities" gorm:"not null;type:boolean;default:false"`
+	ReadMunicipalities bool `json:"readMunicipalities" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Parroquias
-	ReadParishes bool `json:"readParishes" gorm:"not null;type:boolean;default:false"`
+	ReadParishes bool `json:"readParishes" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Secciones
-	ReadSections bool `json:"readSections" gorm:"not null;type:boolean;default:false"`
+	ReadSections bool `json:"readSections" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Sectores
-	ReadSectors bool `json:"readSectors" gorm:"not null;type:boolean;default:false"`
+	ReadSectors bool `json:"readSectors" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Estados
-	ReadStates bool `json:"readStates" gorm:"not null;type:boolean;default:false"`
+	ReadStates bool `json:"readStates" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Condiciones de estudiantes
-	ReadStudentConditions bool `json:"readStudentConditions" gorm:"not null;type:boolean;default:false"`
+	ReadStudentConditions bool `json:"readStudentConditions" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Profesores
-	ReadTeachers bool `json:"readTeachers" gorm:"not null;type:boolean;default:false"`
+	ReadTeachers bool `json:"readTeachers" gorm:"not null;type:boolean;default:true"`
 
 	// Permisos sobre Tipos de vias
-	ReadTypeOfRoads bool `json:"readTypeOfRoads" gorm:"not null;type:boolean;default:false"`
+	ReadTypeOfRoads bool `json:"readTypeOfRoads" gorm:"not null;type:boolean;default:true"`
+
+	Message string `json:"message" gorm:"-"`
+	Code    int    `json:"code" gorm:"-"`
 }

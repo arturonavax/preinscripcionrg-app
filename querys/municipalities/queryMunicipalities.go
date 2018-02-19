@@ -1,6 +1,8 @@
 package municipalities
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -22,8 +24,21 @@ var QueryMunicipalities = &graphql.Field{
 
 		db.Where("id = ?", kindID).First(&kind)
 
-		if kind.ReadMentions {
+		if kind.ReadMunicipalities {
 			db.Find(&ListMunicipalities)
+
+			for i := 0; i < len(ListMunicipalities); i++ {
+				ListMunicipalities[i].Message = "#QueryMunicipalities# : Consulta exitosa."
+				ListMunicipalities[i].Code = http.StatusAccepted
+			}
+		} else {
+
+			Municipality := student.Municipality{
+				Message: "#QueryMunicipalities# : No tienes permisos para leer municipios.",
+				Code:    http.StatusNonAuthoritativeInfo,
+			}
+
+			ListMunicipalities = append(ListMunicipalities, Municipality)
 		}
 		return ListMunicipalities, nil
 	},

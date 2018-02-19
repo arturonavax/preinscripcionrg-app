@@ -1,6 +1,8 @@
 package users
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -23,6 +25,19 @@ var QueryUsers = &graphql.Field{
 
 		if kind.ReadUsers {
 			db.Find(&ListUsers)
+
+			for i := 0; i < len(ListUsers); i++ {
+				ListUsers[i].Message = "#QueryUsers# : Consulta exitosa."
+				ListUsers[i].Code = http.StatusAccepted
+			}
+		} else {
+			User := models.User{
+				Message: "#QueryUsers# : No tienes permisos para leer usuarios.",
+				Code:    http.StatusNonAuthoritativeInfo,
+			}
+
+			ListUsers = append(ListUsers, User)
+
 		}
 
 		return ListUsers, nil
