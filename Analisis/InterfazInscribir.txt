@@ -1,0 +1,27 @@
+
+Primer Panel : 
+
+    Tiene SIGE?. (Radio)
+    Codigo SIGE. (input)
+    Nombre del estudiante. (input)
+    Apellido del estudiante. (input)
+    Cedula del estudiante. (input)
+    Correo Electronico del estudiante. (input)
+    Numero de telefono del estudiante. (input)
+    Fecha de Nacimiento del estudiante. (input Date)
+
+Segundo Panel :
+
+    Pais de nacimiento del estudiante. (Select)
+    Estado de nacimiento del estudiante. (Select)
+    Municipio de Nacimiento del estudiante. (Select)
+    Genero. (Radio)
+    Plantel de procedencia. (input)
+
+Tercer Panel :
+
+    Presenta algun problema de salud que le impida hacer deportes?. (Radio)
+    Cual problema presenta?. (input)
+    Direccion de Habitacion del estudiante. (input)
+    Municipio del estudiante. (select)
+    Parroquia el estudiante. (select)
