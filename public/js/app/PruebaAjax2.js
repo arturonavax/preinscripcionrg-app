@@ -1,15 +1,3 @@
-
-var xhr = new XMLHttpRequest();
-console.log(xhr);
-
-xhr.open("GET", "/user", true);
-console.log(xhr);
-
-xhr.send();
-
-xhr.addEventListener("load", function(e){
-    console.log(e);
-=======
 let username = document.getElementById("username"),
     password = document.getElementById("password"),
     btn = document.getElementById("btn");
@@ -57,5 +45,4 @@ btn.addEventListener("click", function(){
             console.log(json2);
         });
     });
->>>>>>> 59f094c3388370674740e9db4667f26b15babfc3
 });
