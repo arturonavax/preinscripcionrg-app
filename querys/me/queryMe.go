@@ -1,6 +1,8 @@
 package me
 
 import (
+	"net/http"
+
 	"github.com/arthurnavah/PreInscripcionRG/databases"
 	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
@@ -29,6 +31,9 @@ var QueryMe = &graphql.Field{
 		user.Email = people.Email
 		user.LastName = people.LastName
 		user.PhoneNumber = people.PhoneNumber
+
+		user.Message = "#QueryMe : Consulta exitosa."
+		user.Code = http.StatusAccepted
 
 		user.Password = ""
 		//Devolvemos el usuario

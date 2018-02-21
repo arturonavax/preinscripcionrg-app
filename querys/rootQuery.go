@@ -35,24 +35,34 @@ var RootQuery = graphql.NewObject(
 			"asignature":  asignatures.QueryAsignature,
 			//Querys Paises
 			"countries": countries.QueryCountries,
+			"country":   countries.QueryCountry,
 			//Querys Menciones
 			"mentions": mentions.QueryMentions,
+			"mention":  mentions.QueryMention,
 			//Querys Municipios
 			"municipalities": municipalities.QueryMunicipalities,
+			"municipality":   municipalities.QueryMunicipality,
 			//Querys Parroquias
 			"parishes": parishes.QueryParishes,
+			"parish":   parishes.QueryParish,
 			//Querys Sectores
 			"sectors": sectors.QuerySectors,
+			"sector":  sectors.QuerySector,
 			//Querys Secciones
 			"sections": sections.QuerySections,
+			"section":  sections.QuerySection,
 			//Querys Estados
 			"states": states.QueryStates,
+			"state":  states.QueryState,
 			//Querys Profesores
 			"teachers": teachers.QueryTeachers,
+			"teacher":  teachers.QueryTeacher,
 			//Querys Tipos de vias
 			"typeOfRoads": typeOfRoads.QueryTypeOfRoads,
+			"typeOfRoad":  typeOfRoads.QueryTypeOfRoad,
 			//Querys Condiciones de Estudiantes
 			"studentConditions": studentConditions.QueryStudentConditions,
+			"studentCondition":  studentConditions.QueryStudentCondition,
 		},
 	},
 )

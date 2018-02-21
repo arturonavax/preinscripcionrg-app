@@ -1,7 +1,12 @@
 package teachers
 
 import (
+	"net/http"
+
+	"github.com/arthurnavah/PreInscripcionRG/databases"
+	"github.com/arthurnavah/PreInscripcionRG/models"
 	"github.com/arthurnavah/PreInscripcionRG/models/graphqlTypes"
+	"github.com/arthurnavah/PreInscripcionRG/models/student"
 	"github.com/graphql-go/graphql"
 )
 
@@ -14,6 +19,34 @@ var QueryTeacher = &graphql.Field{
 		},
 	},
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
-		return nil, nil
+		idQuery, isOK := p.Args["id"].(int)
+		kind := &models.UserKind{}
+		teacherFound := &student.Teacher{}
+
+		kindID := p.Context.Value("user").(models.User).KindID
+
+		if isOK {
+			db := databases.GetConnectionDB()
+			defer db.Close()
+
+			db.Where("id = ?", kindID).First(&kind)
+
+			if kind.ReadTeachers {
+				err := db.Where("id = ?", idQuery).First(&teacherFound).Error
+
+				if err != nil {
+					teacherFound.Message = "#QueryTeacher# : Ocurrio un error."
+					teacherFound.Code = http.StatusInternalServerError
+				} else {
+					teacherFound.Message = "#QueryTeacher# : Consulta exitosa."
+					teacherFound.Code = http.StatusAccepted
+				}
+			} else {
+				teacherFound.Message = "#QueryTeacher# : No tienes permisos para leer profesores."
+				teacherFound.Code = http.StatusNonAuthoritativeInfo
+			}
+		}
+
+		return teacherFound, nil
 	},
 }
