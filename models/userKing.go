@@ -28,6 +28,9 @@ type UserKind struct {
 	// Permisos sobre Asignaturas
 	ReadAsignatures bool `json:"readAsignatures" gorm:"not null;type:boolean;default:true"`
 
+	// Permisos sobre Instituciones
+	ReadInstitutions bool `json:"readInstitutions" gorm:"not null;type:boolean;default:true"`
+
 	// Permisos sobre Paises
 	ReadCountries bool `json:"readCountries" gorm:"not null;type:boolean;default:true"`
 
