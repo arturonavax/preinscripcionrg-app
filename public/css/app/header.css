@@ -114,7 +114,7 @@
     width: 70%;
     height: 100%;
     z-index: 20;
-    transform: translate(-100%, 0);
+    transform: translate(-105%, 0);
     transition: all .5s;
     
     position: fixed;
