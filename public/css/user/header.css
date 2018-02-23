@@ -1,0 +1,221 @@
+/*------------------------------------------------------------*/
+/*-------------------------- HEADER --------------------------*/
+/*------------------------------------------------------------*/
+
+.header {
+    width: 100%;
+    height: 60px;
+    padding: 16px;
+    position: fixed;
+    top: 0;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: #f3f3f3;
+    border-top: 4px solid #da373b;
+    box-shadow: 2px 2px 2px #c0c0c0;
+}
+
+    .header__logo {
+        font-family: oleo;
+        color: #565656;
+
+    }
+
+        .logo__title {
+            font-weight: 200;
+            display: inline-block;
+        }
+
+        .logo__decoration {
+            width: 5px;
+            height: 5px;
+            display: inline-block;
+
+            background-color: #da373b;
+            border-radius: 50%;
+        }
+
+    .header__btn {
+        font-family: icons;
+        cursor: pointer;
+
+        color: #565656;
+        border: none;
+        background: transparent;
+    }
+
+    .header__btn::before {
+        content: "\e9bd";
+        font-size: 24px;
+    }
+
+    .header__btn:focus {
+        color: #da373b;
+    }
+
+/*------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------*/
+/*------------------------- HEADER NAV -----------------------*/
+/*------------------------------------------------------------*/
+.dark {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: .2;
+    background-color: black;
+    position: fixed;
+    transition: 1s;
+    animation-name: dark-opacity;
+    animation-duration: .3s;       
+}
+
+.dark--move {
+    z-index: 1;
+    opacity: .9;
+    
+}
+
+.dark--none {
+    transform: translate(-100%,0);
+    animation-name: dark-none;
+    animation-duration: 5s;
+    opacity: 0;
+}
+
+@keyframes dark-opacity {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: .9;
+    }
+    
+}
+
+@keyframes dark-none {
+    0%{
+        opacity: .9;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.header__nav {
+    width: 70%;
+    height: 100%;
+    z-index: 20;
+    transform: translate(-100%, 0);
+    transition: all .5s;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    background-color: #f3f3f3;
+    color: #da373b;
+    font-size: 24px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+}
+
+.header__nav--open {
+    transform: translate(0,0);
+}
+
+    .nav__title {
+        width: 100%;
+        height: 60px;
+        padding-top: 10px;
+        font-size: 36px;
+
+        background: rgba(86,86,86,.9);
+        border-bottom: 2px solid #ba373b;
+    }
+
+    .nav__item {
+        width: 100%;
+        height: 60px;
+    }
+
+    .nav__item:hover {
+        background-color: rgba(86,86,86,.4);
+    }
+
+        .item__btn {
+            height: 100%;
+            width: 100%;
+            display: inline-block;
+            line-height: 60px;
+
+            background: transparent;
+            color: #da373b;
+            border: 0;
+            cursor: pointer;
+        }
+
+        .item__btn--home::before {
+            font-family: icons;
+            content: "\e900  ";
+        }
+
+        .item__btn--login::before {
+            font-family: icons;
+            content: "\ea13  ";
+        }
+
+        .item__btn--register::before {
+            font-family: icons;
+            content: "\e973  ";
+        }
+
+/*------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------*/
+/*------------------------ BREAKPOINTS -----------------------*/
+/*------------------------------------------------------------*/
+
+@media screen and (min-width:768px) {
+    
+    .header {
+        padding: 0;
+        padding-left: 16px;
+    }
+    
+        .header__btn {
+            display: none;
+        }
+
+        .header__nav {
+            transform: translate(0,0);
+            z-index: 0;
+            max-width: 800px;
+            height: 60px;
+
+            position: relative;
+            flex-direction: row;
+
+            background: none;
+        }
+
+            .nav__title {
+                display: none;
+            }
+    
+}
+
+/*------------------------------------------------------------*/

@@ -4,166 +4,429 @@
         <title>Profile</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" href="/css/normalize.css"/>
-        <link rel="stylesheet" href="/css/style.css"/>
-        <link rel="stylesheet" href="/css/header.css" />
-        <link rel="stylesheet" href="/css/section.css" />
-        <link rel="stylesheet" href="/css/formulario.css" />
-        <link rel="stylesheet" href="/css/footer.css" />
+        <link rel="stylesheet" href="/css/app/normalize.css"/>
+        <link rel="stylesheet" href="/css/app/style.css"/>
+        <link rel="stylesheet" href="/css/app/header.css" />
+        <link rel="stylesheet" href="/css/app/sectionMain.css" />
+        <link rel="stylesheet" href="/css/app/formulario.css" />
+        <link rel="stylesheet" href="/css/app/footer.css" />
     </head>
     <body>
-
-       <div id="dark" class="dark"></div>
         
-        <header class="header">
-            
-            <div class="header__logo">
-                <h1 class="logo__title">iRG APP</h1>
-                <span class="logo__decoration"></span>
-            </div>
-            
-            <button id="menu__btn" class="header__btn"></button>
-            
-            <nav id="menu" class="header__nav">
+        <div class="main">       
+            <div id="dark" class="dark"></div>
 
-                <h1 class="nav__title">Menu</h1>
-                
-                <span id="titleUser" class="nav__user-name"></span>
-                
-                <div id="" class="nav__item visible">
-                    <button class="item__btn item__btn--home">Inicio</button>
-                </div>
-                
-                <div id="btn-menuProfile" class="nav__item visible">  
-                    <button class="item__btn item__btn--profile">Mi Perfil</button>
+            <header class="header">
+
+                <div class="header__logo">
+                    <h1 class="logo__title">iRG APP</h1>
+                    <span class="logo__decoration"></span>
                 </div>
 
-                <div id="btn-logout" class="nav__item visible">
-                    <button class="item__btn item__btn--log-out">Salida</button>
-                </div>
-                
-            </nav>
-            
-        </header>
-        
-        <section class="section">
-            
-            <article id="container-profile" class="section__container section__container--profile">
-                
-                <div id="top-profileContainer" class="container__title">
-                   
-                    <div class="title__item title__text">
-                        <h2 class="title">
-                            <span class="title__decoration">My</span>
-                            Profile 
-                        </h2>
+                <button id="menu__btn" class="header__btn"></button>
+
+                <nav id="menu" class="header__nav">
+
+                    <h1 class="nav__title">Menu</h1>
+
+                    <span id="titleUser" class="nav__user-name"></span>
+
+                    <div id="" class="nav__item visible">
+                        <button class="item__btn item__btn--home">Inicio</button>
                     </div>
-                    
-                    <div class="title__item title__itemBtn">
-                      
-                        <div id="btnContainer-editProfile" class="itemBtn-edit">
+
+                    <div id="btn-menuProfile" class="nav__item visible">  
+                        <button class="item__btn item__btn--profile">Mi Perfil</button>
+                    </div>
+
+                    <div id="btn-logout" class="nav__item visible">
+                        <button class="item__btn item__btn--log-out">Salida</button>
+                    </div>
+
+                </nav>
+
+            </header>
+
+            <section class="section">
+
+                <article id="container-profile" class="section__container">
+
+                    <div id="top-profileContainer" class="container__title">
+
+                        <div class="title__item title__text">
+                            <h2 class="title">
+                                <span class="title__decoration">Mi</span>
+                                Perfil 
+                            </h2>
                         </div>
-                       
-                        <button id="btn-back" class="itemBtn itemBtn--back"></button>
-                        
+
+                        <div class="title__item title__itemBtn">
+
+                            <div id="btnContainer-editProfile" class="itemBtn-edit">
+                            </div>
+
+                            <button id="btn-back" class="itemBtn itemBtn--back"></button>
+
+                        </div>
+
                     </div>
-                    
-                </div>
-                
-                <div id="userID-profileContainer" class="container__item">
-                    <h3 class="item__data__title">ID del usuario :</h3>
-                    <div id="userIDData-container" class="item__data__content"></div>
+
+                    <div id="userID-profileContainer" class="container__item">
+                        <h3 class="item__data__title">ID del usuario :</h3>
+                        <div id="userIDData-container" class="item__data__content"></div>
+                    </div>
+
+                    <div id="username-profileContainer" class="container__item">
+                        <h3 class="item__data__title">Nombre de Usuario :</h3>
+                        <div id="usernameData-container" class="item__data__content"></div>           
+                    </div>
+
+                    <div id="email-profileContainer" class="container__item">
+                        <h3 class="item__data__title">Email :</h3>
+                        <div id="emailData-container" class="item__data__content"></div>
+                    </div>
+
+                    <div id="firstName-profileContainer" class="container__item">
+                        <h3 class="item__data__title">Nombre :</h3>
+                        <div id="firstNameData-container" class="item__data__content"></div>
+                    </div>
+
+                    <div id="lastName-profileContainer" class="container__item">
+                        <h3 class="item__data__title">Apellido :</h3>
+                        <div id="lastNameData-container" class="item__data__content"></div>
+                    </div>
+
+                    <div id="address-profileContainer" class="container__item">
+                        <h3 class="item__data__title">Dirección :</h3>
+                        <div id="addressData-container" class="item__data__content"></div>
+                    </div>
+
+                    <div id="phoneNumber-profileContainer" class="container__item">
+                        <h3 class="item__data__title">Numero de telefono :</h3>
+                        <div id="phoneNumberData-container" class="item__data__content"></div>
+                    </div>
+
+                    <div id="kindID-profileContainer" class="container__item">
+                        <h3 class="item__data__title">Estado del usuario :</h3>
+                        <div id="kindIDData-container" class="item__data__content"></div>
+                    </div>
+
+                    <div id="btnContainer-profileContainer" class="container__item container__item--btn">
+                    </div>
+
+                    <div id="profileNotification" class="container__item">
+                    </div>
+
+                </article>
+
+                <article id="" class="section__container section__container--open">
+
+                    <div id="" class="container__title">
+
+                        <div class="title__item title__text">
+                            <h2 class="title">
+                                <span class="title__decoration">Ficha</span>
+                                De Inscripción 
+                            </h2>
+                        </div>
+
+                        <div class="title__item title__itemBtn">
+
+                            <button id="btn-back" class="itemBtn itemBtn--back"></button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="panelMove-ficha">
+
+                        <div class="container__itemFicha">
+
+                            <div class="itemFicha">
+
+                                <div class="itemFicha__container ">
+
+                                    <h1 class="itemFicha__title">
+                                        <span class="title__decoration">¿</span>
+                                        Tiene SIGE
+                                        <span class="title__decoration">?</span>
+                                    </h1>
+
+                                </div>
+
+                            </div>
+
+                            <div class="itemFicha">
+
+                                <div class="itemFicha__container">
+                                    <div class="itemFicha__containerRadio">
+
+                                        <input id="" class="item__input--radio" type="radio" name="SIGE"/>
+                                        <p class="item__label">SI</p>
+
+                                    </div>    
+
+                                    <div class="itemFicha__containerRadio">
+
+                                        <input id="" class="item__input--radio" type="radio" name="SIGE"/>
+                                        <p class="item__label">NO</p>
+
+                                    </div> 
+
+                                </div>    
+
+
+                            </div>
+
+                            <div class="itemFicha">
+
+                                <div class="itemFicha__container itemFicha__container--SIGE">
+                                    <h1 class="itemFicha__title">
+                                        Su SIGE
+                                    </h1>
+                                </div>
+
+                                <div class="itemFicha__container">
+                                    <input id="" class="item__input item__input--SIGE" type="text" placeholder="######" />
+                                </div>
+
+                                <div class="itemFicha">
+
+                                    <div class="itemFicha__container">
+
+                                        <button id="" class="item__submitFicha">Siguiente</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="container__itemFicha">
+
+                            <div class="itemFicha">
+
+                                <div class="itemFicha__container">
+                                    <p class="panelTitle">Información Basica del Estudiante</p>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Nombre :</p>
+                                    <input id="" class="item__input" type="text" placeholder="Nombre Del Estudiante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Apellido :</p>
+                                    <input id="" class="item__input" type="text" placeholder="Apellido Del Estudiante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">C.I :</p>
+                                    <input id="" class="item__input" type="text" placeholder="Cedula Del Estudiante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Correo Electronico :</p>
+                                    <input id="" class="item__input" type="text" placeholder="Correo Del Estudiante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Numero Telefonico :</p>
+                                    <input id="" class="item__input" type="text" placeholder="Numero Del Estudiante..." name=""/>
+                                </div>
+
+                                <div class="itemFicha__container">
+                                    <p class="item__label">Genero :</p>
+                                </div>
+
+                                <div class="itemFicha__container">    
+
+                                    <div class="itemFicha__containerRadio">
+
+                                        <input id="" class="item__input--radio" type="radio" name="genero"/>
+                                        <p class="item__label">Femenino</p>
+
+                                    </div>
+
+                                    <div class="itemFicha__containerRadio">    
+
+                                        <input id="" class="item__input--radio" type="radio" name="genero"/>
+                                        <p class="item__label">Masculino</p>
+
+                                    </div>
+
+                                </div>
+
+                            </div> 
+
+                            <div class="itemFicha">
+
+                                <div class="itemFicha__container">
+
+                                    <button id="" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                    <button id="" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="container__itemFicha">
+
+                            <div class="itemFicha__container">
+                                <p class="panelTitle">Información de Nacimiento del Estudiante</p>
+                            </div>  
+
+                            <div class="form__item">
+                                <p class="item__label">Pais de Nacimiento :</p>
+                                <select class="item__select">
+                                </select>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Estado de Nacimiento :</p>
+                                <select class="item__select">
+                                </select>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Municipio de Nacimiento :</p>
+                                <select class="item__select">
+                                </select>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Plantel de Procedencia :</p>
+                                <input id="" class="item__input" type="text" placeholder="Plantel de procedencia..." name=""/>
+                            </div>
+
+                            <div class="itemFicha">
+
+                                <div class="itemFicha__container">
+
+                                    <button id="" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                    <button id="" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                </div>
+
+                            </div> 
+
+                        </div>
+
+                        <div class="container__itemFicha">
+
+
+                            <div class="itemFicha">
+
+                                <p class="item__label">
+                                    <span class="title__decoration">¿</span>
+                                    Presenta algun problema de salud que le impida hacer deportes
+                                    <span class="title__decoration">?</span>
+                                </p>
+
+                            </div>
+
+                            <div class="itemFicha__container ">
+                                <input id="" class="item__input--radio" type="radio" name="salud"/>
+                                <p class="item__label">SI</p>
+
+                                <input id="" class="item__input--radio" type="radio" name="salud"/>
+                                <p class="item__label">NO</p>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Cual Problema Presenta :</p>
+                                <input id="" class="item__input" type="text" placeholder="Problema medico..." name=""/>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Dirección de Hab :</p>
+                                <input id="" class="item__input" type="text" placeholder="Dirección de Hab..." name=""/>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Municipio :</p>
+                                <select class="item__select">
+                                    <option value="">Maracaibo</option>
+                                </select>
+                            </div>
+
+                            <div class="form__item">
+                                <p class="item__label">Parroquia :</p>
+                                <select class="item__select">
+                                    <option value="">Maracaibo</option>
+                                </select>
+                            </div>
+
+                            <div class="itemFicha">
+
+                                <div class="itemFicha__container">
+
+                                    <button id="" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                    <button id="" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                </div>
+
+                            </div>    
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <footer class="footer">
+
+                <div class="footer__information">
+
+                    <div class="information__contact">
+
+                            <p class="contact__icon contact__icon--location">
+                                Maracaibo 4002, Zulia.
+                            </p>
+
+                            <p class="contact__icon contact__icon--call">
+                                +58-416-555-2293.
+                            </p>
+
+                            <a class="contact__icon contact__icon--mail" href="#">
+                                RomuloGallegos@gmail.com
+                            </a>
+                            <a href="#" class="contact__icon contact__icon--facebook">
+                                Facebook
+                            </a>
+                    </div>
+
+                    <div class="information__about">
+
+                        <h2 class="about__name">
+                            Acerca Del Instituto
+                        </h2>
+                        <span class="about__infor">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Adipisci incidunt dicta necessitatibus minima
+                            eum ipsa, ex commodi, consequuntur consectetur cumque
+                            expedita n,obis quis, aspernatur dignissimos nisi harum 
+                            officia voluptatibus! Delectus.
+                        </span>
+
+                    </div>
+
                 </div>
 
-                <div id="username-profileContainer" class="container__item">
-                    <h3 class="item__data__title">Nombre de Usuario :</h3>
-                    <div id="usernameData-container" class="item__data__content"></div>           
+                <div class="footer__royalties">
+                    2018 &copy; All Rights Reserved.
                 </div>
 
-                <div id="email-profileContainer" class="container__item">
-                    <h3 class="item__data__title">Email :</h3>
-                    <div id="emailData-container" class="item__data__content"></div>
-                </div>
-                
-                <div id="firstName-profileContainer" class="container__item">
-                    <h3 class="item__data__title">Nombre :</h3>
-                    <div id="firstNameData-container" class="item__data__content"></div>
-                </div>
-                
-                <div id="lastName-profileContainer" class="container__item">
-                    <h3 class="item__data__title">Apellido :</h3>
-                    <div id="lastNameData-container" class="item__data__content"></div>
-                </div>
-                
-                <div id="address-profileContainer" class="container__item">
-                    <h3 class="item__data__title">Dirección :</h3>
-                    <div id="addressData-container" class="item__data__content"></div>
-                </div>
-                
-                <div id="phoneNumber-profileContainer" class="container__item">
-                    <h3 class="item__data__title">Numero de telefono :</h3>
-                    <div id="phoneNumberData-container" class="item__data__content"></div>
-                </div>
-
-                <div id="kindID-profileContainer" class="container__item">
-                    <h3 class="item__data__title">Estado del usuario :</h3>
-                    <div id="kindIDData-container" class="item__data__content"></div>
-                </div>
-                
-                <div id="btnContainer-profileContainer" class="container__item container__item--btn">
-                </div>
-
-                <div id="profileNotification" class="container__item">
-                </div>
-                
-            </article>
+            </footer>
             
-        </section>
-        
-        <footer class="footer">
+        </div>
             
-            <div class="footer__information">
-                
-                <div class="information__contact">
-                   
-                        <p class="contact__icon contact__icon--location">
-                            Maracaibo 4002, Zulia.
-                        </p>
-
-                        <p class="contact__icon contact__icon--call">
-                            +58-416-555-2293.
-                        </p>
-                    
-                        <a class="contact__icon contact__icon--mail" href="#">
-                            RomuloGallegos@gmail.com
-                        </a>
-                        <a href="#" class="contact__icon contact__icon--facebook">
-                            Facebook
-                        </a>
-                </div>
-                
-                <div class="information__about">
-                       
-                    <h2 class="about__name">
-                        Acerca Del Instituto
-                    </h2>
-                    <span class="about__infor">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Adipisci incidunt dicta necessitatibus minima
-                        eum ipsa, ex commodi, consequuntur consectetur cumque
-                        expedita n,obis quis, aspernatur dignissimos nisi harum 
-                        officia voluptatibus! Delectus.
-                    </span>
-
-                </div>
-                
-            </div>
-            
-            <div class="footer__royalties">
-                2018 &copy; All Rights Reserved.
-            </div>
-            
-        </footer>
         
         <script src="/js/utils.js"></script>
         <script src="/js/app/profile.js"></script>
@@ -171,13 +434,3 @@
         <script src="/js/app/main.js"></script>
     </body>
 </html>
-
-
-<!--
-     ID de Usuario
-     Estado de Usuario
-     Email
-     Address
-     PhoneNumber
-     
--->

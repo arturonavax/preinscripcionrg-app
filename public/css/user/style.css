@@ -1,0 +1,40 @@
+@font-face{
+    font-family: oleo;
+    src: url(/fonts/Oleo_Script/OleoScript-Regular.ttf);
+}
+@font-face{
+    font-family: maven-pro;
+    src: url(/fonts/Maven_Pro/MavenPro-Regular.ttf);
+}
+@font-face{
+    font-family: maven-blod;
+    src: url(/fonts/Maven_Pro/MavenPro-Bold.ttf);
+}
+@font-face{
+    font-family: icons;
+    src: url(/icons/icomoon/fonts/icomoon.ttf);
+}
+
+*{
+    position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
+}
+
+body {
+    font-family: maven-pro;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.main {
+    width: 100%;
+    overflow: hidden;
+}
+
+/*------------------------------------------------------------*/
