@@ -1,9 +1,31 @@
 (function(){
-    self.Menu = function(menuView) {
-        
+    self.Menu = function() {
+        this.Username = "Arthur";
+        this.Home = "Inicio";
+        this.Profile = "Mi Perfil";
+        this.Logout = "Salida";
     }
 })();
 
+(function(){
+    self.MenuView = function(menu) {
+        this.Menu = menu;
+        this.MenuBtn = $("#menu__btn");
+        this.MenuContainer = $("#menu");
+        this.MenuTitle = $("#menu-title");
+        this.Username = $("#menu-titleUser");
+        this.BtnHome = $("#menu-btnHome");
+        this.BtnProfile = $("#menu-btnProfile");
+        this.BtnLogout = $("#menu-btnLogout");
+    }
+
+    self.MenuView.prototype = {
+        render: function(){
+            this.Username = this.Menu.Username;
+        }
+    }
+})();
+/*
 let menu = $("#menu"),
     menuBtn = $("#menu__btn"),
     dark = $("#dark");
@@ -15,9 +37,9 @@ function toggleMenu() {
     menu.classList.toggle("header__nav--open");
     dark.classList.toggle("dark--move");
 }
-
+*/
 /* ------------------------------------------------------ */
-
+/*
 let btnLogout = $("#btn-logout"),
     btnProfile = $("#btn-menuProfile"),
     profileContainer = $("#container-profile"),
@@ -38,3 +60,4 @@ btnBack.addEventListener("click", function() {
 });
 
 $("#titleUser").textContent = profileUser.Username;
+*/
