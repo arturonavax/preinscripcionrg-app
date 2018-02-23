@@ -1,27 +1,102 @@
-
 Primer Panel : 
 
     Tiene SIGE?. (Radio)
     Codigo SIGE. (input)
+
+Segundo Panel :
+
+    Titulo: Datos Basicos del Estudiante.
+
     Nombre del estudiante. (input)
     Apellido del estudiante. (input)
     Cedula del estudiante. (input)
     Correo Electronico del estudiante. (input)
     Numero de telefono del estudiante. (input)
-    Fecha de Nacimiento del estudiante. (input Date)
-
-Segundo Panel :
-
-    Pais de nacimiento del estudiante. (Select)
-    Estado de nacimiento del estudiante. (Select)
-    Municipio de Nacimiento del estudiante. (Select)
     Genero. (Radio)
-    Plantel de procedencia. (input)
 
 Tercer Panel :
 
+    Titulo: Datos de nacimiento del Estudiante.
+
+    Fecha de Nacimiento del estudiante. (input Date)
+    Pais de nacimiento del estudiante. (Select)
+    Estado de nacimiento del estudiante. (Select)
+    Municipio de Nacimiento del estudiante. (Select)
+
+Cuarto Panel :
+
+    Titulo: Datos de Procedencia del Estudiante.
+
+    Plantel de procedencia. (Select)
     Presenta algun problema de salud que le impida hacer deportes?. (Radio)
     Cual problema presenta?. (input)
+
+Quinto Panel :
+
+    Titulo: Datos de Localidad del Estudiante.
+
     Direccion de Habitacion del estudiante. (input)
     Municipio del estudiante. (select)
     Parroquia el estudiante. (select)
+    Sector de el estudiante. (select)
+    Tipo de via. (select)
+    Condicion de la vivienda. (select)
+
+Sexto Panel :
+
+    Titulo: Datos de la madre.
+
+    Nombre de la madre. (input)
+    Apellido de la madre. (input)
+    Cedula de la madre. (input)
+
+Septimo Panel :
+
+    Titulo: Datos de el padre.
+
+    Nombre del padre. (input)
+    Apellido del padre. (input)
+    Cedula del padre. (input)
+
+Octavo Panel :
+
+    Titulo: Datos de el representante.
+
+    Nombre del representante. (input)
+    Apellido del representante. (input)
+    Cedula del representante. (input)
+    Parentesco con el estudiante. (input)
+
+Noveno Panel :
+
+    Titulo : Informacion extra de el estudiante.
+
+    Tiene Beca?. (radio)
+    Le han proporcionado una canaima en alguna institucion educativa?. (radio)
+
+Decimo Panel :
+
+    Titulo: Escolaridad del estudiante.
+
+    Mencion. (Select)
+    Seccion. (select)
+    Edad. (input)
+    Talla. (input)
+    Peso. (input)
+    Regular. (check)
+    Repitiente. (check)
+    Asig. Pend. (Check)
+
+    Asignaturas que repite. (input)
+    Asignaturas que pendiente. (input)
+
+Decimo Primer Panel :
+
+    Titulo: Esta seguro de realizar la operacion?.
+
+    Compromisos.
+    Requisitos Fisicos.
+    Pasos faltantes al terminar esta operacion.
+
+    PreInscribir. (boton)
+    Cancelar PreInscripcion. (boton)
