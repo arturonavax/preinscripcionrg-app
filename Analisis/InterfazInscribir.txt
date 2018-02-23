@@ -66,6 +66,8 @@ Octavo Panel :
     Apellido del representante. (input)
     Cedula del representante. (input)
     Parentesco con el estudiante. (input)
+    Direccion de Habitacion del Representante. (input)
+    
 
 Noveno Panel :
 
