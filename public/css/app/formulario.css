@@ -31,7 +31,6 @@
     }
 
         .item__label {
-            width: 100%;
             display: inline;
             font-family: maven-blod;
             color: #565656;
@@ -117,12 +116,12 @@
             border-radius: 5px;
         }
 
-.item__submitFicha--doble {
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 45%;
-    height: 50px;
-}
+        .item__submitFicha--doble {
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 45%;
+            height: 50px;
+        }
         
         .item__submitFicha:hover {
             cursor: pointer;
