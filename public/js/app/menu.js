@@ -1,3 +1,9 @@
+(function(){
+    self.Menu = function(menuView) {
+        
+    }
+})();
+
 let menu = $("#menu"),
     menuBtn = $("#menu__btn"),
     dark = $("#dark");

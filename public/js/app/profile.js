@@ -1,6 +1,6 @@
 //Profile
 (function(){
-    self.Profile = function(profileView){
+    self.Profile = function(){
         this.Token = "";
         this.UserID = 0;
         this.Username = "";
@@ -10,8 +10,6 @@
         this.Address = "";
         this.PhoneNumber = "";
         this.KindID = 0;
-
-        this.ProfileView = profileView;
     }
 
     self.Profile.prototype = {
@@ -65,142 +63,14 @@
             });
 
             xhr.send(query);
-        },
-        render: function() {
-            let pv = this.ProfileView;
-            let self = this;
-
-            pv.BtnEditProfile.classList.add("itemBtn");
-            pv.BtnEditProfile.classList.add("itemBtn--edit");
-            pv.BtnEditProfile.addEventListener("click", function(){
-               self.renderEdit(); 
-            });
-
-            pv.BtnEditProfileContainer.appendChild(pv.BtnEditProfile);
-            pv.UserIDDataContainer.textContent = this.UserID;
-            pv.UsernameDataContainer.textContent = this.Username;
-            pv.EmailDataContainer.textContent = this.Email;
-            pv.FirstNameDataContainer.textContent = this.FirstName;
-            pv.LastNameDataContainer.textContent = this.LastName;
-            pv.AddressDataContainer.textContent = this.Address;
-            pv.PhoneNumberDataContainer.textContent = this.PhoneNumber;
-            pv.KindIDDataContainer.textContent = this.KindID;
-        },
-
-        renderEdit: function() {
-            let pv = this.ProfileView;
-            let self = this;
-            pv.BtnCancelEditProfile.textContent = "Cancelar";
-            pv.BtnCancelEditProfile.classList.add("item__submit");
-            pv.BtnCancelEditProfile.classList.add("item__submit--edit");
-            pv.BtnCancelEditProfile.addEventListener("click", function(){
-                self.cancelEdit();
-            });
-
-            pv.BtnSaveEditProfile.textContent = "Guardar";
-            pv.BtnSaveEditProfile.classList.add("item__submit");
-            pv.BtnSaveEditProfile.classList.add("item__submit--edit");
-            pv.BtnSaveEditProfile.addEventListener("click", function(){
-                pv.BtnSaveEditProfile.textContent = "Guardando..";
-                self.saveEdit();
-            });
-
-            pv.EmailDataEdit.value = pv.EmailDataContainer.textContent;
-            pv.EmailDataEdit.id = pv.EmailDataContainer.id;
-            pv.EmailDataEdit.classList.add("item__input");
-            pv.EmailDataEdit.classList.add("item__input--edit");
-
-            pv.FirstNameDataEdit.value = pv.FirstNameDataContainer.textContent;
-            pv.FirstNameDataEdit.id = pv.FirstNameDataContainer.id;
-            pv.FirstNameDataEdit.classList.add("item__input");
-            pv.FirstNameDataEdit.classList.add("item__input--edit");
-
-            pv.LastNameDataEdit.value = pv.LastNameDataContainer.textContent;
-            pv.LastNameDataEdit.id = pv.LastNameDataContainer.id;
-            pv.LastNameDataEdit.classList.add("item__input");
-            pv.LastNameDataEdit.classList.add("item__input--edit");
-
-            pv.AddressDataEdit.value = pv.AddressDataContainer.textContent;
-            pv.AddressDataEdit.id = pv.AddressDataContainer.id;
-            pv.AddressDataEdit.classList.add("item__input");
-            pv.AddressDataEdit.classList.add("item__input--edit");
-
-            pv.PhoneNumberDataEdit.value = pv.PhoneNumberDataContainer.textContent;
-            pv.PhoneNumberDataEdit.id = pv.PhoneNumberDataContainer.id;
-            pv.PhoneNumberDataEdit.classList.add("item__input");
-            pv.PhoneNumberDataEdit.classList.add("item__input--edit");
-
-            pv.EmailProfileContainer.replaceChild(pv.EmailDataEdit, pv.EmailDataContainer);
-            pv.FirstNameProfileContainer.replaceChild(pv.FirstNameDataEdit, pv.FirstNameDataContainer);
-            pv.LastNameProfileContainer.replaceChild(pv.LastNameDataEdit, pv.LastNameDataContainer);
-            pv.AddressProfileContainer.replaceChild(pv.AddressDataEdit, pv.AddressDataContainer);
-            pv.PhoneNumberProfileContainer.replaceChild(pv.PhoneNumberDataEdit, pv.PhoneNumberDataContainer);
-
-            pv.BtnContainerEditProfile.appendChild(pv.BtnCancelEditProfile);
-            pv.BtnContainerEditProfile.appendChild(pv.BtnSaveEditProfile);
-        },
-
-        cancelEdit: function(){
-            let pv = this.ProfileView;
-            pv.EmailProfileContainer.replaceChild(pv.EmailDataContainer, pv.EmailDataEdit);
-            pv.FirstNameProfileContainer.replaceChild(pv.FirstNameDataContainer, pv.FirstNameDataEdit);
-            pv.LastNameProfileContainer.replaceChild(pv.LastNameDataContainer, pv.LastNameDataEdit);
-            pv.AddressProfileContainer.replaceChild(pv.AddressDataContainer, pv.AddressDataEdit);
-            pv.PhoneNumberProfileContainer.replaceChild(pv.PhoneNumberDataContainer, pv.PhoneNumberDataEdit);
-
-            pv.BtnContainerEditProfile.removeChild(pv.BtnCancelEditProfile);
-            pv.BtnContainerEditProfile.removeChild(pv.BtnSaveEditProfile);
-        },
-
-        saveEdit: function(){
-            let pv = this.ProfileView;
-            let email = pv.EmailDataEdit.value,
-                firstName = pv.FirstNameDataEdit.value,
-                lastName = pv.LastNameDataEdit.value,
-                address = pv.AddressDataEdit.value,
-                phoneNumber = pv.PhoneNumberDataEdit.value;
-            
-            let mutation = `
-            
-            mutation {
-                meU(
-                    email: "${email}",
-                    firstName: "${firstName}",
-                    lastName: "${lastName}",
-                    address: "${address}",
-                    phoneNumber: "${phoneNumber}"
-                ){id,message,code}
-            }
-
-            `
-
-            requestAjaxToken("POST", "/graphql", this.Token, mutation, true)
-             .then( r => {
-                pv.BtnSaveEditProfile.textContent = "Guardar";
-                if (r.response.data.meU.code === 100) {
-                    pv.EmailDataContainer.textContent = email;
-                    pv.FirstNameDataContainer.textContent = firstName;
-                    pv.LastNameDataContainer.textContent = lastName;
-                    pv.AddressDataContainer.textContent = address;
-                    pv.PhoneNumberDataContainer.textContent = phoneNumber;
-
-                    pv.ProfileNotification.textContent = "Usuario actualizado con exito."
-                } else if (r.response.data.meU.code === 500) {
-                    pv.ProfileNotification.textContent = "Ocurrio un error."
-
-                }
-                console.log(r);
-             });
-
-
-            this.cancelEdit();
         }
     }
 
 })();
 
 (function(){
-    self.ProfileView = function(){
+    self.ProfileView = function(profile){
+        this.Profile = profile;
         this.ContainerProfile = $("#container-profile");
 
         this.TopProfileContainer = $("#top-profileContainer");
@@ -239,16 +109,132 @@
         this.BtnCancelEditProfile = document.createElement("button"); 
         this.BtnSaveEditProfile = document.createElement("button"); 
     }
+
+    self.ProfileView.prototype = {
+        render: function() {
+            this.BtnEditProfile.classList.add("itemBtn");
+            this.BtnEditProfile.classList.add("itemBtn--edit");
+            this.BtnEditProfile.addEventListener("click", function(){
+               self.renderEdit(); 
+            });
+
+            this.BtnEditProfileContainer.appendChild(this.BtnEditProfile);
+            this.UserIDDataContainer.textContent = this.Profile.UserID;
+            this.UsernameDataContainer.textContent = this.Profile.Username;
+            this.EmailDataContainer.textContent = this.Profile.Email;
+            this.FirstNameDataContainer.textContent = this.Profile.FirstName;
+            this.LastNameDataContainer.textContent = this.Profile.LastName;
+            this.AddressDataContainer.textContent = this.Profile.Address;
+            this.PhoneNumberDataContainer.textContent = this.Profile.PhoneNumber;
+            this.KindIDDataContainer.textContent = this.Profile.KindID;
+        },
+
+        renderEdit: function() {
+            this.BtnCancelEditProfile.textContent = "Cancelar";
+            this.BtnCancelEditProfile.classList.add("item__submit");
+            this.BtnCancelEditProfile.classList.add("item__submit--edit");
+            this.BtnCancelEditProfile.addEventListener("click", function(){
+                this.cancelEdit();
+            });
+
+            this.BtnSaveEditProfile.textContent = "Guardar";
+            this.BtnSaveEditProfile.classList.add("item__submit");
+            this.BtnSaveEditProfile.classList.add("item__submit--edit");
+            this.BtnSaveEditProfile.addEventListener("click", function(){
+                this.BtnSaveEditProfile.textContent = "Guardando..";
+                this.saveEdit();
+            });
+
+            this.EmailDataEdit.value = this.EmailDataContainer.textContent;
+            this.EmailDataEdit.id = this.EmailDataContainer.id;
+            this.EmailDataEdit.classList.add("item__input");
+            this.EmailDataEdit.classList.add("item__input--edit");
+
+            this.FirstNameDataEdit.value = this.FirstNameDataContainer.textContent;
+            this.FirstNameDataEdit.id = this.FirstNameDataContainer.id;
+            this.FirstNameDataEdit.classList.add("item__input");
+            this.FirstNameDataEdit.classList.add("item__input--edit");
+
+            this.LastNameDataEdit.value = this.LastNameDataContainer.textContent;
+            this.LastNameDataEdit.id = this.LastNameDataContainer.id;
+            this.LastNameDataEdit.classList.add("item__input");
+            this.LastNameDataEdit.classList.add("item__input--edit");
+
+            this.AddressDataEdit.value = this.AddressDataContainer.textContent;
+            this.AddressDataEdit.id = this.AddressDataContainer.id;
+            this.AddressDataEdit.classList.add("item__input");
+            this.AddressDataEdit.classList.add("item__input--edit");
+
+            this.PhoneNumberDataEdit.value = this.PhoneNumberDataContainer.textContent;
+            this.PhoneNumberDataEdit.id = this.PhoneNumberDataContainer.id;
+            this.PhoneNumberDataEdit.classList.add("item__input");
+            this.PhoneNumberDataEdit.classList.add("item__input--edit");
+
+            this.EmailProfileContainer.replaceChild(this.EmailDataEdit, this.EmailDataContainer);
+            this.FirstNameProfileContainer.replaceChild(this.FirstNameDataEdit, this.FirstNameDataContainer);
+            this.LastNameProfileContainer.replaceChild(this.LastNameDataEdit, this.LastNameDataContainer);
+            this.AddressProfileContainer.replaceChild(this.AddressDataEdit, this.AddressDataContainer);
+            this.PhoneNumberProfileContainer.replaceChild(this.PhoneNumberDataEdit, this.PhoneNumberDataContainer);
+
+            this.BtnContainerEditProfile.appendChild(this.BtnCancelEditProfile);
+            this.BtnContainerEditProfile.appendChild(this.BtnSaveEditProfile);
+        },
+
+        cancelEdit: function(){
+            this.EmailProfileContainer.replaceChild(this.EmailDataContainer, this.EmailDataEdit);
+            this.FirstNameProfileContainer.replaceChild(this.FirstNameDataContainer, this.FirstNameDataEdit);
+            this.LastNameProfileContainer.replaceChild(this.LastNameDataContainer, this.LastNameDataEdit);
+            this.AddressProfileContainer.replaceChild(this.AddressDataContainer, this.AddressDataEdit);
+            this.PhoneNumberProfileContainer.replaceChild(this.PhoneNumberDataContainer, this.PhoneNumberDataEdit);
+
+            this.BtnContainerEditProfile.removeChild(this.BtnCancelEditProfile);
+            this.BtnContainerEditProfile.removeChild(this.BtnSaveEditProfile);
+        },
+
+        saveEdit: function(){
+            let email = this.EmailDataEdit.value,
+                firstName = this.FirstNameDataEdit.value,
+                lastName = this.LastNameDataEdit.value,
+                address = this.AddressDataEdit.value,
+                phoneNumber = this.PhoneNumberDataEdit.value;
+            
+            let mutation = `
+            
+            mutation {
+                meU(
+                    email: "${email}",
+                    firstName: "${firstName}",
+                    lastName: "${lastName}",
+                    address: "${address}",
+                    phoneNumber: "${phoneNumber}"
+                ){id,message,code}
+            }
+
+            `
+
+            requestAjaxToken("POST", "/graphql", this.Profile.Token, mutation, true)
+             .then( r => {
+                this.BtnSaveEditProfile.textContent = "Guardar";
+                if (r.response.data.meU.code === 100) {
+                    this.EmailDataContainer.textContent = email;
+                    this.FirstNameDataContainer.textContent = firstName;
+                    this.LastNameDataContainer.textContent = lastName;
+                    this.AddressDataContainer.textContent = address;
+                    this.PhoneNumberDataContainer.textContent = phoneNumber;
+
+                    this.ProfileNotification.textContent = "Usuario actualizado con exito."
+                } else if (r.response.data.meU.code === 500) {
+                    this.ProfileNotification.textContent = "Ocurrio un error."
+
+                }
+                console.log(r);
+             });
+
+
+            this.cancelEdit();
+        }
+    }
+
 })();
 
 /* -------------------------------------------------------------------------- */
-
-let tokenUser = sessionStorage.getItem("token");
-
-let btnEditProfile = $("#btn-editProfile");
-
-let profileView = new ProfileView(),
-    profileUser = new Profile(profileView);
-
-profileUser.token = tokenUser;
-profileUser.render();
