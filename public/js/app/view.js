@@ -29,6 +29,7 @@
 
         this.MenuView.BtnProfile.addEventListener("click", function(){
             self.ProfileView.ContainerProfile.classList.add("section__container--open");
+            $("#section").classList.add("tx-C");
         });
 
         this.StudentRegister.BtnStudentRegister.addEventListener("click", function(){
@@ -38,6 +39,7 @@
         // Eventos de la ventana profile.
         this.BtnBackWindowProfile.addEventListener("click",function() {
             self.ProfileView.ContainerProfile.classList.remove("section__container--open");
+            $("#section").classList.remove("tx-C");
         });
 
         this.ProfileView.BtnEditProfile.addEventListener("click", function(){
