@@ -95,6 +95,11 @@
                     content: "\ea38";
                 }
 
+                .itemBtn--next::before {
+                    font-family: icons;
+                    content: "\ea34";
+                }
+
                 .itemBtn--search::before {
                     font-family: icons;
                     content: "\e986";
@@ -219,6 +224,12 @@
             cursor: pointer;
             background-color: #db2323;
         }
+
+.RE-container__pagination {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
 
 /*------------------------------------------------------------*/
 
