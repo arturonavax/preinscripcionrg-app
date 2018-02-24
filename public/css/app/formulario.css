@@ -116,6 +116,11 @@
             border-radius: 5px;
         }
 
+        .submitFicha__decoration {
+            font-family: oleo;
+            font-size: 20px;
+        }
+
         .item__submitFicha--doble {
             margin-left: 10px;
             margin-right: 10px;
