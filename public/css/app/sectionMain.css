@@ -30,13 +30,6 @@
         transition: all .3s;
     }
 
-.btn-registrar-estudiante {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    padding-top: 80px;
-}
-
     .section__container--open {
         transform: translate(0, 0);
         transition: all .3s;
@@ -145,6 +138,71 @@
 
 
 /*------------------------------------------------------------*/
+/*--------------------- SECTION PREINSCRITOS -----------------*/
+/*------------------------------------------------------------*/
+
+.registrar-estudiante {
+    margin-top: 60px; 
+    width: 100%;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.RE__container {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    
+    color: #565656;
+    background-color: #dedcdc;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+    .RE-container__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        font-family: maven-blod;
+    }
+
+        .RE-conteiner__label {
+            
+        }
+
+        .RE__content {
+            font-family: maven-pro;
+        }
+
+        .RE__SIGE {
+            font-family: maven-pro;
+            padding-left: 10px;
+        }
+
+        .RE__descargar-btn {
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            height: 30px;
+
+            background-color: #40c53e;
+            color: #fff; 
+        }
+
+        .RE__descargar-btn:hover {
+            cursor: pointer;
+            background-color: #3a9d38;
+        }
+
+/*------------------------------------------------------------*/
+
+/*------------------------------------------------------------*/
 /*----------------------- SECTION PROFILE --------------------*/
 /*------------------------------------------------------------*/
 
@@ -161,22 +219,22 @@
     border-top: 2px dotted #939393;
     flex-direction: row;
 }
-.item__btn-profile {
-    margin-top: 15px;
-    width: 45%;
-    height: 50px;
-    font-size: 20px;
+    .item__btn-profile {
+        margin-top: 15px;
+        width: 45%;
+        height: 50px;
+        font-size: 20px;
 
-    background-color: #da373b;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
+        background-color: #da373b;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+    }
 
-.item__btn-profile:hover {
-    cursor: pointer;
-    background-color: #db2323;
-}
+    .item__btn-profile:hover {
+        cursor: pointer;
+        background-color: #db2323;
+    }
 
     .item__data__title {
         font-size: 20px;
@@ -293,14 +351,14 @@
         align-items: center;
     }
 
-.itemFicha__containerCheck {
-    width: 100%;
-    margin-top: 15px;
-    
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
+        .itemFicha__containerCheck {
+            width: 100%;
+            margin-top: 15px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
 
         .itemFicha__containerRadio {
             width: 45%;
@@ -327,12 +385,19 @@
     align-items: center;
 }
 
-.panelTitle {
-    font-weight: 400;
-    font-size: 25px;
-    text-align: center;
-    color: #565656;
-}
+    .panelTitle {
+        font-weight: 400;
+        font-size: 25px;
+        text-align: center;
+        color: #565656;
+    }
+
+/*------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------*/
+/*----------------------- SECTION MODAL ----------------------*/
+/*------------------------------------------------------------*/
 
 .modal {
     visibility: hidden;
@@ -382,6 +447,8 @@
                 padding-left: 15px;
                 color: #565656;
             }
+
+/*------------------------------------------------------------*/
 
 .tx-A {
     height: 750px;
