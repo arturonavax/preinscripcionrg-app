@@ -335,11 +335,53 @@
 }
 
 .modal {
-
-    z-index: 20;
-    width: 100vw;
-    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    margin-top: -300px;
+    position: absolute;
+    transition:all 1s;
 }
+
+.modal--open {
+    visibility:visible;
+    opacity: 1;
+    z-index: 999;
+    
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin: 0;
+    
+    background-color: rgba(0,0,0,0.8);
+}
+
+    .modal__container {
+        width: 90%;
+        height: 500px;
+        margin: 0 auto;
+        overflow: auto;
+        margin-top: 60px;
+        padding: 16px;
+        
+        background-color: #f3f3f3;
+    }
+
+        .modalContainer__item {
+            margin-top: 15px;
+        }
+
+            .modal__label {
+                font-family: maven-blod;
+                font-size: 20px;
+                color: #565656;
+            }
+
+            .modal__parrafo {
+                padding-left: 15px;
+                color: #565656;
+            }
 
 .tx-A {
     height: 750px;
