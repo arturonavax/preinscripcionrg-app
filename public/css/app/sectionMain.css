@@ -12,7 +12,7 @@
 
     .section__container {
         width: 100%;
-        min-height: 750px;
+        min-height: 850px;
         padding: 16px;
         position: absolute;
         overflow: hidden;
@@ -276,7 +276,7 @@
 
     .itemFicha__container {
         width: 100%;
-        height: 60px;
+        margin-top: 5px;
         
         display: flex;
         justify-content: center;
@@ -285,12 +285,18 @@
         align-items: center;
     }
 
-
+.itemFicha__containerCheck {
+    width: 100%;
+    margin-top: 15px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
         .itemFicha__containerRadio {
             width: 45%;
             height: 50px;
-            line-height: 50px;
 
             display: flex;
             justify-content: center;
@@ -320,6 +326,10 @@
     color: #565656;
 }
 
+.modal {
+    
+}
+
 .tx-A {
     height: 750px;
 }
@@ -331,4 +341,8 @@
 
 .tx-C {
     height: 1100px;
+}
+
+.tx-D {
+    height: 1300px;
 }
