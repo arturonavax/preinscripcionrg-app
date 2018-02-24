@@ -12,7 +12,7 @@
 
     .section__container {
         width: 100%;
-        min-height: 850px;
+        min-height: 1000px;
         padding: 16px;
         position: absolute;
         overflow: hidden;
@@ -93,6 +93,11 @@
                 .itemBtn--back::before {
                     font-family: icons;
                     content: "\ea38";
+                }
+
+                .itemBtn--search::before {
+                    font-family: icons;
+                    content: "\e986";
                 }
 
 /*------------------------------------------------------------*/
@@ -200,6 +205,21 @@
             background-color: #3a9d38;
         }
 
+        .RE__descargarBtn-estudiantes {
+            border: none;
+            text-align: center;
+            border-radius: 5px;
+            height: 30px;
+
+            background-color: #da373b;
+            color: #fff; 
+        }
+
+        .RE__descargarBtn-estudiantes:hover {
+            cursor: pointer;
+            background-color: #db2323;
+        }
+
 /*------------------------------------------------------------*/
 
 /*------------------------------------------------------------*/
@@ -263,7 +283,7 @@
     transition: all 0.6s;
     width: 1100%;
     position: absolute;
-    top: 10%;
+    top: 7%;
     left: 0;
     
     display: flex;
@@ -375,22 +395,27 @@
         border-top: 2px dotted #939393; 
     }
 
-.panel__container {
-    width: 100%;
+    .panel__container {
+        width: 100%;
 
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-content: center;
-    align-items: center;
-}
-
-    .panelTitle {
-        font-weight: 400;
-        font-size: 25px;
-        text-align: center;
-        color: #565656;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
     }
+
+        .panelTitle {
+            font-weight: 400;
+            font-size: 25px;
+            text-align: center;
+            color: #565656;
+        }
+
+        .pagination {
+            margin-bottom: 15px;
+            color: #565656;
+        }
 
 /*------------------------------------------------------------*/
 
@@ -456,7 +481,7 @@
 
 
 .tx-B {
-    height: 1000px;
+    height: 1050px;
 }
 
 .tx-C {
