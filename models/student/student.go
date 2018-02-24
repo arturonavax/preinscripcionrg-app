@@ -25,7 +25,7 @@ type Student struct {
 	MentionID             int `json:"mentionID" gorm:"not null;type:integer"`
 	SectionID             int `json:"sectionID" gorm:"not null;type:integer"`
 	RepresentativeID      int `json:"representativeID" gorm:"not null; type:integer"`
-	TeacherID             int `json:"teacherID" gorm:"not null; type:integer"`
+	TeacherID             int `json:"teacherID" gorm:"type:integer"`
 	ConditionOfHousingID  int `json:"conditionOfHousingID" gorm:"not null;integer"`
 	//-----
 

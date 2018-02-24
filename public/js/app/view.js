@@ -176,6 +176,10 @@
            self.StudentRegister.SIGECOD.classList.add("no-visible"); 
         });
 
+        this.StudentRegister.BtnPreInscribir.addEventListener("click", function(){
+            self.StudentRegister.register();
+        });
+        /*
         window.addEventListener("click", function(){
             campos = document.getElementsByName("SIGE");
             for (var i=0; i<campos.length; i++) {
@@ -184,6 +188,7 @@
                 }
             }
         });
+        */
     }
 
     self.UI.prototype = {

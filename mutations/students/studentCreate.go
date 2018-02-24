@@ -49,7 +49,7 @@ var StudentCreate = &graphql.Field{
 			Type: graphql.NewNonNull(graphql.Int),
 		},
 		"teacherID": &graphql.ArgumentConfig{
-			Type: graphql.NewNonNull(graphql.Int),
+			Type: graphql.Int,
 		},
 		"SIGECOD": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.String),
@@ -58,9 +58,6 @@ var StudentCreate = &graphql.Field{
 			Type: graphql.NewNonNull(graphql.String),
 		},
 		"lastName": &graphql.ArgumentConfig{
-			Type: graphql.NewNonNull(graphql.String),
-		},
-		"ciType": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.String),
 		},
 		"ci": &graphql.ArgumentConfig{
@@ -221,8 +218,6 @@ var StudentCreate = &graphql.Field{
 		newStudent.FirstName, _ = p.Args["firstName"].(string)
 
 		newStudent.LastName, _ = p.Args["lastName"].(string)
-
-		newStudent.CIType, _ = p.Args["ciType"].(string)
 
 		newStudent.CI, _ = p.Args["ci"].(int)
 

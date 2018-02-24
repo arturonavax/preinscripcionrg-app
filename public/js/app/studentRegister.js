@@ -37,30 +37,67 @@
         this.SIGETitle = $("#SIGE-title");
         this.SIGECOD = $("#SIGE-cod");
 
+        // CAMPOS
+        this.SIGERadio = document.getElementsByName("SIGE");
+        this.SIGECODInput = $("#SIGE-codInput");
+
+        this.FirstNameInput = $("#firstName-studentRegister");
+        this.LastNameInput = $("#lastName-studentRegister");
+        this.CIInput = $("#ci-studentRegister");
+        this.EmailInput = $("#email-studentRegister");
+        this.PhoneNumberInput = $("#phoneNumber-studentRegister");
+        this.GenderRadioInput = document.getElementsByName("genero");
+
+        this.DateOfBirthInput = $("#dateOfBirth-studentRegister");
         this.CountriesOfBirth = $("#countriesOfBirth-studentRegister");
         this.StatesOfBirth = $("#statesOfBirth-studentRegister");
         this.MunicipalitiesOfBirth = $("#municipalitiesOfBirth-studentRegister");
-        this.InstitutionsOfOrigin = $("#institutionsOfOrigin-studentRegister");
 
+        this.InstitutionsOfOrigin = $("#institutionsOfOrigin-studentRegister");
+        this.HealthProblemRadio = document.getElementsByName("salud");
+        this.HealthProblemnEInput = $("#healthProblemE-studentRegister");
+
+        this.AddressInput = $("#address-studentRegister");
         this.Municipalities = $("#municipalities-studentRegister");
         this.Parishes = $("#parishes-studentRegister");
         this.Sectors = $("#sectors-studentRegister");
         this.TypeOfRoads = $("#typeOfRoads-studentRegister");
         this.ConditionOfHousings = $("#conditionOfHousing-studentRegister");
 
+        this.MotherFirstNameInput = $("#motherFirstName-studentRegister");
+        this.MotherLastNameInput = $("#motherLastName-studentRegister");
+        this.MotherCIInput = $("#motherCI-studentRegister");
+        this.MotherPhoneNumberInput = $("motherPhoneNumber-studentRegister");
+
+        this.FatherFirstNameInput = $("#fatherFirstName-studentRegister");
+        this.FatherLastNameInput = $("#fatherLastName-studentRegister");
+        this.FatherCIInput = $("#fatherCI-studentRegister");
+        this.FatherPhoneNumberInput = $("fatherPhoneNumber-studentRegister");
+
+        this.RepresentativeFirstNameInput = $("#representativeFirstName-studentRegister");
+        this.RepresentativeLastNameInput = $("#representativeLastName-studentRegister");
+        this.RepresentativeCIInput = $("#representativeCI-studentRegister");
+        this.RepresentativeRelationshipInput = $("#representativeRelationship-studentRegister");
+        this.RepresentativeAddressInput = $("#representativeAddress-studentRegister");
+        this.RepresentativePhoneNumberInput = $("representativePhoneNumber-studentRegister");
+
+        this.BecaRadio = document.getElementsByName("Beca");
+        this.CanaimaRadio = document.getElementsByName("Canaima");
+
         this.Mentions = $("#mentions-studentRegister");
         this.Sections = $("#sections-studentRegister");
+        this.AgeInput = $("#age-studentRegister");
+        this.SizeInput = $("#size-studentRegister");
+        this.WeightInput = $("#weight-studentRegister");
 
-        // CAMPOS
-        this.SIGERadio = document.getElementsByName("SIGE");
-        this.SIGECODInput = $("#SIGE-codInput");
+        this.Regular = $("#regular-studentRegister");
+        this.Repet = $("#repet-studentRegister");
+        this.AsigPend = $("#asigPend-studentRegister");
 
-        this.FirstName = $("#firstName-studentRegister");
-        this.LastName = $("#lastName-studentRegister");
-        this.CI = $("#ci-studentRegister");
-        this.Email = $("#email-studentRegister");
-        this.PhoneNumber = $("#phoneNumber-studentRegister");
-        this.GenderRadio = document.getElementsByName("genero");
+        this.AsigRepetE = $("#asigRepetE-studentRegister");
+        this.AsigPendE = $("#asigPendE-studentRegister");
+
+        this.BtnPreInscribir = $("#btn-preinscribir");
 
     }
 
@@ -285,68 +322,65 @@
         },
 
         register: function(){
+
             let mutation = `
             mutation {
                 studentC (
-                    countryOfBirthID : 1,
-                    stateOfBirthID : 1,
-                    municOfBirthID : 1,
-                    institutionOfOriginID : 1,
-                    municipalityID : 1,
-                    parishID : 1,
-                    sectorID : 1,
-                    typeOfRoadID : 1,
-                    mentionID : 1,
-                    sectionID : 1,
-                    teacherID : 1,
-                    conditionOfHousingID : 1,
+                    countryOfBirthID : ${this.CountriesOfBirth.value},
+                    stateOfBirthID : ${this.StatesOfBirth.value},
+                    municOfBirthID : ${this.MunicipalitiesOfBirth.value},
+                    institutionOfOriginID : ${this.InstitutionsOfOrigin.value},
+                    municipalityID : ${this.Municipalities.value},
+                    parishID : ${this.Parishes.value},
+                    sectorID : ${this.Sectors.value},
+                    typeOfRoadID : ${this.TypeOfRoads.value},
+                    mentionID : ${this.Mentions.value},
+                    sectionID : ${this.Sections.value},
+                    conditionOfHousingID : ${this.ConditionOfHousings.value},
                     
-                    SIGECOD : "A1001",
-                    motherFirstName: "Francis",
-                    motherLastName: "Peñaranda",
-                    motherEmail: "francis@gmail.com",
-                    motherPhoneNumber: "+58928273493",
-                    motherCI: "V-1727392",
-                
-                    representativeFirstName: "Francis",
-                    representativeLastName: "Peñaranda",
-                    representativeEmail: "francis@gmail.com",
-                    representativePhoneNumber: "+58928273493",
-                    representativeCI: "V-1727392",
-                    representativeRelationship: "Madre",
-                    representativeAddress: "La lago",
-                    
-                    fatherFirstName: "Dario",
-                    fatherLastName: "Peñaranda",
-                    fatherEmail: "dario@gmail.com",
-                    fatherPhoneNumber: "+58928273423",
-                    fatherCI: "V-1727772",
-                    
-                    firstName : "Frank",
-                    lastName : "Peñaranda",
-                    ciType : "V",
-                    ci : 29100800,
-                    dateOfBirth : "11/11/01",
+                    SIGECOD : ${this.SIGECODInput.value},
+                    firstName : ${this.FirstNameInput.value},
+                    lastName : ${this.LastNameInput.value},
+                    ci : ${this.CIInput.value},
+                    dateOfBirth : ${this.DateOfBirthInput.value},
                     gender : "M",
                     healthProblem : false,
-                    healthProblemE : "",
-                    email : "coffemanfp@gmail.com",
-                    phoneNumber : "+584167634291",
-                    address : "Valle Frio",
+                    healthProblemE : ${this.HealthProblemnEInput.value},
+                    email : ${this.EmailInput.value},
+                    phoneNumber : ${this.PhoneNumberInput.value},
+                    address : ${this.AddressInput.value},
                     scholarship : true,
                     canaima : true,
-                    year : 4,
-                    age : 15,
-                    size : "L",
-                    weight : 60,
-                    repeatAsignature : "Castellano",
-                    pendingAsignature : "",
+                    year : ${this.YearInput.value},
+                    age : ${this.AgeInput.value},
+                    size : ${this.SizeInput.value},
+                    weight : ${this.WeightInput.value},
+                    repeatAsignature : ${this.AsigRepetE.value},
+                    pendingAsignature :${this.AsigPendE.value},
                     regular : true,
-                    inscriptionDate : "10/08/15"
+                    inscriptionDate : ${this.InscriptionDateInput.value},
+                    
+                    motherFirstName: ${this.MotherFirstNameInput.value},
+                    motherLastName: ${this.MotherLastNameInput.value},
+                    motherPhoneNumber: ${this.MotherPhoneNumberInput.value},
+                    motherCI: ${this.MotherCIInput.value},
+                
+                    fatherFirstName: ${this.FatherFirstNameInput.value},
+                    fatherLastName: ${this.FatherLastNameInput.value},
+                    fatherPhoneNumber: ${this.FatherPhoneNumber.value},
+                    fatherCI: ${this.FatherCIInput.value},
+                    
+                    representativeFirstName: ${this.RepresentativeFirstNameInput.value},
+                    representativeLastName: ${this.RepresentativeLastNameInput.value},
+                    representativePhoneNumber: ${this.RepresentativePhoneNumberInput.value},
+                    representativeCI: ${this.RepresentativeCIInput.value},
+                    representativeRelationship: ${this.RepresentativeRelationshipInput.value},
+                    representativeAddress: ${this.RepresentativeAddressInput.value},
                     
                 ){id,message,code}
             }
             `
+            console.log(mutation);
         }
     }
 })();
