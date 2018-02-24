@@ -114,9 +114,6 @@
         render: function() {
             this.BtnEditProfile.classList.add("itemBtn");
             this.BtnEditProfile.classList.add("itemBtn--edit");
-            this.BtnEditProfile.addEventListener("click", function(){
-               self.renderEdit(); 
-            });
 
             this.BtnEditProfileContainer.appendChild(this.BtnEditProfile);
             this.UserIDDataContainer.textContent = this.Profile.UserID;

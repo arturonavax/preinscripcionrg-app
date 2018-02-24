@@ -8,7 +8,6 @@ let profileUser = new Profile(),
     menuUser = new Menu();
 
 profileUser.token = tokenUser;
-menuUser.Username = profileUser.Username;
 
 let profileView = new ProfileView(profileUser),
     menuView = new MenuView(menuUser);

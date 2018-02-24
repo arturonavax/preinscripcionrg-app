@@ -1,6 +1,6 @@
 (function(){
     self.Menu = function() {
-        this.Username = "Arthur";
+        this.Username = "";
         this.Home = "Inicio";
         this.Profile = "Mi Perfil";
         this.Logout = "Salida";
@@ -11,6 +11,7 @@
     self.MenuView = function(menu) {
         this.Menu = menu;
         this.MenuBtn = $("#menu__btn");
+        this.Dark = $("#dark");
         this.MenuContainer = $("#menu");
         this.MenuTitle = $("#menu-title");
         this.Username = $("#menu-titleUser");
@@ -21,7 +22,10 @@
 
     self.MenuView.prototype = {
         render: function(){
-            this.Username = this.Menu.Username;
+            this.Username.textContent = this.Menu.Username;
+            this.BtnHome.textContent = this.Menu.Home;
+            this.BtnProfile.textContent = this.Menu.Profile;
+            this.BtnLogout.textContent = this.Menu.Logout;
         }
     }
 })();
