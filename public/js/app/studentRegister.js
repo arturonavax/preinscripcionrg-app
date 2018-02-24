@@ -40,7 +40,7 @@
         this.CountriesOfBirth = $("#countriesOfBirth-studentRegister");
         this.StatesOfBirth = $("#statesOfBirth-studentRegister");
         this.MunicipalitiesOfBirth = $("#municipalitiesOfBirth-studentRegister");
-        this.InstitutionsOfBirth = $("#institutionsOfBirth-studentRegister");
+        this.InstitutionsOfOrigin = $("#institutionsOfOrigin-studentRegister");
 
         this.Municipalities = $("#municipalities-studentRegister");
         this.Parishes = $("#parishes-studentRegister");
@@ -54,6 +54,13 @@
         // CAMPOS
         this.SIGERadio = document.getElementsByName("SIGE");
         this.SIGECODInput = $("#SIGE-codInput");
+
+        this.FirstName = $("#firstName-studentRegister");
+        this.LastName = $("#lastName-studentRegister");
+        this.CI = $("#ci-studentRegister");
+        this.Email = $("#email-studentRegister");
+        this.PhoneNumber = $("#phoneNumber-studentRegister");
+        this.GenderRadio = document.getElementsByName("genero");
 
     }
 
