@@ -207,7 +207,7 @@
                      institution.textContent = institutions[i].name;
                      institution.value = institutions[i].id;
 
-                     this.InstitutionsOfBirth.appendChild(institution);
+                     this.InstitutionsOfOrigin.appendChild(institution);
                  }
              });
             //Renderea las parroquias 
