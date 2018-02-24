@@ -1,4 +1,4 @@
-package studentConditions
+package conditionOfHousing
 
 import (
 	"net/http"
@@ -10,8 +10,8 @@ import (
 	"github.com/graphql-go/graphql"
 )
 
-//QueryStudentCondition Query para consultar una condicion de estudiante.
-var QueryStudentCondition = &graphql.Field{
+//QueryConditionOfHousing Query para consultar una condicion de vivienda.
+var QueryConditionOfHousing = &graphql.Field{
 	Type: graphqlTypes.StudentConditionType,
 	Args: graphql.FieldConfigArgument{
 		"id": &graphql.ArgumentConfig{
@@ -21,7 +21,7 @@ var QueryStudentCondition = &graphql.Field{
 	Resolve: func(p graphql.ResolveParams) (interface{}, error) {
 		idQuery, isOK := p.Args["id"].(int)
 		kind := &models.UserKind{}
-		studentConditionFound := &student.StudentCondition{}
+		conditionOfHousingFound := &student.ConditionOfHousing{}
 
 		kindID := p.Context.Value("user").(models.User).KindID
 
@@ -32,21 +32,21 @@ var QueryStudentCondition = &graphql.Field{
 			db.Where("id = ?", kindID).First(&kind)
 
 			if kind.ReadStudentConditions {
-				err := db.Where("id = ?", idQuery).First(&studentConditionFound).Error
+				err := db.Where("id = ?", idQuery).First(&conditionOfHousingFound).Error
 
 				if err != nil {
-					studentConditionFound.Message = "#QueryStudentCondition# : Ocurrio un error."
-					studentConditionFound.Code = http.StatusInternalServerError
+					conditionOfHousingFound.Message = "#QueryConditionOfHousing# : Ocurrio un error."
+					conditionOfHousingFound.Code = http.StatusInternalServerError
 				} else {
-					studentConditionFound.Message = "#QueryStudentCondition# : Consulta exitosa."
-					studentConditionFound.Code = http.StatusAccepted
+					conditionOfHousingFound.Message = "#QueryConditionOfHousing# : Consulta exitosa."
+					conditionOfHousingFound.Code = http.StatusAccepted
 				}
 			} else {
-				studentConditionFound.Message = "#QueryStudentCondition# : No tienes permisos para leer condiciones de estudiantes."
-				studentConditionFound.Code = http.StatusNonAuthoritativeInfo
+				conditionOfHousingFound.Message = "#QueryConditionOfHousing# : No tienes permisos para leer condiciones de vivienda."
+				conditionOfHousingFound.Code = http.StatusNonAuthoritativeInfo
 			}
 		}
 
-		return studentConditionFound, nil
+		return conditionOfHousingFound, nil
 	},
 }

@@ -14,9 +14,9 @@ type Representative struct {
 	LastName     string `json:"lastName" gorm:"not null;type:varchar(30)"`
 	Email        string `json:"email" gorm:"not null;unique;type:varchar(40)"`
 	PhoneNumber  string `json:"phoneNumber" gorm:"not null;type:varchar(15)"`
-	CIType       string `json:"ciType" gorm:"not null;type:char(1)"`
-	CI           int    `json:"ci" gorm:"not null;unique;type:integer"`
+	CI           string `json:"ci" gorm:"not null;unique;type:varchar(15)"`
 	Relationship string `json:"relationship" gorm:"not null;type:varchar(30)"`
+	Address      string `json:"address" gorm:"not null;type:varchar(30)"`
 
 	Message string `json:"message" gorm:"-"`
 	Code    int    `json:"code" gorm:"-"`

@@ -65,7 +65,7 @@ func VerificationBasic() {
 		student.Mother{},
 		student.Mention{},
 		student.Section{},
-		student.StudentCondition{},
+		student.ConditionOfHousing{},
 		student.Student{},
 		student.Asignature{},
 	)

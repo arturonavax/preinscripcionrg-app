@@ -34,7 +34,7 @@ func DropTables() {
 	db.DropTable(&student.Mother{})
 	db.DropTable(&student.Mention{})
 	db.DropTable(&student.Section{})
-	db.DropTable(&student.StudentCondition{})
+	db.DropTable(&student.ConditionOfHousing{})
 	db.DropTable(&student.Student{})
 	db.DropTable(&student.Asignature{})
 	//------------------------

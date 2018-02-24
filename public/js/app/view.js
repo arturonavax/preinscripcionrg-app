@@ -165,12 +165,32 @@
             $("#section").classList.add("tx-D");
         });
 
+        // SIGE
+        this.StudentRegister.SIGEYes.addEventListener("click", function(){
+           self.StudentRegister.SIGETitle.classList.remove("no-visible"); 
+           self.StudentRegister.SIGECOD.classList.remove("no-visible"); 
+        });
+
+        this.StudentRegister.SIGENo.addEventListener("click", function(){
+           self.StudentRegister.SIGETitle.classList.add("no-visible"); 
+           self.StudentRegister.SIGECOD.classList.add("no-visible"); 
+        });
+
+        window.addEventListener("click", function(){
+            campos = document.getElementsByName("SIGE");
+            for (var i=0; i<campos.length; i++) {
+                if (campos[i].checked) {
+                    console.log(campos[i].value);
+                }
+            }
+        });
     }
 
     self.UI.prototype = {
         render: function(){
             this.MenuView.render();
             this.ProfileView.render();
+            this.StudentRegister.render(this.ProfileView.Profile.Token);
         }
     }
 })();

@@ -357,3 +357,7 @@
 .tx-D {
     height: 1300px;
 }
+
+.no-visible {
+    display: none;
+}

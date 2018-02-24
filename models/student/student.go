@@ -24,9 +24,9 @@ type Student struct {
 	MotherID              int `json:"motherID" gorm:"not null;type:integer"`
 	MentionID             int `json:"mentionID" gorm:"not null;type:integer"`
 	SectionID             int `json:"sectionID" gorm:"not null;type:integer"`
-	StudentConditionID    int `json:"studentConditionID" gorm:"not null; type:integer"`
 	RepresentativeID      int `json:"representativeID" gorm:"not null; type:integer"`
 	TeacherID             int `json:"teacherID" gorm:"not null; type:integer"`
+	ConditionOfHousingID  int `json:"conditionOfHousingID" gorm:"not null;integer"`
 	//-----
 
 	// Datos del Estudiante.
@@ -36,22 +36,21 @@ type Student struct {
 	MotherLastName    string `json:"motherLastName" gorm:"-"`
 	MotherEmail       string `json:"motherEmail" gorm:"-"`
 	MotherPhoneNumber string `json:"motherPhoneNumber" gorm:"-"`
-	MotherCIType      string `json:"motherCIType" gorm:"-"`
-	MotherCI          int    `json:"motherCI" gorm:"-"`
+	MotherCI          string `json:"motherCI" gorm:"-"`
 
 	FatherFirstName   string `json:"fatherFirstName" gorm:"-"`
 	FatherLastName    string `json:"fatherLastName" gorm:"-"`
 	FatherEmail       string `json:"fatherEmail" gorm:"-"`
 	FatherPhoneNumber string `json:"fatherPhoneNumber" gorm:"-"`
-	FatherCIType      string `json:"fatherCIType" gorm:"-"`
-	FatherCI          int    `json:"fatherCI" gorm:"-"`
+	FatherCI          string `json:"fatherCI" gorm:"-"`
 
-	RepresentativeFirstName   string `json:"representativeFirstName" gorm:"-"`
-	RepresentativeLastName    string `json:"representativeLastName" gorm:"-"`
-	RepresentativeEmail       string `json:"representativeEmail" gorm:"-"`
-	RepresentativePhoneNumber string `json:"representativePhoneNumber" gorm:"-"`
-	RepresentativeCIType      string `json:"representativeCIType" gorm:"-"`
-	RepresentativeCI          int    `json:"representativeCI" gorm:"-"`
+	RepresentativeFirstName    string `json:"representativeFirstName" gorm:"-"`
+	RepresentativeLastName     string `json:"representativeLastName" gorm:"-"`
+	RepresentativeEmail        string `json:"representativeEmail" gorm:"-"`
+	RepresentativePhoneNumber  string `json:"representativePhoneNumber" gorm:"-"`
+	RepresentativeCI           string `json:"representativeCI" gorm:"-"`
+	RepresentativeRelationship string `json:"representativeRelationship" gorm:"-"`
+	RepresentativeAddress      string `json:"representativeAddress" gorm:"-"`
 
 	FirstName string `json:"firstName" gorm:"not null;type:varchar(50)"`
 	LastName  string `json:"lastName" gorm:"not null;type:varchar(50)"`
@@ -72,8 +71,6 @@ type Student struct {
 	Address     string `json:"address" gorm:"not null;type:varchar(30)"`
 	Scholarship bool   `json:"scholarship" gorm:"not null;type:boolean"`
 	Canaima     bool   `json:"canaima" gorm:"not null;type:boolean"`
-
-	ConditionOfHousing string `json:"conditionOfHousing" gorm:"not null;type:varchar(30)"`
 
 	//Escolaridad-
 	Year int `json:"year" gorm:"not null;type:integer"`

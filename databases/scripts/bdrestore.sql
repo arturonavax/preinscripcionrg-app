@@ -88,13 +88,13 @@ INSERT INTO institutions (user_id,name) VALUES
 ;
 
 -- CREACION DE REPRESENTANTES.
-INSERT INTO representatives (user_id, first_name, last_name, email, phone_number, ci_type, ci, relationship) VALUES
-    (1, 'Zully', 'Marina', 'zullymarina.matheus1@gmail.com', '04146360146', 'V', 8500827, 'Madre')
+INSERT INTO representatives (user_id, first_name, last_name, email, phone_number, ci, relationship, address) VALUES
+    (1, 'Zully', 'Marina', 'zullymarina.matheus1@gmail.com', '04146360146', 'V-8500827', 'Madre', 'Valle Frio')
 ;
 
 -- CREACION DE PROFESORES.
-INSERT INTO teachers (user_id, first_name, last_name, email, phone_number, ci_type, ci) VALUES
-    (1, 'Hosman', 'Salamanca', 'hosman@gmail.com', '04146364823', 'V', 8507329)
+INSERT INTO teachers (user_id, first_name, last_name, email, phone_number, ci) VALUES
+    (1, 'Hosman', 'Salamanca', 'hosman@gmail.com', '04146364823', 'V-8507329')
 ;
 
 -- CREACION DE PARROQUIAS.
@@ -130,13 +130,13 @@ INSERT INTO type_of_roads (user_id, name) VALUES
 ;
 
 -- CREACION DE PADRES.
-INSERT INTO fathers (user_id, first_name, last_name, email, phone_number, ci_type, ci) VALUES
-    (1, 'Arturo', 'Enrique', 'pimosoft@gmail.com', '04146360146', 'V', 8501612)    
+INSERT INTO fathers (user_id, first_name, last_name, email, phone_number, ci) VALUES
+    (1, 'Arturo', 'Enrique', 'pimosoft@gmail.com', '04146360146', 'V-8501612')    
 ;
 
 -- CREACION DE MADRES.
-INSERT INTO mothers (user_id, first_name, last_name, email, phone_number, ci_type, ci) VALUES
-    (1, 'Zully', 'Marina', 'zully@gmail.com', '04146360146', 'V', 8500612)    
+INSERT INTO mothers (user_id, first_name, last_name, email, phone_number, ci) VALUES
+    (1, 'Zully', 'Marina', 'zully@gmail.com', '04146360146', 'V-8500612')    
 ;
 
 -- CREACION DE MENCIONES.
@@ -154,7 +154,7 @@ INSERT INTO sections (user_id, name) VALUES
 ;
 
 -- CREACION DE CONDICIONES DE ESTUDIANTES.
-INSERT INTO student_conditions (user_id, name) VALUES
+INSERT INTO condition_of_housings (user_id, name) VALUES
     (1, 'PROPIA'),
     (1, 'ALQUILADA'),
     (1, 'AL CUIDO'),

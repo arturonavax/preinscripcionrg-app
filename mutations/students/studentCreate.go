@@ -45,7 +45,7 @@ var StudentCreate = &graphql.Field{
 		"sectionID": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Int),
 		},
-		"studentConditionID": &graphql.ArgumentConfig{
+		"conditionOfHousingID": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Int),
 		},
 		"teacherID": &graphql.ArgumentConfig{
@@ -78,11 +78,8 @@ var StudentCreate = &graphql.Field{
 		"motherPhoneNumber": &graphql.ArgumentConfig{
 			Type: graphql.String,
 		},
-		"motherCIType": &graphql.ArgumentConfig{
-			Type: graphql.String,
-		},
 		"motherCI": &graphql.ArgumentConfig{
-			Type: graphql.Int,
+			Type: graphql.String,
 		},
 		"fatherFirstName": &graphql.ArgumentConfig{
 			Type: graphql.String,
@@ -96,11 +93,8 @@ var StudentCreate = &graphql.Field{
 		"fatherPhoneNumber": &graphql.ArgumentConfig{
 			Type: graphql.String,
 		},
-		"fatherCIType": &graphql.ArgumentConfig{
-			Type: graphql.String,
-		},
 		"fatherCI": &graphql.ArgumentConfig{
-			Type: graphql.Int,
+			Type: graphql.String,
 		},
 		"representativeFirstName": &graphql.ArgumentConfig{
 			Type: graphql.String,
@@ -114,11 +108,14 @@ var StudentCreate = &graphql.Field{
 		"representativePhoneNumber": &graphql.ArgumentConfig{
 			Type: graphql.String,
 		},
-		"representativeCIType": &graphql.ArgumentConfig{
+		"representativeCI": &graphql.ArgumentConfig{
 			Type: graphql.String,
 		},
-		"representativeCI": &graphql.ArgumentConfig{
-			Type: graphql.Int,
+		"representativeRelationship": &graphql.ArgumentConfig{
+			Type: graphql.String,
+		},
+		"representativeAddress": &graphql.ArgumentConfig{
+			Type: graphql.String,
 		},
 		"dateOfBirth": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.String),
@@ -146,9 +143,6 @@ var StudentCreate = &graphql.Field{
 		},
 		"canaima": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Boolean),
-		},
-		"conditionOfHousing": &graphql.ArgumentConfig{
-			Type: graphql.NewNonNull(graphql.String),
 		},
 		"year": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Int),
@@ -201,8 +195,8 @@ var StudentCreate = &graphql.Field{
 		newStudent.TypeOfRoadID, _ = p.Args["typeOfRoadID"].(int)
 		newStudent.MentionID, _ = p.Args["mentionID"].(int)
 		newStudent.SectionID, _ = p.Args["sectionID"].(int)
-		newStudent.StudentConditionID, _ = p.Args["studentConditionID"].(int)
 		newStudent.TeacherID, _ = p.Args["teacherID"].(int)
+		newStudent.ConditionOfHousingID, _ = p.Args["conditionOfHousing"].(int)
 
 		newStudent.SIGECOD, _ = p.Args["SIGECOD"].(string)
 
@@ -210,22 +204,19 @@ var StudentCreate = &graphql.Field{
 		newStudent.MotherLastName, _ = p.Args["motherLastName"].(string)
 		newStudent.MotherEmail, _ = p.Args["motherEmail"].(string)
 		newStudent.MotherPhoneNumber, _ = p.Args["motherPhoneNumber"].(string)
-		newStudent.MotherCIType, _ = p.Args["motherCIType"].(string)
-		newStudent.MotherCI, _ = p.Args["motherCI"].(int)
+		newStudent.MotherCI, _ = p.Args["motherCI"].(string)
 
 		newStudent.FatherFirstName, _ = p.Args["fatherFirstName"].(string)
 		newStudent.FatherLastName, _ = p.Args["fatherLastName"].(string)
 		newStudent.FatherEmail, _ = p.Args["fatherEmail"].(string)
 		newStudent.FatherPhoneNumber, _ = p.Args["fatherPhoneNumber"].(string)
-		newStudent.FatherCIType, _ = p.Args["fatherCIType"].(string)
-		newStudent.FatherCI, _ = p.Args["fatherCI"].(int)
+		newStudent.FatherCI, _ = p.Args["fatherCI"].(string)
 
 		newStudent.RepresentativeFirstName, _ = p.Args["representativeFirstName"].(string)
 		newStudent.RepresentativeLastName, _ = p.Args["representativeLastName"].(string)
 		newStudent.RepresentativeEmail, _ = p.Args["representativeEmail"].(string)
 		newStudent.RepresentativePhoneNumber, _ = p.Args["representativePhoneNumber"].(string)
-		newStudent.RepresentativeCIType, _ = p.Args["representativeCIType"].(string)
-		newStudent.RepresentativeCI, _ = p.Args["representativeCI"].(int)
+		newStudent.RepresentativeCI, _ = p.Args["representativeCI"].(string)
 
 		newStudent.FirstName, _ = p.Args["firstName"].(string)
 
@@ -253,8 +244,6 @@ var StudentCreate = &graphql.Field{
 
 		newStudent.Canaima, _ = p.Args["canaima"].(bool)
 
-		newStudent.ConditionOfHousing, _ = p.Args["conditionOfHousing"].(string)
-
 		newStudent.Year, _ = p.Args["year"].(int)
 
 		newStudent.Age, _ = p.Args["age"].(int)
@@ -275,22 +264,21 @@ var StudentCreate = &graphql.Field{
 		newMother.LastName = newStudent.MotherLastName
 		newMother.Email = newStudent.MotherEmail
 		newMother.PhoneNumber = newStudent.MotherPhoneNumber
-		newMother.CIType = newStudent.MotherCIType
 		newMother.CI = newStudent.MotherCI
 
 		newFather.FirstName = newStudent.FatherFirstName
 		newFather.LastName = newStudent.FatherLastName
 		newFather.Email = newStudent.FatherEmail
 		newFather.PhoneNumber = newStudent.FatherPhoneNumber
-		newFather.CIType = newStudent.FatherCIType
 		newFather.CI = newStudent.FatherCI
 
 		newRepresentative.FirstName = newStudent.RepresentativeFirstName
 		newRepresentative.LastName = newStudent.RepresentativeLastName
 		newRepresentative.Email = newStudent.RepresentativeEmail
 		newRepresentative.PhoneNumber = newStudent.RepresentativePhoneNumber
-		newRepresentative.CIType = newStudent.RepresentativeCIType
 		newRepresentative.CI = newStudent.RepresentativeCI
+		newRepresentative.Relationship = newStudent.RepresentativeRelationship
+		newRepresentative.Address = newStudent.RepresentativeAddress
 
 		//Se instancia una conexion a la base de datos.
 		db := databases.GetConnectionDB()

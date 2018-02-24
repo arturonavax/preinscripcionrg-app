@@ -34,7 +34,7 @@ func CreateTables() {
 	db.CreateTable(&student.Mother{})
 	db.CreateTable(&student.Mention{})
 	db.CreateTable(&student.Section{})
-	db.CreateTable(&student.StudentCondition{})
+	db.CreateTable(&student.ConditionOfHousing{})
 	db.CreateTable(&student.Student{})
 	db.CreateTable(&student.Asignature{})
 	//----------------------

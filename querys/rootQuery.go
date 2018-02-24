@@ -2,6 +2,7 @@ package querys
 
 import (
 	"github.com/arthurnavah/PreInscripcionRG/querys/asignatures"
+	"github.com/arthurnavah/PreInscripcionRG/querys/conditionOfHousing"
 	"github.com/arthurnavah/PreInscripcionRG/querys/countries"
 	"github.com/arthurnavah/PreInscripcionRG/querys/institutions"
 	"github.com/arthurnavah/PreInscripcionRG/querys/me"
@@ -11,7 +12,6 @@ import (
 	"github.com/arthurnavah/PreInscripcionRG/querys/sections"
 	"github.com/arthurnavah/PreInscripcionRG/querys/sectors"
 	"github.com/arthurnavah/PreInscripcionRG/querys/states"
-	"github.com/arthurnavah/PreInscripcionRG/querys/studentConditions"
 	"github.com/arthurnavah/PreInscripcionRG/querys/students"
 	"github.com/arthurnavah/PreInscripcionRG/querys/teachers"
 	"github.com/arthurnavah/PreInscripcionRG/querys/typeOfRoads"
@@ -79,8 +79,8 @@ var RootQuery = graphql.NewObject(
 			"typeOfRoad":  typeOfRoads.QueryTypeOfRoad,
 
 			//Querys Condiciones de Estudiantes
-			"studentConditions": studentConditions.QueryStudentConditions,
-			"studentCondition":  studentConditions.QueryStudentCondition,
+			"conditionOfHousings": conditionOfHousing.QueryConditionOfHousings,
+			"conditionOfHousing":  conditionOfHousing.QueryConditionOfHousing,
 		},
 	},
 )

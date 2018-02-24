@@ -169,14 +169,14 @@
                                    
                                     <div class="itemFicha__containerRadio">
 
-                                        <input id="" class="item__input--radio" type="radio" name="SIGE"/>
+                                        <input id="SIGE-yes" class="item__input--radio" type="radio" value="SI" name="SIGE"/>
                                         <p class="item__label">SI</p>
 
                                     </div>    
 
                                     <div class="itemFicha__containerRadio">
 
-                                        <input id="" class="item__input--radio" type="radio" name="SIGE"/>
+                                        <input id="SIGE-no" class="item__input--radio" type="radio" value="NO" name="SIGE"/>
                                         <p class="item__label">NO</p>
 
                                     </div> 
@@ -188,14 +188,14 @@
 
                             <div class="itemFicha">
 
-                                <div class="itemFicha__container itemFicha__container--SIGE">
+                                <div id="SIGE-title" class="itemFicha__container itemFicha__container--SIGE no-visible">
                                     <h1 class="itemFicha__title">
                                         Su SIGE
                                     </h1>
                                 </div>
 
-                                <div class="itemFicha__container">
-                                    <input id="" class="item__input item__input--SIGE" type="text" placeholder="######" />
+                                <div id="SIGE-cod" class="itemFicha__container no-visible">
+                                    <input id="SIGE-codInput" class="item__input item__input--SIGE" type="text" placeholder="######" />
                                 </div>
 
                                 <div class="itemFicha">
@@ -222,27 +222,27 @@
 
                                 <div class="form__item">
                                     <p class="item__label">Nombre :</p>
-                                    <input id="" class="item__input" type="text" placeholder="Nombre Del Estudiante..." name=""/>
+                                    <input id="firstName-studentRegister" class="item__input" type="text" placeholder="Nombre Del Estudiante..." name=""/>
                                 </div>
 
                                 <div class="form__item">
                                     <p class="item__label">Apellido :</p>
-                                    <input id="" class="item__input" type="text" placeholder="Apellido Del Estudiante..." name=""/>
+                                    <input id="lastName-studentRegister" class="item__input" type="text" placeholder="Apellido Del Estudiante..." name=""/>
                                 </div>
 
                                 <div class="form__item">
                                     <p class="item__label">C.I :</p>
-                                    <input id="" class="item__input" type="text" placeholder="Cedula Del Estudiante..." name=""/>
+                                    <input id="ci-studentRegister" class="item__input" type="text" placeholder="Cedula Del Estudiante..." name=""/>
                                 </div>
 
                                 <div class="form__item">
                                     <p class="item__label">Correo Electronico :</p>
-                                    <input id="" class="item__input" type="text" placeholder="Correo Del Estudiante..." name=""/>
+                                    <input id="email-studentRegister" class="item__input" type="text" placeholder="Correo Del Estudiante..." name=""/>
                                 </div>
 
                                 <div class="form__item">
                                     <p class="item__label">Numero Telefonico :</p>
-                                    <input id="" class="item__input" type="text" placeholder="Numero Del Estudiante..." name=""/>
+                                    <input id="phoneNumber-studentRegister" class="item__input" type="text" placeholder="Numero Del Estudiante..." name=""/>
                                 </div>
 
                                 <div class="itemFicha__container">
@@ -290,25 +290,25 @@
 
                             <div class="form__item">
                                 <p class="item__label">Pais de Nacimiento :</p>
-                                <select id="" class="item__select">
+                                <select id="countriesOfBirth-studentRegister" class="item__select">
                                 </select>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">Estado de Nacimiento :</p>
-                                <select id="" class="item__select">
+                                <select id="statesOfBirth-studentRegister" class="item__select">
                                 </select>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">Municipio de Nacimiento :</p>
-                                <select id="" class="item__select">
+                                <select id="municipalitiesOfBirth-studentRegister" class="item__select">
                                 </select>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">Plantel de Procedencia :</p>
-                                <select id="" class="item__select">
+                                <select id="institutionsOfBirth-studentRegister" class="item__select">
                                 </select>
                             </div>
 
@@ -345,14 +345,14 @@
 
                                 <div class="itemFicha__containerRadio">
 
-                                    <input id="" class="item__input--radio" type="radio" name="salud"/>
+                                    <input class="item__input--radio" type="radio" name="salud"/>
                                     <p class="item__label">SI</p>
 
                                 </div>
 
                                 <div class="itemFicha__containerRadio">    
 
-                                    <input id="" class="item__input--radio" type="radio" name="salud"/>
+                                    <input class="item__input--radio" type="radio" name="salud"/>
                                     <p class="item__label">NO</p>
 
                                 </div>
@@ -361,7 +361,7 @@
 
                             <div class="form__item">
                                 <p class="item__label">Cual Problema Presenta :</p>
-                                <input id="" class="item__input" type="text" placeholder="Problema medico..." name=""/>
+                                <input id="healthProblemE-studentRegister" class="item__input" type="text" placeholder="Problema medico..." name=""/>
                             </div>
 
                             <div class="itemFicha">
@@ -385,36 +385,36 @@
                             
                             <div class="form__item">
                                 <p class="item__label">Dirección de Hab :</p>
-                                <input id="" class="item__input" type="text" placeholder="Dirección de Hab..." name=""/>
+                                <input id="address-studentRegister" class="item__input" type="text" placeholder="Dirección de Hab..." name=""/>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">Municipio :</p>
-                                <select id="" class="item__select">
+                                <select id="municipalities-studentRegister" class="item__select">
                                 </select>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">Parroquia :</p>
-                                <select id="" class="item__select">
+                                <select id="parishes-studentRegister" class="item__select">
                                 </select>
                             </div>
                             
                             <div class="form__item">
                                 <p class="item__label">Sector :</p>
-                                <select id="" class="item__select">
+                                <select id="sectors-studentRegister" class="item__select">
                                 </select>
                             </div>
                             
                             <div class="form__item">
                                 <p class="item__label">Tipo de Via :</p>
-                                <select id="" class="item__select">
+                                <select id="typeOfRoads-studentRegister" class="item__select">
                                 </select>
                             </div>
                             
                             <div class="form__item">
                                 <p class="item__label">Condición de la Vivienda :</p>
-                                <select id="" class="item__select">
+                                <select id="conditionOfHousing-studentRegister" class="item__select">
                                 </select>
                             </div>
                             
@@ -439,17 +439,17 @@
                             
                             <div class="form__item">
                                 <p class="item__label">Nombre de la Madre :</p>
-                                <input id="" class="item__input" type="text" placeholder="Nombre de la Madre..." name=""/>
+                                <input id="motherFirstName-studentRegister" class="item__input" type="text" placeholder="Nombre de la Madre..." name=""/>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">Apellido de la Madre :</p>
-                                <input id="" class="item__input" type="text" placeholder="Apellido de la Madre..." name=""/>
+                                <input id="motherLastName-studentRegister" class="item__input" type="text" placeholder="Apellido de la Madre..." name=""/>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">C.I :</p>
-                                <input id="" class="item__input" type="text" placeholder="Cedula de la Madre..." name=""/>
+                                <input id="motherCI-studentRegister" class="item__input" type="text" placeholder="Cedula de la Madre..." name=""/>
                             </div>
                                 
                             <div class="itemFicha">
@@ -473,17 +473,17 @@
                             
                             <div class="form__item">
                                 <p class="item__label">Nombre del Padre :</p>
-                                <input id="" class="item__input" type="text" placeholder="Nombre del Padre..." name=""/>
+                                <input id="fatherFirstName-studentRegister" class="item__input" type="text" placeholder="Nombre del Padre..." name=""/>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">Apellido del Padre :</p>
-                                <input id="" class="item__input" type="text" placeholder="Apellido del Padre..." name=""/>
+                                <input id="fatherLastName-studentRegister" class="item__input" type="text" placeholder="Apellido del Padre..." name=""/>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">C.I :</p>
-                                <input id="" class="item__input" type="text" placeholder="Cedula del Padre..." name=""/>
+                                <input id="fatherCI-studentRegister" class="item__input" type="text" placeholder="Cedula del Padre..." name=""/>
                             </div>
                                 
                             <div class="itemFicha">
@@ -507,27 +507,27 @@
                             
                             <div class="form__item">
                                 <p class="item__label">Nombre del Representante :</p>
-                                <input id="" class="item__input" type="text" placeholder="Nombre del Representante..." name=""/>
+                                <input id="representativeFirstName-studentRegister" class="item__input" type="text" placeholder="Nombre del Representante..." name=""/>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">Apellido del Representante :</p>
-                                <input id="" class="item__input" type="text" placeholder="Apellido del Representante..." name=""/>
+                                <input id="representativeLastName-studentRegister" class="item__input" type="text" placeholder="Apellido del Representante..." name=""/>
                             </div>
 
                             <div class="form__item">
                                 <p class="item__label">C.I :</p>
-                                <input id="" class="item__input" type="text" placeholder="Cedula del Representante..." name=""/>
+                                <input id="representativeCI-studentRegister" class="item__input" type="text" placeholder="Cedula del Representante..." name=""/>
                             </div>
                             
                             <div class="form__item">
                                 <p class="item__label">Parentesco con el Estudiante :</p>
-                                <input id="" class="item__input" type="text" placeholder="Parentesco..." name=""/>
+                                <input id="representativeRelationship-studentRegister" class="item__input" type="text" placeholder="Parentesco..." name=""/>
                             </div>
                                
                             <div class="form__item">
                                 <p class="item__label">Dirección de Hab del Representante :</p>
-                                <input id="" class="item__input" type="text" placeholder="Dirección del Representante..." name=""/>
+                                <input id="representativeAddress-studentRegister" class="item__input" type="text" placeholder="Dirección del Representante..." name=""/>
                             </div>
                                 
                             <div class="itemFicha">
@@ -614,29 +614,29 @@
                             
                             <div class="form__item">
                                 <p class="item__label">Mención :</p>
-                                <select id="" class="item__select">
+                                <select id="mentions-studentRegister" class="item__select">
                                 </select>
                             </div>
                             
                             <div class="form__item">
                                 <p class="item__label">Sección :</p>
-                                <select id="" class="item__select">
+                                <select id="sections-studentRegister" class="item__select">
                                 </select>
                             </div>
                             
                             <div class="form__item">
                                 <p class="item__label">Edad :</p>
-                                <input id="" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
+                                <input id="age-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
                             </div>
                             
                             <div class="form__item">
                                 <p class="item__label">Talla :</p>
-                                <input id="" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
+                                <input id="size-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
                             </div>
                             
                             <div class="form__item">
                                 <p class="item__label">Peso :</p>
-                                <input id="" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
+                                <input id="weight-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
                             </div>
                             
                             <div class="itemFicha">    
@@ -644,21 +644,21 @@
                                 <div class="itemFicha__containerCheck">
 
                                     <p class="item__label">Regular</p>
-                                    <input id="" class="item__input--check" type="checkbox" name="Canaima"/>
+                                    <input id="regular-studentRegister" class="item__input--check" type="checkbox" name="regular"/>
 
                                 </div>
 
                                 <div class="itemFicha__containerCheck">    
 
                                     <p class="item__label">Repitiente</p>
-                                    <input id="" class="item__input--check" type="checkbox" name="Canaima"/>
+                                    <input id="repet-studentRegister" class="item__input--check" type="checkbox" name="repet"/>
 
                                 </div>
                                 
                                 <div class="itemFicha__containerCheck">    
 
                                     <p class="item__label">Asig. Pend.</p>
-                                    <input id="" class="item__input--check" type="checkbox" name="Canaima"/>
+                                    <input id="asigPend-studentRegister" class="item__input--check" type="checkbox" name="asigPend"/>
 
                                 </div>
 
@@ -666,12 +666,12 @@
                             
                             <div class="form__item">
                                 <p class="item__label">Asignaturas que Repite :</p>
-                                <input id="" class="item__input" type="text" placeholder="Asignatura que repite..." name=""/>
+                                <input id="asigRepetE-studentRegister" class="item__input" type="text" placeholder="Asignatura que repite..." name=""/>
                             </div>
                             
                             <div class="form__item">
                                 <p class="item__label">Asignaturas Pendientes :</p>
-                                <input id="" class="item__input" type="text" placeholder="Asignatura Pendientes..." name=""/>
+                                <input id="asigPendE-studentRegister" class="item__input" type="text" placeholder="Asignatura Pendientes..." name=""/>
                             </div>
                             
                             <div class="itemFicha">
@@ -695,7 +695,7 @@
                             
                             <div class="itemFicha">
 
-                                <button id="" class="item__submitFicha">
+                                <button id="btn-preinscribir" class="item__submitFicha">
                                     <span class="submitFicha__decoration">Pre-Inscribir</span>
                                 </button>
                                 

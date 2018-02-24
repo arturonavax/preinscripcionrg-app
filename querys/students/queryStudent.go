@@ -67,21 +67,18 @@ var QueryStudent = &graphql.Field{
 				studentFound.MotherLastName = motherFound.LastName
 				studentFound.MotherEmail = motherFound.Email
 				studentFound.MotherPhoneNumber = motherFound.PhoneNumber
-				studentFound.MotherCIType = motherFound.CIType
 				studentFound.MotherCI = motherFound.CI
 
 				studentFound.FatherFirstName = fatherFound.FirstName
 				studentFound.FatherLastName = fatherFound.LastName
 				studentFound.FatherEmail = fatherFound.Email
 				studentFound.FatherPhoneNumber = fatherFound.PhoneNumber
-				studentFound.FatherCIType = fatherFound.CIType
 				studentFound.FatherCI = fatherFound.CI
 
 				studentFound.RepresentativeFirstName = representativeFound.FirstName
 				studentFound.RepresentativeLastName = representativeFound.LastName
 				studentFound.RepresentativeEmail = representativeFound.Email
 				studentFound.RepresentativePhoneNumber = representativeFound.PhoneNumber
-				studentFound.RepresentativeCIType = representativeFound.CIType
 				studentFound.RepresentativeCI = representativeFound.CI
 			} else {
 				studentFound.Message = "#QueryStudent# : No tienes permisos para leer estudiantes."

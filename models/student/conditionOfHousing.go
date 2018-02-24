@@ -2,8 +2,8 @@ package student
 
 import "time"
 
-//StudentCondition Condicion de el Estudiante de la aplicacion.
-type StudentCondition struct {
+//ConditionOfHousing condicion de vivienda del estudiante.
+type ConditionOfHousing struct {
 	ID        int `json:"id" gorm:"primary_key"`
 	CreatedAt time.Time
 	UpdatedAt time.Time
