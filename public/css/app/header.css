@@ -188,6 +188,12 @@
             
         }
 
+        .item__btn--students::before {
+            font-family: icons;
+            content: "\ ";
+            
+        }
+
         .item__btn--log-out::before {
             font-family: icons;
             content: "\ea14  ";
