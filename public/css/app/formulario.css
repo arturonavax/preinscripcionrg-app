@@ -116,6 +116,10 @@
             border-radius: 5px;
         }
 
+.item__submitFicha--registrar {
+            width: 80%;
+        }
+
         .submitFicha__decoration {
             font-family: oleo;
             font-size: 20px;
