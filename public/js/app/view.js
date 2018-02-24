@@ -31,6 +31,15 @@
             self.ProfileView.renderEdit();
         });
 
+        this.ProfileView.BtnCancelEditProfile.addEventListener("click", function(){
+            self.ProfileView.cancelEdit();
+        }); 
+
+        this.ProfileView.BtnSaveEditProfile.addEventListener("click", function() {
+            self.ProfileView.BtnSaveEditProfile.textContent = "Guardando..";
+            self.ProfileView.saveEdit();
+        });
+
     }
 
     self.UI.prototype = {

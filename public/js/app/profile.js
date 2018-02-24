@@ -130,17 +130,10 @@
             this.BtnCancelEditProfile.textContent = "Cancelar";
             this.BtnCancelEditProfile.classList.add("item__submit");
             this.BtnCancelEditProfile.classList.add("item__submit--edit");
-            this.BtnCancelEditProfile.addEventListener("click", function(){
-                this.cancelEdit();
-            });
 
             this.BtnSaveEditProfile.textContent = "Guardar";
             this.BtnSaveEditProfile.classList.add("item__submit");
             this.BtnSaveEditProfile.classList.add("item__submit--edit");
-            this.BtnSaveEditProfile.addEventListener("click", function(){
-                this.BtnSaveEditProfile.textContent = "Guardando..";
-                this.saveEdit();
-            });
 
             this.EmailDataEdit.value = this.EmailDataContainer.textContent;
             this.EmailDataEdit.id = this.EmailDataContainer.id;
