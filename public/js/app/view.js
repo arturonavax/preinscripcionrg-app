@@ -1,14 +1,22 @@
 (function(){
-    self.UI = function(menu,profile){
+    self.UI = function(menu,profile, studentRegister){
         this.MenuView = menu;
         this.ProfileView = profile;
+        this.StudentRegister = studentRegister;
 
         this.MenuView.Menu.Username = this.ProfileView.Profile.Username;
-        this.BtnBackWindowProfile = $("#btn-back");
+        this.BtnBackWindowProfile = $("#btn-back-profile");
+        this.BtnBackWindowStudentRegister = $("#btn-back-studentRegister");
 
         let self = this;
 
+        // Eventos del menu.
         this.MenuView.MenuBtn.addEventListener("click", function(){
+            self.MenuView.MenuContainer.classList.toggle("header__nav--open");
+            self.MenuView.Dark.classList.toggle("dark--move");
+        });
+
+        this.MenuView.Dark.addEventListener("click", function(){
             self.MenuView.MenuContainer.classList.toggle("header__nav--open");
             self.MenuView.Dark.classList.toggle("dark--move");
         });
@@ -23,6 +31,11 @@
             self.ProfileView.ContainerProfile.classList.add("section__container--open");
         });
 
+        this.StudentRegister.BtnStudentRegister.addEventListener("click", function(){
+            self.StudentRegister.ContainerStudentRegister.classList.add("section__container--open");
+        });
+
+        // Eventos de la ventana profile.
         this.BtnBackWindowProfile.addEventListener("click",function() {
             self.ProfileView.ContainerProfile.classList.remove("section__container--open");
         });
@@ -38,6 +51,116 @@
         this.ProfileView.BtnSaveEditProfile.addEventListener("click", function() {
             self.ProfileView.BtnSaveEditProfile.textContent = "Guardando..";
             self.ProfileView.saveEdit();
+        });
+
+        // Eventos de la ventana de estudiantes.
+        //  Botones de avance.
+        this.BtnBackWindowStudentRegister.addEventListener("click", function(){
+            self.StudentRegister.ContainerStudentRegister.classList.remove("section__container--open");
+        })
+
+        this.StudentRegister.BtnNextPage1.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page2");
+            $("#section").classList.remove("tx-A");
+            $("#section").classList.add("tx-C");
+        });
+        this.StudentRegister.BtnNextPage2.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page2");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page3");
+        });
+        this.StudentRegister.BtnNextPage3.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page3");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page4");
+            $("#section").classList.remove("tx-C");
+            $("#section").classList.add("tx-B");
+        });
+        this.StudentRegister.BtnNextPage4.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page4");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page5");
+            $("#section").classList.remove("tx-B");
+            $("#section").classList.add("tx-C");
+        });
+        this.StudentRegister.BtnNextPage5.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page5");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page6");
+            $("#section").classList.remove("tx-C");
+            $("#section").classList.add("tx-B");
+        });
+        this.StudentRegister.BtnNextPage6.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page6");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page7");
+        });
+        this.StudentRegister.BtnNextPage7.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page7");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page8");
+        });
+        this.StudentRegister.BtnNextPage8.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page8");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page9");
+        });
+        this.StudentRegister.BtnNextPage9.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page9");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page10");
+            $("#section").classList.remove("tx-B");
+            $("#section").classList.add("tx-D");
+        });
+        this.StudentRegister.BtnNextPage10.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page10");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page11");
+            $("#section").classList.remove("tx-D");
+            $("#section").classList.add("tx-A");
+        });
+        // Botones de retroceso.
+        this.StudentRegister.BtnBackPage2.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page2");
+            $("#section").classList.remove("tx-C");
+            $("#section").classList.add("tx-A");
+        });
+        this.StudentRegister.BtnBackPage3.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page3");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page2");
+        });
+        this.StudentRegister.BtnBackPage4.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page4");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page3");
+            $("#section").classList.remove("tx-B");
+            $("#section").classList.add("tx-C");
+        });
+        this.StudentRegister.BtnBackPage5.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page5");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page4");
+            $("#section").classList.remove("tx-C");
+            $("#section").classList.add("tx-B");
+        });
+        this.StudentRegister.BtnBackPage6.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page6");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page5");
+            $("#section").classList.remove("tx-B");
+            $("#section").classList.add("tx-C");
+        });
+        this.StudentRegister.BtnBackPage7.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page7");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page6");
+        });
+        this.StudentRegister.BtnBackPage8.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page8");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page7");
+        });
+        this.StudentRegister.BtnBackPage9.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page9");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page8");
+        });
+        this.StudentRegister.BtnBackPage10.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page10");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page9");
+            $("#section").classList.remove("tx-D");
+            $("#section").classList.add("tx-B");
+        });
+        this.StudentRegister.BtnBackPage11.addEventListener("click", function() {
+            self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page11");
+            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page10");
+            $("#section").classList.remove("tx-A");
+            $("#section").classList.add("tx-D");
         });
 
     }

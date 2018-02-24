@@ -10,9 +10,10 @@ let profileUser = new Profile(),
 profileUser.token = tokenUser;
 
 let profileView = new ProfileView(profileUser),
-    menuView = new MenuView(menuUser);
+    menuView = new MenuView(menuUser),
+    studentRegister = new StudentRegisterView();
 
-let UserInterface = new UI(menuView,profileView);
+let UserInterface = new UI(menuView,profileView,studentRegister);
 
 window.addEventListener("load", function(){
     UserInterface.render();
