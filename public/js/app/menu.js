@@ -3,6 +3,7 @@
         this.Username = "";
         this.Home = "Inicio";
         this.Profile = "Mi Perfil";
+        this.Students = "Estudiantes";
         this.Logout = "Salida";
     }
 })();
@@ -17,6 +18,7 @@
         this.Username = $("#menu-titleUser");
         this.BtnHome = $("#menu-btnHome");
         this.BtnProfile = $("#menu-btnProfile");
+        this.BtnStudents = $("#menu-btnStudents")
         this.BtnLogout = $("#menu-btnLogout");
     }
 
@@ -25,6 +27,7 @@
             this.Username.textContent = this.Menu.Username;
             this.BtnHome.textContent = this.Menu.Home;
             this.BtnProfile.textContent = this.Menu.Profile;
+            this.BtnStudents.textContent = this.Menu.Students;
             this.BtnLogout.textContent = this.Menu.Logout;
         }
     }

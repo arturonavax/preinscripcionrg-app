@@ -12,8 +12,9 @@ profileUser.token = tokenUser;
 let profileView = new ProfileView(profileUser),
     menuView = new MenuView(menuUser),
     studentRegister = new StudentRegisterView();
+    students = new StudentsView();
 
-let UserInterface = new UI(menuView,profileView,studentRegister);
+let UserInterface = new UI(menuView,profileView,studentRegister, students);
 
 window.addEventListener("load", function(){
     UserInterface.render();

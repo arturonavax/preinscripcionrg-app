@@ -1,12 +1,14 @@
 (function(){
-    self.UI = function(menu,profile, studentRegister){
+    self.UI = function(menu,profile, studentRegister, students){
         this.MenuView = menu;
         this.ProfileView = profile;
         this.StudentRegister = studentRegister;
+        this.StudentsView = students;
 
         this.MenuView.Menu.Username = this.ProfileView.Profile.Username;
         this.BtnBackWindowProfile = $("#btn-back-profile");
         this.BtnBackWindowStudentRegister = $("#btn-back-studentRegister");
+        this.BtnBackWindowStudents = $("#btn-back-students");
 
         let self = this;
 
@@ -19,6 +21,11 @@
         this.MenuView.Dark.addEventListener("click", function(){
             self.MenuView.MenuContainer.classList.toggle("header__nav--open");
             self.MenuView.Dark.classList.toggle("dark--move");
+        });
+
+        this.MenuView.BtnStudents.addEventListener("click", function(){
+            self.StudentsView.ContainerStudents.classList.add("section__container--open");
+            $("#section").classList.add("tx-C");
         });
 
         this.MenuView.BtnLogout.addEventListener("click", function(){
@@ -39,7 +46,10 @@
         // Eventos de la ventana profile.
         this.BtnBackWindowProfile.addEventListener("click",function() {
             self.ProfileView.ContainerProfile.classList.remove("section__container--open");
+            $("#section").classList.remove("tx-B");
             $("#section").classList.remove("tx-C");
+            $("#section").classList.remove("tx-D");
+            $("#section").classList.add("tx-A");
         });
 
         this.ProfileView.BtnEditProfile.addEventListener("click", function(){
@@ -55,10 +65,14 @@
             self.ProfileView.saveEdit();
         });
 
-        // Eventos de la ventana de estudiantes.
+        // Eventos de la ventana de creacion de estudiantes.
         //  Botones de avance.
         this.BtnBackWindowStudentRegister.addEventListener("click", function(){
             self.StudentRegister.ContainerStudentRegister.classList.remove("section__container--open");
+            $("#section").classList.remove("tx-B");
+            $("#section").classList.remove("tx-C");
+            $("#section").classList.remove("tx-D");
+            $("#section").classList.add("tx-A");
         })
 
         this.StudentRegister.BtnNextPage1.addEventListener("click", function() {
@@ -179,16 +193,16 @@
         this.StudentRegister.BtnPreInscribir.addEventListener("click", function(){
             self.StudentRegister.register();
         });
-        /*
-        window.addEventListener("click", function(){
-            campos = document.getElementsByName("SIGE");
-            for (var i=0; i<campos.length; i++) {
-                if (campos[i].checked) {
-                    console.log(campos[i].value);
-                }
-            }
+
+        // Eventos de la ventana de estudiantes.
+        this.BtnBackWindowStudents.addEventListener("click", function() {
+            self.StudentsView.ContainerStudents.classList.remove("section__container--open");
+            $("#section").classList.remove("tx-B");
+            $("#section").classList.remove("tx-C");
+            $("#section").classList.remove("tx-D");
+            $("#section").classList.add("tx-A");
+
         });
-        */
     }
 
     self.UI.prototype = {
@@ -196,6 +210,7 @@
             this.MenuView.render();
             this.ProfileView.render();
             this.StudentRegister.render(this.ProfileView.Profile.Token);
+            this.StudentsView.render();
         }
     }
 })();
