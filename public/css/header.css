@@ -170,6 +170,7 @@
             width: 100%;
             display: inline-block;
             line-height: 60px;
+            font-weight: 800;
 
             background: transparent;
             color: #da373b;
@@ -180,27 +181,31 @@
         .item__btn--home::before {
             font-family: icons;
             content: "\e900  ";
+            font-weight: 400;
         }
 
         .item__btn--profile::before {
             font-family: icons;
             content: "\e971 ";
-            
+            font-weight: 400;
         }
 
         .item__btn--login::before {
             font-family: icons;
             content: "\ea13  ";
+            font-weight: 400;
         }
 
         .item__btn--log-out::before {
             font-family: icons;
             content: "\ea14  ";
+            font-weight: 400;
         }
 
         .item__btn--register::before {
             font-family: icons;
             content: "\e973  ";
+            font-weight: 400;
         }
 
 /*------------------------------------------------------------*/
