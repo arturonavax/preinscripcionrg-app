@@ -67,19 +67,19 @@
         this.MotherFirstNameInput = $("#motherFirstName-studentRegister");
         this.MotherLastNameInput = $("#motherLastName-studentRegister");
         this.MotherCIInput = $("#motherCI-studentRegister");
-        this.MotherPhoneNumberInput = $("motherPhoneNumber-studentRegister");
+        this.MotherPhoneNumberInput = $("#motherPhoneNumber-studentRegister");
 
         this.FatherFirstNameInput = $("#fatherFirstName-studentRegister");
         this.FatherLastNameInput = $("#fatherLastName-studentRegister");
         this.FatherCIInput = $("#fatherCI-studentRegister");
-        this.FatherPhoneNumberInput = $("fatherPhoneNumber-studentRegister");
+        this.FatherPhoneNumberInput = $("#fatherPhoneNumber-studentRegister");
 
         this.RepresentativeFirstNameInput = $("#representativeFirstName-studentRegister");
         this.RepresentativeLastNameInput = $("#representativeLastName-studentRegister");
         this.RepresentativeCIInput = $("#representativeCI-studentRegister");
         this.RepresentativeRelationshipInput = $("#representativeRelationship-studentRegister");
         this.RepresentativeAddressInput = $("#representativeAddress-studentRegister");
-        this.RepresentativePhoneNumberInput = $("representativePhoneNumber-studentRegister");
+        this.RepresentativePhoneNumberInput = $("#representativePhoneNumber-studentRegister");
 
         this.BecaRadio = document.getElementsByName("Beca");
         this.CanaimaRadio = document.getElementsByName("Canaima");
@@ -322,6 +322,33 @@
         },
 
         register: function(){
+            let gender = this.GenderRadioInput;
+            let healthProblem = this.HealthProblemRadio;
+            let scholarship = this.BecaRadio;
+            let canaima = this.CanaimaRadio;
+            let y = new Date();
+            let year = y.getFullYear();
+            let inscriptionDate = y.getDate() + "/" + Number(y.getMonth()+1) + "/" + y.getFullYear();
+            for (var i=0; i< gender.length; i++) {
+                if (gender[i].checked) {
+                    gender = gender[i].value;
+                }
+            }
+            for (var i=0; i< healthProblem.length; i++) {
+                if (healthProblem[i].checked) {
+                    healthProblem = healthProblem[i].value;
+                }
+            }
+            for (var i=0; i< scholarship.length; i++) {
+                if (scholarship[i].checked) {
+                    scholarship = scholarship[i].value;
+                }
+            }
+            for (var i=0; i< canaima.length; i++) {
+                if (canaima[i].checked) {
+                    canaima = canaima[i].value;
+                }
+            }
 
             let mutation = `
             mutation {
@@ -343,22 +370,22 @@
                     lastName : ${this.LastNameInput.value},
                     ci : ${this.CIInput.value},
                     dateOfBirth : ${this.DateOfBirthInput.value},
-                    gender : "M",
-                    healthProblem : false,
+                    gender : ${gender},
+                    healthProblem : ${healthProblem},
                     healthProblemE : ${this.HealthProblemnEInput.value},
                     email : ${this.EmailInput.value},
                     phoneNumber : ${this.PhoneNumberInput.value},
                     address : ${this.AddressInput.value},
-                    scholarship : true,
-                    canaima : true,
-                    year : ${this.YearInput.value},
+                    scholarship : ${scholarship},
+                    canaima : ${canaima},
+                    year : ${year},
                     age : ${this.AgeInput.value},
                     size : ${this.SizeInput.value},
                     weight : ${this.WeightInput.value},
                     repeatAsignature : ${this.AsigRepetE.value},
                     pendingAsignature :${this.AsigPendE.value},
                     regular : true,
-                    inscriptionDate : ${this.InscriptionDateInput.value},
+                    inscriptionDate : ${inscriptionDate},
                     
                     motherFirstName: ${this.MotherFirstNameInput.value},
                     motherLastName: ${this.MotherLastNameInput.value},
@@ -367,7 +394,7 @@
                 
                     fatherFirstName: ${this.FatherFirstNameInput.value},
                     fatherLastName: ${this.FatherLastNameInput.value},
-                    fatherPhoneNumber: ${this.FatherPhoneNumber.value},
+                    fatherPhoneNumber: ${this.FatherPhoneNumberInput.value},
                     fatherCI: ${this.FatherCIInput.value},
                     
                     representativeFirstName: ${this.RepresentativeFirstNameInput.value},
