@@ -82,6 +82,8 @@ type Student struct {
 	RepeatAsignature  string `json:"repeatAsignature" gorm:"type:varchar(200)"`
 	PendingAsignature string `json:"pendingAsignature" gorm:"type:varchar(200)"`
 	Regular           bool   `json:"regular" gorm:"not null;type:boolean"`
+	Repeat            bool   `json:"repeat" gorm:"not null;type:boolean"`
+	AsigPend          bool   `json:"AsigPend" gorm:"not null;type:boolean"`
 	InscriptionDate   string `json:"inscriptionDate" gorm:"not null;type:varchar(20)"`
 
 	Message string `json:"message" gorm:"-"`

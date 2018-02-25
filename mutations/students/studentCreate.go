@@ -162,6 +162,12 @@ var StudentCreate = &graphql.Field{
 		"regular": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Boolean),
 		},
+		"repeat": &graphql.ArgumentConfig{
+			Type: graphql.NewNonNull(graphql.Boolean),
+		},
+		"asigPend": &graphql.ArgumentConfig{
+			Type: graphql.NewNonNull(graphql.Boolean),
+		},
 		"inscriptionDate": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.String),
 		},
@@ -252,6 +258,8 @@ var StudentCreate = &graphql.Field{
 		newStudent.PendingAsignature, _ = p.Args["pendingAsignature"].(string)
 
 		newStudent.Regular, _ = p.Args["regular"].(bool)
+		newStudent.Repeat, _ = p.Args["repeat"].(bool)
+		newStudent.AsigPend, _ = p.Args["asigPend"].(bool)
 
 		newStudent.InscriptionDate, _ = p.Args["inscriptionDate"].(string)
 

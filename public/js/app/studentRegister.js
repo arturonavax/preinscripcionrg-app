@@ -90,11 +90,11 @@
         this.SizeInput = $("#size-studentRegister");
         this.WeightInput = $("#weight-studentRegister");
 
-        this.Regular = $("#regular-studentRegister");
-        this.Repet = $("#repet-studentRegister");
-        this.AsigPend = $("#asigPend-studentRegister");
+        this.RegularCheck = $("#regular-studentRegister");
+        this.RepeatCheck = $("#repeat-studentRegister");
+        this.AsigPendCheck = $("#asigPend-studentRegister");
 
-        this.AsigRepetE = $("#asigRepetE-studentRegister");
+        this.AsigRepeatE = $("#asigRepeatE-studentRegister");
         this.AsigPendE = $("#asigPendE-studentRegister");
 
         this.BtnPreInscribir = $("#btn-preinscribir");
@@ -326,9 +326,12 @@
             let healthProblem = this.HealthProblemRadio;
             let scholarship = this.BecaRadio;
             let canaima = this.CanaimaRadio;
+            let regular = this.RegularCheck.checked;
+            let repeat = this.RepeatCheck.checked;
+            let asigPend = this.AsigPendCheck.checked;
             let y = new Date();
             let year = y.getFullYear();
-            let inscriptionDate = y.getDate() + "/" + Number(y.getMonth()+1) + "/" + y.getFullYear();
+            let inscriptionDate = y.getDate() + "-" + Number(y.getMonth()+1) + "-" + y.getFullYear();
             for (var i=0; i< gender.length; i++) {
                 if (gender[i].checked) {
                     gender = gender[i].value;
@@ -365,44 +368,46 @@
                     sectionID : ${this.Sections.value},
                     conditionOfHousingID : ${this.ConditionOfHousings.value},
                     
-                    SIGECOD : ${this.SIGECODInput.value},
-                    firstName : ${this.FirstNameInput.value},
-                    lastName : ${this.LastNameInput.value},
-                    ci : ${this.CIInput.value},
-                    dateOfBirth : ${this.DateOfBirthInput.value},
-                    gender : ${gender},
+                    SIGECOD : "${this.SIGECODInput.value}",
+                    firstName : "${this.FirstNameInput.value}",
+                    lastName : "${this.LastNameInput.value}",
+                    ci : "${this.CIInput.value}",
+                    dateOfBirth : "${this.DateOfBirthInput.value}",
+                    gender : "${gender}",
                     healthProblem : ${healthProblem},
-                    healthProblemE : ${this.HealthProblemnEInput.value},
-                    email : ${this.EmailInput.value},
-                    phoneNumber : ${this.PhoneNumberInput.value},
-                    address : ${this.AddressInput.value},
-                    scholarship : ${scholarship},
+                    healthProblemE : "${this.HealthProblemnEInput.value}",
+                    email : "${this.EmailInput.value}",
+                    phoneNumber : "${this.PhoneNumberInput.value}",
+                    address : "${this.AddressInput.value}",
+                    scholarship : "${scholarship}",
                     canaima : ${canaima},
-                    year : ${year},
+                    year : "${year}",
                     age : ${this.AgeInput.value},
-                    size : ${this.SizeInput.value},
+                    size : "${this.SizeInput.value}",
                     weight : ${this.WeightInput.value},
-                    repeatAsignature : ${this.AsigRepetE.value},
-                    pendingAsignature :${this.AsigPendE.value},
-                    regular : true,
+                    repeatAsignature : "${this.AsigRepeatE.value}",
+                    pendingAsignature :"${this.AsigPendE.value}",
+                    regular : ${regular},
+                    repeat : ${repeat},
+                    asigPend : ${asigPend},
                     inscriptionDate : ${inscriptionDate},
                     
-                    motherFirstName: ${this.MotherFirstNameInput.value},
-                    motherLastName: ${this.MotherLastNameInput.value},
-                    motherPhoneNumber: ${this.MotherPhoneNumberInput.value},
-                    motherCI: ${this.MotherCIInput.value},
+                    motherFirstName: "${this.MotherFirstNameInput.value}",
+                    motherLastName: "${this.MotherLastNameInput.value}",
+                    motherPhoneNumber: "${this.MotherPhoneNumberInput.value}",
+                    motherCI: "${this.MotherCIInput.value}",
                 
-                    fatherFirstName: ${this.FatherFirstNameInput.value},
-                    fatherLastName: ${this.FatherLastNameInput.value},
-                    fatherPhoneNumber: ${this.FatherPhoneNumberInput.value},
-                    fatherCI: ${this.FatherCIInput.value},
+                    fatherFirstName: "${this.FatherFirstNameInput.value}",
+                    fatherLastName: "${this.FatherLastNameInput.value}",
+                    fatherPhoneNumber: "${this.FatherPhoneNumberInput.value}",
+                    fatherCI: "${this.FatherCIInput.value}",
                     
-                    representativeFirstName: ${this.RepresentativeFirstNameInput.value},
-                    representativeLastName: ${this.RepresentativeLastNameInput.value},
-                    representativePhoneNumber: ${this.RepresentativePhoneNumberInput.value},
-                    representativeCI: ${this.RepresentativeCIInput.value},
-                    representativeRelationship: ${this.RepresentativeRelationshipInput.value},
-                    representativeAddress: ${this.RepresentativeAddressInput.value},
+                    representativeFirstName: "${this.RepresentativeFirstNameInput.value}",
+                    representativeLastName: "${this.RepresentativeLastNameInput.value}",
+                    representativePhoneNumber: "${this.RepresentativePhoneNumberInput.value}",
+                    representativeCI: "${this.RepresentativeCIInput.value}",
+                    representativeRelationship: "${this.RepresentativeRelationshipInput.value}",
+                    representativeAddress: "${this.RepresentativeAddressInput.value}",
                     
                 ){id,message,code}
             }
