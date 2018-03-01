@@ -14,8 +14,8 @@
         width: 100%;
         min-height: 1000px;
         padding: 16px;
-        position: absolute;
         overflow: hidden;
+        position: absolute;
         top:0;
         left:0;
 
@@ -196,6 +196,7 @@
         }
 
         .RE__descargar-btn {
+            width: 100px;
             border: none;
             text-align: center;
             border-radius: 5px;
@@ -211,6 +212,7 @@
         }
 
         .RE__descargarBtn-estudiantes {
+            width: 100px;
             border: none;
             text-align: center;
             border-radius: 5px;
@@ -225,11 +227,13 @@
             background-color: #db2323;
         }
 
-.RE-container__pagination {
-    width: 100%;
-    margin-top: 15px;
-    text-align: center;
-}
+            .RE-container__pagination {
+                width: 100%;
+                margin-top: 15px;
+                text-align: center;
+            }
+
+    
 
 /*------------------------------------------------------------*/
 
@@ -440,22 +444,72 @@
     opacity: 0;
     margin-top: -300px;
     position: absolute;
-    transition:all 1s;
+    transition: all 1s;
+}
+
+.modal-header {
+    width: 200%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    margin-left: -300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    transition:all .6s;
 }
 
 .modal--open {
-    visibility:visible;
+    visibility: visible;
     opacity: 1;
-    z-index: 999;
+    z-index: 777;
     
     position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: 0;
     
     background-color: rgba(0,0,0,0.8);
+}
+
+.modal-article {
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+
+    visibility: hidden;
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    transition: all .6s;
+}
+
+
+.modal-article--open {
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    z-index: 777;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    
+    background-color: rgba(0,0,0,0.6);
 }
 
     .modal__container {
@@ -505,4 +559,30 @@
 
 .no-visible {
     display: none;
+}
+
+@media screen and (min-width:768px) {
+    .modal-header {
+        width: 80%;
+        height: 60px;
+        position: relative;
+        visibility: visible;
+        margin: 0;
+        opacity: 1;
+        
+        background: transparent;
+    }
+    
+    .section__container {
+        width: 70%;
+        margin: 20px auto;
+        
+        top:0;
+        left:0;
+        right: 0;
+        left: 0;
+        border-radius: 5px;
+        
+        transform: translate(0,0);
+    }
 }

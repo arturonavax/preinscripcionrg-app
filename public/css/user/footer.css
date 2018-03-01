@@ -116,17 +116,24 @@
     .footer{
         height: 180px;
     }
-        .footer__information {
-            flex-direction: row
-        }
     
+        .footer__information {
+            flex-direction: row;
+        }
+            .information__about {
+                padding: 0;
+            }
+    
+            .about__infor {
+                font-size: 16px;
+            }
 }
 
 @media screen and (min-width: 1120px) {
     
     .about__infor{
         height: 100%;
-        padding: 20px 30px;
+        padding: 0 30px;
     }
     
 }

@@ -12,8 +12,7 @@
     self.MenuView = function(menu) {
         this.Menu = menu;
         this.MenuBtn = $("#menu__btn");
-        this.Dark = $("#dark");
-        this.MenuContainer = $("#menu");
+        this.MenuContainer = $("#modal-header");
         this.MenuTitle = $("#menu-title");
         this.Username = $("#menu-titleUser");
         this.BtnHome = $("#menu-btnHome");

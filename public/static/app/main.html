@@ -13,8 +13,7 @@
     </head>
     <body>
         
-        <div class="main">       
-            <div id="dark" class="dark"></div>
+        <div class="main">     
 
             <header class="header">
 
@@ -24,30 +23,34 @@
                 </div>
 
                 <button id="menu__btn" class="header__btn"></button>
+                
+                <div id="modal-header" class="modal-header">
 
-                <nav id="menu" class="header__nav">
+                    <nav id="menu" class="header__nav">
 
-                    <h1 class="nav__title">Menu</h1>
+                        <h1 class="nav__title">Menu</h1>
 
-                    <span id="menu-titleUser" class="nav__user-name"></span>
+                        <span id="menu-titleUser" class="nav__user-name"></span>
 
-                    <div class="nav__item visible">
-                        <button id="menu-btnHome" class="item__btn item__btn--home">Inicio</button>
-                    </div>
+                        <div class="nav__item visible">
+                            <button id="menu-btnHome" class="item__btn item__btn--home">Inicio</button>
+                        </div>
 
-                    <div class="nav__item visible">  
-                        <button id="menu-btnProfile" class="item__btn item__btn--profile">Mi Perfil</button>
-                    </div>
-                    
-                    <div class="nav__item visible">  
-                        <button id="menu-btnStudents" class="item__btn item__btn--students">Estudiantes</button>
-                    </div>
+                        <div class="nav__item visible">  
+                            <button id="menu-btnProfile" class="item__btn item__btn--profile">Mi Perfil</button>
+                        </div>
 
-                    <div class="nav__item visible">
-                        <button id="menu-btnLogout" class="item__btn item__btn--log-out">Salida</button>
-                    </div>
+                        <div class="nav__item visible">  
+                            <button id="menu-btnStudents" class="item__btn item__btn--students">Estudiantes</button>
+                        </div>
 
-                </nav>
+                        <div class="nav__item visible">
+                            <button id="menu-btnLogout" class="item__btn item__btn--log-out">Salida</button>
+                        </div>
+
+                    </nav>
+                
+                </div>
 
             </header>
 
@@ -110,400 +113,412 @@
                     
                 </article>
                 
-                <article id="container-profile" class="section__container">
-
-                    <div id="top-profileContainer" class="container__title">
-
-                        <div class="title__item title__text">
-                            <h2 class="title">
-                                <span class="title__decoration">Mi</span>
-                                Perfil 
-                            </h2>
-                        </div>
-
-                        <div class="title__item title__itemBtn">
-
-                            <div id="btnContainer-editProfile" class="itemBtn-edit">
-                            </div>
-
-                            <button id="btn-back-profile" class="itemBtn itemBtn--back"></button>
-
-                        </div>
-
-                    </div>
-
-                    <div id="userID-profileContainer" class="container__item">
-                        <h3 class="item__data__title">ID del usuario :</h3>
-                        <div id="userIDData-container" class="item__data__content"></div>
-                    </div>
-
-                    <div id="username-profileContainer" class="container__item">
-                        <h3 class="item__data__title">Nombre de Usuario :</h3>
-                        <div id="usernameData-container" class="item__data__content"></div>           
-                    </div>
-
-                    <div id="email-profileContainer" class="container__item">
-                        <h3 class="item__data__title">Email :</h3>
-                        <div id="emailData-container" class="item__data__content"></div>
-                    </div>
-
-                    <div id="firstName-profileContainer" class="container__item">
-                        <h3 class="item__data__title">Nombre :</h3>
-                        <div id="firstNameData-container" class="item__data__content"></div>
-                    </div>
-
-                    <div id="lastName-profileContainer" class="container__item">
-                        <h3 class="item__data__title">Apellido :</h3>
-                        <div id="lastNameData-container" class="item__data__content"></div>
-                    </div>
-
-                    <div id="address-profileContainer" class="container__item">
-                        <h3 class="item__data__title">Dirección :</h3>
-                        <div id="addressData-container" class="item__data__content"></div>
-                    </div>
-
-                    <div id="phoneNumber-profileContainer" class="container__item">
-                        <h3 class="item__data__title">Numero de telefono :</h3>
-                        <div id="phoneNumberData-container" class="item__data__content"></div>
-                    </div>
-
-                    <div id="kindID-profileContainer" class="container__item">
-                        <h3 class="item__data__title">Estado del usuario :</h3>
-                        <div id="kindIDData-container" class="item__data__content"></div>
-                    </div>
-
-                    <div id="btnContainer-profileContainer" class="container__item container__item--btn">
-                    </div>
-
-                    <div id="profileNotification" class="container__item">
-                    </div>
-
-                </article>
+                <div class="modal-article">
                 
-                <article id="container-students" class="section__container">
-                    
-                    <div id="" class="container__title">
+                    <article id="container-profile" class="section__container">
 
-                        <div class="title__item title__text">
-                            <h2 class="title">
-                                <span class="title__decoration">
-                                    Estudiantes
-                                </span> 
-                            </h2>
-                        </div>
+                        <div id="top-profileContainer" class="container__title">
 
-                        <div class="title__item title__itemBtn">
+                            <div class="title__item title__text">
+                                <h2 class="title">
+                                    <span class="title__decoration">Mi</span>
+                                    Perfil 
+                                </h2>
+                            </div>
 
-                            <button id="" class="itemBtn itemBtn--search">
-                            </button>
+                            <div class="title__item title__itemBtn">
 
-                            <button id="btn-back-students" class="itemBtn itemBtn--back"></button>
-
-                        </div>
-
-                    </div>
-                    
-                    <div class="form__item">
-                        <input id="" class="item__input" type="text" placeholder="Buscar Estudiante..." name=""/>
-                    </div>
-                    
-                    <div class="itemFicha">
-                        <h1 class="panelTitle">Estudiantes Pre-Inscritos</h1>
-                    </div>
-                    
-                    <div class="RE__container">
-                       
-                        <div class="RE-container__item">
-                        
-                            <p class="RE-container__label">
-                                Nombre:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                C.I:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                Correo:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                ID:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                        
-                        </div>
-                        
-                        <div class="RE-container__item">
-                            
-                            <p class="RE-container__label">
-                                SIGE:
-                                <span id="" class="RE__SIGE"></span>
-                            </p>
-                            
-                            <button id="" class="RE__descargarBtn-estudiantes">
-                                Descargar
-                            </button> 
-                            
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="RE__container">
-                       
-                        <div class="RE-container__item">
-                        
-                            <p class="RE-container__label">
-                                Nombre:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                C.I:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                Correo:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                ID:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                        
-                        </div>
-                        
-                        <div class="RE-container__item">
-                            
-                            <p class="RE-container__label">
-                                SIGE:
-                                <span id="" class="RE__SIGE"></span>
-                            </p>
-                            
-                            <button id="" class="RE__descargarBtn-estudiantes">
-                                Descargar
-                            </button> 
-                            
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="RE__container">
-                       
-                        <div class="RE-container__item">
-                        
-                            <p class="RE-container__label">
-                                Nombre:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                C.I:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                Correo:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                ID:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                        
-                        </div>
-                        
-                        <div class="RE-container__item">
-                            
-                            <p class="RE-container__label">
-                                SIGE:
-                                <span id="" class="RE__SIGE"></span>
-                            </p>
-                            
-                            <button id="" class="RE__descargarBtn-estudiantes">
-                                Descargar
-                            </button> 
-                            
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="RE__container">
-                       
-                        <div class="RE-container__item">
-                        
-                            <p class="RE-container__label">
-                                Nombre:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                C.I:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                Correo:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                ID:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                        
-                        </div>
-                        
-                        <div class="RE-container__item">
-                            
-                            <p class="RE-container__label">
-                                SIGE:
-                                <span id="" class="RE__SIGE"></span>
-                            </p>
-                            
-                            <button id="" class="RE__descargarBtn-estudiantes">
-                                Descargar
-                            </button> 
-                            
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="RE__container">
-                       
-                        <div class="RE-container__item">
-                        
-                            <p class="RE-container__label">
-                                Nombre:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                C.I:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                Correo:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                            
-                            <p class="RE-container__label">
-                                ID:
-                                <span id="" class="RE__content"></span>
-                            </p>
-                        
-                        </div>
-                        
-                        <div class="RE-container__item">
-                            
-                            <p class="RE-container__label">
-                                SIGE:
-                                <span id="" class="RE__SIGE"></span>
-                            </p>
-                            
-                            <button id="" class="RE__descargarBtn-estudiantes">
-                                Descargar
-                            </button> 
-                            
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="RE-container__pagination">
-                        
-                        <button class="itemBtn itemBtn--back"></button>
-                        <button class="itemBtn itemBtn--next"></button>
-                        
-                    </div>
-                    
-                </article>
-
-                <article id="container-studentRegister" class="section__container">
-
-                    <div id="" class="container__title">
-
-                        <div class="title__item title__text">
-                            <h2 class="title">
-                                <span class="title__decoration">Ficha</span>
-                                De Inscripción 
-                            </h2>
-                        </div>
-
-                        <div class="title__item title__itemBtn">
-
-                            <button id="btn-back-studentRegister" class="itemBtn itemBtn--back"></button>
-
-                        </div>
-
-                    </div>
-
-                    <div id="panelMove-ficha" class="panelMove-ficha">
-
-                        <div class="container__itemFicha">
-
-                            <div class="itemFicha">
-                                
-                                <span class="pagination">01/11</span>
-
-                                <div class="itemFicha__container ">
-
-                                    <h1 class="itemFicha__title">
-                                        <span class="title__decoration">¿</span>
-                                        Tiene SIGE
-                                        <span class="title__decoration">?</span>
-                                    </h1>
-
+                                <div id="btnContainer-editProfile" class="itemBtn-edit">
                                 </div>
+
+                                <button id="btn-back-profile" class="itemBtn itemBtn--back"></button>
 
                             </div>
 
-                            <div class="itemFicha">
+                        </div>
 
-                                <div class="itemFicha__container">
-                                   
-                                    <div class="itemFicha__containerRadio">
+                        <div id="userID-profileContainer" class="container__item">
+                            <h3 class="item__data__title">ID del usuario :</h3>
+                            <div id="userIDData-container" class="item__data__content"></div>
+                        </div>
 
-                                        <input id="SIGE-yes" class="item__input--radio" type="radio" value="true" name="SIGE"/>
-                                        <p class="item__label">SI</p>
+                        <div id="username-profileContainer" class="container__item">
+                            <h3 class="item__data__title">Nombre de Usuario :</h3>
+                            <div id="usernameData-container" class="item__data__content"></div>           
+                        </div>
 
-                                    </div>    
+                        <div id="email-profileContainer" class="container__item">
+                            <h3 class="item__data__title">Email :</h3>
+                            <div id="emailData-container" class="item__data__content"></div>
+                        </div>
 
-                                    <div class="itemFicha__containerRadio">
+                        <div id="firstName-profileContainer" class="container__item">
+                            <h3 class="item__data__title">Nombre :</h3>
+                            <div id="firstNameData-container" class="item__data__content"></div>
+                        </div>
 
-                                        <input id="SIGE-no" checked class="item__input--radio" type="radio" value="false" name="SIGE"/>
-                                        <p class="item__label">NO</p>
+                        <div id="lastName-profileContainer" class="container__item">
+                            <h3 class="item__data__title">Apellido :</h3>
+                            <div id="lastNameData-container" class="item__data__content"></div>
+                        </div>
 
-                                    </div> 
+                        <div id="address-profileContainer" class="container__item">
+                            <h3 class="item__data__title">Dirección :</h3>
+                            <div id="addressData-container" class="item__data__content"></div>
+                        </div>
 
-                                </div>    
+                        <div id="phoneNumber-profileContainer" class="container__item">
+                            <h3 class="item__data__title">Numero de telefono :</h3>
+                            <div id="phoneNumberData-container" class="item__data__content"></div>
+                        </div>
 
+                        <div id="kindID-profileContainer" class="container__item">
+                            <h3 class="item__data__title">Estado del usuario :</h3>
+                            <div id="kindIDData-container" class="item__data__content"></div>
+                        </div>
+
+                        <div id="btnContainer-profileContainer" class="container__item container__item--btn">
+                        </div>
+
+                        <div id="profileNotification" class="container__item">
+                        </div>
+
+                    </article>
+                
+                </div>
+                
+                <div class="modal-article">
+                
+                    <article id="container-students" class="section__container">
+
+                        <div id="" class="container__title">
+
+                            <div class="title__item title__text">
+                                <h2 class="title">
+                                    <span class="title__decoration">
+                                        Estudiantes
+                                    </span> 
+                                </h2>
+                            </div>
+
+                            <div class="title__item title__itemBtn">
+
+                                <button id="" class="itemBtn itemBtn--search">
+                                </button>
+
+                                <button id="btn-back-students" class="itemBtn itemBtn--back"></button>
 
                             </div>
 
-                            <div class="itemFicha">
+                        </div>
 
-                                <div id="SIGE-title" class="itemFicha__container itemFicha__container--SIGE no-visible">
-                                    <h1 class="itemFicha__title">
-                                        Su SIGE
-                                    </h1>
-                                </div>
+                        <div class="form__item">
+                            <input id="" class="item__input" type="text" placeholder="Buscar Estudiante..." name=""/>
+                        </div>
 
-                                <div id="SIGE-cod" class="itemFicha__container no-visible">
-                                    <input id="SIGE-codInput" class="item__input item__input--SIGE" type="text" placeholder="######" />
+                        <div class="itemFicha">
+                            <h1 class="panelTitle">Estudiantes Pre-Inscritos</h1>
+                        </div>
+
+                        <div class="RE__container">
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    Nombre:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    C.I:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    Correo:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    ID:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                            </div>
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    SIGE:
+                                    <span id="" class="RE__SIGE"></span>
+                                </p>
+
+                                <button id="" class="RE__descargarBtn-estudiantes">
+                                    Descargar
+                                </button> 
+
+                            </div>
+
+                        </div>
+
+                        <div class="RE__container">
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    Nombre:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    C.I:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    Correo:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    ID:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                            </div>
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    SIGE:
+                                    <span id="" class="RE__SIGE"></span>
+                                </p>
+
+                                <button id="" class="RE__descargarBtn-estudiantes">
+                                    Descargar
+                                </button> 
+
+                            </div>
+
+                        </div>
+
+                        <div class="RE__container">
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    Nombre:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    C.I:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    Correo:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    ID:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                            </div>
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    SIGE:
+                                    <span id="" class="RE__SIGE"></span>
+                                </p>
+
+                                <button id="" class="RE__descargarBtn-estudiantes">
+                                    Descargar
+                                </button> 
+
+                            </div>
+
+                        </div>
+
+                        <div class="RE__container">
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    Nombre:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    C.I:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    Correo:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    ID:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                            </div>
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    SIGE:
+                                    <span id="" class="RE__SIGE"></span>
+                                </p>
+
+                                <button id="" class="RE__descargarBtn-estudiantes">
+                                    Descargar
+                                </button> 
+
+                            </div>
+
+                        </div>
+
+                        <div class="RE__container">
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    Nombre:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    C.I:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    Correo:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                                <p class="RE-container__label">
+                                    ID:
+                                    <span id="" class="RE__content"></span>
+                                </p>
+
+                            </div>
+
+                            <div class="RE-container__item">
+
+                                <p class="RE-container__label">
+                                    SIGE:
+                                    <span id="" class="RE__SIGE"></span>
+                                </p>
+
+                                <button id="" class="RE__descargarBtn-estudiantes">
+                                    Descargar
+                                </button> 
+
+                            </div>
+
+                        </div>
+
+                        <div class="RE-container__pagination">
+
+                            <button class="itemBtn itemBtn--back"></button>
+                            <button class="itemBtn itemBtn--next"></button>
+
+                        </div>
+
+                    </article>
+                
+                </div>
+                
+                <div class="modal-article">
+
+                    <article id="container-studentRegister" class="section__container">
+
+                        <div id="" class="container__title">
+
+                            <div class="title__item title__text">
+                                <h2 class="title">
+                                    <span class="title__decoration">Ficha</span>
+                                    De Inscripción 
+                                </h2>
+                            </div>
+
+                            <div class="title__item title__itemBtn">
+
+                                <button id="btn-back-studentRegister" class="itemBtn itemBtn--back"></button>
+
+                            </div>
+
+                        </div>
+
+                        <div id="panelMove-ficha" class="panelMove-ficha">
+
+                            <div class="container__itemFicha">
+
+                                <div class="itemFicha">
+
+                                    <span class="pagination">01/11</span>
+
+                                    <div class="itemFicha__container ">
+
+                                        <h1 class="itemFicha__title">
+                                            <span class="title__decoration">¿</span>
+                                            Tiene SIGE
+                                            <span class="title__decoration">?</span>
+                                        </h1>
+
+                                    </div>
+
                                 </div>
 
                                 <div class="itemFicha">
 
                                     <div class="itemFicha__container">
 
-                                        <button id="btn-next-page1" class="item__submitFicha">Siguiente</button>
+                                        <div class="itemFicha__containerRadio">
+
+                                            <input id="SIGE-yes" class="item__input--radio" type="radio" value="true" name="SIGE"/>
+                                            <p class="item__label">SI</p>
+
+                                        </div>    
+
+                                        <div class="itemFicha__containerRadio">
+
+                                            <input id="SIGE-no" checked class="item__input--radio" type="radio" value="false" name="SIGE"/>
+                                            <p class="item__label">NO</p>
+
+                                        </div> 
+
+                                    </div>    
+
+
+                                </div>
+
+                                <div class="itemFicha">
+
+                                    <div id="SIGE-title" class="itemFicha__container itemFicha__container--SIGE no-visible">
+                                        <h1 class="itemFicha__title">
+                                            Su SIGE
+                                        </h1>
+                                    </div>
+
+                                    <div id="SIGE-cod" class="itemFicha__container no-visible">
+                                        <input id="SIGE-codInput" class="item__input item__input--SIGE" type="text" placeholder="######" />
+                                    </div>
+
+                                    <div class="itemFicha">
+
+                                        <div class="itemFicha__container">
+
+                                            <button id="btn-next-page1" class="item__submitFicha">Siguiente</button>
+
+                                        </div>
 
                                     </div>
 
@@ -511,549 +526,549 @@
 
                             </div>
 
-                        </div>
+                            <div class="container__itemFicha">
 
-                        <div class="container__itemFicha">
+                                <div class="itemFicha">
 
-                            <div class="itemFicha">
-                                
-                                <span class="pagination">02/11</span>
+                                    <span class="pagination">02/11</span>
+
+                                    <div class="panel__container">
+                                        <h1 class="panelTitle">Información Basica del Estudiante</h1>
+                                    </div>
+
+                                    <div class="form__item">
+                                        <p class="item__label">Nombre :</p>
+                                        <input id="firstName-studentRegister" class="item__input" type="text" placeholder="Nombre Del Estudiante..." name=""/>
+                                    </div>
+
+                                    <div class="form__item">
+                                        <p class="item__label">Apellido :</p>
+                                        <input id="lastName-studentRegister" class="item__input" type="text" placeholder="Apellido Del Estudiante..." name=""/>
+                                    </div>
+
+                                    <div class="form__item">
+                                        <p class="item__label">C.I :</p>
+                                        <input id="ci-studentRegister" class="item__input" type="text" placeholder="Cedula Del Estudiante..." name=""/>
+                                    </div>
+
+                                    <div class="form__item">
+                                        <p class="item__label">Correo Electronico :</p>
+                                        <input id="email-studentRegister" class="item__input" type="text" placeholder="Correo Del Estudiante..." name=""/>
+                                    </div>
+
+                                    <div class="form__item">
+                                        <p class="item__label">Numero Telefonico :</p>
+                                        <input id="phoneNumber-studentRegister" class="item__input" type="text" placeholder="Numero Del Estudiante..." name=""/>
+                                    </div>
+
+                                    <div class="itemFicha__container">
+                                        <p class="item__label">Genero :</p>
+                                    </div>
+
+                                    <div class="itemFicha__container">    
+
+                                        <div class="itemFicha__containerRadio">
+
+                                            <input id="" class="item__input--radio" value="Femenino" type="radio" name="genero"/>
+                                            <p class="item__label">Femenino</p>
+
+                                        </div>
+
+                                        <div class="itemFicha__containerRadio">    
+
+                                            <input id="" class="item__input--radio" checked value="Masculino" type="radio" name="genero"/>
+                                            <p class="item__label">Masculino</p>
+
+                                        </div>
+
+                                    </div>
+
+                                </div> 
+
+                                <div class="itemFicha">
+
+                                    <div class="itemFicha__container">
+
+                                        <button id="btn-back-page2" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                        <button id="btn-next-page2" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="container__itemFicha">
+
+                                <span class="pagination">03/11</span>
 
                                 <div class="panel__container">
-                                    <h1 class="panelTitle">Información Basica del Estudiante</h1>
+                                    <h1 class="panelTitle">Información de Nacimiento del Estudiante</h1>
+                                </div> 
+
+                                <div class="form__item">
+                                    <p class="item__label">Fecha de Nacimiento :</p>
+                                    <input id="dateOfBirth-studentRegister" class="item__input--date" type="date" name=""/>
                                 </div>
 
                                 <div class="form__item">
-                                    <p class="item__label">Nombre :</p>
-                                    <input id="firstName-studentRegister" class="item__input" type="text" placeholder="Nombre Del Estudiante..." name=""/>
+                                    <p class="item__label">Pais de Nacimiento :</p>
+                                    <select id="countriesOfBirth-studentRegister" class="item__select">
+                                    </select>
                                 </div>
 
                                 <div class="form__item">
-                                    <p class="item__label">Apellido :</p>
-                                    <input id="lastName-studentRegister" class="item__input" type="text" placeholder="Apellido Del Estudiante..." name=""/>
+                                    <p class="item__label">Estado de Nacimiento :</p>
+                                    <select id="statesOfBirth-studentRegister" class="item__select">
+                                    </select>
                                 </div>
 
                                 <div class="form__item">
-                                    <p class="item__label">C.I :</p>
-                                    <input id="ci-studentRegister" class="item__input" type="text" placeholder="Cedula Del Estudiante..." name=""/>
+                                    <p class="item__label">Municipio de Nacimiento :</p>
+                                    <select id="municipalitiesOfBirth-studentRegister" class="item__select">
+                                    </select>
                                 </div>
 
-                                <div class="form__item">
-                                    <p class="item__label">Correo Electronico :</p>
-                                    <input id="email-studentRegister" class="item__input" type="text" placeholder="Correo Del Estudiante..." name=""/>
-                                </div>
+                                <div class="itemFicha">
 
-                                <div class="form__item">
-                                    <p class="item__label">Numero Telefonico :</p>
-                                    <input id="phoneNumber-studentRegister" class="item__input" type="text" placeholder="Numero Del Estudiante..." name=""/>
-                                </div>
+                                    <div class="itemFicha__container">
+
+                                        <button id="btn-back-page3" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                        <button id="btn-next-page3" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                    </div>
+
+                                </div> 
+
+                            </div>
+
+                            <div class="container__itemFicha">
+
+                                <span class="pagination">04/11</span>
 
                                 <div class="itemFicha__container">
-                                    <p class="item__label">Genero :</p>
+                                    <p class="panelTitle">Datos de Procedendia del Estudiante</p>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Plantel de Procedencia :</p>
+                                    <select id="institutionsOfOrigin-studentRegister" class="item__select">
+                                    </select>
+                                </div>
+
+                                <div class="itemFicha">
+
+                                    <p class="item__label">
+                                        <span class="title__decoration">¿</span>
+                                            Presenta algun problema de salud que le impida hacer deportes
+                                        <span class="title__decoration">?</span>
+                                    </p>
+
                                 </div>
 
                                 <div class="itemFicha__container">    
 
                                     <div class="itemFicha__containerRadio">
 
-                                        <input id="" class="item__input--radio" value="Femenino" type="radio" name="genero"/>
-                                        <p class="item__label">Femenino</p>
+                                        <input class="item__input--radio" value="true" type="radio" name="salud"/>
+                                        <p class="item__label">SI</p>
 
                                     </div>
 
                                     <div class="itemFicha__containerRadio">    
 
-                                        <input id="" class="item__input--radio" checked value="Masculino" type="radio" name="genero"/>
-                                        <p class="item__label">Masculino</p>
+                                        <input class="item__input--radio" value="false" checked type="radio" name="salud"/>
+                                        <p class="item__label">NO</p>
 
                                     </div>
 
                                 </div>
 
-                            </div> 
+                                <div class="form__item">
+                                    <p class="item__label">Cual Problema Presenta :</p>
+                                    <input id="healthProblemE-studentRegister" class="item__input" type="text" placeholder="Problema medico..." name=""/>
+                                </div>
 
-                            <div class="itemFicha">
+                                <div class="itemFicha">
+
+                                    <div class="itemFicha__container">
+
+                                        <button id="btn-back-page4" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                        <button id="btn-next-page4" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                    </div>
+
+                                </div>    
+
+                            </div>
+
+                            <div class="container__itemFicha">
+
+                                <span class="pagination">05/11</span>
 
                                 <div class="itemFicha__container">
+                                    <p class="panelTitle">Datos de Localidad del Estudiante</p>
+                                </div>
 
-                                    <button id="btn-back-page2" class="item__submitFicha item__submitFicha--doble">Anterior</button>
-                                    <button id="btn-next-page2" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+                                <div class="form__item">
+                                    <p class="item__label">Dirección de Hab :</p>
+                                    <input id="address-studentRegister" class="item__input" type="text" placeholder="Dirección de Hab..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Municipio :</p>
+                                    <select id="municipalities-studentRegister" class="item__select">
+                                    </select>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Parroquia :</p>
+                                    <select id="parishes-studentRegister" class="item__select">
+                                    </select>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Sector :</p>
+                                    <select id="sectors-studentRegister" class="item__select">
+                                    </select>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Tipo de Via :</p>
+                                    <select id="typeOfRoads-studentRegister" class="item__select">
+                                    </select>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Condición de la Vivienda :</p>
+                                    <select id="conditionOfHousing-studentRegister" class="item__select">
+                                    </select>
+                                </div>
+
+                                <div class="itemFicha">
+
+                                    <div class="itemFicha__container">
+
+                                        <button id="btn-back-page5" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                        <button id="btn-next-page5" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                    </div>
 
                                 </div>
 
                             </div>
 
-                        </div>
+                            <div class="container__itemFicha">
 
-                        <div class="container__itemFicha">
-                            
-                            <span class="pagination">03/11</span>
-
-                            <div class="panel__container">
-                                <h1 class="panelTitle">Información de Nacimiento del Estudiante</h1>
-                            </div> 
-                            
-                            <div class="form__item">
-                                <p class="item__label">Fecha de Nacimiento :</p>
-                                <input id="dateOfBirth-studentRegister" class="item__input--date" type="date" name=""/>
-                            </div>
-
-                            <div class="form__item">
-                                <p class="item__label">Pais de Nacimiento :</p>
-                                <select id="countriesOfBirth-studentRegister" class="item__select">
-                                </select>
-                            </div>
-
-                            <div class="form__item">
-                                <p class="item__label">Estado de Nacimiento :</p>
-                                <select id="statesOfBirth-studentRegister" class="item__select">
-                                </select>
-                            </div>
-
-                            <div class="form__item">
-                                <p class="item__label">Municipio de Nacimiento :</p>
-                                <select id="municipalitiesOfBirth-studentRegister" class="item__select">
-                                </select>
-                            </div>
-
-                            <div class="itemFicha">
+                                <span class="pagination">06/11</span>
 
                                 <div class="itemFicha__container">
-
-                                    <button id="btn-back-page3" class="item__submitFicha item__submitFicha--doble">Anterior</button>
-                                    <button id="btn-next-page3" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
-
+                                    <p class="panelTitle">Datos de la Madre</p>
                                 </div>
 
-                            </div> 
-
-                        </div>
-
-                        <div class="container__itemFicha">
-                        
-                            <span class="pagination">04/11</span>
-                        
-                            <div class="itemFicha__container">
-                                <p class="panelTitle">Datos de Procedendia del Estudiante</p>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Plantel de Procedencia :</p>
-                                <select id="institutionsOfOrigin-studentRegister" class="item__select">
-                                </select>
-                            </div>
-
-                            <div class="itemFicha">
-
-                                <p class="item__label">
-                                    <span class="title__decoration">¿</span>
-                                        Presenta algun problema de salud que le impida hacer deportes
-                                    <span class="title__decoration">?</span>
-                                </p>
-
-                            </div>
-
-                            <div class="itemFicha__container">    
-
-                                <div class="itemFicha__containerRadio">
-
-                                    <input class="item__input--radio" value="true" type="radio" name="salud"/>
-                                    <p class="item__label">SI</p>
-
+                                <div class="form__item">
+                                    <p class="item__label">Nombre de la Madre :</p>
+                                    <input id="motherFirstName-studentRegister" class="item__input" type="text" placeholder="Nombre de la Madre..." name=""/>
                                 </div>
 
-                                <div class="itemFicha__containerRadio">    
+                                <div class="form__item">
+                                    <p class="item__label">Apellido de la Madre :</p>
+                                    <input id="motherLastName-studentRegister" class="item__input" type="text" placeholder="Apellido de la Madre..." name=""/>
+                                </div>
 
-                                    <input class="item__input--radio" value="false" checked type="radio" name="salud"/>
-                                    <p class="item__label">NO</p>
+                                <div class="form__item">
+                                    <p class="item__label">Numero Telefonico :</p>
+                                    <input id="motherPhoneNumber-studentRegister" class="item__input" type="text" placeholder="Numero de la Madre..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">C.I :</p>
+                                    <input id="motherCI-studentRegister" class="item__input" type="text" placeholder="Cedula de la Madre..." name=""/>
+                                </div>
+
+                                <div class="itemFicha">
+
+                                    <div class="itemFicha__container">
+
+                                        <button id="btn-back-page6" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                        <button id="btn-next-page6" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                    </div>
 
                                 </div>
 
                             </div>
 
-                            <div class="form__item">
-                                <p class="item__label">Cual Problema Presenta :</p>
-                                <input id="healthProblemE-studentRegister" class="item__input" type="text" placeholder="Problema medico..." name=""/>
-                            </div>
+                            <div class="container__itemFicha">
 
-                            <div class="itemFicha">
+                                <span class="pagination">07/11</span>
 
                                 <div class="itemFicha__container">
+                                    <p class="panelTitle">Datos de el Padre</p>
+                                </div>
 
-                                    <button id="btn-back-page4" class="item__submitFicha item__submitFicha--doble">Anterior</button>
-                                    <button id="btn-next-page4" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+                                <div class="form__item">
+                                    <p class="item__label">Nombre del Padre :</p>
+                                    <input id="fatherFirstName-studentRegister" class="item__input" type="text" placeholder="Nombre del Padre..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Apellido del Padre :</p>
+                                    <input id="fatherLastName-studentRegister" class="item__input" type="text" placeholder="Apellido del Padre..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Numero Telefonico :</p>
+                                    <input id="fatherPhoneNumber-studentRegister" class="item__input" type="text" placeholder="Numero del Padre..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">C.I :</p>
+                                    <input id="fatherCI-studentRegister" class="item__input" type="text" placeholder="Cedula del Padre..." name=""/>
+                                </div>
+
+                                <div class="itemFicha">
+
+                                    <div class="itemFicha__container">
+
+                                        <button id="btn-back-page7" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                        <button id="btn-next-page7" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                    </div>
 
                                 </div>
 
-                            </div>    
-
-                        </div>
-                        
-                        <div class="container__itemFicha">
-                           
-                            <span class="pagination">05/11</span>
-                            
-                            <div class="itemFicha__container">
-                                <p class="panelTitle">Datos de Localidad del Estudiante</p>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Dirección de Hab :</p>
-                                <input id="address-studentRegister" class="item__input" type="text" placeholder="Dirección de Hab..." name=""/>
                             </div>
 
-                            <div class="form__item">
-                                <p class="item__label">Municipio :</p>
-                                <select id="municipalities-studentRegister" class="item__select">
-                                </select>
-                            </div>
+                            <div class="container__itemFicha">
 
-                            <div class="form__item">
-                                <p class="item__label">Parroquia :</p>
-                                <select id="parishes-studentRegister" class="item__select">
-                                </select>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Sector :</p>
-                                <select id="sectors-studentRegister" class="item__select">
-                                </select>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Tipo de Via :</p>
-                                <select id="typeOfRoads-studentRegister" class="item__select">
-                                </select>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Condición de la Vivienda :</p>
-                                <select id="conditionOfHousing-studentRegister" class="item__select">
-                                </select>
-                            </div>
-                            
-                            <div class="itemFicha">
+                                <span class="pagination">08/11</span>
 
                                 <div class="itemFicha__container">
+                                    <p class="panelTitle">Datos de el Representante</p>
+                                </div>
 
-                                    <button id="btn-back-page5" class="item__submitFicha item__submitFicha--doble">Anterior</button>
-                                    <button id="btn-next-page5" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+                                <div class="form__item">
+                                    <p class="item__label">Nombre del Representante :</p>
+                                    <input id="representativeFirstName-studentRegister" class="item__input" type="text" placeholder="Nombre del Representante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Apellido del Representante :</p>
+                                    <input id="representativeLastName-studentRegister" class="item__input" type="text" placeholder="Apellido del Representante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Numero Telefonico :</p>
+                                    <input id="representativePhoneNumber-studentRegister" class="item__input" type="text" placeholder="Numero del Representante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">C.I :</p>
+                                    <input id="representativeCI-studentRegister" class="item__input" type="text" placeholder="Cedula del Representante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Parentesco con el Estudiante :</p>
+                                    <input id="representativeRelationship-studentRegister" class="item__input" type="text" placeholder="Parentesco..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Dirección de Hab del Representante :</p>
+                                    <input id="representativeAddress-studentRegister" class="item__input" type="text" placeholder="Dirección del Representante..." name=""/>
+                                </div>
+
+                                <div class="itemFicha">
+
+                                    <div class="itemFicha__container">
+
+                                        <button id="btn-back-page8" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                        <button id="btn-next-page8" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                    </div>
 
                                 </div>
 
                             </div>
-                            
-                        </div>
-                        
-                        <div class="container__itemFicha">
-                           
-                            <span class="pagination">06/11</span>
-                            
-                            <div class="itemFicha__container">
-                                <p class="panelTitle">Datos de la Madre</p>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Nombre de la Madre :</p>
-                                <input id="motherFirstName-studentRegister" class="item__input" type="text" placeholder="Nombre de la Madre..." name=""/>
-                            </div>
 
-                            <div class="form__item">
-                                <p class="item__label">Apellido de la Madre :</p>
-                                <input id="motherLastName-studentRegister" class="item__input" type="text" placeholder="Apellido de la Madre..." name=""/>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Numero Telefonico :</p>
-                                <input id="motherPhoneNumber-studentRegister" class="item__input" type="text" placeholder="Numero de la Madre..." name=""/>
-                            </div>
+                            <div class="container__itemFicha">
 
-                            <div class="form__item">
-                                <p class="item__label">C.I :</p>
-                                <input id="motherCI-studentRegister" class="item__input" type="text" placeholder="Cedula de la Madre..." name=""/>
-                            </div>
-                                
-                            <div class="itemFicha">
+                                <span class="pagination">09/11</span>
 
                                 <div class="itemFicha__container">
-
-                                    <button id="btn-back-page6" class="item__submitFicha item__submitFicha--doble">Anterior</button>
-                                    <button id="btn-next-page6" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
-
+                                    <p class="panelTitle">Información Extra de el Estudiante</p>
                                 </div>
-
-                            </div>
-                            
-                        </div>
-                        
-                        <div class="container__itemFicha">
-                           
-                            <span class="pagination">07/11</span>
-                            
-                            <div class="itemFicha__container">
-                                <p class="panelTitle">Datos de el Padre</p>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Nombre del Padre :</p>
-                                <input id="fatherFirstName-studentRegister" class="item__input" type="text" placeholder="Nombre del Padre..." name=""/>
-                            </div>
-
-                            <div class="form__item">
-                                <p class="item__label">Apellido del Padre :</p>
-                                <input id="fatherLastName-studentRegister" class="item__input" type="text" placeholder="Apellido del Padre..." name=""/>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Numero Telefonico :</p>
-                                <input id="fatherPhoneNumber-studentRegister" class="item__input" type="text" placeholder="Numero del Padre..." name=""/>
-                            </div>
-
-                            <div class="form__item">
-                                <p class="item__label">C.I :</p>
-                                <input id="fatherCI-studentRegister" class="item__input" type="text" placeholder="Cedula del Padre..." name=""/>
-                            </div>
-                                
-                            <div class="itemFicha">
 
                                 <div class="itemFicha__container">
-
-                                    <button id="btn-back-page7" class="item__submitFicha item__submitFicha--doble">Anterior</button>
-                                    <button id="btn-next-page7" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
-
+                                    <p class="item__label">¿Tiene Beca?</p>
                                 </div>
 
-                            </div>
-                            
-                        </div>
-                        
-                        <div class="container__itemFicha">
-                           
-                            <span class="pagination">08/11</span>
-                            
-                            <div class="itemFicha__container">
-                                <p class="panelTitle">Datos de el Representante</p>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Nombre del Representante :</p>
-                                <input id="representativeFirstName-studentRegister" class="item__input" type="text" placeholder="Nombre del Representante..." name=""/>
-                            </div>
+                                <div class="itemFicha__container">    
 
-                            <div class="form__item">
-                                <p class="item__label">Apellido del Representante :</p>
-                                <input id="representativeLastName-studentRegister" class="item__input" type="text" placeholder="Apellido del Representante..." name=""/>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Numero Telefonico :</p>
-                                <input id="representativePhoneNumber-studentRegister" class="item__input" type="text" placeholder="Numero del Representante..." name=""/>
-                            </div>
+                                    <div class="itemFicha__containerRadio">
 
-                            <div class="form__item">
-                                <p class="item__label">C.I :</p>
-                                <input id="representativeCI-studentRegister" class="item__input" type="text" placeholder="Cedula del Representante..." name=""/>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Parentesco con el Estudiante :</p>
-                                <input id="representativeRelationship-studentRegister" class="item__input" type="text" placeholder="Parentesco..." name=""/>
-                            </div>
-                               
-                            <div class="form__item">
-                                <p class="item__label">Dirección de Hab del Representante :</p>
-                                <input id="representativeAddress-studentRegister" class="item__input" type="text" placeholder="Dirección del Representante..." name=""/>
-                            </div>
-                                
-                            <div class="itemFicha">
+                                        <input id="" class="item__input--radio" value="true" type="radio" name="Beca"/>
+                                        <p class="item__label">SI</p>
+
+                                    </div>
+
+                                    <div class="itemFicha__containerRadio">    
+
+                                        <input id="" class="item__input--radio" checked value="false" type="radio" name="Beca"/>
+                                        <p class="item__label">NO</p>
+
+                                    </div>
+
+                                </div>
 
                                 <div class="itemFicha__container">
+                                    <p class="item__label">¿Le han Proporcionado Canaima?</p>
+                                </div>
 
-                                    <button id="btn-back-page8" class="item__submitFicha item__submitFicha--doble">Anterior</button>
-                                    <button id="btn-next-page8" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+                                <div class="itemFicha__container">    
+
+                                    <div class="itemFicha__containerRadio">
+
+                                        <input id="" class="item__input--radio" value="true" checked type="radio" name="Canaima"/>
+                                        <p class="item__label">SI</p>
+
+                                    </div>
+
+                                    <div class="itemFicha__containerRadio">    
+
+                                        <input id="" class="item__input--radio" value="false" type="radio" name="Canaima"/>
+                                        <p class="item__label">NO</p>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="itemFicha">
+
+                                    <div class="itemFicha__container">
+
+                                        <button id="btn-back-page9" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                        <button id="btn-next-page9" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                    </div>
 
                                 </div>
 
                             </div>
-                            
-                        </div>
-                        
-                        <div class="container__itemFicha">
-                           
-                            <span class="pagination">09/11</span>
-                            
-                            <div class="itemFicha__container">
-                                <p class="panelTitle">Información Extra de el Estudiante</p>
-                            </div>
-                            
-                            <div class="itemFicha__container">
-                                <p class="item__label">¿Tiene Beca?</p>
-                            </div>
-                                
-                            <div class="itemFicha__container">    
 
-                                <div class="itemFicha__containerRadio">
+                            <div class="container__itemFicha">
 
-                                    <input id="" class="item__input--radio" value="true" type="radio" name="Beca"/>
-                                    <p class="item__label">SI</p>
-
-                                </div>
-
-                                <div class="itemFicha__containerRadio">    
-
-                                    <input id="" class="item__input--radio" checked value="false" type="radio" name="Beca"/>
-                                    <p class="item__label">NO</p>
-
-                                </div>
-
-                            </div>
-                            
-                            <div class="itemFicha__container">
-                                <p class="item__label">¿Le han Proporcionado Canaima?</p>
-                            </div>
-                                
-                            <div class="itemFicha__container">    
-
-                                <div class="itemFicha__containerRadio">
-
-                                    <input id="" class="item__input--radio" value="true" checked type="radio" name="Canaima"/>
-                                    <p class="item__label">SI</p>
-
-                                </div>
-
-                                <div class="itemFicha__containerRadio">    
-
-                                    <input id="" class="item__input--radio" value="false" type="radio" name="Canaima"/>
-                                    <p class="item__label">NO</p>
-
-                                </div>
-
-                            </div>
-                            
-                            <div class="itemFicha">
+                                <span class="pagination">10/11</span>
 
                                 <div class="itemFicha__container">
+                                    <p class="panelTitle">Escolaridad del Estudiante</p>
+                                </div>
 
-                                    <button id="btn-back-page9" class="item__submitFicha item__submitFicha--doble">Anterior</button>
-                                    <button id="btn-next-page9" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+                                <div class="form__item">
+                                    <p class="item__label">Mención :</p>
+                                    <select id="mentions-studentRegister" class="item__select">
+                                    </select>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Sección :</p>
+                                    <select id="sections-studentRegister" class="item__select">
+                                    </select>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Edad :</p>
+                                    <input id="age-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Talla :</p>
+                                    <input id="size-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Peso :</p>
+                                    <input id="weight-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
+                                </div>
+
+                                <div class="itemFicha">    
+
+                                    <div class="itemFicha__containerCheck">
+
+                                        <p class="item__label">Regular</p>
+                                        <input id="regular-studentRegister" class="item__input--check" type="checkbox" name="regular"/>
+
+                                    </div>
+
+                                    <div class="itemFicha__containerCheck">    
+
+                                        <p class="item__label">Repitiente</p>
+                                        <input id="repeat-studentRegister" class="item__input--check" type="checkbox" name="repeat"/>
+
+                                    </div>
+
+                                    <div class="itemFicha__containerCheck">    
+
+                                        <p class="item__label">Asig. Pend.</p>
+                                        <input id="asigPend-studentRegister" class="item__input--check" type="checkbox" name="asigPend"/>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Asignaturas que Repite :</p>
+                                    <input id="asigRepeatE-studentRegister" class="item__input" type="text" placeholder="Asignatura que repite..." name=""/>
+                                </div>
+
+                                <div class="form__item">
+                                    <p class="item__label">Asignaturas Pendientes :</p>
+                                    <input id="asigPendE-studentRegister" class="item__input" type="text" placeholder="Asignatura Pendientes..." name=""/>
+                                </div>
+
+                                <div class="itemFicha">
+
+                                    <div class="itemFicha__container">
+
+                                        <button id="btn-back-page10" class="item__submitFicha item__submitFicha--doble">Anterior</button>
+                                        <button id="btn-next-page10" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+
+                                    </div>
 
                                 </div>
 
                             </div>
-                            
-                        </div>
-                        
-                        <div class="container__itemFicha">
-                           
-                            <span class="pagination">10/11</span>
-                            
-                            <div class="itemFicha__container">
-                                <p class="panelTitle">Escolaridad del Estudiante</p>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Mención :</p>
-                                <select id="mentions-studentRegister" class="item__select">
-                                </select>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Sección :</p>
-                                <select id="sections-studentRegister" class="item__select">
-                                </select>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Edad :</p>
-                                <input id="age-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Talla :</p>
-                                <input id="size-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Peso :</p>
-                                <input id="weight-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>
-                            </div>
-                            
-                            <div class="itemFicha">    
 
-                                <div class="itemFicha__containerCheck">
+                            <div class="container__itemFicha">
 
-                                    <p class="item__label">Regular</p>
-                                    <input id="regular-studentRegister" class="item__input--check" type="checkbox" name="regular"/>
-
-                                </div>
-
-                                <div class="itemFicha__containerCheck">    
-
-                                    <p class="item__label">Repitiente</p>
-                                    <input id="repeat-studentRegister" class="item__input--check" type="checkbox" name="repeat"/>
-
-                                </div>
-                                
-                                <div class="itemFicha__containerCheck">    
-
-                                    <p class="item__label">Asig. Pend.</p>
-                                    <input id="asigPend-studentRegister" class="item__input--check" type="checkbox" name="asigPend"/>
-
-                                </div>
-
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Asignaturas que Repite :</p>
-                                <input id="asigRepeatE-studentRegister" class="item__input" type="text" placeholder="Asignatura que repite..." name=""/>
-                            </div>
-                            
-                            <div class="form__item">
-                                <p class="item__label">Asignaturas Pendientes :</p>
-                                <input id="asigPendE-studentRegister" class="item__input" type="text" placeholder="Asignatura Pendientes..." name=""/>
-                            </div>
-                            
-                            <div class="itemFicha">
+                                <span class="pagination">11/11</span>
 
                                 <div class="itemFicha__container">
+                                    <p class="panelTitle">¿Esta Seguro de Realizar la Operación?</p>
+                                </div>
 
-                                    <button id="btn-back-page10" class="item__submitFicha item__submitFicha--doble">Anterior</button>
-                                    <button id="btn-next-page10" class="item__submitFicha item__submitFicha--doble">Siguiente</button>
+                                <div class="itemFicha">
+
+                                    <button id="btn-preinscribir" class="item__submitFicha">
+                                        <span class="submitFicha__decoration">Pre-Inscribir</span>
+                                    </button>
+
+                                    <button id="btn-back-page11" class="item__submitFicha">
+                                        <span class="submitFicha__decoration">
+                                            Cancelar 
+                                            Pre-Inscripción
+                                        </span>
+                                    </button>
 
                                 </div>
 
                             </div>
-                            
-                        </div>
-                        
-                        <div class="container__itemFicha">
-                           
-                            <span class="pagination">11/11</span>
-                            
-                            <div class="itemFicha__container">
-                                <p class="panelTitle">¿Esta Seguro de Realizar la Operación?</p>
-                            </div>
-                            
-                            <div class="itemFicha">
 
-                                <button id="btn-preinscribir" class="item__submitFicha">
-                                    <span class="submitFicha__decoration">Pre-Inscribir</span>
-                                </button>
-                                
-                                <button id="btn-back-page11" class="item__submitFicha">
-                                    <span class="submitFicha__decoration">
-                                        Cancelar 
-                                        Pre-Inscripción
-                                    </span>
-                                </button>
-
-                            </div>
-                            
                         </div>
-                        
-                    </div>
-                    
-                </article>
+
+                    </article>
+                
+                </div>
 
             </section>
             
@@ -1102,13 +1117,13 @@
 
                     <div class="itemFicha">
                            
-                        <button id="" class="item__submitFicha">
+                        <button id="" class="item__submitFicha item__submitFicha--modal">
                             <span class="submitFicha__decoration">
                                 Cancelar 
                             </span>
                         </button>
 
-                        <button id="" class="item__submitFicha">
+                        <button id="" class="item__submitFicha item__submitFicha--modal">
                             <span class="submitFicha__decoration">
                                 Pre-Inscribir
                             </span>

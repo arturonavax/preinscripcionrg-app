@@ -14,13 +14,11 @@
 
         // Eventos del menu.
         this.MenuView.MenuBtn.addEventListener("click", function(){
-            self.MenuView.MenuContainer.classList.toggle("header__nav--open");
-            self.MenuView.Dark.classList.toggle("dark--move");
+            self.MenuView.MenuContainer.classList.toggle("modal--open");
         });
 
-        this.MenuView.Dark.addEventListener("click", function(){
-            self.MenuView.MenuContainer.classList.toggle("header__nav--open");
-            self.MenuView.Dark.classList.toggle("dark--move");
+        this.MenuView.MenuContainer.addEventListener("click", function(){
+            self.MenuView.MenuContainer.classList.toggle("modal--open");
         });
 
         this.MenuView.BtnStudents.addEventListener("click", function(){
