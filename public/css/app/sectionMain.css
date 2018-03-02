@@ -480,7 +480,7 @@
 
     .modal__container {
         width: 90%;
-        height: 500px;
+        height: 80vh;
         margin: 0 auto;
         overflow: auto;
         margin-top: 60px;

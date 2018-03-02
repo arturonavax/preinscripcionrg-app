@@ -188,14 +188,13 @@
             $("#section").classList.add("tx-B");
         });
         this.StudentRegister.BtnBackPage11.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "950px";
+            $("#article-studentRegister").style.height = "300px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page11");
-            self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page10");
             $("#section").classList.remove("tx-A");
             $("#section").classList.add("tx-D");
         });
 
-        this.StudentRegister.BtnPreInscribir.addEventListener("click", function(){
+        $("#btn-prein").addEventListener("click", function(){
             $("#modal").classList.add("modal--open");
         });
         
