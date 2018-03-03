@@ -75,24 +75,24 @@
 
         this.StudentRegister.BtnNextPage1.addEventListener("click", function() {
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page2");
-            $("#article-studentRegister").style.height = "700px";
+            $("#article-studentRegister").style.height = "720px";
             $("#section").classList.remove("tx-A");
             $("#section").classList.add("tx-C");
         });
         this.StudentRegister.BtnNextPage2.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "580px";
+            $("#article-studentRegister").style.height = "600px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page2");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page3");
         });
         this.StudentRegister.BtnNextPage3.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "500px";
+            $("#article-studentRegister").style.height = "580px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page3");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page4");
             $("#section").classList.remove("tx-C");
             $("#section").classList.add("tx-B");
         });
         this.StudentRegister.BtnNextPage4.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "730px";
+            $("#article-studentRegister").style.height = "750px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page4");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page5");
             $("#section").classList.remove("tx-B");
@@ -110,17 +110,17 @@
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page7");
         });
         this.StudentRegister.BtnNextPage7.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "675px";
+            $("#article-studentRegister").style.height = "700px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page7");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page8");
         });
         this.StudentRegister.BtnNextPage8.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "450px";
+            $("#article-studentRegister").style.height = "490px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page8");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page9");
         });
         this.StudentRegister.BtnNextPage9.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "950px";
+            $("#article-studentRegister").style.height = "930px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page9");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page10");
             $("#section").classList.remove("tx-B");
@@ -141,47 +141,47 @@
             $("#section").classList.add("tx-A");
         });
         this.StudentRegister.BtnBackPage3.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "700px";
+            $("#article-studentRegister").style.height = "720px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page3");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page2");
         });
         this.StudentRegister.BtnBackPage4.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "580px";
+            $("#article-studentRegister").style.height = "600px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page4");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page3");
             $("#section").classList.remove("tx-B");
             $("#section").classList.add("tx-C");
         });
         this.StudentRegister.BtnBackPage5.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "500px";
+            $("#article-studentRegister").style.height = "580px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page5");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page4");
             $("#section").classList.remove("tx-C");
             $("#section").classList.add("tx-B");
         });
         this.StudentRegister.BtnBackPage6.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "730px";
+            $("#article-studentRegister").style.height = "750px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page6");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page5");
             $("#section").classList.remove("tx-B");
             $("#section").classList.add("tx-C");
         });
         this.StudentRegister.BtnBackPage7.addEventListener("click", function() {
+            $("#article-studentRegister").style.height = "540px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page7");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page6");
         });
         this.StudentRegister.BtnBackPage8.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "540px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page8");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page7");
         });
         this.StudentRegister.BtnBackPage9.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "675px";
+            $("#article-studentRegister").style.height = "700px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page9");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page8");
         });
         this.StudentRegister.BtnBackPage10.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "540px";
+            $("#article-studentRegister").style.height = "490px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page10");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page9");
             $("#section").classList.remove("tx-D");
