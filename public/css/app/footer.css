@@ -15,10 +15,10 @@
     justify-content: space-between;
     align-items: center;
     
-    background-color: #f3f3f3;
+    background-color: #ecf0f1;
     font-family: maven-blod;
     color: #565656;
-    border-bottom: 4px solid #da373b;
+    border-bottom: 4px solid #e74c3c;
     box-shadow: -2px -2px 2px #c0c0c0;
 }
 
@@ -49,10 +49,10 @@
             }
 
             .contact__icon:nth-child(3):hover {
-                color:  #da373b; 
+                color:  #e74c3c; 
             }
             .contact__icon:nth-child(4):hover {
-                color:  #da373b; 
+                color:  #e74c3c; 
             }
 
             .contact__icon--location::before{
@@ -83,9 +83,10 @@
         
         .about__name{
             font-size: 20px;
-            color: #da373b;
+            color: #e74c3c;
         }
         .about__name::after {
+            font-size: 18px;
             font-family: icons;
             content: "  \e9da";
         }
@@ -96,7 +97,7 @@
         padding-top: 8px;
         text-align: center;
 
-        color: #da373b;
+        color: #e74c3c;
         background-color: rgba(86,86,86,.4);
     }
 

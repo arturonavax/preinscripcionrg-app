@@ -14,15 +14,14 @@
     justify-content: space-between;
     align-items: center;
     
-    background-color: #f3f3f3;
-    border-top: 4px solid #da373b;
+    background-color: #ecf0f1;
+    border-top: 4px solid #e74c3c;
     box-shadow: 2px 2px 2px #c0c0c0;
 }
 
     .header__logo {
         font-family: oleo;
         color: #565656;
-
     }
 
         .logo__title {
@@ -36,7 +35,7 @@
             height: 5px;
             display: inline-block;
 
-            background-color: #da373b;
+            background-color: #e74c3c;
             border-radius: 50%;
         }
 
@@ -55,7 +54,7 @@
     }
 
     .header__btn:focus {
-        color: #da373b;
+        color: #e74c3c;
     }
 
 /*------------------------------------------------------------*/
@@ -120,8 +119,8 @@
     width:38%;
     height: 100%;
     
-    background-color: #f3f3f3;
-    color: #da373b;
+    background-color: #ecf0f1;
+    color: #e74c3c;
     font-size: 24px;
     
     display: flex;
@@ -138,7 +137,7 @@
         font-size: 30px;
 
         background: rgba(86,86,86,.9);
-        border-bottom: 2px solid #ba373b;
+        border-bottom: 2px solid #e74c3c;
     }
 
     .nav__user-name{
@@ -169,7 +168,7 @@
             font-size: 18px;
             
             background: transparent;
-            color: #da373b;
+            color: #e74c3c;
             border: 0;
             cursor: pointer;
         }

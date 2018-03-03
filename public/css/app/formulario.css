@@ -109,10 +109,15 @@
             height: 50px;
             font-size: 20px;
 
-            background-color: #da373b;
+            background-color: #3498db;
             color: #fff;
             border: none;
             border-radius: 5px;
+        }
+
+        .item__submit:hover {
+            cursor: pointer;
+            background-color: #2980b9;
         }
 
         .item__submitFicha {
@@ -121,7 +126,7 @@
             height: 50px;
             font-size: 20px;
 
-            background-color: #40c53e;
+            background-color: #2ecc71;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -145,17 +150,13 @@
         
         .item__submitFicha:hover {
             cursor: pointer;
-            background-color: #3a9d38;
+            background-color: #27ae60;
         }
 
         .item__submit--edit {
             width: 45%;
         }
 
-        .item__submit:hover {
-            cursor: pointer;
-            background-color: #db2323;
-        }
 
 
 /*------------------------------------------------------------*/

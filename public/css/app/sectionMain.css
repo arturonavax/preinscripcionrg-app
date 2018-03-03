@@ -7,7 +7,7 @@
     z-index: 0;
     min-height: 750px;
     margin-top: 40px;
-    background-color: #f3f3f3;
+    background-color: #ecf0f1;
 }
 
     .section__container {
@@ -24,7 +24,7 @@
         justify-content:flex-start;
         align-items: center;
 
-        background-color: #f3f3f3;
+        background-color: #ecf0f1;
         
         transition: all .3s;
     }
@@ -57,7 +57,7 @@
 
                 .title__decoration {
                     font-family: maven-blod;
-                    color: #da373b;
+                    color: #3498db;
                 }
 
             .title__itemBtn {
@@ -74,7 +74,7 @@
                     cursor: pointer;
 
                     border: none;
-                    color: #da373b;
+                    color: #3498db;
                     background: none;
                 }
 
@@ -117,7 +117,7 @@
         height: 50px;
         font-size: 20px;
 
-        background-color: #da373b;
+        background-color: #3498db;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -125,7 +125,7 @@
 
     .btn-back:hover {
         cursor: pointer;
-        background-color: #db2323;
+        background-color: #2980b9;
     }
 
 .container__btns {
@@ -195,13 +195,13 @@
             border-radius: 5px;
             height: 30px;
 
-            background-color: #40c53e;
+            background-color: #2ecc71;
             color: #fff; 
         }
 
         .RE__descargar-btn:hover {
             cursor: pointer;
-            background-color: #3a9d38;
+            background-color: #27ae60;
         }
 
         .RE__descargarBtn-estudiantes {
@@ -211,13 +211,13 @@
             border-radius: 5px;
             height: 30px;
 
-            background-color: #da373b;
+            background-color: #3498db;
             color: #fff; 
         }
 
         .RE__descargarBtn-estudiantes:hover {
             cursor: pointer;
-            background-color: #db2323;
+            background-color: #2980b9;
         }
 
             .RE-container__pagination {
@@ -253,7 +253,7 @@
         height: 50px;
         font-size: 20px;
 
-        background-color: #da373b;
+        background-color: #3498db;
         color: #fff;
         border: none;
         border-radius: 5px;
@@ -261,13 +261,13 @@
 
     .item__btn-profile:hover {
         cursor: pointer;
-        background-color: #db2323;
+        background-color: #2980b9;
     }
 
     .item__data__title {
         font-size: 20px;
         
-        color: #da333b;
+        color: #3498db;
     }
 
     .item__data__content {

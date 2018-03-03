@@ -14,8 +14,8 @@
     justify-content: space-between;
     align-items: center;
     
-    background-color: #f3f3f3;
-    border-top: 4px solid #da373b;
+    background-color: #ecf0f1;
+    border-top: 4px solid #e74c3c;
     box-shadow: 2px 2px 2px #c0c0c0;
 }
 
@@ -35,7 +35,7 @@
             height: 5px;
             display: inline-block;
 
-            background-color: #da373b;
+            background-color: #e74c3c;
             border-radius: 50%;
         }
 
@@ -54,7 +54,7 @@
     }
 
     .header__btn:focus {
-        color: #da373b;
+        color: #e74c3c;
     }
 
 /*------------------------------------------------------------*/
@@ -121,8 +121,8 @@
     top: 0;
     left: 0;
     
-    background-color: #f3f3f3;
-    color: #da373b;
+    background-color: #ecf0f1;
+    color: #e74c3c;
     font-size: 24px;
     
     display: flex;
@@ -140,10 +140,10 @@
         width: 100%;
         height: 60px;
         padding-top: 10px;
-        font-size: 36px;
+        font-size: 30px;
 
         background: rgba(86,86,86,.9);
-        border-bottom: 2px solid #ba373b;
+        border-bottom: 2px solid #e74c3c;
     }
 
     .nav__item {
@@ -160,9 +160,11 @@
             width: 100%;
             display: inline-block;
             line-height: 60px;
+            font-weight: 800;
+            font-size: 18px;
 
             background: transparent;
-            color: #da373b;
+            color: #e74c3c;
             border: 0;
             cursor: pointer;
         }
@@ -170,16 +172,19 @@
         .item__btn--home::before {
             font-family: icons;
             content: "\e900  ";
+            font-weight: 400;
         }
 
         .item__btn--login::before {
             font-family: icons;
             content: "\ea13  ";
+            font-weight: 400;
         }
 
         .item__btn--register::before {
             font-family: icons;
             content: "\e973  ";
+            font-weight: 400;
         }
 
 /*------------------------------------------------------------*/
