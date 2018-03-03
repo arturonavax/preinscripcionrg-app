@@ -119,6 +119,10 @@
                     font-family: icons;
                     content: "\ea38";
                 }
+                .itemBtn--backP::before {
+                    font-family: icons;
+                    content: "\ea38";
+                }
 
 /*------------------------------------------------------------*/
 

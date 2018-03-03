@@ -126,11 +126,23 @@
             height: 50px;
             font-size: 20px;
 
-            background-color: #2ecc71;
+            background-color: #3498db;
             color: #fff;
             border: none;
             border-radius: 5px;
         }
+
+        .item__submitFicha:hover {
+            cursor: pointer;
+            background-color: #2980b9;
+        }
+        
+        .item__submitFicha--preM:nth-child(1) {
+            background-color: #2ecc71;
+        }
+        .item__submitFicha--preM:nth-child(1):hover {
+            background-color: #27ae60;
+        } 
 
         .item__submitFicha--registrar {
             width: 80%;
@@ -147,16 +159,40 @@
             width: 45%;
             height: 50px;
         }
-        
-        .item__submitFicha:hover {
-            cursor: pointer;
-            background-color: #27ae60;
+
+        .item__submitFicha--modal:nth-child(1) {
+            background-color: #e74c3c;
         }
+        .item__submitFicha--modal:nth-child(1):hover {
+            background-color: #c0392b;
+        }
+
+        .item__submitFicha--modal:nth-child(2) {
+            background-color: #2ecc71;
+        }
+        .item__submitFicha--modal:nth-child(2):hover {
+            background-color: #27ae60;
+        } 
 
         .item__submit--edit {
             width: 45%;
         }
 
+            .item__submit--edit:nth-child(1) {
+                background-color: #e74c3c;
+            }
+
+            .item__submit--edit:nth-child(1):hover {
+                background-color: #c0392b;
+            }
+
+            .item__submit--edit:nth-child(2) {
+                background-color: #2ecc71;
+            }
+
+            .item__submit--edit:nth-child(2):hover {
+                background-color: #27ae60;
+            }
 
 
 /*------------------------------------------------------------*/

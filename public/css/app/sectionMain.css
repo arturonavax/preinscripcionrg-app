@@ -77,6 +77,9 @@
                     color: #3498db;
                     background: none;
                 }
+                .itemBtn:hover {
+                    color: #2980b9;
+                }
 
                 .itemBtn--edit::before {
                     font-family: icons;
@@ -84,6 +87,11 @@
                 }
 
                 .itemBtn--back::before {
+                    font-family: icons;
+                    content: "\ea38";
+                }
+
+                .itemBtn--backP::before {
                     font-family: icons;
                     content: "\ea38";
                 }
