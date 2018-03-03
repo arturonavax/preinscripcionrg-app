@@ -183,21 +183,25 @@
         font-family: maven-blod;
     }
 
-        .RE-conteiner__label {
-            
+        .RE-container__label {
+            margin-top: 5px;
+            display: block;
         }
 
         .RE__content {
             font-family: maven-pro;
-        }
-
-        .RE__SIGE {
-            font-family: maven-pro;
+            display: block;
             padding-left: 10px;
         }
 
+        .RE__content-status {
+            margin-top: 5px;
+            font-family: oleo;
+            font-size: 20px;
+        }
+
         .RE__descargar-btn {
-            width: 100px;
+            width: 85px;
             border: none;
             text-align: center;
             border-radius: 5px;
@@ -214,10 +218,12 @@
 
         .RE__descargarBtn-estudiantes {
             width: 100px;
+            height: 30px;
+            margin-top: 5px;
+            border-radius: 5px;
+            
             border: none;
             text-align: center;
-            border-radius: 5px;
-            height: 30px;
 
             background-color: #3498db;
             color: #fff; 

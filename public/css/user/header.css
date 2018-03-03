@@ -26,6 +26,7 @@
     }
 
         .logo__title {
+            font-size: 24px;
             font-weight: 200;
             display: inline-block;
         }
@@ -63,53 +64,6 @@
 /*------------------------------------------------------------*/
 /*------------------------- HEADER NAV -----------------------*/
 /*------------------------------------------------------------*/
-.dark {
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: .2;
-    background-color: black;
-    position: fixed;
-    transition: 1s;
-    animation-name: dark-opacity;
-    animation-duration: .3s;       
-}
-
-.dark--move {
-    z-index: 1;
-    opacity: .9;
-    
-}
-
-.dark--none {
-    transform: translate(-100%,0);
-    animation-name: dark-none;
-    animation-duration: 5s;
-    opacity: 0;
-}
-
-@keyframes dark-opacity {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: .5;
-    }
-    100% {
-        opacity: .9;
-    }
-    
-}
-
-@keyframes dark-none {
-    0%{
-        opacity: .9;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
 .header__nav {
     width: 70%;
     height: 100%;

@@ -63,58 +63,6 @@
 /*------------------------------------------------------------*/
 /*------------------------- HEADER NAV -----------------------*/
 /*------------------------------------------------------------*/
-.dark {
-    visibility:visible;
-    opacity: 1;
-    z-index: 777;
-    
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin: 0;
-    
-    background-color: rgba(0,0,0,0.8);
-
-    animation-name: dark-opacity;
-    animation-duration: .3s;       
-}
-
-.dark--move {
-    z-index: 1;
-    opacity: .9; 
-}
-
-.dark--none {
-    transform: translate(-100%,0);
-    animation-name: dark-none;
-    animation-duration: 5s;
-    opacity: 0;
-}
-
-@keyframes dark-opacity {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: .5;
-    }
-    100% {
-        opacity: .9;
-    }
-    
-}
-
-@keyframes dark-none {
-    0%{
-        opacity: .9;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
 .header__nav {
     width:38%;
     height: 100%;
