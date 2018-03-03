@@ -596,4 +596,9 @@
         
         transform: translate(0,0);
     }
+    
+        .itemBtn--back::before {
+            font-family: icons;
+            content: "\ea0f";
+        }
 }
