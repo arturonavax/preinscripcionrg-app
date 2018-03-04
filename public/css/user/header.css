@@ -65,15 +65,9 @@
 /*------------------------- HEADER NAV -----------------------*/
 /*------------------------------------------------------------*/
 .header__nav {
-    width: 70%;
+    width: 38%;
     height: 100%;
     z-index: 20;
-    transform: translate(-100%, 0);
-    transition: all .5s;
-    
-    position: fixed;
-    top: 0;
-    left: 0;
     
     background-color: #ecf0f1;
     color: #e74c3c;
@@ -84,10 +78,6 @@
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-}
-
-.header__nav--open {
-    transform: translate(0,0);
 }
 
     .nav__title {

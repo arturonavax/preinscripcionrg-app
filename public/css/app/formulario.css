@@ -142,7 +142,14 @@
         }
         .item__submitFicha--preM:nth-child(1):hover {
             background-color: #27ae60;
-        } 
+        }
+
+        .item__submitFicha--preM:nth-child(2) {
+            background-color: #e74c3c;
+        }
+        .item__submitFicha--preM:nth-child(2):hover {
+                    background-color: #c0392b;
+                }
 
         .item__submitFicha--registrar {
             width: 80%;
