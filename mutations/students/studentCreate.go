@@ -60,6 +60,9 @@ var StudentCreate = &graphql.Field{
 		"lastName": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.String),
 		},
+		"ciType": &graphql.ArgumentConfig{
+			Type: graphql.NewNonNull(graphql.String),
+		},
 		"ci": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Int),
 		},
