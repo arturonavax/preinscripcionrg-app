@@ -31,7 +31,6 @@
     }
 
         .item__label {
-            display: inline;
             font-family: maven-blod;
             color: #565656;
             font-size: 20px;
@@ -46,6 +45,12 @@
             background-color: #fff;
             border-radius: 5px;
             color: #565656;
+        }
+        
+        .item__input--CI {
+            display: inline;
+            height: 25px;
+            width: 83%;
         }
 
         .item__input--date {
@@ -70,6 +75,12 @@
             background-color: #fff;
             color: #565656;
         }
+        
+            .item__select--CI {
+                display: inline;
+                height: 25px;
+                width: 15%;
+            }
 
         .item__input--SIGE {
             width: 40%;
