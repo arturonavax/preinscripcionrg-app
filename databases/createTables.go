@@ -36,6 +36,7 @@ func CreateTables() {
 	db.CreateTable(&student.Section{})
 	db.CreateTable(&student.ConditionOfHousing{})
 	db.CreateTable(&student.Student{})
+	db.CreateTable(&student.StudentStatus{})
 	db.CreateTable(&student.Asignature{})
 	//----------------------
 
@@ -56,8 +57,23 @@ func CreateTables() {
 	status.Name = "ACTIVO"
 	status.Description = "Usuario activo"
 
+	studentStatus := &student.StudentStatus{}
+	studentStatus.Name = "EN PROCESO"
+	studentStatus.Description = "Estudiantes en proceso de ser aceptados o rechazados"
+
+	studentStatus2 := &student.StudentStatus{}
+	studentStatus2.Name = "ACEPTADO"
+	studentStatus2.Description = "Estudiantes aceptados para ser inscritos"
+
+	studentStatus3 := &student.StudentStatus{}
+	studentStatus3.Name = "RECHAZADO"
+	studentStatus3.Description = "Estudiantes rechazados para ser inscritos"
+
 	db.Create(&kind)
 	db.Create(&status)
+	db.Create(&studentStatus)
+	db.Create(&studentStatus2)
+	db.Create(&studentStatus3)
 	//---------------------------
 
 	log.Println("|                 ...                 |")

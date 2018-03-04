@@ -10,7 +10,8 @@ type Student struct {
 	DeletedAt *time.Time `sql:"index"`
 
 	//IDs
-	UserID int `json:"userId" gorm:"not null;type:integer"`
+	UserID   int `json:"userId" gorm:"not null;type:integer"`
+	StatusID int `json:"statusID" gorm:"not null;type:integer;default:1"`
 
 	CountryOfBirthID      int `json:"countryOfBirthID" gorm:"not null;type:integer"`
 	StateOfBirthID        int `json:"stateOfBirthID" gorm:"not null;type:integer"`
@@ -60,7 +61,7 @@ type Student struct {
 
 	DateOfBirth string `json:"dateOfBirth" gorm:"not null;type:varchar(20)"`
 
-	Gender string `json:"gender" gorm:"not null;type:char(1)"`
+	Gender string `json:"gender" gorm:"not null;type:varchar(15)"`
 
 	HealthProblem  bool   `json:"healthProblem" gorm:"not null;type:boolean"`
 	HealthProblemE string `json:"healthProblemE" gorm:"type:varchar(300)"`

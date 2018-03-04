@@ -13,6 +13,7 @@ import (
 	"github.com/arthurnavah/PreInscripcionRG/querys/sectors"
 	"github.com/arthurnavah/PreInscripcionRG/querys/states"
 	"github.com/arthurnavah/PreInscripcionRG/querys/students"
+	"github.com/arthurnavah/PreInscripcionRG/querys/studentsStatus"
 	"github.com/arthurnavah/PreInscripcionRG/querys/teachers"
 	"github.com/arthurnavah/PreInscripcionRG/querys/typeOfRoads"
 	"github.com/arthurnavah/PreInscripcionRG/querys/users"
@@ -33,6 +34,9 @@ var RootQuery = graphql.NewObject(
 			//Querys Estudiantes
 			"students": students.QueryStudents,
 			"student":  students.QueryStudent,
+
+			//Querys Estados de Estudiantes
+			"studentStatus": studentsStatus.QueryStudentStatus,
 
 			//Querys Asignaturas
 			"asignatures": asignatures.QueryAsignatures,
