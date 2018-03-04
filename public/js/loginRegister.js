@@ -7,10 +7,12 @@ var btnLogin = $("#navBtn-login");
 var loginRegister = $("#login-register");
 
 btnRegister.addEventListener("click", function() {
+    $("#section").style.minHeight = "735px";
     loginRegister.classList.add("register--open");
 });
 
 btnLogin.addEventListener("click", function(){
+    $("#section").style.minHeight = "400px";
     loginRegister.classList.remove("register--open");
 });
 
