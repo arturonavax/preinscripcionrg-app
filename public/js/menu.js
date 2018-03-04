@@ -1,12 +1,11 @@
-var menu = $("#menu");
-var menuBtn = $("#menu__btn");
-var dark = $("#dark");
+var menu = $("#modal-header"),
+    menuBtn = $("#menu__btn");
 
-menuBtn.addEventListener("click", toggleMenu);
-dark.addEventListener("click", toggleMenu);
+menuBtn.addEventListener("click", function(){
+    menu.classList.add("modal--open");
+});
 
-function toggleMenu() {
-    menu.classList.toggle("header__nav--open");
-    //dark.classList.toggle("header__nav--open");
-    dark.classList.toggle("dark--move");
-}
+menu.addEventListener("click",function(){
+    menu.classList.remove("modal--open");
+})
+
