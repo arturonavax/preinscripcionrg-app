@@ -24,7 +24,6 @@
         this.MenuView.BtnStudents.addEventListener("click", function(){
             self.StudentsView.ContainerStudents.classList.add("modal-article--open");
             $("#section").classList.add("tx-C");
-            $("#article-studentRegister").style.height = "430px";
         });
 
         this.MenuView.BtnLogout.addEventListener("click", function(){
@@ -40,6 +39,7 @@
 
         this.StudentRegister.BtnStudentRegister.addEventListener("click", function(){
             self.StudentRegister.ContainerStudentRegister.classList.add("modal-article--open");
+            $("#article-studentRegister").style.height = "430px";
         });
 
         // Eventos de la ventana profile.
@@ -217,6 +217,12 @@
 
         this.StudentRegister.BtnPreInscribir.addEventListener("click", function(){
             self.StudentRegister.register();
+            $("#modal").classList.remove("modal--open");
+            $("#modal-mini").classList.add("modal-mini--open");
+        });
+
+        $("#modal-mini-cancel").addEventListener("click", function() {
+            $("#modal-mini").classList.remove("modal-mini--open");
         });
 
         // Eventos de la ventana de estudiantes.
