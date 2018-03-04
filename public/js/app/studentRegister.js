@@ -372,7 +372,7 @@
                     SIGECOD : "${this.SIGECODInput.value}",
                     firstName : "${this.FirstNameInput.value}",
                     lastName : "${this.LastNameInput.value}",
-                    ciType: ${this.CITypeInput.value},
+                    ciType: "${this.CITypeInput.value}",
                     ci : ${this.CIInput.value},
                     dateOfBirth : "${this.DateOfBirthInput.value}",
                     gender : "${gender}",

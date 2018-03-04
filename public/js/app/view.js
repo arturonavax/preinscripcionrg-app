@@ -24,6 +24,7 @@
         this.MenuView.BtnStudents.addEventListener("click", function(){
             self.StudentsView.ContainerStudents.classList.add("modal-article--open");
             $("#section").classList.add("tx-C");
+            $("#article-studentRegister").style.height = "430px";
         });
 
         this.MenuView.BtnLogout.addEventListener("click", function(){
@@ -135,7 +136,7 @@
         });
         // Botones de retroceso.
         this.StudentRegister.BtnBackPage2.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "300px";
+            $("#article-studentRegister").style.height = "430px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page2");
             $("#section").classList.remove("tx-C");
             $("#section").classList.add("tx-A");
