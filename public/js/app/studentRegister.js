@@ -43,6 +43,7 @@
 
         this.FirstNameInput = $("#firstName-studentRegister");
         this.LastNameInput = $("#lastName-studentRegister");
+        this.CITypeInput = $("#ciType-studentRegister");
         this.CIInput = $("#ci-studentRegister");
         this.EmailInput = $("#email-studentRegister");
         this.PhoneNumberInput = $("#phoneNumber-studentRegister");
@@ -367,10 +368,11 @@
                     mentionID : ${this.Mentions.value},
                     sectionID : ${this.Sections.value},
                     conditionOfHousingID : ${this.ConditionOfHousings.value},
-                    
+
                     SIGECOD : "${this.SIGECODInput.value}",
                     firstName : "${this.FirstNameInput.value}",
                     lastName : "${this.LastNameInput.value}",
+                    ciType: ${this.CITypeInput.value},
                     ci : ${this.CIInput.value},
                     dateOfBirth : "${this.DateOfBirthInput.value}",
                     gender : "${gender}",
