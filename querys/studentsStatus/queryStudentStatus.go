@@ -12,7 +12,7 @@ import (
 
 //QueryStudentStatus Query para consultar un estado de estudiante.
 var QueryStudentStatus = &graphql.Field{
-	Type: graphqlTypes.AsignatureType,
+	Type: graphqlTypes.StudentStatusType,
 	Args: graphql.FieldConfigArgument{
 		"id": &graphql.ArgumentConfig{
 			Type: graphql.NewNonNull(graphql.Int),
