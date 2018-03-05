@@ -62,6 +62,8 @@
         this.ProfileView.BtnSaveEditProfile.addEventListener("click", function() {
             self.ProfileView.BtnSaveEditProfile.textContent = "Guardando..";
             self.ProfileView.saveEdit();
+            $("#modal-mini").classList.add("modal-mini--open");
+
         });
 
         // Eventos de la ventana de creacion de estudiantes.

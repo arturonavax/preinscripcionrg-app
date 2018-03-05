@@ -212,9 +212,9 @@
                     this.AddressDataContainer.textContent = address;
                     this.PhoneNumberDataContainer.textContent = phoneNumber;
 
-                    this.ProfileNotification.textContent = "Usuario actualizado con exito."
+                    $("#modal-mini-parrafo").textContent = "Usuario actualizado con exito."
                 } else if (r.response.data.meU.code === 500) {
-                    this.ProfileNotification.textContent = "Ocurrio un error."
+                    $("#modal-mini-parrafo").textContent = "Ocurrio un error."
 
                 }
                 console.log(r);

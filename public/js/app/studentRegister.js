@@ -5,6 +5,7 @@
 
 (function(){
     self.StudentRegisterView = function(studentRegister) {
+        this.Token = "";
         this.StudentRegister = studentRegister;
         this.BtnStudentRegister = $("#btn-registerStudent");
         this.ContainerStudentRegister = $("#container-studentRegister");
@@ -104,6 +105,7 @@
 
     self.StudentRegisterView.prototype = {
         render: function(token) {
+            this.Token = token;
             //Query de paises
             let queryCountries = `
             query {
@@ -196,7 +198,7 @@
             `
 
             //Renderea los paises 
-            requestAjaxToken("POST", "/graphql", token, queryCountries, true)
+            requestAjaxToken("POST", "/graphql", this.Token, queryCountries, true)
              .then( r => {
                  let countries = r.response.data.countries;
                  for (let i = 0; i < countries.length; i++){
@@ -208,7 +210,7 @@
                  }
              });
             //Renderea los estados 
-            requestAjaxToken("POST", "/graphql", token, queryStates, true)
+            requestAjaxToken("POST", "/graphql", this.Token, queryStates, true)
              .then( r => {
                  let states = r.response.data.states;
                  for (let i = 0; i < states.length; i++){
@@ -220,7 +222,7 @@
                  }
              });
             //Renderea los municipios 
-            requestAjaxToken("POST", "/graphql", token, queryMunicipalities, true)
+            requestAjaxToken("POST", "/graphql", this.Token, queryMunicipalities, true)
              .then( r => {
                  let municipalities = r.response.data.municipalities;
                  for (let i = 0; i < municipalities.length; i++){
@@ -237,7 +239,7 @@
                  }
              });
             //Renderea las institutiones 
-            requestAjaxToken("POST", "/graphql", token, queryInstitutions, true)
+            requestAjaxToken("POST", "/graphql", this.Token, queryInstitutions, true)
              .then( r => {
                  let institutions = r.response.data.institutions;
                  for (let i = 0; i < institutions.length; i++){
@@ -249,7 +251,7 @@
                  }
              });
             //Renderea las parroquias 
-            requestAjaxToken("POST", "/graphql", token, queryParishes, true)
+            requestAjaxToken("POST", "/graphql", this.Token, queryParishes, true)
              .then( r => {
                  let parishes = r.response.data.parishes;
                  for (let i = 0; i < parishes.length; i++){
@@ -261,7 +263,7 @@
                  }
              });
             //Renderea los sectores 
-            requestAjaxToken("POST", "/graphql", token, querySectors, true)
+            requestAjaxToken("POST", "/graphql", this.Token, querySectors, true)
              .then( r => {
                  let sectors = r.response.data.sectors;
                  for (let i = 0; i < sectors.length; i++){
@@ -273,7 +275,7 @@
                  }
              });
             //Renderea los tipos de vias 
-            requestAjaxToken("POST", "/graphql", token, queryTypeOfRoads, true)
+            requestAjaxToken("POST", "/graphql", this.Token, queryTypeOfRoads, true)
              .then( r => {
                  let typeOfRoads = r.response.data.typeOfRoads;
                  for (let i = 0; i < typeOfRoads.length; i++){
@@ -285,7 +287,7 @@
                  }
              });
             //Renderea las condiciones de estudiantes
-            requestAjaxToken("POST", "/graphql", token, queryConditionOfHousings, true)
+            requestAjaxToken("POST", "/graphql", this.Token, queryConditionOfHousings, true)
              .then( r => {
                  let conditionOfHousings = r.response.data.conditionOfHousings;
                  for (let i = 0; i < conditionOfHousings.length; i++){
@@ -297,7 +299,7 @@
                  }
              });
             //Renderea las menciones
-            requestAjaxToken("POST", "/graphql", token, queryMentions, true)
+            requestAjaxToken("POST", "/graphql", this.Token, queryMentions, true)
              .then( r => {
                  let mentions = r.response.data.mentions;
                  for (let i = 0; i < mentions.length; i++){
@@ -309,7 +311,7 @@
                  }
              });
             //Renderea las secciones
-            requestAjaxToken("POST", "/graphql", token, querySections, true)
+            requestAjaxToken("POST", "/graphql", this.Token, querySections, true)
              .then( r => {
                  let sections = r.response.data.sections;
                  for (let i = 0; i < sections.length; i++){
@@ -414,6 +416,20 @@
                 ){id,message,code}
             }
             `
+            requestAjaxToken("POST", "/graphql", this.Token, mutation, true)
+             .then( r => {
+                 console.log(r);
+                 if (r.response.errors.length != 0) {
+                    $("#modal-mini-parrafo").textContent = "El estudiante ya habia sido registrado."
+                 } else {
+                    if (r.response.data.studentC.code === 201) {
+                        $("#modal-mini-parrafo").textContent = "El estudiante se creo exitosamente!."
+                    } else {
+                        $("#modal-mini-parrafo").textContent = "El estudiante ya habia sido registrado."
+                    }
+                 }
+
+             });
             console.log(mutation);
         }
     }
