@@ -325,6 +325,9 @@
         },
 
         register: function(){
+            let ciMother = $("#motherCIType-studentRegister").value + "-" + this.MotherCIInput.value;
+            let ciFather = $("#fatherCIType-studentRegister").value + "-" + this.FatherCIInput.value;
+            let ciRepresentative = $("#representativeCIType-studentRegister").value + "-" + this.RepresentativeCIInput.value;
             let gender = this.GenderRadioInput;
             let healthProblem = this.HealthProblemRadio;
             let scholarship = this.BecaRadio;
@@ -399,17 +402,17 @@
                     motherFirstName: "${this.MotherFirstNameInput.value}",
                     motherLastName: "${this.MotherLastNameInput.value}",
                     motherPhoneNumber: "${this.MotherPhoneNumberInput.value}",
-                    motherCI: "${this.MotherCIInput.value}",
+                    motherCI: "${ciMother}",
                 
                     fatherFirstName: "${this.FatherFirstNameInput.value}",
                     fatherLastName: "${this.FatherLastNameInput.value}",
                     fatherPhoneNumber: "${this.FatherPhoneNumberInput.value}",
-                    fatherCI: "${this.FatherCIInput.value}",
+                    fatherCI: "${ciFather}",
                     
                     representativeFirstName: "${this.RepresentativeFirstNameInput.value}",
                     representativeLastName: "${this.RepresentativeLastNameInput.value}",
                     representativePhoneNumber: "${this.RepresentativePhoneNumberInput.value}",
-                    representativeCI: "${this.RepresentativeCIInput.value}",
+                    representativeCI: "${ciRepresentative}",
                     representativeRelationship: "${this.RepresentativeRelationshipInput.value}",
                     representativeAddress: "${this.RepresentativeAddressInput.value}",
                     
