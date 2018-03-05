@@ -113,8 +113,8 @@
                     height: 30px;
 
                     position: absolute;
-                    top: 62px;
-                    right: 5px;
+                    top: 16px;
+                    right: 14px;
 
                     border: none;
                     background: none;
@@ -322,6 +322,10 @@
         color: #535353;
     }
 
+    .item__data__content--estado {
+        font-family: oleo;
+    }
+
 /*------------------------------------------------------------*/
 
 
@@ -495,10 +499,10 @@
 }
 
     .modal-students__container {
-        width: 80%;
+        width: 85%;
         height: 80vh;
         margin: 0 auto;
-        margin-top: 100px;
+        margin-top: 80px;
         padding: 16px;
 
         overflow: auto;
@@ -626,6 +630,11 @@
             
         }
 
+        .modalContainer-students__item {
+            margin-top: 15px;
+            width: 100%;
+        }
+
             .modal__label {
                 font-family: maven-blod;
                 font-size: 20px;
@@ -716,6 +725,11 @@
         background-color: rgba(0,0,0,0.6);
     }
 
+    .modalContainer-students__item {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 15px;
+    }
     
     .section__container {
         min-height: 400px;

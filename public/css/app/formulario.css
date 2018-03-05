@@ -103,6 +103,9 @@
             background-color: transparent;
         }
 
+        .item__input--estado {
+            font-family: oleo;
+        }
 
         .item__input--radio{
             margin-bottom: 0;
@@ -168,7 +171,6 @@
 
         .submitFicha__decoration {
             font-family: oleo;
-            font-size: 20px;
         }
 
         .item__submitFicha--doble {
