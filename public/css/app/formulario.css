@@ -50,7 +50,9 @@
         .item__input--CI {
             display: inline;
             height: 25px;
-            width: 83%;
+            width: 80%;
+            margin-left: 5px;
+
         }
 
         .item__input--date {
@@ -79,7 +81,7 @@
             .item__select--CI {
                 display: inline;
                 height: 25px;
-                width: 15%;
+                width: 50px;
             }
 
         .item__input--SIGE {
@@ -224,5 +226,9 @@
     
     .item__submitFicha {
         width: 60%;
+    }
+    .item__input--CI {
+        width: 93%;
+        margin-left: 8px;
     }
 }
