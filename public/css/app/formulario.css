@@ -149,20 +149,18 @@
             cursor: pointer;
             background-color: #2980b9;
         }
-        
-        .item__submitFicha--preM:nth-child(1) {
-            background-color: #3498db;
-        }
-        .item__submitFicha--preM:nth-child(1):hover {
-            background-color: #2980b9;
+
+        .item__submitFicha--palnilla {
+            height: 40px;
+            width: 100%;
         }
 
-        .item__submitFicha--preM:nth-child(2) {
+        .item__submitFicha--preM:nth-child(3) {
             background-color: #e74c3c;
         }
-        .item__submitFicha--preM:nth-child(2):hover {
-                    background-color: #c0392b;
-                }
+        .item__submitFicha--preM:nth-child(3):hover {
+            background-color: #c0392b;
+        }
 
         .item__submitFicha--registrar {
             width: 80%;
