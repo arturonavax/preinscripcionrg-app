@@ -615,21 +615,21 @@
 
                                     <div class="itemFicha__containerRadio">
 
-                                        <input class="item__input--radio" value="true" type="radio" name="salud"/>
+                                        <input id="healthProblem-yes" class="item__input--radio" value="true" type="radio" name="salud"/>
                                         <p class="item__label">SI</p>
 
                                     </div>
 
                                     <div class="itemFicha__containerRadio">    
 
-                                        <input class="item__input--radio" value="false" checked type="radio" name="salud"/>
+                                        <input id="healthProblem-no" class="item__input--radio" value="false" checked type="radio" name="salud"/>
                                         <p class="item__label">NO</p>
 
                                     </div>
 
                                 </div>
 
-                                <div class="form__item">
+                                <div id="healthProblemE-container" class="form__item">
                                     <p class="item__label">Cual Problema Presenta :</p>
                                     <input id="healthProblemE-studentRegister" class="item__input" type="text" placeholder="Problema medico..." name=""/>
                                 </div>
@@ -922,6 +922,18 @@
                                 </div>
 
                                 <div class="form__item">
+                                    <p class="item__label">Año a Cursar :</p>
+                                    <select id="year-studentRegister" class="item__select">
+                                        <option value="1">1er</option>
+                                        <option value="2">2do</option>
+                                        <option value="3">3er</option>
+                                        <option value="4">4to</option>
+                                        <option value="5">5to</option>
+                                        <option value="6">6to</option>
+                                    </select>
+                                </div>
+
+                                <div class="form__item">
                                     <p class="item__label">Mención :</p>
                                     <select id="mentions-studentRegister" class="item__select">
                                     </select>
@@ -933,12 +945,6 @@
                                     </select>
                                 </div>
                                 
-                                <div class="form__item">
-                                    <p class="item__label">Año a Cursar :</p>
-                                    <select id="" class="item__select">
-                                    </select>
-                                </div>
-
                                 <div class="form__item">
                                     <p class="item__label">Edad :</p>
                                     <input id="age-studentRegister" class="item__input" type="text" placeholder="Edad del Estudiante..." name=""/>

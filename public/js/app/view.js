@@ -23,6 +23,8 @@
 
         this.MenuView.BtnStudents.addEventListener("click", function(){
             self.StudentsView.ContainerStudents.classList.add("modal-article--open");
+            self.ProfileView.ContainerProfile.classList.remove("modal-article--open");
+            self.StudentRegister.ContainerStudentRegister.classList.remove("modal-article--open");
             $("#section").classList.add("tx-C");
         });
 
@@ -34,12 +36,17 @@
 
         this.MenuView.BtnProfile.addEventListener("click", function(){
             self.ProfileView.ContainerProfile.classList.add("modal-article--open");
+            self.StudentRegister.ContainerStudentRegister.classList.remove("modal-article--open");
+            self.StudentsView.ContainerStudents.classList.remove("modal-article--open");
             $("#section").classList.add("tx-C");
         });
 
         this.StudentRegister.BtnStudentRegister.addEventListener("click", function(){
             self.StudentRegister.ContainerStudentRegister.classList.add("modal-article--open");
+            self.StudentsView.ContainerStudents.classList.remove("modal-article--open");
+            self.ProfileView.ContainerProfile.classList.remove("modal-article--open");
             $("#article-studentRegister").style.height = "430px";
+            self.StudentRegister.PanelMove.className = "panelMove-ficha";
         });
 
         // Eventos de la ventana profile.
@@ -215,6 +222,15 @@
         this.StudentRegister.SIGENo.addEventListener("click", function(){
            self.StudentRegister.SIGETitle.classList.add("no-visible"); 
            self.StudentRegister.SIGECOD.classList.add("no-visible"); 
+        });
+        // Salud
+        this.StudentRegister.HealthProblemContainer.classList.add("no-visible");
+        this.StudentRegister.HealthProblemYes.addEventListener("click", function() {
+            self.StudentRegister.HealthProblemContainer.classList.remove("no-visible");
+        });
+        this.StudentRegister.HealthProblemNo.addEventListener("click", function() {
+            self.StudentRegister.HealthProblemContainer.classList.add("no-visible");
+
         });
 
         this.StudentRegister.BtnPreInscribir.addEventListener("click", function(){

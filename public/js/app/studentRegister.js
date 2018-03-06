@@ -58,6 +58,9 @@
         this.InstitutionsOfOrigin = $("#institutionsOfOrigin-studentRegister");
         this.HealthProblemRadio = document.getElementsByName("salud");
         this.HealthProblemnEInput = $("#healthProblemE-studentRegister");
+        this.HealthProblemYes = $("#healthProblem-yes");
+        this.HealthProblemNo = $("#healthProblem-no");
+        this.HealthProblemContainer = $("#healthProblemE-container");
 
         this.AddressInput = $("#address-studentRegister");
         this.Municipalities = $("#municipalities-studentRegister");
@@ -86,6 +89,7 @@
         this.BecaRadio = document.getElementsByName("Beca");
         this.CanaimaRadio = document.getElementsByName("Canaima");
 
+        this.Year = $("#year-studentRegister");
         this.Mentions = $("#mentions-studentRegister");
         this.Sections = $("#sections-studentRegister");
         this.AgeInput = $("#age-studentRegister");
@@ -336,7 +340,6 @@
             let repeat = this.RepeatCheck.checked;
             let asigPend = this.AsigPendCheck.checked;
             let y = new Date();
-            let year = y.getFullYear();
             let inscriptionDate = y.getDate() + "-" + Number(y.getMonth()+1) + "-" + y.getFullYear();
             for (var i=0; i< gender.length; i++) {
                 if (gender[i].checked) {
@@ -388,7 +391,7 @@
                     address : "${this.AddressInput.value}",
                     scholarship : ${scholarship},
                     canaima : ${canaima},
-                    year : ${year},
+                    year : ${this.Year.value},
                     age : ${this.AgeInput.value},
                     size : "${this.SizeInput.value}",
                     weight : ${this.WeightInput.value},
