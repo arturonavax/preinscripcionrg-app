@@ -88,8 +88,8 @@ INSERT INTO institutions (user_id,name) VALUES
 ;
 
 -- CREACION DE REPRESENTANTES.
-INSERT INTO representatives (user_id, first_name, last_name, email, phone_number, ci, relationship, address) VALUES
-    (1, 'Zully', 'Marina', 'zullymarina.matheus1@gmail.com', '04146360146', 'V-8500827', 'Madre', 'Valle Frio')
+INSERT INTO representatives (user_id, first_name, last_name, phone_number, ci, relationship, address) VALUES
+    (1, 'Zully', 'Marina', '04146360146', 'V-8500827', 'Madre', 'Valle Frio')
 ;
 
 -- CREACION DE PROFESORES.
@@ -130,13 +130,13 @@ INSERT INTO type_of_roads (user_id, name) VALUES
 ;
 
 -- CREACION DE PADRES.
-INSERT INTO fathers (user_id, first_name, last_name, email, phone_number, ci) VALUES
-    (1, 'Arturo', 'Enrique', 'pimosoft@gmail.com', '04146360146', 'V-8501612')    
+INSERT INTO fathers (user_id, first_name, last_name, phone_number, ci) VALUES
+    (1, 'Arturo', 'Enrique', '04146360146', 'V-8501612')    
 ;
 
 -- CREACION DE MADRES.
-INSERT INTO mothers (user_id, first_name, last_name, email, phone_number, ci) VALUES
-    (1, 'Zully', 'Marina', 'zully@gmail.com', '04146360146', 'V-8500612')    
+INSERT INTO mothers (user_id, first_name, last_name, phone_number, ci) VALUES
+    (1, 'Zully', 'Marina', '04146360146', 'V-8500612')    
 ;
 
 -- CREACION DE MENCIONES.

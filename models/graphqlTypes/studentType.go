@@ -15,6 +15,9 @@ var StudentType = graphql.NewObject(
 			"userID": &graphql.Field{
 				Type: graphql.Int,
 			},
+			"statusID": &graphql.Field{
+				Type: graphql.Int,
+			},
 			"countryOfBirthID": &graphql.Field{
 				Type: graphql.Int,
 			},

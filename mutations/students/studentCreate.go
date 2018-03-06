@@ -269,19 +269,16 @@ var StudentCreate = &graphql.Field{
 
 		newMother.FirstName = newStudent.MotherFirstName
 		newMother.LastName = newStudent.MotherLastName
-		newMother.Email = newStudent.MotherEmail
 		newMother.PhoneNumber = newStudent.MotherPhoneNumber
 		newMother.CI = newStudent.MotherCI
 
 		newFather.FirstName = newStudent.FatherFirstName
 		newFather.LastName = newStudent.FatherLastName
-		newFather.Email = newStudent.FatherEmail
 		newFather.PhoneNumber = newStudent.FatherPhoneNumber
 		newFather.CI = newStudent.FatherCI
 
 		newRepresentative.FirstName = newStudent.RepresentativeFirstName
 		newRepresentative.LastName = newStudent.RepresentativeLastName
-		newRepresentative.Email = newStudent.RepresentativeEmail
 		newRepresentative.PhoneNumber = newStudent.RepresentativePhoneNumber
 		newRepresentative.CI = newStudent.RepresentativeCI
 		newRepresentative.Relationship = newStudent.RepresentativeRelationship

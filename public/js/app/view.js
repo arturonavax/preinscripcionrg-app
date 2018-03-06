@@ -230,7 +230,6 @@
         });
         this.StudentRegister.HealthProblemNo.addEventListener("click", function() {
             self.StudentRegister.HealthProblemContainer.classList.add("no-visible");
-
         });
 
         this.StudentRegister.BtnPreInscribir.addEventListener("click", function(){
@@ -259,7 +258,7 @@
             this.MenuView.render();
             this.ProfileView.render();
             this.StudentRegister.render(this.ProfileView.Profile.Token);
-            this.StudentsView.render();
+            this.StudentsView.render(this.ProfileView.Profile.Token);
         }
     }
 })();

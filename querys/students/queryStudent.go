@@ -65,19 +65,16 @@ var QueryStudent = &graphql.Field{
 
 				studentFound.MotherFirstName = motherFound.FirstName
 				studentFound.MotherLastName = motherFound.LastName
-				studentFound.MotherEmail = motherFound.Email
 				studentFound.MotherPhoneNumber = motherFound.PhoneNumber
 				studentFound.MotherCI = motherFound.CI
 
 				studentFound.FatherFirstName = fatherFound.FirstName
 				studentFound.FatherLastName = fatherFound.LastName
-				studentFound.FatherEmail = fatherFound.Email
 				studentFound.FatherPhoneNumber = fatherFound.PhoneNumber
 				studentFound.FatherCI = fatherFound.CI
 
 				studentFound.RepresentativeFirstName = representativeFound.FirstName
 				studentFound.RepresentativeLastName = representativeFound.LastName
-				studentFound.RepresentativeEmail = representativeFound.Email
 				studentFound.RepresentativePhoneNumber = representativeFound.PhoneNumber
 				studentFound.RepresentativeCI = representativeFound.CI
 			} else {
