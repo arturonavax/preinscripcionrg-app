@@ -123,7 +123,7 @@
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page9");
         });
         this.StudentRegister.BtnNextPage9.addEventListener("click", function() {
-            $("#article-studentRegister").style.height = "930px";
+            $("#article-studentRegister").style.height = "970px";
             self.StudentRegister.PanelMove.classList.remove("panelMove-ficha--page9");
             self.StudentRegister.PanelMove.classList.add("panelMove-ficha--page10");
             $("#section").classList.remove("tx-B");
