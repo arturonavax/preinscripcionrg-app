@@ -39,14 +39,10 @@
             color: #565656;
             border-bottom: 2px dotted #939393;
         }
-
-            .title__item {
-                width: auto;
-            }
-            
             .title__text {
                 line-height: 60px;
                 display: inline-block;
+                width: 80%;
             }
 
                 .title {
@@ -65,7 +61,7 @@
                 justify-content: flex-end;
                 align-content: center;
                 align-items: center;
-                width: 55px;
+                width: 20%;
             }
 
                 .itemBtn {
@@ -110,6 +106,7 @@
                 .itemBtn--load::before {
                     font-family: icons;
                     content: "\e984";
+                    margin: 0;
                 }
 
                 .itemBtn--exit {
