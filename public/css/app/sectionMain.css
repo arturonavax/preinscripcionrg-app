@@ -39,14 +39,10 @@
             color: #565656;
             border-bottom: 2px dotted #939393;
         }
-
-            .title__item {
-                width: auto;
-            }
-            
             .title__text {
                 line-height: 60px;
                 display: inline-block;
+                width: 80%;
             }
 
                 .title {
@@ -65,7 +61,7 @@
                 justify-content: flex-end;
                 align-content: center;
                 align-items: center;
-                width: 55px;
+                width: 20%;
             }
 
                 .itemBtn {
@@ -107,6 +103,11 @@
                     content: "\e986";
                 }
                 
+                .itemBtn--load::before {
+                    font-family: icons;
+                    content: "\e984";
+                    margin: 0;
+                }
 
                 .itemBtn--exit {
                     width: 30px;
@@ -207,18 +208,18 @@
         font-family: maven-blod;
     }
 
-        .RE-container__label {
+        .RE-container__item > p {
             margin-top: 5px;
             display: block;
         }
 
-        .RE__content {
+        .RE-container__item > p > span {
             font-family: maven-pro;
             display: block;
             padding-left: 10px;
         }
 
-        .RE__content-status {
+        .RE-container__item > span {
             margin-top: 5px;
             font-family: oleo;
             font-size: 20px;
@@ -240,7 +241,7 @@
             background-color: #27ae60;
         }
 
-        .RE__descargarBtn-estudiantes {
+        .RE-container__item > button {
             width: 100px;
             height: 30px;
             margin-top: 5px;
@@ -253,7 +254,7 @@
             color: #fff; 
         }
 
-        .RE__descargarBtn-estudiantes:hover {
+        .RE-container__item > button:hover {
             cursor: pointer;
             background-color: #2980b9;
         }

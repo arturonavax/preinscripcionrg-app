@@ -74,7 +74,7 @@
       "properties": {
         "ligatures": "phone, telephone",
         "name": "phone",
-        "order": 4,
+        "order": 6,
         "id": 67,
         "prevSize": 32,
         "code": 59714
@@ -103,7 +103,7 @@
       "properties": {
         "ligatures": "envelop, mail",
         "name": "envelop",
-        "order": 8,
+        "order": 5,
         "id": 70,
         "prevSize": 32,
         "code": 59717
@@ -130,7 +130,7 @@
       "properties": {
         "ligatures": "location2, map-marker2",
         "name": "location2",
-        "order": 5,
+        "order": 4,
         "id": 73,
         "prevSize": 32,
         "code": 59720
@@ -162,7 +162,7 @@
       "properties": {
         "ligatures": "users, group",
         "name": "users",
-        "order": 19,
+        "order": 8,
         "id": 115,
         "prevSize": 32,
         "code": 59762
@@ -195,7 +195,7 @@
       "properties": {
         "ligatures": "user-plus, user2",
         "name": "user-plus",
-        "order": 18,
+        "order": 10,
         "id": 116,
         "prevSize": 32,
         "code": 59763
@@ -228,7 +228,7 @@
       "properties": {
         "ligatures": "user-check, user4",
         "name": "user-check",
-        "order": 25,
+        "order": 11,
         "id": 118,
         "prevSize": 32,
         "code": 59765
@@ -261,7 +261,7 @@
       "properties": {
         "ligatures": "user-tie, user5",
         "name": "user-tie",
-        "order": 20,
+        "order": 9,
         "id": 119,
         "prevSize": 32,
         "code": 59766
@@ -269,6 +269,38 @@
       "setIdx": 0,
       "setId": 1,
       "iconIdx": 118
+    },
+    {
+      "icon": {
+        "paths": [
+          "M1024 384h-384l143.53-143.53c-72.53-72.526-168.96-112.47-271.53-112.47s-199 39.944-271.53 112.47c-72.526 72.53-112.47 168.96-112.47 271.53s39.944 199 112.47 271.53c72.53 72.526 168.96 112.47 271.53 112.47s199-39.944 271.528-112.472c6.056-6.054 11.86-12.292 17.456-18.668l96.32 84.282c-93.846 107.166-231.664 174.858-385.304 174.858-282.77 0-512-229.23-512-512s229.23-512 512-512c141.386 0 269.368 57.326 362.016 149.984l149.984-149.984v384z"
+        ],
+        "tags": [
+          "spinner",
+          "loading",
+          "loading-wheel",
+          "refresh",
+          "repeat",
+          "busy",
+          "wait",
+          "arrow"
+        ],
+        "defaultCode": 59780,
+        "grid": 16,
+        "attrs": []
+      },
+      "attrs": [],
+      "properties": {
+        "ligatures": "spinner11, loading12",
+        "name": "spinner11",
+        "order": 7,
+        "id": 133,
+        "prevSize": 32,
+        "code": 59780
+      },
+      "setIdx": 0,
+      "setId": 1,
+      "iconIdx": 132
     },
     {
       "icon": {
@@ -290,7 +322,7 @@
       "properties": {
         "ligatures": "search, magnifier",
         "name": "search",
-        "order": 15,
+        "order": 12,
         "id": 135,
         "prevSize": 32,
         "code": 59782
@@ -319,7 +351,7 @@
       "properties": {
         "ligatures": "menu, list3",
         "name": "menu",
-        "order": 10,
+        "order": 13,
         "id": 190,
         "prevSize": 32,
         "code": 59837
@@ -347,7 +379,7 @@
       "properties": {
         "ligatures": "heart, like",
         "name": "heart",
-        "order": 11,
+        "order": 14,
         "id": 219,
         "prevSize": 32,
         "code": 59866
@@ -375,7 +407,7 @@
       "properties": {
         "ligatures": "blocked, forbidden",
         "name": "blocked",
-        "order": 24,
+        "order": 17,
         "id": 271,
         "prevSize": 32,
         "code": 59918
@@ -404,7 +436,7 @@
       "properties": {
         "ligatures": "cross, cancel",
         "name": "cross",
-        "order": 21,
+        "order": 16,
         "id": 272,
         "prevSize": 32,
         "code": 59919
@@ -433,7 +465,7 @@
       "properties": {
         "ligatures": "checkmark, tick",
         "name": "checkmark",
-        "order": 22,
+        "order": 15,
         "id": 273,
         "prevSize": 32,
         "code": 59920
@@ -462,7 +494,7 @@
       "properties": {
         "ligatures": "checkmark2, tick2",
         "name": "checkmark2",
-        "order": 23,
+        "order": 18,
         "id": 274,
         "prevSize": 32,
         "code": 59921
@@ -489,7 +521,7 @@
       "properties": {
         "ligatures": "enter, signin",
         "name": "enter",
-        "order": 17,
+        "order": 19,
         "id": 276,
         "prevSize": 32,
         "code": 59923
@@ -518,7 +550,7 @@
       "properties": {
         "ligatures": "exit, signout",
         "name": "exit",
-        "order": 16,
+        "order": 20,
         "id": 277,
         "prevSize": 32,
         "code": 59924
@@ -545,7 +577,7 @@
       "properties": {
         "ligatures": "arrow-right, right3",
         "name": "arrow-right",
-        "order": 13,
+        "order": 21,
         "id": 309,
         "prevSize": 32,
         "code": 59956
@@ -572,7 +604,7 @@
       "properties": {
         "ligatures": "arrow-left, left3",
         "name": "arrow-left",
-        "order": 12,
+        "order": 22,
         "id": 313,
         "prevSize": 32,
         "code": 59960
@@ -599,7 +631,7 @@
       "properties": {
         "ligatures": "facebook2, brand11",
         "name": "facebook2",
-        "order": 14,
+        "order": 23,
         "id": 402,
         "prevSize": 32,
         "code": 60049
