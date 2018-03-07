@@ -107,6 +107,10 @@
                     content: "\e986";
                 }
                 
+                .itemBtn--load::before {
+                    font-family: icons;
+                    content: "\e984";
+                }
 
                 .itemBtn--exit {
                     width: 30px;
