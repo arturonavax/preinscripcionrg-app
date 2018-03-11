@@ -20,8 +20,14 @@
         height: auto;
         width: 100%;
         margin-top: 20px;
-        align-items: center;
     }
+    
+    .form__item--CI {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }    
+
     .form__title {
         margin-top: 16px;
         text-align: center;
@@ -48,11 +54,14 @@
         }
         
         .item__input--CI {
-            display: inline;
             height: 25px;
-            width: 80%;
-            margin-left: 5px;
-
+            width: 100%;
+            padding-left: 5px;
+            
+            border: 1px solid #939393;
+            background-color: #fff;
+            border-radius: 0 5px 5px 0;
+            color: #565656;
         }
 
         .item__input--date {
@@ -79,9 +88,9 @@
         }
         
             .item__select--CI {
-                display: inline;
                 height: 25px;
-                width: 50px;
+                width: 40px;
+                border-radius: 5px 0 0 5px;
             }
 
         .item__input--SIGE {
@@ -228,10 +237,6 @@
     
     .item__submitFicha {
         width: 60%;
-    }
-    .item__input--CI {
-        width: 93%;
-        margin-left: 8px;
     }
     .item__input--SIGE {
         width: 13%;

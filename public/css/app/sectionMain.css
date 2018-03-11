@@ -208,6 +208,11 @@
         font-family: maven-blod;
     }
 
+.student-list {
+    width: 100%;
+    padding: 16px;
+}
+
         .RE-container__item > p {
             margin-top: 5px;
             display: block;
@@ -743,6 +748,10 @@
         
         transform: translate(0,0);
     }
+    
+        .student-list {
+            width: 65%;
+        }
     
         .itemBtn--back::before {
             font-family: icons;
