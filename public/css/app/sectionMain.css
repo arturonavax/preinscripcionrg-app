@@ -188,16 +188,19 @@
 
 .RE__container {
     width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
     margin-top: 15px;
     padding: 10px;
     
     color: #565656;
     background-color: #dedcdc;
+    border-left: 8px solid #3498db;
     
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-radius: 5px;
+    border-radius: 0 5px 5px 0;
 }
 
     .RE-container__item {
@@ -208,10 +211,15 @@
         font-family: maven-blod;
     }
 
-.student-list {
+.student-listContainer {
     width: 100%;
-    padding: 16px;
 }
+
+    .student-list {
+        width: 100%;
+        padding: 16px;
+        margin: 0 auto;
+    }
 
         .RE-container__item > p {
             margin-top: 5px;
@@ -748,10 +756,6 @@
         
         transform: translate(0,0);
     }
-    
-        .student-list {
-            width: 65%;
-        }
     
         .itemBtn--back::before {
             font-family: icons;
