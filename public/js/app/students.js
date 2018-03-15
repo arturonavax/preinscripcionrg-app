@@ -6,6 +6,7 @@
     self.StudentsView.prototype = {
         render: function(token){
             this.Token = token;
+            var self = this;
 
             let queryStudents = `
             query {
@@ -20,6 +21,12 @@
             }
             
             `
+            $("#student-listContainer").removeChild($("#student-list"));
+            let studentList = document.createElement("div");
+            studentList.id = "student-list";
+            studentList.className = "student-list";
+            $("#student-listContainer").appendChild(studentList);
+            
             requestAjaxToken("POST", "/graphql", this.Token, queryStudents)
              .then( r => {
                  for (i=0; i < r.response.data.students.length; i++) {
@@ -33,7 +40,6 @@
                     let ItemP1 = document.createElement("p");
                     ItemP1.textContent = "Nombre: ";
                     let ItemSpan1 = document.createElement("span");
-                    ItemSpan1.id = "student-name";
                     ItemSpan1.textContent = r.response.data.students[i].firstName + " " + r.response.data.students[i].lastName ;
 
                     let ItemP2 = document.createElement("p");
@@ -42,7 +48,6 @@
                     ItemSpan2.textContent = r.response.data.students[i].ci;
 
                     let ItemSpan3 = document.createElement("span");
-                    ItemSpan3.id = "student-status";
                     if (r.response.data.students[i].statusID === 1) {
                         ItemSpan3.textContent = "En Proceso..";
                     }
@@ -72,6 +77,76 @@
 
                     let ItemButton = document.createElement("button");
                     ItemButton.textContent = "Ver";
+                    ItemButton.className = "btnView";
+                    ItemButton.id = "btnStudentView" + r.response.data.students[i].id;
+
+                    ItemButton.addEventListener("click", function(){
+                        let queryStudent = `
+                            query {
+                                student(id:${ItemSpan22.textContent}){
+                                    countryOfBirthID,
+                                    stateOfBirthID,
+                                    municOfBirthID,
+                                    institutionOfOriginID,
+                                    municipalityID,
+                                    parishID,
+                                    sectorID,
+                                    typeOfRoadID,
+                                    mentionID,
+                                    sectionID,
+                                    conditionOfHousingID,
+
+                                    SIGECOD,
+                                    firstName,
+                                    lastName,
+                                    ciType,
+                                    ci,
+                                    dateOfBirth,
+                                    gender,
+                                    healthProblem,
+                                    healthProblemE,
+                                    email,
+                                    phoneNumber,
+                                    address,
+                                    scholarship,
+                                    canaima,
+                                    year,
+                                    age,
+                                    size,
+                                    weight,
+                                    repeatAsignature,
+                                    pendingAsignature,
+                                    regular,
+                                    repeat,
+                                    asigPend,
+                                    inscriptionDate,
+                                    
+                                    motherFirstName,
+                                    motherLastName,
+                                    motherPhoneNumber,
+                                    motherCI,
+                                
+                                    fatherFirstName,
+                                    fatherLastName,
+                                    fatherPhoneNumber,
+                                    fatherCI,
+                                    
+                                    representativeFirstName,
+                                    representativeLastName,
+                                    representativePhoneNumber,
+                                    representativeCI,
+                                    representativeRelationship,
+                                    representativeAddress
+                                }
+                            }
+                        `
+                        requestAjaxToken("POST", "/graphql", self.Token, queryStudent)
+                         .then(r => {
+                             console.log(r)
+                         });
+
+
+                    });
 
                     studentContainer.appendChild(studentContainerItem2);
                     studentContainerItem2.appendChild(ItemP12);

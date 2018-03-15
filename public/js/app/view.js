@@ -251,6 +251,17 @@
             $("#section").classList.add("tx-A");
 
         });
+        $("#studentReload").addEventListener("click", function() {
+            self.StudentsView.render(self.ProfileView.Profile.Token);
+        });
+
+        for (var i=1; i < document.getElementsByClassName("btnView").length+1; i++){
+            let j = "btnStudentView"; 
+            j = j + i; console.log(j); 
+            document.getElementById(j).addEventListener("click",function(){
+                console.log("Hola soy " + j)
+            });
+        }
     }
 
     self.UI.prototype = {
