@@ -80,10 +80,12 @@
                     ItemButton.className = "btnView";
                     ItemButton.id = "btnStudentView" + r.response.data.students[i].id;
 
+                    var studentID = r.response.data.students[i].id;
                     ItemButton.addEventListener("click", function(){
                         let queryStudent = `
                             query {
-                                student(id:${ItemSpan22.textContent}){
+                                student(id:${studentID}){
+                                    id,
                                     countryOfBirthID,
                                     stateOfBirthID,
                                     municOfBirthID,
@@ -140,9 +142,54 @@
                                 }
                             }
                         `
-                        requestAjaxToken("POST", "/graphql", self.Token, queryStudent)
+                        requestAjaxToken("POST", "/graphql", self.Token, queryStudent, false)
                          .then(r => {
-                             console.log(r)
+                             let student = r.response.data.student;
+
+                             $("#modal-studentView").classList.add("modal--open");
+
+                             $("#viewStudent-id").textContent = student.id;
+                             $("#viewStudent-SIGE").textContent = student.SIGECOD;
+                             $("#viewStudent-firstName").textContent = student.firstName;
+                             $("#viewStudent-lastName").textContent = student.lastName;
+                             $("#viewStudent-ci").textContent = student.ci;
+                             $("#viewStudent-email").textContent = student.email;
+                             $("#viewStudent-phoneNumber").textContent = student.phoneNumber;
+                             $("#viewStudent-gender").textContent = student.gender;
+                             $("#viewStudent-dateOfBirth").textContent = student.dateOfBirth;
+                             $("#viewStudent-countryOfBirth").textContent = student.countryOfBirthID;
+                             $("#viewStudent-stateOfBirth").textContent = student.stateOfBirthID;
+                             $("#viewStudent-municOfBirth").textContent = student.municOfBirthID;
+                             $("#viewStudent-institutionOfOrigin").textContent = student.institutionOfOriginID;
+                             $("#viewStudent-healthProblemE").textContent = student.healthProblemE;
+                             $("#viewStudent-address").textContent = student.address;
+                             $("#viewStudent-municipality").textContent = student.municipalityID;
+                             $("#viewStudent-parish").textContent = student.parishID;
+                             $("#viewStudent-sector").textContent = student.sectorID;
+                             $("#viewStudent-typeOfRoad").textContent = student.typeOfRoadID;
+                             $("#viewStudent-conditionOfHousing").textContent = student.conditionOfHousingID;
+                             $("#viewStudent-motherFirstName").textContent = student.motherFirstName;
+                             $("#viewStudent-motherLastName").textContent = student.motherLastName;
+                             $("#viewStudent-motherPhoneNumber").textContent = student.motherPhoneNumber;
+                             $("#viewStudent-motherCI").textContent = student.motherCI;
+                             $("#viewStudent-fatherFirstName").textContent = student.fatherFirstName;
+                             $("#viewStudent-fatherLastName").textContent = student.fatherLastName;
+                             $("#viewStudent-fatherPhoneNumber").textContent = student.fatherPhoneNumber;
+                             $("#viewStudent-fatherCI").textContent = student.fatherCI;
+                             $("#viewStudent-representativeFirstName").textContent = student.representativeFirstName;
+                             $("#viewStudent-representativeLastName").textContent = student.representativeLastName;
+                             $("#viewStudent-representativePhoneNumber").textContent = student.representativePhoneNumber;
+                             $("#viewStudent-representativeCI").textContent = student.representativeCI;
+                             $("#viewStudent-representativeRelationship").textContent = student.representativeRelationship;
+                             $("#viewStudent-representativeAddress").textContent = student.representativeAddress;
+                             $("#viewStudent-scholarship").textContent = student.scholarship;
+                             $("#viewStudent-canaima").textContent = student.canaima;
+                             $("#viewStudent-mention").textContent = student.mentionID;
+                             $("#viewStudent-section").textContent = student.sectionID;
+                             $("#viewStudent-year").textContent = student.year;
+                             $("#viewStudent-age").textContent = student.age;
+                             $("#viewStudent-size").textContent = student.size;
+                             $("#viewStudent-weight").textContent = student.weight;
                          });
 
 
