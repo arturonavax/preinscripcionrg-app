@@ -44,7 +44,6 @@
         justify-content: flex-start;
         width: 100%;
         border-top: 1px solid black;
-        border-bottom: none;
     }
 
     .print-last-line {
@@ -63,7 +62,6 @@
 
     .print-data-container:first-child{
         border-left: 1px solid black;
-
     }
 
     .print-title-data{
