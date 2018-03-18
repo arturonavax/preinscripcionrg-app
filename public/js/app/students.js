@@ -154,6 +154,143 @@
                         requestAjaxToken("POST", "/graphql", self.Token, queryStudent, false)
                          .then(r => {
                              let student = r.response.data.student;
+                             console.log(student);
+
+                             let queryCountryOfBirth = `
+                                 query {
+                                     country(id:${student.countryOfBirthID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let queryStateOfBirth = `
+                                 query {
+                                     state(id:${student.stateOfBirthID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let queryMunicOfBirth = `
+                                 query {
+                                     municipality(id:${student.municOfBirthID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let queryInstitutionOfOrigin = `
+                                 query {
+                                     institution(id:${student.institutionOfOriginID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let queryMunicipality = `
+                                 query {
+                                     municipality(id:${student.municipalityID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let queryParish = `
+                                 query {
+                                     parish(id:${student.parishID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let querySector = `
+                                 query {
+                                     sector(id:${student.sectorID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let queryTypeOfRoad = `
+                                 query {
+                                     typeOfRoad(id:${student.typeOfRoadID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let queryConditionOfHousing = `
+                                 query {
+                                     conditionOfHousing(id:${student.conditionOfHousingID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let queryMention = `
+                                 query {
+                                     mention(id:${student.mentionID}){
+                                         name
+                                     }
+                                 }
+                             `
+                             let querySection = `
+                                 query {
+                                     section(id:${student.sectionID}){
+                                         name
+                                     }
+                                 }
+                             `
+
+                             requestAjaxToken("POST", "/graphql", self.Token, queryCountryOfBirth, true)
+                             .then(r => {
+                                let country = r.response.data.country;
+                                $("#viewStudent-countryOfBirth").textContent = country.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, queryStateOfBirth, true)
+                             .then(r => {
+                                let state = r.response.data.state;
+                                $("#viewStudent-stateOfBirth").textContent = state.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, queryMunicOfBirth, true)
+                             .then(r => {
+                                let municipality = r.response.data.municipality;
+                                $("#viewStudent-municOfBirth").textContent = municipality.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, queryInstitutionOfOrigin, true)
+                             .then(r => {
+                                let institution = r.response.data.institution;
+                                $("#viewStudent-institutionOfOrigin").textContent = institution.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, queryMunicipality, true)
+                             .then(r => {
+                                let municipality = r.response.data.municipality;
+                                $("#viewStudent-municipality").textContent = municipality.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, queryParish, true)
+                             .then(r => {
+                                let parish = r.response.data.parish;
+                                $("#viewStudent-parish").textContent = parish.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, querySector, true)
+                             .then(r => {
+                                let sector = r.response.data.sector;
+                                $("#viewStudent-sector").textContent = sector.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, queryTypeOfRoad, true)
+                             .then(r => {
+                                let typeOfRoad = r.response.data.typeOfRoad;
+                                $("#viewStudent-typeOfRoad").textContent = typeOfRoad.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, queryConditionOfHousing, true)
+                             .then(r => {
+                                console.log(r);
+                                let conditionOfHousing = r.response.data.conditionOfHousing;
+                                $("#viewStudent-conditionOfHousing").textContent = conditionOfHousing.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, queryMention, true)
+                             .then(r => {
+                                let mention = r.response.data.mention;
+                                $("#viewStudent-mention").textContent = mention.name;
+                             });
+                             requestAjaxToken("POST", "/graphql", self.Token, querySection, true)
+                             .then(r => {
+                                let section = r.response.data.section;
+                                $("#viewStudent-section").textContent = section.name;
+                             });
+
 
                              $("#modal-studentView").classList.add("modal--open");
 
@@ -166,17 +303,8 @@
                              $("#viewStudent-phoneNumber").textContent = student.phoneNumber;
                              $("#viewStudent-gender").textContent = student.gender;
                              $("#viewStudent-dateOfBirth").textContent = student.dateOfBirth;
-                             $("#viewStudent-countryOfBirth").textContent = student.countryOfBirthID;
-                             $("#viewStudent-stateOfBirth").textContent = student.stateOfBirthID;
-                             $("#viewStudent-municOfBirth").textContent = student.municOfBirthID;
-                             $("#viewStudent-institutionOfOrigin").textContent = student.institutionOfOriginID;
                              $("#viewStudent-healthProblemE").textContent = student.healthProblemE;
                              $("#viewStudent-address").textContent = student.address;
-                             $("#viewStudent-municipality").textContent = student.municipalityID;
-                             $("#viewStudent-parish").textContent = student.parishID;
-                             $("#viewStudent-sector").textContent = student.sectorID;
-                             $("#viewStudent-typeOfRoad").textContent = student.typeOfRoadID;
-                             $("#viewStudent-conditionOfHousing").textContent = student.conditionOfHousingID;
                              $("#viewStudent-motherFirstName").textContent = student.motherFirstName;
                              $("#viewStudent-motherLastName").textContent = student.motherLastName;
                              $("#viewStudent-motherPhoneNumber").textContent = student.motherPhoneNumber;
@@ -191,16 +319,24 @@
                              $("#viewStudent-representativeCI").textContent = student.representativeCI;
                              $("#viewStudent-representativeRelationship").textContent = student.representativeRelationship;
                              $("#viewStudent-representativeAddress").textContent = student.representativeAddress;
-                             $("#viewStudent-scholarship").textContent = student.scholarship;
-                             $("#viewStudent-canaima").textContent = student.canaima;
-                             $("#viewStudent-mention").textContent = student.mentionID;
-                             $("#viewStudent-section").textContent = student.sectionID;
+                             if (student.scholarship == true) {
+                                $("#viewStudent-scholarship").textContent = "Si";
+
+                             } else {
+                                $("#viewStudent-scholarship").textContent = "No";
+                             }
+
+                             if (student.canaima == true) {
+                                $("#viewStudent-canaima").textContent = "Si";
+                             } else {
+                                $("#viewStudent-canaima").textContent = "No";
+
+                             }
                              $("#viewStudent-year").textContent = student.year;
                              $("#viewStudent-age").textContent = student.age;
                              $("#viewStudent-size").textContent = student.size;
                              $("#viewStudent-weight").textContent = student.weight;
                          });
-
 
                     });
 
