@@ -36,4 +36,17 @@ h1 {
     width: 100%;
     overflow: hidden;
 }
+
+.print-container {
+    display: none;
+}
+
+@media print {
+    .main {
+        display: none;
+    }
+    .print-container {
+        display: block;
+    }
+}
 /*------------------------------------------------------------*/

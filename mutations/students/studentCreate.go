@@ -202,7 +202,7 @@ var StudentCreate = &graphql.Field{
 		newStudent.MentionID, _ = p.Args["mentionID"].(int)
 		newStudent.SectionID, _ = p.Args["sectionID"].(int)
 		newStudent.TeacherID, _ = p.Args["teacherID"].(int)
-		newStudent.ConditionOfHousingID, _ = p.Args["conditionOfHousing"].(int)
+		newStudent.ConditionOfHousingID, _ = p.Args["conditionOfHousingID"].(int)
 
 		newStudent.SIGECOD, _ = p.Args["SIGECOD"].(string)
 

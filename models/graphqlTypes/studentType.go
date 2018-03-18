@@ -54,7 +54,7 @@ var StudentType = graphql.NewObject(
 			"sectionID": &graphql.Field{
 				Type: graphql.Int,
 			},
-			"studentConditionID": &graphql.Field{
+			"conditionOfHousingID": &graphql.Field{
 				Type: graphql.Int,
 			},
 			"representativeID": &graphql.Field{
@@ -120,6 +120,12 @@ var StudentType = graphql.NewObject(
 			"representativeCI": &graphql.Field{
 				Type: graphql.Int,
 			},
+			"representativeRelationship": &graphql.Field{
+				Type: graphql.String,
+			},
+			"representativeAddress": &graphql.Field{
+				Type: graphql.String,
+			},
 			"firstName": &graphql.Field{
 				Type: graphql.String,
 			},
@@ -159,9 +165,6 @@ var StudentType = graphql.NewObject(
 			"canaima": &graphql.Field{
 				Type: graphql.Boolean,
 			},
-			"conditionOfHousing": &graphql.Field{
-				Type: graphql.String,
-			},
 			"year": &graphql.Field{
 				Type: graphql.Int,
 			},
@@ -181,6 +184,12 @@ var StudentType = graphql.NewObject(
 				Type: graphql.String,
 			},
 			"regular": &graphql.Field{
+				Type: graphql.Boolean,
+			},
+			"repeat": &graphql.Field{
+				Type: graphql.Boolean,
+			},
+			"asigPend": &graphql.Field{
 				Type: graphql.Boolean,
 			},
 			"inscriptionDate": &graphql.Field{

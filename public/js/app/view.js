@@ -251,17 +251,18 @@
             $("#section").classList.add("tx-A");
 
         });
+        $("#modal-studentView-exit").addEventListener("click", function() {
+            $("#modal-studentView").classList.remove("modal--open");
+
+        });
         $("#studentReload").addEventListener("click", function() {
             self.StudentsView.render(self.ProfileView.Profile.Token);
         });
 
-        for (var i=1; i < document.getElementsByClassName("btnView").length+1; i++){
-            let j = "btnStudentView"; 
-            j = j + i; console.log(j); 
-            document.getElementById(j).addEventListener("click",function(){
-                console.log("Hola soy " + j)
-            });
-        }
+        $("#modal-studentView-download").addEventListener("click", function(){
+            window.print();
+
+        });
     }
 
     self.UI.prototype = {
