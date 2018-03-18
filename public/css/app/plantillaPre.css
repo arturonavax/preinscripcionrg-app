@@ -57,6 +57,7 @@
         height: 28px;
         width: 100%;
         min-width:15%;
+        padding-right: 3px;
         flex-direction: column;
     }
 
@@ -78,14 +79,13 @@
         font-size: 12px;
         height: 16px;
     }
-    
 
     .print-width6 {
         width:60%;
     }
 
     .print-width4 {
-        width:40%;
+        width:41%;
     }
 
     .print-container-mother {
@@ -130,13 +130,11 @@
     .print-nots-representative {
         position: absolute;
         top: 0;
-        left: 12%;
+        left: 13%;
     }
 
     .print-nots-teacher {
         position: absolute;
         top: 0;
         right: 15%;
-
     }
-}
