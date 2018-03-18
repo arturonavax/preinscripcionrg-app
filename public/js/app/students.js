@@ -27,7 +27,7 @@
             studentList.className = "student-list";
             $("#student-listContainer").appendChild(studentList);
             
-            requestAjaxToken("POST", "/graphql", this.Token, queryStudents)
+            requestAjaxToken("POST", "/graphql", this.Token, queryStudents, false)
              .then( r => {
                  for (i=0; i < r.response.data.students.length; i++) {
                     let studentContainer = document.createElement("div");
@@ -80,11 +80,20 @@
                     ItemButton.className = "btnView";
                     ItemButton.id = "btnStudentView" + r.response.data.students[i].id;
 
-                    var studentID = r.response.data.students[i].id;
+                    studentContainer.appendChild(studentContainerItem2);
+                    studentContainerItem2.appendChild(ItemP12);
+                    ItemP12.appendChild(ItemSpan12);
+                    studentContainerItem2.appendChild(ItemP22);
+                    ItemP22.appendChild(ItemSpan22);
+                    studentContainerItem2.appendChild(ItemButton);
+
+                    ItemButton.value = r.response.data.students[i].id;
+
                     ItemButton.addEventListener("click", function(){
+
                         let queryStudent = `
                             query {
-                                student(id:${studentID}){
+                                student(id:${this.value}){
                                     id,
                                     countryOfBirthID,
                                     stateOfBirthID,
@@ -195,12 +204,7 @@
 
                     });
 
-                    studentContainer.appendChild(studentContainerItem2);
-                    studentContainerItem2.appendChild(ItemP12);
-                    ItemP12.appendChild(ItemSpan12);
-                    studentContainerItem2.appendChild(ItemP22);
-                    ItemP22.appendChild(ItemSpan22);
-                    studentContainerItem2.appendChild(ItemButton);
+
                     // ---------------------------------------------
                  }
 
