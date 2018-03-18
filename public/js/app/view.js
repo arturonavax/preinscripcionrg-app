@@ -258,6 +258,11 @@
         $("#studentReload").addEventListener("click", function() {
             self.StudentsView.render(self.ProfileView.Profile.Token);
         });
+
+        $("#modal-studentView-download").addEventListener("click", function(){
+            window.print();
+
+        });
     }
 
     self.UI.prototype = {

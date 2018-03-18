@@ -1,45 +1,45 @@
-* {
-    position: relative;
-    box-sizing: border-box;
-    text-decoration: none;
-    margin: 0px;
-    padding: 0px;
-    z-index: 1;
-    font-family: Arial, Helvetica, sans-serif;
-}
+@media print {
+    * {
+        position: relative;
+        box-sizing: border-box;
+        text-decoration: none;
+        margin: 0px;
+        padding: 0px;
+        z-index: 1;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-@media screen,print {
-    .flex {
+    .print-flex {
         display: flex;
     }
 
-    .row {
+    .print-row {
         flex-direction: row;
     }
 
-    .container {
+    .print-container {
         margin: 10px auto;
         width:95%;
     }
-    .header {
+    .print-header {
         text-align: center;
         margin-bottom: 30px;
     }
     
-    .title-box {
+    .print-title-box {
         display: flex;
         justify-content: space-between;
         flex-direction: row;
         width: 100%;
     }
 
-    .id-data {
+    .print-id-data {
         display: inline;
         font-style: italic;
 
     }
 
-    .line {
+    .print-line {
         display: flex;
         justify-content: flex-start;
         width: 100%;
@@ -47,11 +47,11 @@
         border-bottom: none;
     }
 
-    .last-line {
+    .print-last-line {
         border-bottom: 1px solid black;
     }
 
-    .data-container{
+    .print-data-container{
         border-right: 1px solid black;
         display:flex;
         justify-content: space-between;
@@ -61,19 +61,19 @@
         flex-direction: column;
     }
 
-    .data-container:first-child{
+    .print-data-container:first-child{
         border-left: 1px solid black;
 
     }
 
-    .title-data{
+    .print-title-data{
         font-weight: 900;
         font-size: 12px;
         height: 16px;
         padding-left: 3px;
     }
 
-    .content-data{
+    .print-content-data{
         position: absolute;
         bottom: 0;
         right: 5%;
@@ -82,29 +82,29 @@
     }
     
 
-    .width6 {
+    .print-width6 {
         width:60%;
     }
 
-    .width4 {
+    .print-width4 {
         width:40%;
     }
 
-    .container-mother {
+    .print-container-mother {
         margin-top: 30px;
     }
-    .container-father {
+    .print-container-father {
         margin-top: 20px;
     }
-    .container-representative {
+    .print-container-representative {
         margin-top: 20px;
     }
 
-    .container-scolar {
+    .print-container-scolar {
         margin-top: 30px;
     }
 
-    .container-firms {
+    .print-container-firms {
         margin-top: 50px;
         display: flex;
         justify-content: space-around;
@@ -112,30 +112,30 @@
         height: 30px;
     }
 
-    .firm-representative {
+    .print-firm-representative {
         border-bottom: 1px solid black;
         width: 200px;
         height: 30px;
     }
 
-    .firm-teacher {
+    .print-firm-teacher {
         border-bottom: 1px solid black;
         height: 30px;
         width: 200px;
     }
 
-    .container-firms-nots {
+    .print-container-firms-nots {
         display: flex;
         width: 100%;
     }
 
-    .nots-representative {
+    .print-nots-representative {
         position: absolute;
         top: 0;
         left: 12%;
     }
 
-    .nots-teacher {
+    .print-nots-teacher {
         position: absolute;
         top: 0;
         right: 15%;

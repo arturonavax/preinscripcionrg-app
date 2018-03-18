@@ -13,4 +13,7 @@ func SetViewsRoutes(mux *http.ServeMux) {
 
 	prefixApp := "/app"
 	mux.HandleFunc(prefixApp, controllers.AppView)
+
+	prefixPlantilla := "/plantilla"
+	mux.HandleFunc(prefixPlantilla, controllers.PlantillaView)
 }

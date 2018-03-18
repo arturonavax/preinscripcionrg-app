@@ -32,3 +32,16 @@ func AppView(w http.ResponseWriter, r *http.Request) {
 
 	t.Execute(w, nil)
 }
+
+//PlantillaView Controlador para la ruta /plantilla.
+func PlantillaView(w http.ResponseWriter, r *http.Request) {
+	log.Println("Estan haciendo un Request a la pagina plantilla.html")
+	t, err := template.ParseFiles("./public/static/app/plantillaPre.html")
+	if err != nil {
+		fmt.Println("No se encontro el archivo app/plantillaPre.html")
+		return
+
+	}
+
+	t.Execute(w, nil)
+}
