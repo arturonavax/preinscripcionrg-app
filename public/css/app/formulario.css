@@ -95,7 +95,7 @@
 
         .item__input--SIGE {
             width: 40%;
-            max-width: 50%;
+            max-width: 120px;
             height: 40px;
             padding-left: 2px;
 
@@ -131,6 +131,7 @@
         .item__submit {
             margin-top: 15px;
             width: 100%;
+            max-width: 490px;
             height: 50px;
             font-size: 20px;
 
@@ -168,6 +169,7 @@
         .item__submitFicha {
             margin-top: 10px;
             width: 100%;
+            max-width: 490px;
             height: 50px;
             font-size: 20px;
 
@@ -233,13 +235,4 @@
 /*------------------------ BREAKPOINTS -----------------------*/
 /*------------------------------------------------------------*/
 
-@media screen and (min-width: 768px) {
-    
-    .item__submitFicha {
-        width: 60%;
-    }
-    .item__input--SIGE {
-        width: 13%;
-    }
-}
 /*------------------------------------------------------------*/
