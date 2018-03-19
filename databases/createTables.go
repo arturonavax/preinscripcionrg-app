@@ -51,7 +51,11 @@ func CreateTables() {
 	//Records basicos necesarios.
 	kind := &models.UserKind{}
 	kind.Name = "REPRESENTANTE"
-	kind.Description = "Tiene los permisos basicos para poder utilizar la interfaz superficialmente y registrar usuarios"
+	kind.Description = "Tiene los permisos basicos para poder utilizar la interfaz superficialmente y registrar estudiantes"
+
+	kind2 := &models.UserKind{}
+	kind2.Name = "DOCENTE"
+	kind2.Description = "Tiene los permisos basicos para poder utilizar la interfaz pudiendo ver todos los estudiantes registrados"
 
 	status := &models.UserStatus{}
 	status.Name = "ACTIVO"
@@ -70,6 +74,7 @@ func CreateTables() {
 	studentStatus3.Description = "Estudiantes rechazados para ser inscritos"
 
 	db.Create(&kind)
+	db.Create(&kind2)
 	db.Create(&status)
 	db.Create(&studentStatus)
 	db.Create(&studentStatus2)

@@ -19,17 +19,30 @@ var QueryStudents = &graphql.Field{
 
 		kindID := p.Context.Value("user").(models.User).KindID
 
+		//Se obtiene el ID del usuario enviado en el Contexto.
+		userID := p.Context.Value("user").(models.User).ID
+
 		db := databases.GetConnectionDB()
 		defer db.Close()
 
 		db.Where("id = ?", kindID).First(&kind)
 
 		if kind.ReadStudents {
-			db.Find(&ListStudent)
+			if kind.Name == "REPRESENTANTE" {
+				db.Where("user_id = ?", userID).Find(&ListStudent)
 
-			for i := 0; i < len(ListStudent); i++ {
-				ListStudent[i].Message = "#QueryStudents# : Consulta exitosa."
-				ListStudent[i].Code = http.StatusAccepted
+				for i := 0; i < len(ListStudent); i++ {
+					ListStudent[i].Message = "#QueryStudents# : Consulta exitosa."
+					ListStudent[i].Code = http.StatusAccepted
+				}
+			} else if kind.Name == "DOCENTE" {
+				db.Find(&ListStudent)
+
+				for i := 0; i < len(ListStudent); i++ {
+					ListStudent[i].Message = "#QueryStudents# : Consulta exitosa."
+					ListStudent[i].Code = http.StatusAccepted
+				}
+
 			}
 		} else {
 			Student := student.Student{

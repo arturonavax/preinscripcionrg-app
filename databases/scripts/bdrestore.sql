@@ -8,7 +8,7 @@ INSERT INTO peoples (first_name, last_name, email, phone_number, address) VALUES
 
 -- CREACION DE USUARIOS.
 INSERT INTO users (people_id,status_id,kind_id,username,password) VALUES
-	(1, 1, 1, 'ArthurNavaH', 'a8e8300d94b085dd82528964c2a18810a35b2026be4453b400a2bed3593cec4b'),
+	(1, 1, 2, 'ArthurNavaH', 'a8e8300d94b085dd82528964c2a18810a35b2026be4453b400a2bed3593cec4b'),
 	(2, 1, 1, 'JuanAlvarez1999', '15c2c15ec8faf2eb483b4836c4de8ae3697128a7e399ab7613babfe939e48648')
 ;
 
