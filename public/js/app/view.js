@@ -255,13 +255,15 @@
             $("#modal-studentView").classList.remove("modal--open");
 
         });
-        $("#studentReload").addEventListener("click", function() {
+        $("#btn-studentReload").addEventListener("click", function() {
             self.StudentsView.render(self.ProfileView.Profile.Token);
+        });
+        $("#btn-studentSearch").addEventListener("click", function(){
+            $("#inputStudentSearch").classList.toggle("no-visible");
         });
 
         $("#modal-studentView-download").addEventListener("click", function(){
             window.print();
-
         });
     }
 

@@ -90,6 +90,7 @@
                     ItemButton.value = r.response.data.students[i].id;
 
                     ItemButton.addEventListener("click", function(){
+                        ClearStudentView();
 
                         let queryStudent = `
                             query {
@@ -384,18 +385,19 @@
                                 $("#viewStudent-regular2").textContent = "Si";
                              } else {
                                 $("#viewStudent-regular2").textContent = "No";
-                            }
+                             }
                              if (student.repeat == true) {
                                 $("#viewStudent-repeat2").textContent = "Si";
                              } else {
                                 $("#viewStudent-repeat2").textContent = "No";
-                            }
+                             }
                              if (student.asigPend == true) {
                                 $("#viewStudent-asigPend2").textContent = "Si";
                              } else {
                                 $("#viewStudent-asigPend2").textContent = "No";
-                            }
-                             $("#viewStudent-year2").textContent = "2017-2018";
+                             }
+                             let dat = student.inscriptionDate[0]+student.inscriptionDate[1]+student.inscriptionDate[2]+student.inscriptionDate[3];
+                             $("#viewStudent-year22").textContent = (dat-1)+"-"+dat;
                              $("#viewStudent-asigRepeatE2").textContent = student.repeatAsignature;
                              $("#viewStudent-asigPendE2").textContent = student.pendingAsignature;
                              $("#viewStudent-dateOfInscription2").textContent = student.inscriptionDate;
