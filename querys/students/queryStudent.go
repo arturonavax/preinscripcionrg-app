@@ -77,6 +77,8 @@ var QueryStudent = &graphql.Field{
 				studentFound.RepresentativeLastName = representativeFound.LastName
 				studentFound.RepresentativePhoneNumber = representativeFound.PhoneNumber
 				studentFound.RepresentativeCI = representativeFound.CI
+				studentFound.RepresentativeRelationship = representativeFound.Relationship
+				studentFound.RepresentativeAddress = representativeFound.Address
 			} else {
 				studentFound.Message = "#QueryStudent# : No tienes permisos para leer estudiantes."
 				studentFound.Code = http.StatusNonAuthoritativeInfo

@@ -3,17 +3,13 @@
 -- CREACION DE PERSONAS.
 INSERT INTO peoples (first_name, last_name, email, phone_number, address) VALUES
 	('Arturo', 'Nava', 'arthurnavah@gmail.com','+584166651924', 'Valle Frio'),
-	('Maikol', 'Hernandez', 'maikol@gmail.com', '04146360146', 'Chinita'),
-	('Ricardo', 'Romero', 'ricardo@gmail.com', '041664091   70', 'La Victoria'),
-	('Carlos', 'Vasquez', 'carlos@gmail.com', '04243081929', 'La Limpia')
+	('Juan', 'Alvarez', 'juaniav@gmail.com','04162694898', 'Bella Vista')
 ;
 
 -- CREACION DE USUARIOS.
 INSERT INTO users (people_id,status_id,kind_id,username,password) VALUES
 	(1, 1, 1, 'ArthurNavaH', 'a8e8300d94b085dd82528964c2a18810a35b2026be4453b400a2bed3593cec4b'),
-	(2, 1, 1, 'PitbullBlood', 'a8e8300d94b085dd82528964c2a18810a35b2026be4453b400a2bed3593cec4b'),
-	(3, 1, 1, 'MaikolH', 'a8e8300d94b085dd82528964c2a18810a35b2026be4453b400a2bed3593cec4b'),
-	(4, 1, 1, 'CarlosV', 'a8e8300d94b085dd82528964c2a18810a35b2026be4453b400a2bed3593cec4b')
+	(2, 1, 1, 'JuanAlvarez1999', '15c2c15ec8faf2eb483b4836c4de8ae3697128a7e399ab7613babfe939e48648')
 ;
 
 -- CREACION DE PAISES.
@@ -87,16 +83,6 @@ INSERT INTO institutions (user_id,name) VALUES
     (2, 'Nestor Luis Perez')
 ;
 
--- CREACION DE REPRESENTANTES.
-INSERT INTO representatives (user_id, first_name, last_name, phone_number, ci, relationship, address) VALUES
-    (1, 'Zully', 'Marina', '04146360146', 'V-8500827', 'Madre', 'Valle Frio')
-;
-
--- CREACION DE PROFESORES.
-INSERT INTO teachers (user_id, first_name, last_name, email, phone_number, ci) VALUES
-    (1, 'Hosman', 'Salamanca', 'hosman@gmail.com', '04146364823', 'V-8507329')
-;
-
 -- CREACION DE PARROQUIAS.
 INSERT INTO parishes (user_id, municipality_id, name) VALUES 
     (1, 1, 'Antonio Borjas Romero'),
@@ -127,16 +113,6 @@ INSERT INTO sectors (user_id, parish_id,name) VALUES
 -- CREACION DE TIPOS DE VIAS.
 INSERT INTO type_of_roads (user_id, name) VALUES
     (1, 'Autobus')
-;
-
--- CREACION DE PADRES.
-INSERT INTO fathers (user_id, first_name, last_name, phone_number, ci) VALUES
-    (1, 'Arturo', 'Enrique', '04146360146', 'V-8501612')    
-;
-
--- CREACION DE MADRES.
-INSERT INTO mothers (user_id, first_name, last_name, phone_number, ci) VALUES
-    (1, 'Zully', 'Marina', '04146360146', 'V-8500612')    
 ;
 
 -- CREACION DE MENCIONES.

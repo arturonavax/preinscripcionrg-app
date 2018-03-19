@@ -25,9 +25,6 @@ var MotherType = graphql.NewObject(
 			"phoneNumber": &graphql.Field{
 				Type: graphql.String,
 			},
-			"ciType": &graphql.Field{
-				Type: graphql.String,
-			},
 			"ci": &graphql.Field{
 				Type: graphql.Int,
 			},

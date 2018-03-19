@@ -94,6 +94,7 @@
                         let queryStudent = `
                             query {
                                 student(id:${this.value}){
+                                    statusID,
                                     id,
                                     countryOfBirthID,
                                     stateOfBirthID,
@@ -303,16 +304,25 @@
 
                              $("#modal-studentView").classList.add("modal--open");
 
+                             console.log(student);
+                             if (student.statusID == 1) {
+                                $("#viewStudent-status").textContent = "En proceso...";
+                             }
                              $("#viewStudent-id").textContent = student.id;
                              $("#viewStudent-id2").textContent = student.id;
-                             $("#viewStudent-SIGE").textContent = student.SIGECOD;
-                             $("#viewStudent-SIGE2").textContent = student.SIGECOD;
+                             $("#viewStudent-SIGECOD").textContent = student.SIGECOD;
+                             if (student.SIGECOD.length == 0) {
+                                $("#viewStudent-SIGE2").textContent = "No";
+                             } else {
+                                $("#viewStudent-SIGE2").textContent = "Si";
+                                $("#viewStudent-SIGECOD2").textContent = student.SIGECOD;
+                             }
                              $("#viewStudent-firstName").textContent = student.firstName;
                              $("#viewStudent-firstName2").textContent = student.firstName;
                              $("#viewStudent-lastName").textContent = student.lastName;
                              $("#viewStudent-lastName2").textContent = student.lastName;
-                             $("#viewStudent-ci").textContent = student.ci;
-                             $("#viewStudent-ci2").textContent = student.ci;
+                             $("#viewStudent-ci").textContent = student.ciType+"-"+student.ci;
+                             $("#viewStudent-ci2").textContent = student.ciType+"-"+student.ci;
                              $("#viewStudent-email").textContent = student.email;
                              $("#viewStudent-email2").textContent = student.email;
                              $("#viewStudent-phoneNumber").textContent = student.phoneNumber;
@@ -368,10 +378,28 @@
                              } else {
                                 $("#viewStudent-canaima").textContent = "No";
                                 $("#viewStudent-canaima2").textContent = "No";
-
                              }
+
+                             if (student.regular == true) {
+                                $("#viewStudent-regular2").textContent = "Si";
+                             } else {
+                                $("#viewStudent-regular2").textContent = "No";
+                            }
+                             if (student.repeat == true) {
+                                $("#viewStudent-repeat2").textContent = "Si";
+                             } else {
+                                $("#viewStudent-repeat2").textContent = "No";
+                            }
+                             if (student.asigPend == true) {
+                                $("#viewStudent-asigPend2").textContent = "Si";
+                             } else {
+                                $("#viewStudent-asigPend2").textContent = "No";
+                            }
+                             $("#viewStudent-year2").textContent = "2017-2018";
+                             $("#viewStudent-asigRepeatE2").textContent = student.repeatAsignature;
+                             $("#viewStudent-asigPendE2").textContent = student.pendingAsignature;
+                             $("#viewStudent-dateOfInscription2").textContent = student.inscriptionDate;
                              $("#viewStudent-year").textContent = student.year;
-                             $("#viewStudent-year2").textContent = student.year;
                              $("#viewStudent-age").textContent = student.age;
                              $("#viewStudent-age2").textContent = student.age;
                              $("#viewStudent-size").textContent = student.size;

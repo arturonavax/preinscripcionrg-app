@@ -223,6 +223,8 @@ var StudentCreate = &graphql.Field{
 		newStudent.RepresentativeEmail, _ = p.Args["representativeEmail"].(string)
 		newStudent.RepresentativePhoneNumber, _ = p.Args["representativePhoneNumber"].(string)
 		newStudent.RepresentativeCI, _ = p.Args["representativeCI"].(string)
+		newStudent.RepresentativeRelationship, _ = p.Args["representativeRelationship"].(string)
+		newStudent.RepresentativeAddress, _ = p.Args["representativeAddress"].(string)
 
 		newStudent.FirstName, _ = p.Args["firstName"].(string)
 

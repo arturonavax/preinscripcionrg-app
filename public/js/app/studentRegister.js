@@ -340,7 +340,7 @@
             let repeat = this.RepeatCheck.checked;
             let asigPend = this.AsigPendCheck.checked;
             let y = new Date();
-            let inscriptionDate = y.getDate() + "-" + Number(y.getMonth()+1) + "-" + y.getFullYear();
+            let inscriptionDate = y.getFullYear() + "-" + Number(y.getMonth()+1) + "-" + y.getDate();
             for (var i=0; i< gender.length; i++) {
                 if (gender[i].checked) {
                     gender = gender[i].value;

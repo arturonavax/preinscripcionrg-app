@@ -78,11 +78,8 @@ var StudentType = graphql.NewObject(
 			"motherPhoneNumber": &graphql.Field{
 				Type: graphql.String,
 			},
-			"motherCIType": &graphql.Field{
-				Type: graphql.String,
-			},
 			"motherCI": &graphql.Field{
-				Type: graphql.Int,
+				Type: graphql.String,
 			},
 			"fatherFirstName": &graphql.Field{
 				Type: graphql.String,
@@ -96,11 +93,8 @@ var StudentType = graphql.NewObject(
 			"fatherPhoneNumber": &graphql.Field{
 				Type: graphql.String,
 			},
-			"fatherCIType": &graphql.Field{
-				Type: graphql.String,
-			},
 			"fatherCI": &graphql.Field{
-				Type: graphql.Int,
+				Type: graphql.String,
 			},
 			"representativeFirstName": &graphql.Field{
 				Type: graphql.String,
@@ -114,11 +108,8 @@ var StudentType = graphql.NewObject(
 			"representativePhoneNumber": &graphql.Field{
 				Type: graphql.String,
 			},
-			"representativeCIType": &graphql.Field{
-				Type: graphql.String,
-			},
 			"representativeCI": &graphql.Field{
-				Type: graphql.Int,
+				Type: graphql.String,
 			},
 			"representativeRelationship": &graphql.Field{
 				Type: graphql.String,
