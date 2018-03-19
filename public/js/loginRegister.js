@@ -32,7 +32,9 @@ let formLogin = $("#form-login"),
     btnSubmitLogin = $("#btn-submit-login"),
     btnSubmitRegister = $("#btn-submit-register"),
     formMessageLogin = $("#form-message-login"),
-    formMessageRegister = $("#form-message-register");
+    modalMini = $("#modal-mini"),
+    modalMiniParrafo = $("#modal-mini-parrafo"),
+    modalMiniBtn = $("#modal-mini-cancel");
 
 
 usernameLogin.value = sessionStorage.getItem("username");
@@ -101,9 +103,14 @@ btnSubmitRegister.addEventListener("click", function() {
     btnSubmitRegister.value = "Registrando...";
 });
 
+modalMiniBtn.addEventListener("click", function(){
+    modalMini.classList.remove("modal-mini--open");
+});
+
 formRegister.addEventListener("submit", e => {
     e.preventDefault();
     btnSubmitRegister.disabled = true;
+    modalMini.classList.add("modal-mini--open");
 
     let obj = {
         username: usernameRegister.value,
@@ -118,26 +125,31 @@ formRegister.addEventListener("submit", e => {
 
     requestAjax(formRegister.method, formRegister.action, JSON.stringify(obj))
      .then( respuesta => {
-        btnSubmitRegister.disabled = false;
-        btnSubmitRegister.value = "Registrar";
+         btnSubmitRegister.disabled = false;
+         btnSubmitRegister.value = "Registrar";
          if (respuesta.response.code === 201) {
 
-             formMessageRegister.textContent = "Registro exitoso";
-             console.log(respuesta.response);
+             modalMiniParrafo.textContent = "Registro exitoso";
+             modalMiniBtn.addEventListener("click", function(){
+                 loginRegister.classList.remove("register--open");
+             });
 
          } else if (respuesta.response.code === 400) {
 
-             formMessageRegister.textContent = "El Usuario ya existe";
-             console.log(respuesta.response);
+             modalMiniParrafo.textContent = "El Usuario ya existe";
+             modalMiniBtn.addEventListener("click", function(){
+                 loginRegister.classList.remove("register--open");
+                 window.scrollTo(0,0);
+             });
 
          } else if (respuesta.response.code === 406) {
 
-             formMessageRegister.textContent = "Las contraseñas no coinciden";
-             console.log(respuesta.response);
+             modalMiniParrafo.textContent = "Las contraseñas no coinciden";
+             modalMiniBtn.addEventListener("click", function(){
+                 loginRegister.classList.add("register--open");
+             });
 
          } else {
-
-             console.log(respuesta.response.code);
 
          }
      })
