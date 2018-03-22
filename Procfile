@@ -1,1 +1,1 @@
-web: preinscripcionrg
+web: github.com/arthurnavah/PreInscripcionRG
