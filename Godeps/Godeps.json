@@ -1,5 +1,5 @@
 {
-	"ImportPath": "PreInscripcionRG",
+	"ImportPath": "github.com/arthurnavah/PreInscripcionRG",
 	"GoVersion": "go1.9",
 	"GodepVersion": "v80",
 	"Deps": [
