@@ -3,6 +3,7 @@ package utils
 import (
 	"flag"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/arthurnavah/PreInscripcionRG/databases"
@@ -25,11 +26,12 @@ var InitProduc string
 
 //FlagControl Controla las banderas del ejecutable.
 func FlagControl() {
+	port2, _ := strconv.Atoi(os.Getenv("PORT"))
 	flag.StringVar(&CreateTables, "createTables", "NO", "Genera las tablas necesarias")
 	flag.StringVar(&DropTables, "dropTables", "NO", "Borra las tablas de la base de datos")
 	flag.StringVar(&RecreateTables, "recreateTables", "NO", "Recrea las tablas necesarias")
 	flag.StringVar(&InitProduc, "initProduction", "NO", "Crea todas las carpetas y archivos necesarios para ejecutar la aplicacion")
-	flag.IntVar(&Port, "port", os.Getenv("PORT"), "Declara el puerto para el servidor web")
+	flag.IntVar(&Port, "port", port2, "Declara el puerto para el servidor web")
 	flag.Parse()
 
 	CreateTables = strings.ToUpper(CreateTables)
