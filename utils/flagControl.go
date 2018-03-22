@@ -42,7 +42,6 @@ func FlagControl() {
 	if CreateTables == "YES" {
 		databases.CreateTables()
 		os.Exit(0)
-
 	}
 	if DropTables == "YES" {
 		databases.DropTables()
