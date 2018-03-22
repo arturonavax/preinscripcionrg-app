@@ -1,15 +1,15 @@
 {
-	"ImportPath": "github.com/arthurnavah/PreInscripcionRG",
+	"ImportPath": "./PreInscripcionRG",
 	"GoVersion": "go1.9",
 	"GodepVersion": "v80",
 	"Deps": [
 		{
-			"ImportPath": "github.com/dgrijalva/jwt-go",
+			"ImportPath": "./vendor/dgrijalva/jwt-go",
 			"Comment": "v3.1.0",
 			"Rev": "dbeaa9332f19a944acb5736b4456cfcc02140e29"
 		},
 		{
-			"ImportPath": "github.com/dgrijalva/jwt-go/request",
+			"ImportPath": "./vendor/dgrijalva/jwt-go/request",
 			"Comment": "v3.1.0",
 			"Rev": "dbeaa9332f19a944acb5736b4456cfcc02140e29"
 		},
