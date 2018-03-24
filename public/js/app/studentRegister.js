@@ -424,19 +424,19 @@
             `
             requestAjaxToken("POST", "/graphql", this.Token, mutation, true)
              .then( r => {
-                 console.log(r);
-                 if (r.response.errors.length != 0) {
-                    $("#modal-mini-parrafo").textContent = "El estudiante ya habia sido registrado."
+                 $("#modal-mini-parrafo").textContent = "";
+
+                 if (r.response.errors != undefined) {
+                    $("#modal-mini-parrafo").textContent = "El estudiante ya habia sido registrado.";
                  } else {
                     if (r.response.data.studentC.code === 201) {
-                        $("#modal-mini-parrafo").textContent = "El estudiante se creo exitosamente!."
+                        $("#modal-mini-parrafo").textContent = "El estudiante se creo exitosamente!.";
                     } else {
-                        $("#modal-mini-parrafo").textContent = "El estudiante ya habia sido registrado."
+                        $("#modal-mini-parrafo").textContent = "El estudiante ya habia sido registrado.";
                     }
                  }
 
              });
-            console.log(mutation);
         }
     }
 })();

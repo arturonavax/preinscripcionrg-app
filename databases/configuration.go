@@ -2,7 +2,6 @@ package databases
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"os"
 
@@ -58,8 +57,6 @@ func GetConnectionDB() *gorm.DB {
 	if err != nil {
 		log.Println(err)
 	}
-	fmt.Println("url :" + url)
-	fmt.Println("connection : " + connection)
 
 	return db
 
