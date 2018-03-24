@@ -8,6 +8,7 @@ import (
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"github.com/lib/pq"
 )
 
 //ConfigurationDB Estructura que contiene la configuracion de la Base de datos
@@ -36,15 +37,30 @@ func getConfigurationDB() ConfigurationDB {
 
 //GetConnectionDB Devuelve una conexion con la base de datos
 func GetConnectionDB() *gorm.DB {
-	c := getConfigurationDB()
+	/*
+		c := getConfigurationDB()
 
-	dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=%s",
-		c.User, c.Password, c.Server, c.Port, c.Database, c.SSLMode)
+		dsn := fmt.Sprintf("postgres://%s:%s@%s:%s/%s?sslmode=%s",
+			c.User, c.Password, c.Server, c.Port, c.Database, c.SSLMode)
 
-	db, err := gorm.Open("postgres", dsn)
+		db, err := gorm.Open("postgres", dsn)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		return db
+	*/
+	url := os.Getenv("DATABASE_URL")
+	connection, _ := pq.ParseURL(url)
+	connection += " sslmode=require"
+
+	db, err := gorm.Open("postgres", connection)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 	}
+	fmt.Println("url :" + url)
+	fmt.Println("connection : " + connection)
 
 	return db
+
 }
