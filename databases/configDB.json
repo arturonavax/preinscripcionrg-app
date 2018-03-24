@@ -1,0 +1,8 @@
+{
+	"Server": "localhost",
+	"Port": "5432",
+	"User": "arthurnavah",
+	"Password": "5808",
+	"Database": "preinscripcion",
+	"SSLMode": "disable"
+}
